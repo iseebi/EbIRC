@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="BeginConnection" xml:space="preserve">
+    <value>接続を開始します。</value>
+  </data>
+  <data name="CannotConnectMessage" xml:space="preserve">
+    <value>接続できませんでした。ネットワークに繋がってない可能性があります。</value>
+  </data>
+  <data name="CannotOpenURL" xml:space="preserve">
+    <value>URLを開けませんでした。\n標準ブラウザの設定が壊れている可能性があります。</value>
+  </data>
+  <data name="ChannelSelecterServerCaption" xml:space="preserve">
+    <value>＜サーバー＞</value>
+  </data>
+  <data name="ClearedLog" xml:space="preserve">
+    <value>ログをクリアしました。</value>
+  </data>
+  <data name="Confim" xml:space="preserve">
+    <value>確認</value>
+  </data>
+  <data name="Connected" xml:space="preserve">
+    <value>サーバーに接続しました。</value>
+  </data>
+  <data name="ConnectionError" xml:space="preserve">
+    <value>接続エラー</value>
+  </data>
+  <data name="ConnectionMenuCaption" xml:space="preserve">
+    <value>接続</value>
+  </data>
+  <data name="CtcpReplyMessage" xml:space="preserve">
+    <value>CTCP-Reply: {0} さんの {1} は {2}</value>
+  </data>
+  <data name="CtcpSource" xml:space="preserve">
+    <value>http://iseebi.half-done.net/</value>
+  </data>
+  <data name="CtcpVersion" xml:space="preserve">
+    <value>EbIRC (.NET/Windows Mobile)</value>
+  </data>
+  <data name="DefaultServerFileName" xml:space="preserve">
+    <value>servers.txt</value>
+  </data>
+  <data name="DefaultServers" xml:space="preserve">
+    <value>irc.nara.wide.ad.jp
+irc.tokyo.wide.ad.jp
+irc.fujisawa.wide.ad.jp
+irc.huie.hokudai.ac.jp
+irc.media.kyoto-u.ac.jp</value>
+  </data>
+  <data name="DisconnectConfim" xml:space="preserve">
+    <value>切断してもよろしいですか？</value>
+  </data>
+  <data name="Disconnected" xml:space="preserve">
+    <value>サーバーに切断されました。</value>
+  </data>
+  <data name="DisconnectedUser" xml:space="preserve">
+    <value>{0} さんが切断しました。</value>
+  </data>
+  <data name="DisconnectMenuCaption" xml:space="preserve">
+    <value>切断</value>
+  </data>
+  <data name="FaildBoot" xml:space="preserve">
+    <value>起動失敗</value>
+  </data>
+  <data name="GoogleURL" xml:space="preserve">
+    <value>http://www.google.co.jp/search?q={0}&amp;hl=ja&amp;lr=lang_ja&amp;ie=utf-8&amp;oe=utf-8</value>
+  </data>
+  <data name="InputNewNicknamePrompt" xml:space="preserve">
+    <value>新しいニックネーム</value>
+  </data>
+  <data name="InputNewNicknameTitle" xml:space="preserve">
+    <value>ニックネームの入力</value>
+  </data>
+  <data name="Joined" xml:space="preserve">
+    <value>入室しました。</value>
+  </data>
+  <data name="JoinedUser" xml:space="preserve">
+    <value>{0} さんが入室しました。</value>
+  </data>
+  <data name="KickedMeMessage" xml:space="preserve">
+    <value>退室させられました。</value>
+  </data>
+  <data name="KickedMessage" xml:space="preserve">
+    <value>{0} さんが {1} さんを強制退室させました。</value>
+  </data>
+  <data name="Leaved" xml:space="preserve">
+    <value>退室しました。</value>
+  </data>
+  <data name="LeavedUser" xml:space="preserve">
+    <value>{0} さんが退室しました。</value>
+  </data>
+  <data name="LogFormat" xml:space="preserve">
+    <value>{0} {1}</value>
+  </data>
+  <data name="ModeChanged" xml:space="preserve">
+    <value>{0} がモード変更: {1} {2}</value>
+  </data>
+  <data name="ModeReceived" xml:space="preserve">
+    <value>モード: {0} {1}</value>
+  </data>
+  <data name="NicknameChangedMessage" xml:space="preserve">
+    <value>{0} → {1}</value>
+  </data>
+  <data name="NoticeLogFormat" xml:space="preserve">
+    <value>{0}: {1}</value>
+  </data>
+  <data name="NullServerSettingError" xml:space="preserve">
+    <value>接続先のサーバーが設定されていません。</value>
+  </data>
+  <data name="NumericReplyLogFormat" xml:space="preserve">
+    <value>{0:D3} {1}</value>
+  </data>
+  <data name="PrivmsgLogFormat" xml:space="preserve">
+    <value>{0}&gt; {1}</value>
+  </data>
+  <data name="ServerMessageTitlebar" xml:space="preserve">
+    <value>EbIRC ＜サーバーメッセージ＞</value>
+  </data>
+  <data name="ServerMessageTopicbar" xml:space="preserve">
+    <value>サーバーメッセージ</value>
+  </data>
+  <data name="TimeFormat" xml:space="preserve">
+    <value>{0:00}:{1:00}</value>
+  </data>
+  <data name="TitlebarFormat" xml:space="preserve">
+    <value>EbIRC {0}({1}人)</value>
+  </data>
+  <data name="TopicbarFormat" xml:space="preserve">
+    <value>{0} {1}</value>
+  </data>
+  <data name="TopicChanged" xml:space="preserve">
+    <value>{0} がトピック変更: {1}</value>
+  </data>
+  <data name="TopicReceived" xml:space="preserve">
+    <value>トピック: {0}</value>
+  </data>
+  <data name="UsersLogFormat" xml:space="preserve">
+    <value>[現在の参加者: {0}]</value>
+  </data>
+  <data name="VersionInfomation" xml:space="preserve">
+    <value>EbIRC Ver{0}.{1:D2} Release.{2} Copyright(C) 2006-2007 Shin ISE.</value>
+  </data>
+  <data name="ExitConfim" xml:space="preserve">
+    <value>終了してもよろしいですか？</value>
+  </data>
+  <data name="DefaultProfileName" xml:space="preserve">
+    <value>(デフォルト)</value>
+  </data>
+  <data name="ChannelAddDialogCaption" xml:space="preserve">
+    <value>追加するチャンネル / PMの送信先</value>
+  </data>
+  <data name="ChannelAddDialogTitle" xml:space="preserve">
+    <value>送信先の追加</value>
+  </data>
+  <data name="ProfileAddDialogCaption" xml:space="preserve">
+    <value>追加するプロファイルの名前</value>
+  </data>
+  <data name="ProfileAddDialogTitle" xml:space="preserve">
+    <value>プロファイルの追加</value>
+  </data>
+  <data name="CannotRemoveAllProfileMessage" xml:space="preserve">
+    <value>プロファイルをすべて削除することはできません。</value>
+  </data>
+  <data name="DefaultEncoding" xml:space="preserve">
+    <value>iso-2022-jp</value>
+  </data>
+  <data name="EncodeList" xml:space="preserve">
+    <value>iso-2022-jp
+UTF-8
+shift_jis
+euc-jp</value>
+  </data>
+  <data name="ChannelControl_Add" xml:space="preserve">
+    <value>送信先を追加</value>
+  </data>
+  <data name="ChannelControl_Join" xml:space="preserve">
+    <value>入室</value>
+  </data>
+  <data name="ChannelControl_Leave" xml:space="preserve">
+    <value>退室</value>
+  </data>
+  <data name="ChannelControl_NoContext" xml:space="preserve">
+    <value>選択可能メニューなし</value>
+  </data>
+  <data name="ChannelControl_PrivateMessage" xml:space="preserve">
+    <value>PM の送信先として追加</value>
+  </data>
+  <data name="ChannelControl_Remove" xml:space="preserve">
+    <value>リストから取り除く</value>
+  </data>
+  <data name="SettingFileName" xml:space="preserve">
+    <value>EbIRC.settings.xml</value>
+  </data>
+  <data name="CrashMessage" xml:space="preserve">
+    <value>回復不能のエラーが起こりました。おそらくバグなので、インストール先の EbIRC_ExceptionReport.txt を作者へ送ってください。</value>
+  </data>
+</root>

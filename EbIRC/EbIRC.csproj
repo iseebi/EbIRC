@@ -1,0 +1,202 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{82124F8F-1A07-4475-9704-EA254A183FBC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EbiSoft.EbIRC</RootNamespace>
+    <AssemblyName>EbIRC</AssemblyName>
+    <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PlatformFamilyName>PocketPC</PlatformFamilyName>
+    <PlatformID>4118C335-430C-497f-BE48-11C3316B135E</PlatformID>
+    <OSVersion>5.01</OSVersion>
+    <DeployDirSuffix>EbIRC</DeployDirSuffix>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FormFactorID>
+    </FormFactorID>
+    <ApplicationIcon>ebirc_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppRelease|AnyCPU' ">
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <OutputPath>bin\AppRelease\</OutputPath>
+    <DefineConstants>TRACE;PocketPC</DefineConstants>
+    <Optimize>true</Optimize>
+    <FileAlignment>512</FileAlignment>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Win32Release|AnyCPU' ">
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <OutputPath>bin\Win32Release\</OutputPath>
+    <DefineConstants>TRACE;PocketPC;Win32PInvoke</DefineConstants>
+    <Optimize>true</Optimize>
+    <FileAlignment>512</FileAlignment>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.WindowsCE.Forms" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Channel.cs" />
+    <Compile Include="ChannelControlDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChannelControlDialog.Designer.cs">
+      <DependentUpon>ChannelControlDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChannelMenuItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ChannelNameEqualityComparer.cs" />
+    <Compile Include="ConnectionManager.cs" />
+    <Compile Include="ConnectionProfile.cs" />
+    <Compile Include="ConnectionProfileData.cs" />
+    <Compile Include="EbIrcMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EbIrcMainForm.Designer.cs">
+      <DependentUpon>EbIrcMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InputBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputBoxForm.Designer.cs">
+      <DependentUpon>InputBoxForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InputBoxInputFilter.cs" />
+    <Compile Include="IRC\ModeChangeEventArgs.cs" />
+    <Compile Include="IRC\CTCPEventArgs.cs" />
+    <Compile Include="IRC\IRCClient.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IRC\KickEventArgs.cs" />
+    <Compile Include="IRC\MessageParseException.cs" />
+    <Compile Include="IRC\NickNameChangeEventArgs.cs" />
+    <Compile Include="IRC\ReceiveMessageEventArgs.cs" />
+    <Compile Include="IRC\ReceiveNamesEventArgs.cs" />
+    <Compile Include="IRC\ReceiveServerReplyEventArgs.cs" />
+    <Compile Include="IRC\ReplyNumbers.cs" />
+    <Compile Include="IRC\ServerInfo.cs" />
+    <Compile Include="IRC\TopicChangeEventArgs.cs" />
+    <Compile Include="IRC\UserInfo.cs" />
+    <Compile Include="IRC\UserInOutEventArgs.cs" />
+    <Compile Include="Led.cs" />
+    <Compile Include="LogBoxInputFilter.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ChannelControlDialog.ja-JP.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ChannelControlDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChannelControlDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ChannelControlDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EbIrcMainForm.ja-JP.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EbIrcMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EbIrcMainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EbIrcMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputBoxForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>InputBoxForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.ja-JP.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingForm.ja-JP.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RingBuffer.cs" />
+    <Compile Include="SettingData.cs" />
+    <Compile Include="SettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingForm.Designer.cs">
+      <DependentUpon>SettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="TextBoxInputFilter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ebirc_icon.ico" />
+  </ItemGroup>
+  <Import Condition="'$(TargetFrameworkVersion)' == 'v1.0'" Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.v1.targets" />
+  <Import Condition="'$(TargetFrameworkVersion)' == 'v2.0'" Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
