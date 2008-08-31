@@ -69,12 +69,11 @@ namespace EbiSoft.EbIRC
             // 設定ファイルの存在を確認
             if (File.Exists(settingFile))
             {
-                m_data = new SettingData();
                 XmlSerializer serializer = new XmlSerializer(typeof(SettingData));
                 using (FileStream fs = new FileStream(settingFile, FileMode.Open, FileAccess.Read))
                 {
                     m_deserializing = true;
-                    m_data = (SettingData) serializer.Deserialize(fs);
+                    m_data = (SettingData)serializer.Deserialize(fs);
                     m_deserializing = false;
 
                     // 旧設定変換処理
@@ -94,6 +93,10 @@ namespace EbiSoft.EbIRC
                     }
 
                 }
+            }
+            else
+            {
+                m_data = new SettingData();
             }
 
             // サーバー一覧読み込み

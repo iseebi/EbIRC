@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Resources;
 using System.IO;
+using System.Diagnostics;
 
 namespace EbiSoft.EbIRC
 {
@@ -20,6 +21,20 @@ namespace EbiSoft.EbIRC
         {
             // デフォルト例外ハンドラの定義
             AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
+
+#if DEBUG
+            /*
+            // トレースログ
+            System.Diagnostics.Debug.Listeners.Add(
+                new TextWriterTraceListener(
+                    Path.Combine(
+                        Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetModules()[0].FullyQualifiedName), 
+                        "EbIRC_TraceLog.txt"
+                    )
+                )
+            );
+            */ 
+#endif
 
             Application.Run(new EbIrcMainForm());
         }

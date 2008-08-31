@@ -179,6 +179,7 @@
     </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="TextBoxInputFilter.cs" />
+    <Compile Include="TextWriterTraceListener.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ebirc_icon.ico" />
