@@ -1313,6 +1313,7 @@ namespace EbiSoft.EbIRC.IRC {
 
                                 // イベントを通知
                                 queue.Enqueue(new EventData(eventKeyOfProcessedConnection, EventArgs.Empty));
+                                queue.Enqueue(new EventData(eventKeyOfReceiveServerReply, new ReceiveServerReplyEventArgs(number, SliceArray(parameters, 1))));
                             }
                             break;
 
