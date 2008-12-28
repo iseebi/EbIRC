@@ -1626,7 +1626,6 @@ namespace EbiSoft.EbIRC.IRC {
         public void JoinChannel(string channel)
         {
             SendCommand(string.Format("JOIN {0}", channel));
-            SendCommand(string.Format("MODE {0} +sn", channel));
         }
 
         /// <summary>
