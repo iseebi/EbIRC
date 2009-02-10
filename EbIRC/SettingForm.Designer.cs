@@ -88,6 +88,11 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.logTabPage = new System.Windows.Forms.TabPage();
+            this.enableLoggingCheckBox = new System.Windows.Forms.CheckBox();
+            this.logDirectoryBrowseButton = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.logDirectoryNameTextBox = new System.Windows.Forms.TextBox();
             this.tabControl.SuspendLayout();
             this.serverTabPage.SuspendLayout();
             this.communicationTabPage.SuspendLayout();
@@ -95,6 +100,7 @@
             this.viewTabPage.SuspendLayout();
             this.controlTabPage.SuspendLayout();
             this.keywordsTabPage.SuspendLayout();
+            this.logTabPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainMenu1
@@ -115,6 +121,7 @@
             this.tabControl.Controls.Add(this.viewTabPage);
             this.tabControl.Controls.Add(this.controlTabPage);
             this.tabControl.Controls.Add(this.keywordsTabPage);
+            this.tabControl.Controls.Add(this.logTabPage);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             // 
@@ -499,6 +506,36 @@
             resources.ApplyResources(this.label15, "label15");
             this.label15.Name = "label15";
             // 
+            // logTabPage
+            // 
+            resources.ApplyResources(this.logTabPage, "logTabPage");
+            this.logTabPage.Controls.Add(this.enableLoggingCheckBox);
+            this.logTabPage.Controls.Add(this.logDirectoryBrowseButton);
+            this.logTabPage.Controls.Add(this.label18);
+            this.logTabPage.Controls.Add(this.logDirectoryNameTextBox);
+            this.logTabPage.Name = "logTabPage";
+            // 
+            // enableLoggingCheckBox
+            // 
+            resources.ApplyResources(this.enableLoggingCheckBox, "enableLoggingCheckBox");
+            this.enableLoggingCheckBox.Name = "enableLoggingCheckBox";
+            // 
+            // logDirectoryBrowseButton
+            // 
+            resources.ApplyResources(this.logDirectoryBrowseButton, "logDirectoryBrowseButton");
+            this.logDirectoryBrowseButton.Name = "logDirectoryBrowseButton";
+            this.logDirectoryBrowseButton.Click += new System.EventHandler(this.logDirectoryBrowseButton_Click);
+            // 
+            // label18
+            // 
+            resources.ApplyResources(this.label18, "label18");
+            this.label18.Name = "label18";
+            // 
+            // logDirectoryNameTextBox
+            // 
+            resources.ApplyResources(this.logDirectoryNameTextBox, "logDirectoryNameTextBox");
+            this.logDirectoryNameTextBox.Name = "logDirectoryNameTextBox";
+            // 
             // SettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
@@ -518,6 +555,7 @@
             this.viewTabPage.ResumeLayout(false);
             this.controlTabPage.ResumeLayout(false);
             this.keywordsTabPage.ResumeLayout(false);
+            this.logTabPage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -581,5 +619,10 @@
         private System.Windows.Forms.CheckBox dislikeUseRegexCheckBox;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TabPage logTabPage;
+        private System.Windows.Forms.Button logDirectoryBrowseButton;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox logDirectoryNameTextBox;
+        private System.Windows.Forms.CheckBox enableLoggingCheckBox;
     }
 }

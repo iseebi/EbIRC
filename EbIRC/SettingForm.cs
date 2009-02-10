@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using EbiSoft.EbIRC.Properties;
+using EbiSoft.Library.Mobile;
 
 namespace EbiSoft.EbIRC
 {
@@ -120,6 +121,8 @@ namespace EbiSoft.EbIRC
             highlightChannelCheckBox.Checked = Settings.Data.HighlightChannelChange;
             dislikeWordsTextBox.Text = string.Join("\r\n", Settings.Data.DislikeKeywords);
             dislikeUseRegexCheckBox.Checked = Settings.Data.UseRegexDislike;
+            enableLoggingCheckBox.Checked = Settings.Data.LogingEnable;
+            logDirectoryNameTextBox.Text = Settings.Data.LogDirectory;
         }
 
         private void SettingForm_Closing(object sender, CancelEventArgs e)
@@ -173,6 +176,8 @@ namespace EbiSoft.EbIRC
             Settings.Data.HighlightChannelChange = highlightChannelCheckBox.Checked;
             Settings.Data.DislikeKeywords = dislikeWordsTextBox.Text.Replace("\r", "").Split('\n');
             Settings.Data.UseRegexDislike = dislikeUseRegexCheckBox.Checked;
+            Settings.Data.LogingEnable = enableLoggingCheckBox.Checked;
+            Settings.Data.LogDirectory = logDirectoryNameTextBox.Text;
 
             Settings.WriteSetting();
         }
@@ -384,6 +389,17 @@ namespace EbiSoft.EbIRC
             if (!dislikeWordsTextBox.Multiline)
             {
                 dislikeWordsTextBox.Text = dislikeWordsTextBox.Text.Replace("\r", string.Empty).Replace('\n', '|');
+            }
+        }
+
+        private void logDirectoryBrowseButton_Click(object sender, EventArgs e)
+        {
+            using (FolderSelectDialog dialog = new FolderSelectDialog())
+            {
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    logDirectoryNameTextBox.Text = dialog.SelectedDirectory;
+                }
             }
         }
     }

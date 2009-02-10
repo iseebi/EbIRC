@@ -46,6 +46,8 @@ namespace EbiSoft.EbIRC
         private int m_highlightContinueTime = 1500;
         private int m_channelShortcutIgnoreTimes = 400;
 
+        private bool m_logingEnable = false;
+        private string m_logDirectory = string.Empty;
 
         /// <summary>
         /// 接続プロファイル
@@ -356,7 +358,24 @@ namespace EbiSoft.EbIRC
             get { return m_channelShortcutIgnoreTimes; }
             set { m_channelShortcutIgnoreTimes = value; }
         }
-	
+
+        /// <summary>
+        /// ログ保存有効
+        /// </summary>
+        public bool LogingEnable
+        {
+            get { return m_logingEnable; }
+            set { m_logingEnable = value; }
+        }
+
+        /// <summary>
+        /// ログ保存先
+        /// </summary>
+        public string LogDirectory
+        {
+            get { return m_logDirectory; }
+            set { m_logDirectory = value; }
+        }
 
         #region 設定からデータを作成するメソッドとプロパティ
 

@@ -2,6 +2,7 @@ using System;
 using System.Text;
 using System.Windows.Forms;
 using EbiSoft.Library;
+using System.IO;
 
 namespace EbiSoft.EbIRC
 {
@@ -49,6 +50,22 @@ namespace EbiSoft.EbIRC
         {
             // ÉçÉOÇí«â¡Ç∑ÇÈ
             m_log.Add(logLine);
+            if (Settings.Data.LogingEnable && Directory.Exists(Settings.Data.LogDirectory))
+            {
+                try
+                {
+                    string baseDir = Path.Combine(Settings.Data.LogDirectory, "Log");
+                    string directory = Path.Combine(baseDir, Name);
+                    string filename = Path.Combine(directory, DateTime.Now.ToString("yyyyMMdd") + ".htm");
+                    if (!Directory.Exists(baseDir))   Directory.CreateDirectory(baseDir);
+                    if (!Directory.Exists(directory)) Directory.CreateDirectory(directory);
+                    using (StreamWriter writer = new StreamWriter(filename, true, Encoding.Default))
+                    {
+                        writer.WriteLine(logLine + "<br>");
+                    }
+                }
+                finally { }
+            }
         }
 
         /// <summary>

@@ -101,6 +101,12 @@
     <Compile Include="EbIrcMainForm.Designer.cs">
       <DependentUpon>EbIrcMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FolderSelectDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FolderSelectDialog.designer.cs">
+      <DependentUpon>FolderSelectDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="InputBoxForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,14 @@
     <EmbeddedResource Include="EbIrcMainForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>EbIrcMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FolderSelectDialog.ja-JP.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FolderSelectDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FolderSelectDialog.resx">
+      <DependentUpon>FolderSelectDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="InputBoxForm.resx">
       <SubType>Designer</SubType>
