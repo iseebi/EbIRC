@@ -18,6 +18,8 @@ namespace EbiSoft.EbIRC
         private string m_topic;
         private string[] m_members;
 
+        private static char[] escapeForFilenameTargets = "\\/:*?<>\"|".ToCharArray();
+
         /// <summary>
         /// コンストラクタ
         /// </summary>
@@ -50,21 +52,31 @@ namespace EbiSoft.EbIRC
         {
             // ログを追加する
             m_log.Add(logLine);
-            if (Settings.Data.LogingEnable && Directory.Exists(Settings.Data.LogDirectory))
-            {
+            if (Settings.Data.LogingEnable) {
                 try
                 {
-                    string baseDir = Path.Combine(Settings.Data.LogDirectory, "Log");
-                    string directory = Path.Combine(baseDir, Name);
+                    string baseDir;
+                    if (!String.IsNullOrEmpty(Settings.Data.LogDirectory)
+                        && Directory.Exists(Settings.Data.LogDirectory))
+                    {
+                        baseDir = Path.Combine(Settings.Data.LogDirectory, "Log");
+                    }
+                    else
+                    {
+                        baseDir = Path.Combine(Program.ProgramDirectory, "Log");
+                    }
+                    string directory = Path.Combine(baseDir, EscapeForFilename(Name));
                     string filename = Path.Combine(directory, DateTime.Now.ToString("yyyyMMdd") + ".htm");
-                    if (!Directory.Exists(baseDir))   Directory.CreateDirectory(baseDir);
+                    if (!Directory.Exists(baseDir)) Directory.CreateDirectory(baseDir);
                     if (!Directory.Exists(directory)) Directory.CreateDirectory(directory);
                     using (StreamWriter writer = new StreamWriter(filename, true, Encoding.Default))
                     {
-                        writer.WriteLine(logLine + "<br>");
+                        writer.WriteLine(logLine.Replace("<", "&lt;").Replace(">", "&gt;") + "<br>");
                     }
                 }
-                finally { }
+                catch (Exception)
+                {
+                }
             }
         }
 
@@ -74,6 +86,16 @@ namespace EbiSoft.EbIRC
         public void ClearLog()
         {
             m_log.Clear();
+        }
+
+        private string EscapeForFilename(string str)
+        {
+            string returnValue = str;
+            foreach (char escapeChar in escapeForFilenameTargets)
+            {
+                returnValue = returnValue.Replace(escapeChar, '_');
+            }
+            return returnValue;
         }
 
         /// <summary>

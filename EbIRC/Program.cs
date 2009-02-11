@@ -12,6 +12,8 @@ namespace EbiSoft.EbIRC
         private static readonly string crashReportFile = Path.Combine(Path.GetDirectoryName(
         System.Reflection.Assembly.GetExecutingAssembly().GetModules()[0].FullyQualifiedName),
         Properties.Resources.ResourceManager.GetString("CrashReportFile"));
+        private static readonly string programDirectory = Path.GetDirectoryName(
+        System.Reflection.Assembly.GetExecutingAssembly().GetModules()[0].FullyQualifiedName);
 
         /// <summary>
         /// アプリケーションのメイン エントリ ポイントです。
@@ -37,6 +39,11 @@ namespace EbiSoft.EbIRC
 #endif
 
             Application.Run(new EbIrcMainForm());
+        }
+
+        public static string ProgramDirectory
+        {
+            get { return programDirectory; }
         }
 
         /// <summary>
