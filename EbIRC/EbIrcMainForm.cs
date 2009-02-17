@@ -1456,6 +1456,41 @@ namespace EbiSoft.EbIRC
             return channel;
         }
 
+        /// <summary>
+        /// チャンネルを削除する
+        /// </summary>
+        /// <param name="name">削除するチャンネル</param>
+        internal void RemoveChannel(string name)
+        {
+            if (!Channels.ContainsKey(name)) throw new ArgumentException();
+
+            Channel ch = this.Channels[name];
+            // 現在のチャンネルが削除されるならサーバーに移動する
+            if (ch == m_currentCh)
+            {
+                LoadChannel(m_serverCh);
+            }
+            // チャンネル削除
+            Channels.Remove(name);
+            foreach (ChannelMenuItem item in m_channelPopupMenus)
+            {
+                if (item.Channel == ch)
+                {
+                    m_channelPopupMenus.Remove(item);
+                    break;
+                }
+            }
+            foreach (MenuItem item in menuChannelListMenuItem.MenuItems)
+            {
+                ChannelMenuItem channelItem = (item as ChannelMenuItem);
+                if ((channelItem != null) && (channelItem.Channel == ch))
+                {
+                    menuChannelListMenuItem.MenuItems.Remove(item);
+                    break;
+                }
+            }
+        }
+
         #endregion
 
         #region チャンネル移動

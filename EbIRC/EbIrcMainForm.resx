@@ -123,14 +123,8 @@
   <data name="connectionMenuItem.Text" xml:space="preserve">
     <value />
   </data>
-  <data name="menuMenuItem.Text" xml:space="preserve">
-    <value>Menu</value>
-  </data>
   <data name="menuChannelControlMenuItem.Text" xml:space="preserve">
     <value>Control channels</value>
-  </data>
-  <data name="menuChannelListMenuItem.Text" xml:space="preserve">
-    <value>Channel list</value>
   </data>
   <data name="menuChannelListServerMenuItem.Text" xml:space="preserve">
     <value>Server message</value>
@@ -138,11 +132,11 @@
   <data name="menuItem3.Text" xml:space="preserve">
     <value>-</value>
   </data>
+  <data name="menuChannelListMenuItem.Text" xml:space="preserve">
+    <value>Channel list</value>
+  </data>
   <data name="menuItem8.Text" xml:space="preserve">
     <value>-</value>
-  </data>
-  <data name="menuEditMenuItem.Text" xml:space="preserve">
-    <value>Edit</value>
   </data>
   <data name="menuEditCopyMenuItem.Text" xml:space="preserve">
     <value>Copy selection</value>
@@ -159,11 +153,14 @@
   <data name="menuEditClearMenuItem.Text" xml:space="preserve">
     <value>Scrollback</value>
   </data>
-  <data name="nicknameSwitchMenuItem.Text" xml:space="preserve">
-    <value>Nickname</value>
+  <data name="menuEditMenuItem.Text" xml:space="preserve">
+    <value>Edit</value>
   </data>
   <data name="menuNicknameInputMenuItem.Text" xml:space="preserve">
     <value>Input new nickname...</value>
+  </data>
+  <data name="nicknameSwitchMenuItem.Text" xml:space="preserve">
+    <value>Nickname</value>
   </data>
   <data name="menuItem1.Text" xml:space="preserve">
     <value>-</value>
@@ -174,44 +171,14 @@
   <data name="menuExitMenuItem.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
-  <data name="&gt;&gt;topicLabel.Name" xml:space="preserve">
-    <value>topicLabel</value>
-  </data>
-  <data name="&gt;&gt;topicLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;topicLabel.Parent" xml:space="preserve">
-    <value>infomationPanel</value>
-  </data>
-  <data name="&gt;&gt;topicLabel.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="menuMenuItem.Text" xml:space="preserve">
+    <value>Menu</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="infomationPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="infomationPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="infomationPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 39</value>
-  </data>
-  <data name="&gt;&gt;infomationPanel.Name" xml:space="preserve">
-    <value>infomationPanel</value>
-  </data>
-  <data name="&gt;&gt;infomationPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;infomationPanel.Parent" xml:space="preserve">
-    <value>mainPanel</value>
-  </data>
-  <data name="&gt;&gt;infomationPanel.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="topicLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="topicLabel.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 5</value>
   </data>
@@ -229,6 +196,27 @@
   </data>
   <data name="&gt;&gt;topicLabel.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="infomationPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="infomationPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="infomationPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 39</value>
+  </data>
+  <data name="&gt;&gt;infomationPanel.Name" xml:space="preserve">
+    <value>infomationPanel</value>
+  </data>
+  <data name="&gt;&gt;infomationPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;infomationPanel.Parent" xml:space="preserve">
+    <value>mainPanel</value>
+  </data>
+  <data name="&gt;&gt;infomationPanel.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="inputTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
@@ -258,6 +246,15 @@
   <metadata name="logContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>126, 17</value>
   </metadata>
+  <data name="contextUrlOpenMenuItem.Text" xml:space="preserve">
+    <value>Open URL</value>
+  </data>
+  <data name="contextCopyMenuItem.Text" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="contextGoogleMenuItem.Text" xml:space="preserve">
+    <value>Search in Google</value>
+  </data>
   <data name="logTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -287,15 +284,6 @@
   </data>
   <data name="&gt;&gt;logTextBox.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="contextUrlOpenMenuItem.Text" xml:space="preserve">
-    <value>Open URL</value>
-  </data>
-  <data name="contextCopyMenuItem.Text" xml:space="preserve">
-    <value>Copy</value>
-  </data>
-  <data name="contextGoogleMenuItem.Text" xml:space="preserve">
-    <value>Search in Google</value>
   </data>
   <metadata name="inputPanel.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>261, 17</value>

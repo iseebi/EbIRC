@@ -237,7 +237,7 @@ namespace EbiSoft.EbIRC
             }
 
             // チャンネル一覧から削除する
-            (Owner as EbIrcMainForm).Channels.Remove(ch.Name);
+            (Owner as EbIrcMainForm).RemoveChannel(ch.Name);
 
             // チャンネル一覧を再構築する
             LoadChannelList();
