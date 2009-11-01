@@ -31,7 +31,8 @@ namespace EbiSoft.EbIRC
         [DllImport("coredll.dll", SetLastError = true)]
         private static extern bool NLedSetDevice(uint h, ref NLED_SETTINGS_INFO pOutput);
 
-        private unsafe struct NLED_SETTINGS_INFO
+        [StructLayout(LayoutKind.Sequential)]
+        private struct NLED_SETTINGS_INFO
         {
             public uint LedNum;
             public int OffOnBlink;
@@ -41,7 +42,8 @@ namespace EbiSoft.EbIRC
             public int MetaCycleOn;
             public int MetaCycleOff;
         }
-        private unsafe struct NLED_COUNT_INFO
+        [StructLayout(LayoutKind.Sequential)]
+        private struct NLED_COUNT_INFO
         {
             public uint cLeds;
         }
@@ -49,7 +51,7 @@ namespace EbiSoft.EbIRC
         private const uint NLED_COUNT_INFO_ID = 0;
         private const uint NLED_SETTINGS_INFO_ID = 2;
 
-        public static unsafe int GetLedCount()
+        public static int GetLedCount()
         {
             NLED_COUNT_INFO countInfo = new NLED_COUNT_INFO();
             int LEDCount = 0;
@@ -75,7 +77,7 @@ namespace EbiSoft.EbIRC
             SetLedStatus((int)led, (int)status);
         }
 
-        public static unsafe void SetLedStatus(int wLed, int wStatus)
+        public static void SetLedStatus(int wLed, int wStatus)
         {
             if (!AvailableLed(wLed)) throw new InvalidOperationException();
 
