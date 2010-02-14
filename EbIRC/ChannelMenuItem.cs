@@ -8,7 +8,7 @@ namespace EbiSoft.EbIRC
     /// <summary>
     /// ƒ`ƒƒƒ“ƒlƒ‹‚ğ‚ÂMenuItem
     /// </summary>
-    class ChannelMenuItem : MenuItem
+    class ChannelMenuItem : MenuItem, IComparable
     {
         private Channel m_channel;
 
@@ -29,9 +29,52 @@ namespace EbiSoft.EbIRC
             get { return m_channel; }
             set
             {
-                base.Text = value.Name.Replace("&", "&&");
                 m_channel = value;
+                UpdateText();
             }
         }
+
+        public void UpdateText()
+        {
+            if (Channel.UnreadCount > 0)
+            {
+                base.Text = string.Format("{0} ({1})", Channel.Name.Replace("&", "&&"), Channel.UnreadCount);
+            }
+            else
+            {
+                base.Text = Channel.Name.Replace("&", "&&");
+            }
+        }
+
+        #region IComparable ƒƒ“ƒo
+
+        public int CompareTo(object obj)
+        {
+            if (obj is ChannelMenuItem)
+            {
+                ChannelMenuItem chItem = obj as ChannelMenuItem;
+                Channel ch1 = m_channel;
+                Channel ch2 = chItem.Channel;
+
+                if (this.Checked && !chItem.Checked)
+                {
+                    return 1;
+                }
+                else if (!this.Checked && chItem.Checked)
+                {
+                    return -1;
+                }
+                else
+                {
+                    return ch1.UnreadCount.CompareTo(ch2.UnreadCount);
+                }
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        #endregion
     }
 }

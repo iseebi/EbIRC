@@ -578,8 +578,12 @@ namespace EbiSoft.EbIRC
             }
 
             // その他のチャンネルセレクタの処理
-            foreach (ChannelMenuItem menu in m_channelPopupMenus)
+            List<ChannelMenuItem> menus = new List<ChannelMenuItem>(m_channelPopupMenus);
+            menus.Sort();
+            menus.Reverse(); // 降順に
+            foreach (ChannelMenuItem menu in menus)
             {
+                menu.UpdateText();
                 channelContextMenu.MenuItems.Add(menu);
             }
         }
@@ -1138,6 +1142,12 @@ namespace EbiSoft.EbIRC
             // ログ追加
             string message = AddLog(m_channel[channel], string.Format(Resources.PrivmsgLogFormat, IRCClient.GetUserName(e.Sender), e.Message));
 
+            // 発言数加算
+            if (m_channel[channel] != m_currentCh)
+            {
+                m_channel[channel].UnreadCount++;
+            }
+
             // ハイライトキーワードフィルタ
             if ((highlightMatcher != null) && highlightMatcher.Match(e.Message).Success)
                 SetHighlight(m_channel[channel], message);
@@ -1534,6 +1544,9 @@ namespace EbiSoft.EbIRC
 
                     logTextBox.Text = channel.GetLogs();
                     LogMoveLastLine();
+
+                    // 発言数クリア
+                    channel.UnreadCount = 0;
                 }
                 finally
                 {
@@ -1791,6 +1804,7 @@ namespace EbiSoft.EbIRC
             // ハイライトメッセージ一覧に追加
             ChannelMenuItem mesMenu = new ChannelMenuItem(channel);
             mesMenu.Text = message;
+            mesMenu.Click += new EventHandler(menuChannelListChannelsMenuItem_Click);
             menuHilightedMessages.MenuItems.Add(mesMenu);
 
             // 該当チャンネルをハイライトチェックする

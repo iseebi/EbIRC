@@ -17,6 +17,7 @@ namespace EbiSoft.EbIRC
         private string m_name;
         private string m_topic;
         private string[] m_members;
+        private int m_unreadCount;
 
         private static char[] escapeForFilenameTargets = "\\/:*?<>\"|".ToCharArray();
 
@@ -32,6 +33,7 @@ namespace EbiSoft.EbIRC
             m_name = name;
             m_defaultChannel = defaultChannel;
             m_members = new string[] { };
+            m_unreadCount = 0;
         }
 
         /// <summary>
@@ -162,5 +164,15 @@ namespace EbiSoft.EbIRC
         {
             get { return IRC.IRCClient.IsChannelString(this.Name); }
         }
+
+        /// <summary>
+        /// 未読メッセージ数
+        /// </summary>
+        public int UnreadCount
+        {
+            get { return m_unreadCount; }
+            set { m_unreadCount = value; }
+        }
+	
     }
 }
