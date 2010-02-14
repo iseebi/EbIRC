@@ -839,7 +839,7 @@ namespace EbiSoft.EbIRC.IRC {
         /// </summary>
         public IRCClient()
         {
-            m_encoding = Encoding.GetEncoding("iso-2022-jp");
+            m_encoding = new UTF8Encoding(false);
 
             m_sendQueue = new Queue();
             m_namelist = new Dictionary<string, string[]>();

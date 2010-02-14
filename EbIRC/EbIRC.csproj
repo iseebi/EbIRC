@@ -92,6 +92,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ChannelNameEqualityComparer.cs" />
+    <Compile Include="ChannelSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChannelSettingForm.Designer.cs">
+      <DependentUpon>ChannelSettingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConnectionManager.cs" />
     <Compile Include="ConnectionProfile.cs" />
     <Compile Include="ConnectionProfileData.cs" />
@@ -141,6 +147,14 @@
     <EmbeddedResource Include="ChannelControlDialog.resx">
       <SubType>Designer</SubType>
       <DependentUpon>ChannelControlDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChannelSettingForm.ja-JP.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ChannelSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChannelSettingForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ChannelSettingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EbIrcMainForm.ja-JP.resx">
       <SubType>Designer</SubType>
