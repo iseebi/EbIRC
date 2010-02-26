@@ -579,6 +579,14 @@ namespace EbiSoft.EbIRC
 
             // その他のチャンネルセレクタの処理
             List<ChannelMenuItem> menus = new List<ChannelMenuItem>(m_channelPopupMenus);
+
+            // インデックス付与
+            for (int i = 0; i < menus.Count; i++)
+            {
+                menus[i].Index = i;
+            }
+
+            // ソートして追加
             menus.Sort();
             menus.Reverse(); // 降順に
             foreach (ChannelMenuItem menu in menus)

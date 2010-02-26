@@ -11,6 +11,7 @@ namespace EbiSoft.EbIRC
     class ChannelMenuItem : MenuItem, IComparable
     {
         private Channel m_channel;
+        private int m_index;
 
         /// <summary>
         /// チャンネルを指定してメニューを初期化します。
@@ -32,6 +33,15 @@ namespace EbiSoft.EbIRC
                 m_channel = value;
                 UpdateText();
             }
+        }
+
+        /// <summary>
+        /// ソート用のインデックスを取得または設定します。
+        /// </summary>
+        public int Index
+        {
+            get { return m_index; }
+            set { m_index = value; }
         }
 
         public void UpdateText()
@@ -56,18 +66,26 @@ namespace EbiSoft.EbIRC
                 Channel ch1 = m_channel;
                 Channel ch2 = chItem.Channel;
 
-                if (this.Checked && !chItem.Checked)
+                if (Settings.Data.QuickSwitchHilightsSort)
                 {
-                    return 1;
+                    if (this.Checked && !chItem.Checked)
+                    {
+                        return 1;
+                    }
+                    else if (!this.Checked && chItem.Checked)
+                    {
+                        return -1;
+                    }
                 }
-                else if (!this.Checked && chItem.Checked)
+                if (Settings.Data.QuickSwitchUnreadCountSort)
                 {
-                    return -1;
+                    int dx = ch1.UnreadCount.CompareTo(ch2.UnreadCount);
+                    if (dx != 0)
+                    {
+                        return dx;
+                    }
                 }
-                else
-                {
-                    return ch1.UnreadCount.CompareTo(ch2.UnreadCount);
-                }
+                return ch1.Index.CompareTo(ch2.Index);
             }
             else
             {
