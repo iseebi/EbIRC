@@ -45,6 +45,8 @@ namespace EbiSoft.EbIRC
         private bool m_highlightChannelChange = false;
         private int m_highlightContinueTime = 1500;
         private int m_channelShortcutIgnoreTimes = 400;
+        private bool m_QuickSwitchUnreadCountSort = true;
+        private bool m_QuickSwitchHilightsSort = true;
 
         private bool m_logingEnable = false;
         private string m_logDirectory = string.Empty;
@@ -375,6 +377,24 @@ namespace EbiSoft.EbIRC
         {
             get { return m_logDirectory; }
             set { m_logDirectory = value; }
+        }
+
+        /// <summary>
+        /// 空打ちポップアップで未読数ソートするかどうか
+        /// </summary>
+        public bool QuickSwitchUnreadCountSort
+        {
+            get { return m_QuickSwitchUnreadCountSort; }
+            set { m_QuickSwitchUnreadCountSort = value; }
+        }
+
+        /// <summary>
+        /// 空打ちポップアップでハイライトソートするかどうか
+        /// </summary>
+        public bool QuickSwitchHilightsSort
+        {
+            get { return m_QuickSwitchHilightsSort; }
+            set { m_QuickSwitchHilightsSort = value; }
         }
 
         #region 設定からデータを作成するメソッドとプロパティ

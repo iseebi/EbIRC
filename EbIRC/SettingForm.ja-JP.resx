@@ -120,68 +120,11 @@
   <data name="saveCloseMenuItem.Text" xml:space="preserve">
     <value>保存して閉じる</value>
   </data>
-  <data name="serverTabPage.Text" xml:space="preserve">
-    <value>接続</value>
-  </data>
-  <data name="communicationTabPage.Text" xml:space="preserve">
-    <value>通信</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="nickNameTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>472, 498</value>
-  </data>
-  <data name="nickNameTabPage.Text" xml:space="preserve">
-    <value>ニックネーム</value>
-  </data>
-  <data name="viewTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>472, 498</value>
-  </data>
-  <data name="viewTabPage.Text" xml:space="preserve">
-    <value>表示</value>
-  </data>
-  <data name="controlTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>472, 498</value>
-  </data>
-  <data name="controlTabPage.Text" xml:space="preserve">
-    <value>操作</value>
-  </data>
-  <data name="qsSortHilightedCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>466, 40</value>
-  </data>
-  <data name="qsSortHilightedCheckBox.Text" xml:space="preserve">
-    <value>ハイライトチャンネルを上に表示する</value>
-  </data>
-  <data name="qsSortUnreadCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>466, 40</value>
-  </data>
-  <data name="qsSortUnreadCheckBox.Text" xml:space="preserve">
-    <value>未読順にソートする</value>
-  </data>
-  <data name="label20.Text" xml:space="preserve">
-    <value>ソート順オプション</value>
-  </data>
-  <data name="label19.Text" xml:space="preserve">
-    <value>入力エリアに未入力の状態でEnterキーを押すと空打ちポップアップが表示されます。</value>
-  </data>
-  <data name="quickSwitchShortcutTabPage.Text" xml:space="preserve">
-    <value>空打ち</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="keywordsTabPage.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="keywordsTabPage.AutoScrollMargin" type="System.Drawing.Size, System.Drawing">
-    <value>0, 15</value>
-  </data>
-  <data name="keywordsTabPage.Text" xml:space="preserve">
-    <value>キーワード</value>
-  </data>
-  <data name="logTabPage.Text" xml:space="preserve">
-    <value>ログ</value>
-  </data>
   <data name="defaultChannelInputbox.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 700</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="defaultChannelInputbox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -269,6 +212,9 @@
   <data name="label1.Text" xml:space="preserve">
     <value>サーバー</value>
   </data>
+  <data name="serverTabPage.Text" xml:space="preserve">
+    <value>接続</value>
+  </data>
   <data name="forcePongCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 50</value>
   </data>
@@ -284,6 +230,9 @@
   <data name="cacheConnectionCheckBox.Text" xml:space="preserve">
     <value>ネットワーク接続を切断しない</value>
   </data>
+  <data name="communicationTabPage.Text" xml:space="preserve">
+    <value>通信</value>
+  </data>
   <data name="subNicknameInputBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>447, 226</value>
   </data>
@@ -292,6 +241,12 @@
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>メニューに登録するニックネーム(1行1個)</value>
+  </data>
+  <data name="nickNameTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>472, 498</value>
+  </data>
+  <data name="nickNameTabPage.Text" xml:space="preserve">
+    <value>ニックネーム</value>
   </data>
   <data name="defaultLoadOnConnectCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -313,6 +268,12 @@
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>フォント</value>
+  </data>
+  <data name="viewTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>472, 498</value>
+  </data>
+  <data name="viewTabPage.Text" xml:space="preserve">
+    <value>表示</value>
   </data>
   <data name="scrollLinesTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -428,6 +389,39 @@
   <data name="label8.Text" xml:space="preserve">
     <value>上下キー</value>
   </data>
+  <data name="controlTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>472, 498</value>
+  </data>
+  <data name="controlTabPage.Text" xml:space="preserve">
+    <value>操作</value>
+  </data>
+  <data name="qsSortHilightedCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>466, 40</value>
+  </data>
+  <data name="qsSortHilightedCheckBox.Text" xml:space="preserve">
+    <value>ハイライトチャンネルを上に表示する</value>
+  </data>
+  <data name="qsSortUnreadCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>466, 40</value>
+  </data>
+  <data name="qsSortUnreadCheckBox.Text" xml:space="preserve">
+    <value>未読順にソートする</value>
+  </data>
+  <data name="label20.Text" xml:space="preserve">
+    <value>ソート順オプション</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>入力エリアに未入力の状態でEnterキーを押すと空打ちポップアップが表示されます。</value>
+  </data>
+  <data name="quickSwitchShortcutTabPage.Text" xml:space="preserve">
+    <value>空打ち</value>
+  </data>
+  <data name="keywordsTabPage.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="keywordsTabPage.AutoScrollMargin" type="System.Drawing.Size, System.Drawing">
+    <value>0, 15</value>
+  </data>
   <data name="highlightChannelCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>143, 233</value>
   </data>
@@ -455,6 +449,9 @@
   <data name="label15.Text" xml:space="preserve">
     <value>キーワード</value>
   </data>
+  <data name="keywordsTabPage.Text" xml:space="preserve">
+    <value>キーワード</value>
+  </data>
   <data name="enableLoggingCheckBox.Text" xml:space="preserve">
     <value>ログ保存有効</value>
   </data>
@@ -466,6 +463,9 @@
   </data>
   <data name="logDirectoryNameTextBox.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
     <value />
+  </data>
+  <data name="logTabPage.Text" xml:space="preserve">
+    <value>ログ</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>EbIRC 設定</value>

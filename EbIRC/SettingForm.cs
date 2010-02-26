@@ -123,6 +123,8 @@ namespace EbiSoft.EbIRC
             dislikeUseRegexCheckBox.Checked = Settings.Data.UseRegexDislike;
             enableLoggingCheckBox.Checked = Settings.Data.LogingEnable;
             logDirectoryNameTextBox.Text = Settings.Data.LogDirectory;
+            qsSortHilightedCheckBox.Checked = Settings.Data.QuickSwitchHilightsSort;
+            qsSortUnreadCheckBox.Checked = Settings.Data.QuickSwitchUnreadCountSort;
         }
 
         private void SettingForm_Closing(object sender, CancelEventArgs e)
@@ -178,6 +180,8 @@ namespace EbiSoft.EbIRC
             Settings.Data.UseRegexDislike = dislikeUseRegexCheckBox.Checked;
             Settings.Data.LogingEnable = enableLoggingCheckBox.Checked;
             Settings.Data.LogDirectory = logDirectoryNameTextBox.Text;
+            Settings.Data.QuickSwitchHilightsSort = qsSortHilightedCheckBox.Checked;
+            Settings.Data.QuickSwitchUnreadCountSort = qsSortUnreadCheckBox.Checked;
 
             Settings.WriteSetting();
         }
