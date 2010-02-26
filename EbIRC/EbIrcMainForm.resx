@@ -180,10 +180,10 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="topicLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 5</value>
+    <value>0, 0</value>
   </data>
   <data name="topicLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>474, 29</value>
+    <value>480, 29</value>
   </data>
   <data name="&gt;&gt;topicLabel.Name" xml:space="preserve">
     <value>topicLabel</value>
@@ -204,7 +204,7 @@
     <value>0, 0</value>
   </data>
   <data name="infomationPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 39</value>
+    <value>480, 33</value>
   </data>
   <data name="&gt;&gt;infomationPanel.Name" xml:space="preserve">
     <value>infomationPanel</value>
@@ -259,7 +259,7 @@
     <value>Fill</value>
   </data>
   <data name="logTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 39</value>
+    <value>0, 33</value>
   </data>
   <data name="logTextBox.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -268,7 +268,7 @@
     <value>Vertical</value>
   </data>
   <data name="logTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 456</value>
+    <value>480, 462</value>
   </data>
   <data name="logTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -322,10 +322,10 @@
     <value>-</value>
   </data>
   <metadata name="$this.FormFactorShadowProperty" xml:space="preserve">
-    <value>Pocket_PC_VGA</value>
+    <value>Pocket_PC_Phone_VGA</value>
   </metadata>
   <metadata name="$this.FormFactor" xml:space="preserve">
-    <value>Pocket_PC_VGA</value>
+    <value>Pocket_PC_Phone_VGA</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
