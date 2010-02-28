@@ -437,34 +437,34 @@
   <data name="&gt;&gt;mainMenu.Name" xml:space="preserve">
     <value>mainMenu</value>
   </data>
-  <metadata name="$this.FormRotation" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <data name="$this.FormRotation" type="System.Int32, mscorlib">
     <value>180</value>
-  </metadata>
-  <metadata name="imageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  </data>
+  <data name="imageList.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>115, 18</value>
-  </metadata>
-  <metadata name="$this.FormFactorShadowProperty" xml:space="preserve">
-    <value>Pocket_PC_VGA</value>
-  </metadata>
-  <metadata name="$this.Skin" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  </data>
+  <data name="$this.FormFactorShadowProperty" xml:space="preserve">
+    <value>Pocket_PC_Phone_VGA</value>
+  </data>
+  <data name="$this.Skin" type="System.Boolean, mscorlib">
     <value>False</value>
-  </metadata>
-  <metadata name="mainMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  </data>
+  <data name="mainMenu.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>17, 17</value>
-  </metadata>
-  <metadata name="memberContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  </data>
+  <data name="memberContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>419, 17</value>
-  </metadata>
-  <metadata name="$this.FormFactor" xml:space="preserve">
-    <value>Pocket_PC_VGA</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  </data>
+  <data name="$this.FormFactor" xml:space="preserve">
+    <value>Pocket_PC_Phone_VGA</value>
+  </data>
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
     <value>True</value>
-  </metadata>
-  <metadata name="openedChannelContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  </data>
+  <data name="openedChannelContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing">
     <value>225, 17</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  </data>
+  <data name="$this.Language" type="System.Globalization.CultureInfo, mscorlib">
     <value>Japanese (Japan)</value>
-  </metadata>
+  </data>
 </root>
