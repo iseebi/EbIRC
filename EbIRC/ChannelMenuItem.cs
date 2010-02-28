@@ -85,7 +85,7 @@ namespace EbiSoft.EbIRC
                         return dx;
                     }
                 }
-                return ch1.Index.CompareTo(ch2.Index);
+                return this.Index.CompareTo(chItem.Index);
             }
             else
             {
