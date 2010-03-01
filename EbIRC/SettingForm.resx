@@ -686,7 +686,7 @@
     <value>454, 40</value>
   </data>
   <data name="defaultLoadOnConnectCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
+    <value>3</value>
   </data>
   <data name="defaultLoadOnConnectCheckBox.Text" xml:space="preserve">
     <value>Change active channel on connected</value>
@@ -698,7 +698,7 @@
     <value>277, 40</value>
   </data>
   <data name="visibleTopicPanelCheckbox.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="visibleTopicPanelCheckbox.Text" xml:space="preserve">
     <value>Visible topic panel</value>
@@ -740,7 +740,7 @@
     <value>200, 41</value>
   </data>
   <data name="fontSizeComboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;fontSizeComboBox.Name" xml:space="preserve">
     <value>fontSizeComboBox</value>
@@ -776,7 +776,7 @@
     <value>439, 41</value>
   </data>
   <data name="fontNameInputBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;fontNameInputBox.Name" xml:space="preserve">
     <value>fontNameInputBox</value>
@@ -815,7 +815,7 @@
     <value>0, 0</value>
   </data>
   <data name="viewTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>472, 498</value>
+    <value>480, 492</value>
   </data>
   <data name="viewTabPage.Text" xml:space="preserve">
     <value>View</value>
@@ -1178,7 +1178,7 @@
     <value>245, 37</value>
   </data>
   <data name="qsSortHilightedCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="qsSortHilightedCheckBox.Text" xml:space="preserve">
     <value>Sort by Hilights</value>
@@ -1190,7 +1190,7 @@
     <value>466, 40</value>
   </data>
   <data name="qsSortUnreadCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="qsSortUnreadCheckBox.Text" xml:space="preserve">
     <value>Sort by unread count</value>
@@ -1545,7 +1545,7 @@
     <value>0, 0</value>
   </data>
   <data name="logTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>472, 498</value>
+    <value>480, 492</value>
   </data>
   <data name="logTabPage.Text" xml:space="preserve">
     <value>Logging</value>
