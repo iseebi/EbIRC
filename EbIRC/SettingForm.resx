@@ -138,10 +138,10 @@
     <value>True</value>
   </data>
   <data name="defaultChannelInputbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>441, 131</value>
+    <value>425, 131</value>
   </data>
   <data name="defaultChannelInputbox.TabIndex" type="System.Int32, mscorlib">
-    <value>47</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;defaultChannelInputbox.Name" xml:space="preserve">
     <value>defaultChannelInputbox</value>
@@ -180,10 +180,10 @@
     <value>7, 632</value>
   </data>
   <data name="encodingSelectBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>441, 41</value>
+    <value>425, 41</value>
   </data>
   <data name="encodingSelectBox.TabIndex" type="System.Int32, mscorlib">
-    <value>38</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;encodingSelectBox.Name" xml:space="preserve">
     <value>encodingSelectBox</value>
@@ -219,13 +219,13 @@
     <value>3</value>
   </data>
   <data name="profileRemoveButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>318, 94</value>
+    <value>302, 94</value>
   </data>
   <data name="profileRemoveButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 40</value>
   </data>
   <data name="profileRemoveButton.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
+    <value>2</value>
   </data>
   <data name="profileRemoveButton.Text" xml:space="preserve">
     <value>Remove</value>
@@ -243,13 +243,13 @@
     <value>4</value>
   </data>
   <data name="profileAddButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>182, 94</value>
+    <value>166, 94</value>
   </data>
   <data name="profileAddButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 40</value>
   </data>
   <data name="profileAddButton.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
+    <value>1</value>
   </data>
   <data name="profileAddButton.Text" xml:space="preserve">
     <value>Add</value>
@@ -270,10 +270,10 @@
     <value>7, 47</value>
   </data>
   <data name="profileSelectBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>441, 41</value>
+    <value>425, 41</value>
   </data>
   <data name="profileSelectBox.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;profileSelectBox.Name" xml:space="preserve">
     <value>profileSelectBox</value>
@@ -315,7 +315,7 @@
     <value>147, 41</value>
   </data>
   <data name="portInputBox.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>4</value>
   </data>
   <data name="portInputBox.Text" xml:space="preserve">
     <value>6667</value>
@@ -381,7 +381,7 @@
     <value>*</value>
   </data>
   <data name="passwordInputBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>441, 41</value>
+    <value>425, 41</value>
   </data>
   <data name="passwordInputBox.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -402,10 +402,10 @@
     <value>7, 545</value>
   </data>
   <data name="nameInputbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>441, 41</value>
+    <value>425, 41</value>
   </data>
   <data name="nameInputbox.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;nameInputbox.Name" xml:space="preserve">
     <value>nameInputbox</value>
@@ -423,10 +423,10 @@
     <value>7, 452</value>
   </data>
   <data name="nicknameInputbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>441, 41</value>
+    <value>425, 41</value>
   </data>
   <data name="nicknameInputbox.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;nicknameInputbox.Name" xml:space="preserve">
     <value>nicknameInputbox</value>
@@ -501,10 +501,10 @@
     <value>7, 180</value>
   </data>
   <data name="serverInputbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>441, 41</value>
+    <value>425, 41</value>
   </data>
   <data name="serverInputbox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;serverInputbox.Name" xml:space="preserve">
     <value>serverInputbox</value>
@@ -567,7 +567,7 @@
     <value>441, 40</value>
   </data>
   <data name="forcePongCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
+    <value>1</value>
   </data>
   <data name="forcePongCheckBox.Text" xml:space="preserve">
     <value>Force transmit PONG command</value>
@@ -579,7 +579,7 @@
     <value>445, 37</value>
   </data>
   <data name="cacheConnectionCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
+    <value>0</value>
   </data>
   <data name="cacheConnectionCheckBox.Text" xml:space="preserve">
     <value>No disconnect network
@@ -589,7 +589,7 @@
     <value>0, 0</value>
   </data>
   <data name="communicationTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>472, 498</value>
+    <value>480, 492</value>
   </data>
   <data name="communicationTabPage.Text" xml:space="preserve">
     <value>Communication</value>
@@ -617,10 +617,10 @@
     <value>True</value>
   </data>
   <data name="subNicknameInputBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>438, 226</value>
+    <value>446, 226</value>
   </data>
   <data name="subNicknameInputBox.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;subNicknameInputBox.Name" xml:space="preserve">
     <value>subNicknameInputBox</value>
@@ -659,7 +659,7 @@
     <value>0, 0</value>
   </data>
   <data name="nickNameTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>472, 498</value>
+    <value>480, 492</value>
   </data>
   <data name="nickNameTabPage.Text" xml:space="preserve">
     <value>Nicknames</value>
@@ -845,7 +845,7 @@
     <value>112, 41</value>
   </data>
   <data name="scrollLinesTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
+    <value>4</value>
   </data>
   <data name="scrollLinesTextBox.Text" xml:space="preserve">
     <value>2</value>
@@ -869,7 +869,7 @@
     <value>428, 40</value>
   </data>
   <data name="reverseSoftKeyCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>24</value>
+    <value>7</value>
   </data>
   <data name="reverseSoftKeyCheckBox.Text" xml:space="preserve">
     <value>reverse soft keys (need restart)</value>
@@ -881,7 +881,7 @@
     <value>410, 40</value>
   </data>
   <data name="confimExitCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+    <value>6</value>
   </data>
   <data name="confimExitCheckBox.Text" xml:space="preserve">
     <value>confirmation before exit</value>
@@ -893,7 +893,7 @@
     <value>428, 40</value>
   </data>
   <data name="confimDisconnectCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+    <value>5</value>
   </data>
   <data name="confimDisconnectCheckBox.Text" xml:space="preserve">
     <value>confirmation before disconnect</value>
@@ -920,7 +920,7 @@
     <value>428, 41</value>
   </data>
   <data name="ctrlHorizontalKeySelectBox.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;ctrlHorizontalKeySelectBox.Name" xml:space="preserve">
     <value>ctrlHorizontalKeySelectBox</value>
@@ -998,7 +998,7 @@
     <value>428, 41</value>
   </data>
   <data name="ctrlVerticalKeySelectBox.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;ctrlVerticalKeySelectBox.Name" xml:space="preserve">
     <value>ctrlVerticalKeySelectBox</value>
@@ -1055,7 +1055,7 @@
     <value>428, 41</value>
   </data>
   <data name="horizontalKeySelectBox.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;horizontalKeySelectBox.Name" xml:space="preserve">
     <value>horizontalKeySelectBox</value>
@@ -1115,7 +1115,7 @@
     <value>428, 41</value>
   </data>
   <data name="verticalKeySelectBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;verticalKeySelectBox.Name" xml:space="preserve">
     <value>verticalKeySelectBox</value>
@@ -1154,7 +1154,7 @@
     <value>0, 0</value>
   </data>
   <data name="controlTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>472, 498</value>
+    <value>480, 492</value>
   </data>
   <data name="controlTabPage.Text" xml:space="preserve">
     <value>Control</value>
@@ -1170,6 +1170,9 @@
   </data>
   <data name="&gt;&gt;controlTabPage.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="quickSwitchShortcutTabPage.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="qsSortHilightedCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 215</value>
@@ -1259,8 +1262,11 @@
   <data name="&gt;&gt;quickSwitchShortcutTabPage.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
+  <data name="keywordsTabPage.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="highlightChannelCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>226, 233</value>
+    <value>208, 233</value>
   </data>
   <data name="highlightChannelCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>230, 40</value>
@@ -1284,7 +1290,7 @@
     <value>Vibration + LED</value>
   </data>
   <data name="highlightMethodComboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>226, 186</value>
+    <value>208, 186</value>
   </data>
   <data name="highlightMethodComboBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>230, 41</value>
@@ -1311,7 +1317,7 @@
     <value>True</value>
   </data>
   <data name="dislikeWordsTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>449, 137</value>
+    <value>431, 137</value>
   </data>
   <data name="dislikeWordsTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1335,7 +1341,7 @@
     <value>True</value>
   </data>
   <data name="highlightWordsTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>449, 137</value>
+    <value>431, 137</value>
   </data>
   <data name="highlightWordsTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -1353,7 +1359,7 @@
     <value>3</value>
   </data>
   <data name="dislikeUseRegexCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>324, 301</value>
+    <value>306, 301</value>
   </data>
   <data name="dislikeUseRegexCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>136, 40</value>
@@ -1365,7 +1371,7 @@
     <value>Regex</value>
   </data>
   <data name="highlightUseRegexCheckbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>324, 4</value>
+    <value>306, 4</value>
   </data>
   <data name="highlightUseRegexCheckbox.Size" type="System.Drawing.Size, System.Drawing">
     <value>132, 40</value>
@@ -1380,7 +1386,7 @@
     <value>7, 187</value>
   </data>
   <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 40</value>
+    <value>203, 40</value>
   </data>
   <data name="label16.Text" xml:space="preserve">
     <value>Highlight method</value>
@@ -1443,7 +1449,7 @@
     <value>0, 0</value>
   </data>
   <data name="keywordsTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>472, 498</value>
+    <value>480, 492</value>
   </data>
   <data name="keywordsTabPage.Text" xml:space="preserve">
     <value>Keywords</value>

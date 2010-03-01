@@ -450,11 +450,11 @@
             // 
             // quickSwitchShortcutTabPage
             // 
+            resources.ApplyResources(this.quickSwitchShortcutTabPage, "quickSwitchShortcutTabPage");
             this.quickSwitchShortcutTabPage.Controls.Add(this.qsSortHilightedCheckBox);
             this.quickSwitchShortcutTabPage.Controls.Add(this.qsSortUnreadCheckBox);
             this.quickSwitchShortcutTabPage.Controls.Add(this.label20);
             this.quickSwitchShortcutTabPage.Controls.Add(this.label19);
-            resources.ApplyResources(this.quickSwitchShortcutTabPage, "quickSwitchShortcutTabPage");
             this.quickSwitchShortcutTabPage.Name = "quickSwitchShortcutTabPage";
             // 
             // qsSortHilightedCheckBox
@@ -479,6 +479,7 @@
             // 
             // keywordsTabPage
             // 
+            resources.ApplyResources(this.keywordsTabPage, "keywordsTabPage");
             this.keywordsTabPage.Controls.Add(this.highlightChannelCheckBox);
             this.keywordsTabPage.Controls.Add(this.highlightMethodComboBox);
             this.keywordsTabPage.Controls.Add(this.dislikeWordsTextBox);
@@ -488,7 +489,6 @@
             this.keywordsTabPage.Controls.Add(this.label16);
             this.keywordsTabPage.Controls.Add(this.label17);
             this.keywordsTabPage.Controls.Add(this.label15);
-            resources.ApplyResources(this.keywordsTabPage, "keywordsTabPage");
             this.keywordsTabPage.Name = "keywordsTabPage";
             // 
             // highlightChannelCheckBox
