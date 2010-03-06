@@ -3,6 +3,7 @@ using System.Text;
 using System.Windows.Forms;
 using EbiSoft.Library;
 using System.IO;
+using EbiSoft.EbIRC.Settings;
 
 namespace EbiSoft.EbIRC
 {
@@ -28,7 +29,7 @@ namespace EbiSoft.EbIRC
         /// <param name="defaultChannel">デフォルトチャンネル指定ON/OFF</param>
         public Channel(string name, bool defaultChannel)
         {
-            m_log = new RingBuffer<string>(Settings.Data.MaxLogs);
+            m_log = new RingBuffer<string>(SettingManager.Data.MaxLogs);
             m_topic = string.Empty;
             m_name = name;
             m_defaultChannel = defaultChannel;
@@ -54,14 +55,15 @@ namespace EbiSoft.EbIRC
         {
             // ログを追加する
             m_log.Add(logLine);
-            if (Settings.Data.LogingEnable) {
+            if (SettingManager.Data.LogingEnable)
+            {
                 try
                 {
                     string baseDir;
-                    if (!String.IsNullOrEmpty(Settings.Data.LogDirectory)
-                        && Directory.Exists(Settings.Data.LogDirectory))
+                    if (!String.IsNullOrEmpty(SettingManager.Data.LogDirectory)
+                        && Directory.Exists(SettingManager.Data.LogDirectory))
                     {
-                        baseDir = Path.Combine(Settings.Data.LogDirectory, "Log");
+                        baseDir = Path.Combine(SettingManager.Data.LogDirectory, "Log");
                     }
                     else
                     {

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
+using EbiSoft.EbIRC.Settings;
 
 namespace EbiSoft.EbIRC
 {
@@ -66,7 +67,7 @@ namespace EbiSoft.EbIRC
                 Channel ch1 = m_channel;
                 Channel ch2 = chItem.Channel;
 
-                if (Settings.Data.QuickSwitchHilightsSort)
+                if (SettingManager.Data.QuickSwitchHilightsSort)
                 {
                     if (this.Checked && !chItem.Checked)
                     {
@@ -77,7 +78,7 @@ namespace EbiSoft.EbIRC
                         return -1;
                     }
                 }
-                if (Settings.Data.QuickSwitchUnreadCountSort)
+                if (SettingManager.Data.QuickSwitchUnreadCountSort)
                 {
                     int dx = ch1.UnreadCount.CompareTo(ch2.UnreadCount);
                     if (dx != 0)

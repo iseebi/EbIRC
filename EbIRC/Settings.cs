@@ -7,12 +7,12 @@ using System.IO;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
-namespace EbiSoft.EbIRC
+namespace EbiSoft.EbIRC.Settings
 {
     /// <summary>
     /// 設定
     /// </summary>
-    class Settings
+    class SettingManager
     {
         private static readonly string settingFile = Path.Combine(Path.GetDirectoryName(
         System.Reflection.Assembly.GetExecutingAssembly().GetModules()[0].FullyQualifiedName),
@@ -148,75 +148,5 @@ namespace EbiSoft.EbIRC
                 serializer.Serialize(fs, m_data);
             }
         }
-    }
-
-    /// <summary>
-    /// キーオペレーションの種類
-    /// </summary>
-    public enum EbIRCKeyOperations
-    {
-        /// <summary>
-        /// デフォルト動作
-        /// </summary>
-        Default,
-        /// <summary>
-        /// クイックチャンネルセレクト、次へ
-        /// </summary>
-        QuickChannelNext,
-        /// <summary>
-        /// クイックチャンネルセレクト、前へ
-        /// </summary>
-        QuickChannelPrev,
-        /// <summary>
-        /// 次ページへ
-        /// </summary>
-        PageUp,
-        /// <summary>
-        /// 前ページへ
-        /// </summary>
-        PageDown,
-        /// <summary>
-        /// 入力ログ巻き戻し
-        /// </summary>
-        InputLogPrev,
-        /// <summary>
-        /// 入力ログ先送り
-        /// </summary>
-        InputLogNext,
-        /// <summary>
-        /// フォントサイズ拡大
-        /// </summary>
-        FontSizeUp,
-        /// <summary>
-        /// フォントサイズ縮小
-        /// </summary>
-        FontSizeDown,
-        /// <summary>
-        /// 動作なし
-        /// </summary>
-        NoOperation
-    }
-
-    /// <summary>
-    /// キーワード反応の方法
-    /// </summary>
-    public enum EbIRCHilightMethod
-    {
-        /// <summary>
-        /// 反応なし
-        /// </summary>
-        None,
-        /// <summary>
-        /// バイブレーション
-        /// </summary>
-        Vibration,
-        /// <summary>
-        /// LED点灯
-        /// </summary>
-        Led,
-        /// <summary>
-        /// バイブ＋LED
-        /// </summary>
-        VibrationAndLed
     }
 }

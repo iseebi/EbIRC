@@ -131,50 +131,29 @@
   <data name="serverTabPage.AutoScrollMargin" type="System.Drawing.Size, System.Drawing">
     <value>0, 15</value>
   </data>
-  <data name="defaultChannelInputbox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 719</value>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 691</value>
   </data>
-  <data name="defaultChannelInputbox.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>219, 40</value>
   </data>
-  <data name="defaultChannelInputbox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>425, 131</value>
+  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
   </data>
-  <data name="defaultChannelInputbox.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Edit channels</value>
   </data>
-  <data name="&gt;&gt;defaultChannelInputbox.Name" xml:space="preserve">
-    <value>defaultChannelInputbox</value>
+  <data name="&gt;&gt;button1.Name" xml:space="preserve">
+    <value>button1</value>
   </data>
-  <data name="&gt;&gt;defaultChannelInputbox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;defaultChannelInputbox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
     <value>serverTabPage</value>
   </data>
-  <data name="&gt;&gt;defaultChannelInputbox.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 676</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>441, 40</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Join channels on connected</value>
-  </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>serverTabPage</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="encodingSelectBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 632</value>
@@ -195,7 +174,7 @@
     <value>serverTabPage</value>
   </data>
   <data name="&gt;&gt;encodingSelectBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 589</value>
@@ -216,7 +195,7 @@
     <value>serverTabPage</value>
   </data>
   <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>2</value>
   </data>
   <data name="profileRemoveButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>302, 94</value>
@@ -240,7 +219,7 @@
     <value>serverTabPage</value>
   </data>
   <data name="&gt;&gt;profileRemoveButton.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="profileAddButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>166, 94</value>
@@ -264,7 +243,7 @@
     <value>serverTabPage</value>
   </data>
   <data name="&gt;&gt;profileAddButton.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="profileSelectBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 47</value>
@@ -285,7 +264,7 @@
     <value>serverTabPage</value>
   </data>
   <data name="&gt;&gt;profileSelectBox.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 4</value>
@@ -306,7 +285,7 @@
     <value>serverTabPage</value>
   </data>
   <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="portInputBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 267</value>
@@ -330,7 +309,7 @@
     <value>serverTabPage</value>
   </data>
   <data name="&gt;&gt;portInputBox.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 322</value>
@@ -351,7 +330,7 @@
     <value>serverTabPage</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 502</value>
@@ -372,7 +351,7 @@
     <value>serverTabPage</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="passwordInputBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 365</value>
@@ -396,7 +375,7 @@
     <value>serverTabPage</value>
   </data>
   <data name="&gt;&gt;passwordInputBox.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <data name="nameInputbox.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 545</value>
@@ -417,7 +396,7 @@
     <value>serverTabPage</value>
   </data>
   <data name="&gt;&gt;nameInputbox.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>11</value>
   </data>
   <data name="nicknameInputbox.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 452</value>
@@ -438,7 +417,7 @@
     <value>serverTabPage</value>
   </data>
   <data name="&gt;&gt;nicknameInputbox.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>12</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 409</value>
@@ -459,7 +438,7 @@
     <value>serverTabPage</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>13</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 224</value>
@@ -480,7 +459,7 @@
     <value>serverTabPage</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>14</value>
   </data>
   <data name="serverInputbox.Items" xml:space="preserve">
     <value>irc.nara.wide.ad.jp</value>
@@ -516,7 +495,7 @@
     <value>serverTabPage</value>
   </data>
   <data name="&gt;&gt;serverInputbox.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>15</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 137</value>
@@ -537,7 +516,7 @@
     <value>serverTabPage</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>16</value>
   </data>
   <data name="serverTabPage.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -589,7 +568,7 @@
     <value>0, 0</value>
   </data>
   <data name="communicationTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 492</value>
+    <value>472, 498</value>
   </data>
   <data name="communicationTabPage.Text" xml:space="preserve">
     <value>Communication</value>
@@ -617,7 +596,7 @@
     <value>True</value>
   </data>
   <data name="subNicknameInputBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>446, 226</value>
+    <value>438, 226</value>
   </data>
   <data name="subNicknameInputBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -659,7 +638,7 @@
     <value>0, 0</value>
   </data>
   <data name="nickNameTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 492</value>
+    <value>472, 498</value>
   </data>
   <data name="nickNameTabPage.Text" xml:space="preserve">
     <value>Nicknames</value>
@@ -815,7 +794,7 @@
     <value>0, 0</value>
   </data>
   <data name="viewTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 492</value>
+    <value>472, 498</value>
   </data>
   <data name="viewTabPage.Text" xml:space="preserve">
     <value>View</value>
@@ -1154,7 +1133,7 @@
     <value>0, 0</value>
   </data>
   <data name="controlTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 492</value>
+    <value>472, 498</value>
   </data>
   <data name="controlTabPage.Text" xml:space="preserve">
     <value>Control</value>
@@ -1245,7 +1224,7 @@
     <value>0, 0</value>
   </data>
   <data name="quickSwitchShortcutTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 492</value>
+    <value>472, 498</value>
   </data>
   <data name="quickSwitchShortcutTabPage.Text" xml:space="preserve">
     <value>Quick Switch</value>
@@ -1449,7 +1428,7 @@
     <value>0, 0</value>
   </data>
   <data name="keywordsTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 492</value>
+    <value>472, 498</value>
   </data>
   <data name="keywordsTabPage.Text" xml:space="preserve">
     <value>Keywords</value>
@@ -1551,7 +1530,7 @@
     <value>0, 0</value>
   </data>
   <data name="logTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 492</value>
+    <value>472, 498</value>
   </data>
   <data name="logTabPage.Text" xml:space="preserve">
     <value>Logging</value>

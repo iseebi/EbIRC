@@ -92,6 +92,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ChannelNameEqualityComparer.cs" />
+    <Compile Include="ChannelSetting.cs" />
     <Compile Include="ChannelSettingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +108,7 @@
     <Compile Include="EbIrcMainForm.Designer.cs">
       <DependentUpon>EbIrcMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Enums.cs" />
     <Compile Include="FolderSelectDialog.cs">
       <SubType>Form</SubType>
     </Compile>

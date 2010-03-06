@@ -33,7 +33,10 @@
             this.mainMenu = new System.Windows.Forms.MainMenu();
             this.closeMenuItem = new System.Windows.Forms.MenuItem();
             this.containerPanel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.channelList = new System.Windows.Forms.ListBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.removeChannelButton = new System.Windows.Forms.Button();
             this.addChannelButton = new System.Windows.Forms.Button();
@@ -44,6 +47,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.inputPanel = new Microsoft.WindowsCE.Forms.InputPanel();
             this.containerPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,18 +62,37 @@
             // 
             // containerPanel
             // 
-            this.containerPanel.Controls.Add(this.channelList);
-            this.containerPanel.Controls.Add(this.panel2);
             resources.ApplyResources(this.containerPanel, "containerPanel");
+            this.containerPanel.Controls.Add(this.panel1);
+            this.containerPanel.Controls.Add(this.panel2);
             this.containerPanel.Name = "containerPanel";
+            // 
+            // panel1
+            // 
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Controls.Add(this.channelList);
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Name = "panel1";
             // 
             // channelList
             // 
             resources.ApplyResources(this.channelList, "channelList");
             this.channelList.Name = "channelList";
             // 
+            // button2
+            // 
+            resources.ApplyResources(this.button2, "button2");
+            this.button2.Name = "button2";
+            // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            // 
             // panel2
             // 
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Controls.Add(this.removeChannelButton);
             this.panel2.Controls.Add(this.addChannelButton);
             this.panel2.Controls.Add(this.disableUnreadSortCheckBox);
@@ -77,7 +100,6 @@
             this.panel2.Controls.Add(this.channelPasswordTextBox);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
-            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
             // removeChannelButton
@@ -126,6 +148,7 @@
             this.Name = "ChannelSettingForm";
             this.Resize += new System.EventHandler(this.ChannelSettingForm_Resize);
             this.containerPanel.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -145,6 +168,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox channelList;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
 
     }
 }

@@ -34,8 +34,6 @@
             this.saveCloseMenuItem = new System.Windows.Forms.MenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.serverTabPage = new System.Windows.Forms.TabPage();
-            this.defaultChannelInputbox = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.encodingSelectBox = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.profileRemoveButton = new System.Windows.Forms.Button();
@@ -98,6 +96,7 @@
             this.logDirectoryBrowseButton = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.logDirectoryNameTextBox = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.serverTabPage.SuspendLayout();
             this.communicationTabPage.SuspendLayout();
@@ -135,8 +134,7 @@
             // serverTabPage
             // 
             resources.ApplyResources(this.serverTabPage, "serverTabPage");
-            this.serverTabPage.Controls.Add(this.defaultChannelInputbox);
-            this.serverTabPage.Controls.Add(this.label5);
+            this.serverTabPage.Controls.Add(this.button1);
             this.serverTabPage.Controls.Add(this.encodingSelectBox);
             this.serverTabPage.Controls.Add(this.label14);
             this.serverTabPage.Controls.Add(this.profileRemoveButton);
@@ -154,16 +152,6 @@
             this.serverTabPage.Controls.Add(this.serverInputbox);
             this.serverTabPage.Controls.Add(this.label1);
             this.serverTabPage.Name = "serverTabPage";
-            // 
-            // defaultChannelInputbox
-            // 
-            resources.ApplyResources(this.defaultChannelInputbox, "defaultChannelInputbox");
-            this.defaultChannelInputbox.Name = "defaultChannelInputbox";
-            // 
-            // label5
-            // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.Name = "label5";
             // 
             // encodingSelectBox
             // 
@@ -572,6 +560,11 @@
             resources.ApplyResources(this.logDirectoryNameTextBox, "logDirectoryNameTextBox");
             this.logDirectoryNameTextBox.Name = "logDirectoryNameTextBox";
             // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            // 
             // SettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
@@ -643,8 +636,6 @@
         private System.Windows.Forms.ComboBox encodingSelectBox;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.MenuItem saveCloseMenuItem;
-        private System.Windows.Forms.TextBox defaultChannelInputbox;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox defaultLoadOnConnectCheckBox;
         private System.Windows.Forms.TabPage keywordsTabPage;
         private System.Windows.Forms.TextBox highlightWordsTextBox;
@@ -666,5 +657,6 @@
         private System.Windows.Forms.CheckBox qsSortHilightedCheckBox;
         private System.Windows.Forms.CheckBox qsSortUnreadCheckBox;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Button button1;
     }
 }

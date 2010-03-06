@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using EbiSoft.EbIRC.Properties;
 using EbiSoft.Library.Mobile;
+using EbiSoft.EbIRC.Settings;
 
 namespace EbiSoft.EbIRC
 {
@@ -73,7 +74,7 @@ namespace EbiSoft.EbIRC
 
             // デフォルトサーバーリストの読み込み
             serverInputbox.Items.Clear();
-            foreach (string server in Settings.Data.DefaultServers)
+            foreach (string server in SettingManager.Data.DefaultServers)
             {
                 serverInputbox.Items.Add(server);
             }
@@ -86,45 +87,45 @@ namespace EbiSoft.EbIRC
 
             // 設定を読み込む
             profileSelectBox.Items.Clear();
-            foreach (ConnectionProfile prof in Settings.Data.Profiles.Profile)
+            foreach (ConnectionProfile prof in SettingManager.Data.Profiles.Profile)
             {
                 profileSelectBox.Items.Add(prof);
             }
-            profileSelectBox.SelectedIndex = Settings.Data.Profiles.ActiveProfileIndex;
-            fontNameInputBox.Text = Settings.Data.FontName;
-            fontSizeComboBox.Text = Settings.Data.FontSize.ToString();
-            visibleTopicPanelCheckbox.Checked = Settings.Data.TopicVisible;
-            defaultLoadOnConnectCheckBox.Checked = Settings.Data.SelectChannelAtConnect;
+            profileSelectBox.SelectedIndex = SettingManager.Data.Profiles.ActiveProfileIndex;
+            fontNameInputBox.Text = SettingManager.Data.FontName;
+            fontSizeComboBox.Text = SettingManager.Data.FontSize.ToString();
+            visibleTopicPanelCheckbox.Checked = SettingManager.Data.TopicVisible;
+            defaultLoadOnConnectCheckBox.Checked = SettingManager.Data.SelectChannelAtConnect;
 
-            if (Settings.Data.VerticalKeyOperation == 5)
+            if (SettingManager.Data.VerticalKeyOperation == 5)
             {
                 verticalKeySelectBox.SelectedIndex = 0;
             }
             else
             {
-                verticalKeySelectBox.SelectedIndex = Settings.Data.VerticalKeyOperation + 1;
+                verticalKeySelectBox.SelectedIndex = SettingManager.Data.VerticalKeyOperation + 1;
             }
-            horizontalKeySelectBox.SelectedIndex = Settings.Data.HorizontalKeyOperation;
-            ctrlVerticalKeySelectBox.SelectedIndex = Settings.Data.VerticalKeyWithCtrlOperation;
-            ctrlHorizontalKeySelectBox.SelectedIndex = Settings.Data.HorizontalKeyWithCtrlOperation;
+            horizontalKeySelectBox.SelectedIndex = SettingManager.Data.HorizontalKeyOperation;
+            ctrlVerticalKeySelectBox.SelectedIndex = SettingManager.Data.VerticalKeyWithCtrlOperation;
+            ctrlHorizontalKeySelectBox.SelectedIndex = SettingManager.Data.HorizontalKeyWithCtrlOperation;
 
-            subNicknameInputBox.Text = string.Join("\r\n", Settings.Data.SubNicknames);
-            confimDisconnectCheckBox.Checked = Settings.Data.ConfimDisconnect;
-            confimExitCheckBox.Checked = Settings.Data.ConfimExit;
-            cacheConnectionCheckBox.Checked = Settings.Data.CacheConnection;
-            reverseSoftKeyCheckBox.Checked = Settings.Data.ReverseSoftKey;
-            scrollLinesTextBox.Text = Settings.Data.ScrollLines.ToString();
-            forcePongCheckBox.Checked = Settings.Data.ForcePong;
-            highlightWordsTextBox.Text = string.Join("\r\n", Settings.Data.HighlightKeywords);
-            highlightUseRegexCheckbox.Checked = Settings.Data.UseRegexHighlight;
-            highlightMethodComboBox.SelectedIndex = (int)Settings.Data.HighlightMethod;
-            highlightChannelCheckBox.Checked = Settings.Data.HighlightChannelChange;
-            dislikeWordsTextBox.Text = string.Join("\r\n", Settings.Data.DislikeKeywords);
-            dislikeUseRegexCheckBox.Checked = Settings.Data.UseRegexDislike;
-            enableLoggingCheckBox.Checked = Settings.Data.LogingEnable;
-            logDirectoryNameTextBox.Text = Settings.Data.LogDirectory;
-            qsSortHilightedCheckBox.Checked = Settings.Data.QuickSwitchHilightsSort;
-            qsSortUnreadCheckBox.Checked = Settings.Data.QuickSwitchUnreadCountSort;
+            subNicknameInputBox.Text = string.Join("\r\n", SettingManager.Data.SubNicknames);
+            confimDisconnectCheckBox.Checked = SettingManager.Data.ConfimDisconnect;
+            confimExitCheckBox.Checked = SettingManager.Data.ConfimExit;
+            cacheConnectionCheckBox.Checked = SettingManager.Data.CacheConnection;
+            reverseSoftKeyCheckBox.Checked = SettingManager.Data.ReverseSoftKey;
+            scrollLinesTextBox.Text = SettingManager.Data.ScrollLines.ToString();
+            forcePongCheckBox.Checked = SettingManager.Data.ForcePong;
+            highlightWordsTextBox.Text = string.Join("\r\n", SettingManager.Data.HighlightKeywords);
+            highlightUseRegexCheckbox.Checked = SettingManager.Data.UseRegexHighlight;
+            highlightMethodComboBox.SelectedIndex = (int)SettingManager.Data.HighlightMethod;
+            highlightChannelCheckBox.Checked = SettingManager.Data.HighlightChannelChange;
+            dislikeWordsTextBox.Text = string.Join("\r\n", SettingManager.Data.DislikeKeywords);
+            dislikeUseRegexCheckBox.Checked = SettingManager.Data.UseRegexDislike;
+            enableLoggingCheckBox.Checked = SettingManager.Data.LogingEnable;
+            logDirectoryNameTextBox.Text = SettingManager.Data.LogDirectory;
+            qsSortHilightedCheckBox.Checked = SettingManager.Data.QuickSwitchHilightsSort;
+            qsSortUnreadCheckBox.Checked = SettingManager.Data.QuickSwitchUnreadCountSort;
         }
 
         private void SettingForm_Closing(object sender, CancelEventArgs e)
@@ -138,52 +139,52 @@ namespace EbiSoft.EbIRC
                 data.Profile.Add(prof);
             }
             data.ActiveProfileIndex = profileSelectBox.SelectedIndex;
-            Settings.Data.Profiles = data;
-            Settings.Data.Profiles.ActiveProfile.Password = passwordInputBox.Text;
-            Settings.Data.SelectChannelAtConnect = defaultLoadOnConnectCheckBox.Checked;
-            Settings.Data.FontName = fontNameInputBox.Text;
-            Settings.Data.TopicVisible = visibleTopicPanelCheckbox.Checked;
+            SettingManager.Data.Profiles = data;
+            SettingManager.Data.Profiles.ActiveProfile.Password = passwordInputBox.Text;
+            SettingManager.Data.SelectChannelAtConnect = defaultLoadOnConnectCheckBox.Checked;
+            SettingManager.Data.FontName = fontNameInputBox.Text;
+            SettingManager.Data.TopicVisible = visibleTopicPanelCheckbox.Checked;
 
             if (verticalKeySelectBox.SelectedIndex == 0)
             {
-                Settings.Data.VerticalKeyOperation = 5;
+                SettingManager.Data.VerticalKeyOperation = 5;
             }
             else
             {
-                Settings.Data.VerticalKeyOperation = verticalKeySelectBox.SelectedIndex - 1;
+                SettingManager.Data.VerticalKeyOperation = verticalKeySelectBox.SelectedIndex - 1;
             }
-            Settings.Data.HorizontalKeyOperation = horizontalKeySelectBox.SelectedIndex;
-            Settings.Data.VerticalKeyWithCtrlOperation = ctrlVerticalKeySelectBox.SelectedIndex;
-            Settings.Data.HorizontalKeyWithCtrlOperation = ctrlHorizontalKeySelectBox.SelectedIndex;
+            SettingManager.Data.HorizontalKeyOperation = horizontalKeySelectBox.SelectedIndex;
+            SettingManager.Data.VerticalKeyWithCtrlOperation = ctrlVerticalKeySelectBox.SelectedIndex;
+            SettingManager.Data.HorizontalKeyWithCtrlOperation = ctrlHorizontalKeySelectBox.SelectedIndex;
 
             try
             {
-                Settings.Data.FontSize = int.Parse(fontSizeComboBox.Text);
+                SettingManager.Data.FontSize = int.Parse(fontSizeComboBox.Text);
             }
             catch (Exception) { } // 設定を保存しない
-            Settings.Data.SubNicknames = subNicknameInputBox.Text.Replace("\r", "").Split('\n');
-            Settings.Data.ConfimDisconnect = confimDisconnectCheckBox.Checked;
-            Settings.Data.ConfimExit = confimExitCheckBox.Checked;
-            Settings.Data.CacheConnection = cacheConnectionCheckBox.Checked;
-            Settings.Data.ReverseSoftKey = reverseSoftKeyCheckBox.Checked;
+            SettingManager.Data.SubNicknames = subNicknameInputBox.Text.Replace("\r", "").Split('\n');
+            SettingManager.Data.ConfimDisconnect = confimDisconnectCheckBox.Checked;
+            SettingManager.Data.ConfimExit = confimExitCheckBox.Checked;
+            SettingManager.Data.CacheConnection = cacheConnectionCheckBox.Checked;
+            SettingManager.Data.ReverseSoftKey = reverseSoftKeyCheckBox.Checked;
             try
             {
-                Settings.Data.ScrollLines = int.Parse(scrollLinesTextBox.Text);
+                SettingManager.Data.ScrollLines = int.Parse(scrollLinesTextBox.Text);
             }
             catch (Exception) { }
-            Settings.Data.ForcePong = forcePongCheckBox.Checked;
-            Settings.Data.HighlightKeywords = highlightWordsTextBox.Text.Replace("\r", "").Split('\n');
-            Settings.Data.UseRegexHighlight=highlightUseRegexCheckbox.Checked;
-            Settings.Data.HighlightMethod = (EbIRCHilightMethod)highlightMethodComboBox.SelectedIndex;
-            Settings.Data.HighlightChannelChange = highlightChannelCheckBox.Checked;
-            Settings.Data.DislikeKeywords = dislikeWordsTextBox.Text.Replace("\r", "").Split('\n');
-            Settings.Data.UseRegexDislike = dislikeUseRegexCheckBox.Checked;
-            Settings.Data.LogingEnable = enableLoggingCheckBox.Checked;
-            Settings.Data.LogDirectory = logDirectoryNameTextBox.Text;
-            Settings.Data.QuickSwitchHilightsSort = qsSortHilightedCheckBox.Checked;
-            Settings.Data.QuickSwitchUnreadCountSort = qsSortUnreadCheckBox.Checked;
+            SettingManager.Data.ForcePong = forcePongCheckBox.Checked;
+            SettingManager.Data.HighlightKeywords = highlightWordsTextBox.Text.Replace("\r", "").Split('\n');
+            SettingManager.Data.UseRegexHighlight=highlightUseRegexCheckbox.Checked;
+            SettingManager.Data.HighlightMethod = (EbIRCHilightMethod)highlightMethodComboBox.SelectedIndex;
+            SettingManager.Data.HighlightChannelChange = highlightChannelCheckBox.Checked;
+            SettingManager.Data.DislikeKeywords = dislikeWordsTextBox.Text.Replace("\r", "").Split('\n');
+            SettingManager.Data.UseRegexDislike = dislikeUseRegexCheckBox.Checked;
+            SettingManager.Data.LogingEnable = enableLoggingCheckBox.Checked;
+            SettingManager.Data.LogDirectory = logDirectoryNameTextBox.Text;
+            SettingManager.Data.QuickSwitchHilightsSort = qsSortHilightedCheckBox.Checked;
+            SettingManager.Data.QuickSwitchUnreadCountSort = qsSortUnreadCheckBox.Checked;
 
-            Settings.WriteSetting();
+            SettingManager.WriteSetting();
         }
 
         #region キー移動関連
@@ -296,7 +297,6 @@ namespace EbiSoft.EbIRC
             prof.Nickname = nicknameInputbox.Text;
             prof.Realname = nameInputbox.Text;
             prof.Encoding = encodingSelectBox.Text;
-            prof.DefaultChannels = defaultChannelInputbox.Text.Replace("\r", "").Split('\n');
         }
 
         /// <summary>
@@ -313,7 +313,6 @@ namespace EbiSoft.EbIRC
             nameInputbox.Text = prof.Realname;
             passwordInputBox.Text = prof.Password;
             encodingSelectBox.Text = prof.Encoding;
-            defaultChannelInputbox.Text = string.Join("\r\n", prof.DefaultChannels);
         }
 
         /// <summary>

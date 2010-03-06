@@ -12,6 +12,7 @@ using System.Text.RegularExpressions;
 using System.Reflection;
 using Microsoft.WindowsCE.Forms;
 using EbiSoft.EbIRC.Properties;
+using EbiSoft.EbIRC.Settings;
 
 namespace EbiSoft.EbIRC
 {
@@ -120,7 +121,7 @@ namespace EbiSoft.EbIRC
             ircClient.FinishMessageEvents += new EventHandler(ircClient_FinishMessageEvents);
 
             // 設定を読み込む
-            Settings.ReadSetting();
+            SettingManager.ReadSetting();
 
             // チャンネルリスト初期化
             m_channel = new Dictionary<string, Channel>(new ChannelNameEqualityComparer());
@@ -135,7 +136,7 @@ namespace EbiSoft.EbIRC
             AddLog(m_serverCh, string.Format(Resources.VersionInfomation, asmName.Version.Major, asmName.Version.Minor, asmName.Version.Build));
 
             // テキストログ初期化
-            m_inputlog = new List<string>(Settings.Data.InputLogBufferSize);
+            m_inputlog = new List<string>(SettingManager.Data.InputLogBufferSize);
             m_inputlogPtr = 0;
 
             // メッセージフィルタ設定
@@ -154,7 +155,7 @@ namespace EbiSoft.EbIRC
             UpdateUISettings();      // その他のUI設定のアップデート
 
             // ソフトキーの入れ替え
-            if (Settings.Data.ReverseSoftKey)
+            if (SettingManager.Data.ReverseSoftKey)
             {
                 mainMenu1.MenuItems.Remove(connectionMenuItem);
                 mainMenu1.MenuItems.Add(connectionMenuItem);
@@ -307,7 +308,7 @@ namespace EbiSoft.EbIRC
             if (ircClient.Status == IRCClientStatus.Disconnected)
             {
                 // サーバーが空欄のときには接続処理を行わない。
-                if (Settings.Data.Profiles.ActiveProfile.Server == string.Empty)
+                if (SettingManager.Data.Profiles.ActiveProfile.Server == string.Empty)
                 {
                     MessageBox.Show(Resources.NullServerSettingError,
                         Resources.ConnectionError, MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
@@ -317,17 +318,17 @@ namespace EbiSoft.EbIRC
                 try
                 {
                     // ダイアルアップ処理
-                    if (Settings.Data.UseNetworkControl)
+                    if (SettingManager.Data.UseNetworkControl)
                     {
                         ConnectionManager.Connection(string.Format(CONNMGR_URL_FORMAT,
-                            Settings.Data.Profiles.ActiveProfile.Server, Settings.Data.Profiles.ActiveProfile.Port.ToString()));
+                            SettingManager.Data.Profiles.ActiveProfile.Server, SettingManager.Data.Profiles.ActiveProfile.Port.ToString()));
                     }
 
                     BroadcastLog(Resources.BeginConnection);
-                    IRCClient.Encoding = Settings.Data.Profiles.ActiveProfile.GetEncoding();
-                    ircClient.Connect(Settings.Data.Profiles.ActiveProfile.Server, (int)Settings.Data.Profiles.ActiveProfile.Port, 
-                        Settings.Data.Profiles.ActiveProfile.Password, Settings.Data.Profiles.ActiveProfile.Nickname, 
-                        Settings.Data.Profiles.ActiveProfile.Realname);
+                    IRCClient.Encoding = SettingManager.Data.Profiles.ActiveProfile.GetEncoding();
+                    ircClient.Connect(SettingManager.Data.Profiles.ActiveProfile.Server, (int)SettingManager.Data.Profiles.ActiveProfile.Port,
+                        SettingManager.Data.Profiles.ActiveProfile.Password, SettingManager.Data.Profiles.ActiveProfile.Nickname,
+                        SettingManager.Data.Profiles.ActiveProfile.Realname);
                     SetConnectionMenuText();
 
                 }
@@ -343,7 +344,7 @@ namespace EbiSoft.EbIRC
             else
             {
                 // 確認メッセージ表示設定がONなら確認メッセージを表示する
-                if (Settings.Data.ConfimDisconnect)
+                if (SettingManager.Data.ConfimDisconnect)
                 {
                     // いいえが選択された場合は抜ける
                     if (MessageBox.Show(Resources.DisconnectConfim, Resources.Confim,
@@ -404,7 +405,7 @@ namespace EbiSoft.EbIRC
         /// </summary>
         private void menuExitMenuItem_Click(object sender, EventArgs e)
         {
-            if (Settings.Data.ConfimExit)
+            if (SettingManager.Data.ConfimExit)
             {
                 // いいえが選択された場合は抜ける
                 if (MessageBox.Show(Resources.ExitConfim, Resources.Confim,
@@ -647,7 +648,7 @@ namespace EbiSoft.EbIRC
                     else
                     {
                         // 無効時間内でなければポップアップする
-                        if ((Environment.TickCount - m_lastSendTick) > Settings.Data.ChannelShortcutIgnoreTimes)
+                        if ((Environment.TickCount - m_lastSendTick) > SettingManager.Data.ChannelShortcutIgnoreTimes)
                         {
                             channelContextMenu.Show(logTextBox, new Point(0, 0));
                             e.Handled = true;
@@ -678,7 +679,7 @@ namespace EbiSoft.EbIRC
         /// </summary>
         void m_inputBoxFilter_MouseWheelMoveUp(object sender, EventArgs e)
         {
-            SendMessage2(logTextBox.Handle, EM_LINESCROLL, 0, -Settings.Data.ScrollLines);
+            SendMessage2(logTextBox.Handle, EM_LINESCROLL, 0, -SettingManager.Data.ScrollLines);
         }
 
         /// <summary>
@@ -686,7 +687,7 @@ namespace EbiSoft.EbIRC
         /// </summary>
         void m_inputBoxFilter_MouseWheelMoveDown(object sender, EventArgs e)
         {
-            SendMessage2(logTextBox.Handle, EM_LINESCROLL, 0, Settings.Data.ScrollLines);
+            SendMessage2(logTextBox.Handle, EM_LINESCROLL, 0, SettingManager.Data.ScrollLines);
         }
 
         /// <summary>
@@ -713,16 +714,16 @@ namespace EbiSoft.EbIRC
                 switch (e.KeyCode)
                 {
                     case Keys.Right:
-                        e.Handled = ProcessKeyOperation(Settings.Data.CtrlRightKeyOperation);
+                        e.Handled = ProcessKeyOperation(SettingManager.Data.CtrlRightKeyOperation);
                         break;
                     case Keys.Left:
-                        e.Handled = ProcessKeyOperation(Settings.Data.CtrlLeftKeyOperation);
+                        e.Handled = ProcessKeyOperation(SettingManager.Data.CtrlLeftKeyOperation);
                         break;
                     case Keys.Up:
-                        e.Handled = ProcessKeyOperation(Settings.Data.CtrlUpKeyOperation);
+                        e.Handled = ProcessKeyOperation(SettingManager.Data.CtrlUpKeyOperation);
                         break;
                     case Keys.Down:
-                        e.Handled = ProcessKeyOperation(Settings.Data.CtrlDownKeyOperation);
+                        e.Handled = ProcessKeyOperation(SettingManager.Data.CtrlDownKeyOperation);
                         break;
                     default:
                         break;
@@ -743,7 +744,7 @@ namespace EbiSoft.EbIRC
                             }
                             else
                             {
-                                e.Handled = ProcessKeyOperation(Settings.Data.RightKeyOperation);
+                                e.Handled = ProcessKeyOperation(SettingManager.Data.RightKeyOperation);
                             }
                         }
                         break;
@@ -751,7 +752,7 @@ namespace EbiSoft.EbIRC
                         if ((inputTextBox.Text == "")
                             || (inputTextBox.SelectionStart == 0))
                         {
-                            e.Handled = ProcessKeyOperation(Settings.Data.LeftKeyOperation);
+                            e.Handled = ProcessKeyOperation(SettingManager.Data.LeftKeyOperation);
                         }
                         break;
                     case Keys.Up:
@@ -798,13 +799,13 @@ namespace EbiSoft.EbIRC
                         if (m_scrollFlag)
                         {
                             System.Diagnostics.Debug.WriteLine("Xcrawl Up");
-                            SendMessage2(logTextBox.Handle, EM_LINESCROLL, 0, -Settings.Data.ScrollLines);
+                            SendMessage2(logTextBox.Handle, EM_LINESCROLL, 0, -SettingManager.Data.ScrollLines);
                             e.Handled = true;
                         }
                         else
                         {
                             System.Diagnostics.Debug.WriteLine("Up");
-                            if (!ProcessKeyOperation(Settings.Data.UpKeyOperation))
+                            if (!ProcessKeyOperation(SettingManager.Data.UpKeyOperation))
                             {
                                 // デフォルトキー操作のエミュレーション
                                 inputTextBox.SelectionStart = 0;
@@ -816,12 +817,12 @@ namespace EbiSoft.EbIRC
                         if (m_scrollFlag)
                         {
                             System.Diagnostics.Debug.WriteLine("Xcrawl Down");
-                            SendMessage2(logTextBox.Handle, EM_LINESCROLL, 0, Settings.Data.ScrollLines);
+                            SendMessage2(logTextBox.Handle, EM_LINESCROLL, 0, SettingManager.Data.ScrollLines);
                             e.Handled = true;
                         }
                         else
                         {
-                            if (!ProcessKeyOperation(Settings.Data.DownKeyOperation))
+                            if (!ProcessKeyOperation(SettingManager.Data.DownKeyOperation))
                             {
                                 // デフォルトキー操作のエミュレーション
                                 inputTextBox.SelectionStart = inputTextBox.Text.Length;
@@ -949,9 +950,9 @@ namespace EbiSoft.EbIRC
                     ircClient.JoinChannel(channel.Name);
 
                     // デフォルトチャンネル選択設定ONのときは、選択する
-                    if (Settings.Data.SelectChannelAtConnect
-                        && (Settings.Data.Profiles.ActiveProfile.DefaultChannels.Length > 0)
-                        && (channel.Name == Settings.Data.Profiles.ActiveProfile.DefaultChannels[0]))
+                    if (SettingManager.Data.SelectChannelAtConnect
+                        && (SettingManager.Data.Profiles.ActiveProfile.DefaultChannels.Length > 0)
+                        && (channel.Name == SettingManager.Data.Profiles.ActiveProfile.DefaultChannels[0]))
                     {
                         LoadChannel(channel);
                     }
@@ -1031,7 +1032,7 @@ namespace EbiSoft.EbIRC
             LoadChannel(m_currentCh);
 
             // ダイアルアップ処理
-            if (Settings.Data.UseNetworkControl)
+            if (SettingManager.Data.UseNetworkControl)
             {
                 ConnectionManager.ReleaseAll();
             }
@@ -1408,7 +1409,7 @@ namespace EbiSoft.EbIRC
                 // 一度デフォルトをはずす
                 channel.IsDefaultChannel = false;
                 // デフォルトリストを走査する
-                foreach (string ch in Settings.Data.Profiles.ActiveProfile.DefaultChannels)
+                foreach (string ch in SettingManager.Data.Profiles.ActiveProfile.DefaultChannels)
                 {
                     // デフォルトチャンネルだったらtrueにして抜ける
                     if (channel.Name == ch)
@@ -1420,7 +1421,7 @@ namespace EbiSoft.EbIRC
             }
 
             // 新しく追加されたチャンネルを追加
-            foreach (string ch in Settings.Data.Profiles.ActiveProfile.DefaultChannels)
+            foreach (string ch in SettingManager.Data.Profiles.ActiveProfile.DefaultChannels)
             {
                 // チャンネルリストに存在しないなら追加する
                 if (!m_channel.ContainsKey(ch))
@@ -1835,7 +1836,7 @@ namespace EbiSoft.EbIRC
         {
             if (highlightFlag && (highlightChannel != null))
             {
-                if ((Settings.Data.HighlightMethod == EbIRCHilightMethod.Vibration) || (Settings.Data.HighlightMethod == EbIRCHilightMethod.VibrationAndLed))
+                if ((SettingManager.Data.HighlightMethod == EbIRCHilightMethod.Vibration) || (SettingManager.Data.HighlightMethod == EbIRCHilightMethod.VibrationAndLed))
                 {
                     if (Led.AvailableLed(LedType.Vibrartion))
                     {
@@ -1843,7 +1844,7 @@ namespace EbiSoft.EbIRC
                         clearHighlightTimer.Enabled = true;
                     }
                 }
-                if ((Settings.Data.HighlightMethod == EbIRCHilightMethod.Led) || (Settings.Data.HighlightMethod == EbIRCHilightMethod.VibrationAndLed))
+                if ((SettingManager.Data.HighlightMethod == EbIRCHilightMethod.Led) || (SettingManager.Data.HighlightMethod == EbIRCHilightMethod.VibrationAndLed))
                 {
                     if (Led.AvailableLed(LedType.Yellow))
                     {
@@ -1851,7 +1852,7 @@ namespace EbiSoft.EbIRC
                         clearHighlightTimer.Enabled = true;
                     }
                 }
-                if (Settings.Data.HighlightChannelChange)
+                if (SettingManager.Data.HighlightChannelChange)
                 {
                     LoadChannel(highlightChannel);
                 }
@@ -1900,8 +1901,8 @@ namespace EbiSoft.EbIRC
         /// </summary>
         void UpdateUISettings()
         {
-            logTextBox.Font = Settings.Data.GetFont();
-            infomationPanel.Visible = Settings.Data.TopicVisible;
+            logTextBox.Font = SettingManager.Data.GetFont();
+            infomationPanel.Visible = SettingManager.Data.TopicVisible;
 
             // サブニックネームリストを作成 ------------------------
 
@@ -1912,12 +1913,12 @@ namespace EbiSoft.EbIRC
 
             // デフォルトニックネームをセット
             newItem = new MenuItem();
-            newItem.Text = Settings.Data.Profiles.ActiveProfile.Nickname;
+            newItem.Text = SettingManager.Data.Profiles.ActiveProfile.Nickname;
             newItem.Click += new EventHandler(nicknameSwitcher_Click);
             nicknameSwitchMenuItem.MenuItems.Add(newItem);
 
             // ニックネームリストを登録
-            foreach (string itemName in Settings.Data.SubNicknames)
+            foreach (string itemName in SettingManager.Data.SubNicknames)
             {
                 if (!string.IsNullOrEmpty(itemName.Trim()))
                 {
@@ -1932,17 +1933,17 @@ namespace EbiSoft.EbIRC
             nicknameSwitchMenuItem.MenuItems.Add(menuNicknameInputMenuItem);
 
             // 接続キャッシュ設定
-            ConnectionManager.ConnectionCacheLength = Settings.Data.CacheConnection ? 1 : 0;
+            ConnectionManager.ConnectionCacheLength = SettingManager.Data.CacheConnection ? 1 : 0;
 
             // 強制PONG
-            pongTimer.Enabled = Settings.Data.ForcePong;
+            pongTimer.Enabled = SettingManager.Data.ForcePong;
 
             // キーワード反応マッチオブジェクト
-            highlightMatcher = Settings.Data.GetHighlightKeywordMatcher();
-            dislikeMatcher = Settings.Data.GetDislikeKeywordMatcher();
+            highlightMatcher = SettingManager.Data.GetHighlightKeywordMatcher();
+            dislikeMatcher = SettingManager.Data.GetDislikeKeywordMatcher();
 
             // ハイライト停止タイマーの周期
-            clearHighlightTimer.Interval = Settings.Data.HighlightContinueTime;
+            clearHighlightTimer.Interval = SettingManager.Data.HighlightContinueTime;
         }
 
         #endregion
@@ -2008,15 +2009,15 @@ namespace EbiSoft.EbIRC
                     return true;
 
                 case EbIRCKeyOperations.FontSizeUp:
-                    Settings.Data.FontSize++;
-                    logTextBox.Font = Settings.Data.GetFont();
+                    SettingManager.Data.FontSize++;
+                    logTextBox.Font = SettingManager.Data.GetFont();
                     return true;
 
                 case EbIRCKeyOperations.FontSizeDown:
-                    if (Settings.Data.FontSize > 1)
+                    if (SettingManager.Data.FontSize > 1)
                     {
-                        Settings.Data.FontSize--;
-                        logTextBox.Font = Settings.Data.GetFont();
+                        SettingManager.Data.FontSize--;
+                        logTextBox.Font = SettingManager.Data.GetFont();
                     }
                     return true;
 
@@ -2117,7 +2118,7 @@ namespace EbiSoft.EbIRC
         {
             if (ircClient.Status == IRCClientStatus.Online)
             {
-                ircClient.SendCommand("PONG :" + Settings.Data.Profiles.ActiveProfile.Server);
+                ircClient.SendCommand("PONG :" + SettingManager.Data.Profiles.ActiveProfile.Server);
             }
         }
 

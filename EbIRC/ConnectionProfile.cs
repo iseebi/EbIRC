@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Xml.Serialization;
 
-namespace EbiSoft.EbIRC
+namespace EbiSoft.EbIRC.Settings
 {
     /// <summary>
     /// 接続プロファイル
@@ -84,6 +84,7 @@ namespace EbiSoft.EbIRC
         /// <summary>
         /// 接続時にJOINするチャンネル
         /// </summary>
+        [Obsolete("Profiles.ActiveProfile.DefaultChannelsを使用してください。")]
         public string[] DefaultChannels
         {
             get { return m_defchannels; }

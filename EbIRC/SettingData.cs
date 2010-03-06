@@ -5,7 +5,7 @@ using System.Xml.Serialization;
 using System.Drawing;
 using System.Text.RegularExpressions;
 
-namespace EbiSoft.EbIRC
+namespace EbiSoft.EbIRC.Settings
 {
     [XmlType(Namespace="EbIRC", TypeName="Settings")]
     public class SettingData
