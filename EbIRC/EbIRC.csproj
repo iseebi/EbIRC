@@ -92,7 +92,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ChannelNameEqualityComparer.cs" />
-    <Compile Include="ChannelSetting.cs" />
+    <Compile Include="Settings\ChannelSetting.cs" />
     <Compile Include="ChannelSettingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,8 +100,9 @@
       <DependentUpon>ChannelSettingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ConnectionManager.cs" />
-    <Compile Include="ConnectionProfile.cs" />
-    <Compile Include="ConnectionProfileData.cs" />
+    <Compile Include="Settings\ChannelSettingCollection.cs" />
+    <Compile Include="Settings\ConnectionProfile.cs" />
+    <Compile Include="Settings\ConnectionProfileCollection.cs" />
     <Compile Include="EbIrcMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,14 +201,14 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="RingBuffer.cs" />
-    <Compile Include="SettingData.cs" />
+    <Compile Include="Settings\Setting.cs" />
     <Compile Include="SettingForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SettingForm.Designer.cs">
       <DependentUpon>SettingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Settings.cs" />
+    <Compile Include="Settings\SettingManager.cs" />
     <Compile Include="TextBoxInputFilter.cs" />
     <Compile Include="TextWriterTraceListener.cs" />
   </ItemGroup>

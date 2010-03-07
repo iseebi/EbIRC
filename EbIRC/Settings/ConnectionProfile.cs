@@ -84,13 +84,23 @@ namespace EbiSoft.EbIRC.Settings
         /// <summary>
         /// 接続時にJOINするチャンネル
         /// </summary>
-        [Obsolete("Profiles.ActiveProfile.DefaultChannelsを使用してください。")]
+        [Obsolete("Channelsを使用してください。")]
         public string[] DefaultChannels
         {
             get { return m_defchannels; }
             set { m_defchannels = value; }
         }
         private string[] m_defchannels = new string[] { };
+
+        /// <summary>
+        /// 接続時にJOINするチャンネル
+        /// </summary>
+        public ChannelSettingCollection Channels
+        {
+            get { return m_channels; }
+            set { m_channels = value; }
+        }
+        private ChannelSettingCollection m_channels = new ChannelSettingCollection();
 
         #region コンストラクタ
 

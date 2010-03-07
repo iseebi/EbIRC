@@ -132,7 +132,7 @@ namespace EbiSoft.EbIRC
         {
             // ê›íËÇèëÇ´çûÇﬁ
             saveLastProfile();
-            ConnectionProfileData data = new ConnectionProfileData();
+            ConnectionProfileCollection data = new ConnectionProfileCollection();
             foreach (object obj in profileSelectBox.Items)
             {
                 ConnectionProfile prof = obj as ConnectionProfile;

@@ -8,11 +8,11 @@ using System.Text.RegularExpressions;
 namespace EbiSoft.EbIRC.Settings
 {
     [XmlType(Namespace="EbIRC", TypeName="Settings")]
-    public class SettingData
+    public class Setting
     {
         private const string DEFAULT_FONT = "Tahoma";
 
-        private ConnectionProfileData m_profiles = new ConnectionProfileData();
+        private ConnectionProfileCollection m_profiles = new ConnectionProfileCollection();
         private string[] m_defchannels = new string[] { };
         private int m_maxLog = 60;
         private string m_fontName = DEFAULT_FONT;
@@ -54,7 +54,7 @@ namespace EbiSoft.EbIRC.Settings
         /// <summary>
         /// 接続プロファイル
         /// </summary>
-        public ConnectionProfileData Profiles
+        public ConnectionProfileCollection Profiles
         {
             get { return m_profiles;  }
             set { m_profiles = value; }

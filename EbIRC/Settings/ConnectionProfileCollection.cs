@@ -6,7 +6,7 @@ using EbiSoft.EbIRC.Properties;
 
 namespace EbiSoft.EbIRC.Settings
 {
-    public class ConnectionProfileData
+    public class ConnectionProfileCollection
     {
 
         /// <summary>
