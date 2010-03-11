@@ -96,7 +96,7 @@
             this.logDirectoryBrowseButton = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.logDirectoryNameTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.serverUseSslCheckBox = new System.Windows.Forms.CheckBox();
             this.tabControl.SuspendLayout();
             this.serverTabPage.SuspendLayout();
             this.communicationTabPage.SuspendLayout();
@@ -134,7 +134,7 @@
             // serverTabPage
             // 
             resources.ApplyResources(this.serverTabPage, "serverTabPage");
-            this.serverTabPage.Controls.Add(this.button1);
+            this.serverTabPage.Controls.Add(this.serverUseSslCheckBox);
             this.serverTabPage.Controls.Add(this.encodingSelectBox);
             this.serverTabPage.Controls.Add(this.label14);
             this.serverTabPage.Controls.Add(this.profileRemoveButton);
@@ -560,10 +560,10 @@
             resources.ApplyResources(this.logDirectoryNameTextBox, "logDirectoryNameTextBox");
             this.logDirectoryNameTextBox.Name = "logDirectoryNameTextBox";
             // 
-            // button1
+            // serverUseSslCheckBox
             // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
+            resources.ApplyResources(this.serverUseSslCheckBox, "serverUseSslCheckBox");
+            this.serverUseSslCheckBox.Name = "serverUseSslCheckBox";
             // 
             // SettingForm
             // 
@@ -657,6 +657,6 @@
         private System.Windows.Forms.CheckBox qsSortHilightedCheckBox;
         private System.Windows.Forms.CheckBox qsSortUnreadCheckBox;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox serverUseSslCheckBox;
     }
 }

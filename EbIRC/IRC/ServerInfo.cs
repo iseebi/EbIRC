@@ -40,8 +40,8 @@ namespace EbiSoft.EbIRC.IRC {
         /// </summary>
         public bool UseSsl
         {
-            get { return m_ssl; }
-            set { m_ssl = value; }
+            get { return m_useSsl; }
+            set { m_useSsl = value; }
         }
 	
 

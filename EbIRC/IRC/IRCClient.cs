@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.ComponentModel;
+using EbiSoft.EbIRC.ExternalLibrary;
 
 namespace EbiSoft.EbIRC.IRC {
 	/// <summary>
@@ -19,6 +20,7 @@ namespace EbiSoft.EbIRC.IRC {
     {
         private Thread m_thread;        // 送信スレッド
         private Socket m_socket;        // ソケット
+        private SslHelper m_sslHelper;  // SSLヘルパ
         private NetworkStream m_stream; // ストリーム
         private StreamReader m_reader;  // 受信用ストリームリーダー
         private StreamWriter m_writer;  // 送信用ストリームライター
@@ -924,6 +926,10 @@ namespace EbiSoft.EbIRC.IRC {
                 // ソケット作成・接続
                 Debug.WriteLine("接続を開始します。", "IRCClient");
                 m_socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                if (Server.UseSsl)
+                {
+                    m_sslHelper = new SslHelper(m_socket, Server.Name);
+                }
                 m_connectAsync = m_socket.BeginConnect(server.GetEndPoint(), new AsyncCallback(OnConnected), m_socket);
             }
             catch
@@ -952,6 +958,8 @@ namespace EbiSoft.EbIRC.IRC {
 
                 // ストリーム作成
                 m_stream = new NetworkStream(socket);
+
+                // ストリームリーダ・ライタ作成
                 m_reader = new StreamReader(m_stream, this.Encoding);
                 m_writer = new StreamWriter(m_stream, this.Encoding);
                 m_writer.NewLine = "\r\n";
@@ -1190,9 +1198,14 @@ namespace EbiSoft.EbIRC.IRC {
                     }
                     catch (Exception) { }
                 }
+                if (m_sslHelper != null)
+                {
+                    m_sslHelper.Dispose();
+                }
 
                 // 使用したデータをクリアする
                 m_socket = null;
+                m_sslHelper = null;
                 m_reader = null;
                 m_writer = null;
                 m_online = false;

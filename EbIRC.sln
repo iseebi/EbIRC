@@ -1,10 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EbIRC", "EbIRC\EbIRC.csproj", "{82124F8F-1A07-4475-9704-EA254A183FBC}"
-EndProject
-Project("{B900F1C2-3D47-4FEC-85B3-04AAF18C3634}") = "EbIRCInstaller_AppOnly", "EbIRCInstaller_AppOnly\EbIRCInstaller_AppOnly.vddproj", "{0E6DFCB7-F5E5-4647-BB16-1110D8B9DD2A}"
-EndProject
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{051B69AA-E147-4B6D-B7E6-44A6211E6061}"
 	ProjectSection(SolutionItems) = preProject
 		Readme.txt = Readme.txt
@@ -18,11 +14,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Resources", "Resources", "{
 		Resources\ChannelControl_Operator.png = Resources\ChannelControl_Operator.png
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EbIRC", "EbIRC\EbIRC.csproj", "{82124F8F-1A07-4475-9704-EA254A183FBC}"
+EndProject
+Project("{B900F1C2-3D47-4FEC-85B3-04AAF18C3634}") = "EbIRCInstaller_AppOnly", "EbIRCInstaller_AppOnly\EbIRCInstaller_AppOnly.vddproj", "{0E6DFCB7-F5E5-4647-BB16-1110D8B9DD2A}"
+EndProject
 Global
-	GlobalSection(SubversionScc) = preSolution
-		Svn-Managed = True
-		Manager = AnkhSVN - Subversion Support for Visual Studio
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		AppRelease|Any CPU = AppRelease|Any CPU
 		Debug|Any CPU = Debug|Any CPU
@@ -52,5 +48,9 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{CA74AC34-9418-4725-8C0C-6215F5DCE728} = {051B69AA-E147-4B6D-B7E6-44A6211E6061}
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
 	EndGlobalSection
 EndGlobal
