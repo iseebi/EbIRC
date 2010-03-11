@@ -1,6 +1,7 @@
 // this source from this url.
 // http://blogs.msdn.com/cgarcia/archive/2009/08/21/enable-ssl-for-managed-socket-on-windows-mobile.aspx
 
+
 using System;
 using System.Diagnostics;
 using System.Net.Sockets;
@@ -10,7 +11,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Globalization;
 
-namespace EbiSoft.EbIRC.ExternalLibrary
+namespace SslTest
 {
     class SslHelper : IDisposable
     {
@@ -57,9 +58,9 @@ namespace EbiSoft.EbIRC.ExternalLibrary
             WriteASCIIString(ptrHost, host);
 
             //Now put both pointers into a byte[]
-            byte[] inBuffer = new byte[8];
-            byte[] hookFuncBytes = BitConverter.GetBytes(hookFunc.ToInt32());
-            byte[] hostPtrBytes = BitConverter.GetBytes(ptrHost.ToInt32());
+            var inBuffer = new byte[8];
+            var hookFuncBytes = BitConverter.GetBytes(hookFunc.ToInt32());
+            var hostPtrBytes = BitConverter.GetBytes(ptrHost.ToInt32());
             Array.Copy(hookFuncBytes, inBuffer, hookFuncBytes.Length);
             Array.Copy(hostPtrBytes, 0, inBuffer, hookFuncBytes.Length, hostPtrBytes.Length);
 
@@ -103,7 +104,6 @@ namespace EbiSoft.EbIRC.ExternalLibrary
 
         #endregion
 
-
         private int ValidateCert(uint dwType, IntPtr pvArg, uint dwChainLen, IntPtr pCertChain, uint dwFlags)
         {
             //According to http://msdn.microsoft.com/en-us/library/ms940451.aspx:
@@ -114,6 +114,7 @@ namespace EbiSoft.EbIRC.ExternalLibrary
             //- case is the host name
             //
             //So here we are responsible for validating the dates on the certificate and the CN
+
 
             if (dwType != SSL_CERT_X59)
                 return SSL_ERR_BAD_TYPE;

@@ -327,8 +327,8 @@ namespace EbiSoft.EbIRC
                     BroadcastLog(Resources.BeginConnection);
                     IRCClient.Encoding = SettingManager.Data.Profiles.ActiveProfile.GetEncoding();
                     ircClient.Connect(SettingManager.Data.Profiles.ActiveProfile.Server, (int)SettingManager.Data.Profiles.ActiveProfile.Port,
-                        SettingManager.Data.Profiles.ActiveProfile.Password, SettingManager.Data.Profiles.ActiveProfile.Nickname,
-                        SettingManager.Data.Profiles.ActiveProfile.Realname);
+                        SettingManager.Data.Profiles.ActiveProfile.Password, SettingManager.Data.Profiles.ActiveProfile.UseSsl,
+                        SettingManager.Data.Profiles.ActiveProfile.Nickname, SettingManager.Data.Profiles.ActiveProfile.Realname);
                     SetConnectionMenuText();
 
                 }

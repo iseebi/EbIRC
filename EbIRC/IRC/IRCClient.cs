@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.ComponentModel;
-using EbiSoft.EbIRC.ExternalLibrary;
+using SslTest;
 
 namespace EbiSoft.EbIRC.IRC {
 	/// <summary>
@@ -882,6 +882,21 @@ namespace EbiSoft.EbIRC.IRC {
         /// 接続
         /// </summary>
         /// <param name="name">サーバー名</param>
+        /// <param name="port">接続ポート</param>
+        /// <param name="password">サーバーパスワード</param>
+        /// <param name="nickname">ニックネーム</param>
+        /// <param name="realname">名前</param>
+        /// <param name="useSsl">SSL使用</param>
+        public void Connect(string name, int port, string password, bool useSsl, string nickname, string realname)
+        {
+            Connect(new ServerInfo(name, port, password, useSsl), new UserInfo(nickname, realname));
+        }
+
+
+        /// <summary>
+        /// 接続
+        /// </summary>
+        /// <param name="name">サーバー名</param>
         /// <param name="nickname">ニックネーム</param>
         /// <param name="realname">名前</param>
         public void Connect(ServerInfo server, string nickname, string realname)
@@ -1081,6 +1096,10 @@ namespace EbiSoft.EbIRC.IRC {
                     }
 
                     // 受信処理
+                    if (Server.UseSsl && !m_stream.DataAvailable)
+                    {
+                        m_socket.Poll(100, SelectMode.SelectRead);
+                    }
                     while (m_stream.DataAvailable)
                     {
                         try
@@ -1909,7 +1928,7 @@ namespace EbiSoft.EbIRC.IRC {
         }
 
         #endregion
-	}
+    }
 
     /// <summary>
     /// IRCClient のステータスをあらわす定数
