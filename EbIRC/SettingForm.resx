@@ -131,29 +131,17 @@
   <data name="serverTabPage.AutoScrollMargin" type="System.Drawing.Size, System.Drawing">
     <value>0, 15</value>
   </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 691</value>
+  <data name="serverUseSslCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>177, 268</value>
   </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 40</value>
+  <data name="serverUseSslCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 40</value>
   </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+  <data name="serverUseSslCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Edit channels</value>
-  </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
-  </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
-    <value>serverTabPage</value>
-  </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="serverUseSslCheckBox.Text" xml:space="preserve">
+    <value>Use SSL</value>
   </data>
   <data name="encodingSelectBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 632</value>
@@ -162,7 +150,7 @@
     <value>425, 41</value>
   </data>
   <data name="encodingSelectBox.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;encodingSelectBox.Name" xml:space="preserve">
     <value>encodingSelectBox</value>
@@ -363,7 +351,7 @@
     <value>425, 41</value>
   </data>
   <data name="passwordInputBox.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="&gt;&gt;passwordInputBox.Name" xml:space="preserve">
     <value>passwordInputBox</value>
@@ -384,7 +372,7 @@
     <value>425, 41</value>
   </data>
   <data name="nameInputbox.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;nameInputbox.Name" xml:space="preserve">
     <value>nameInputbox</value>
@@ -405,7 +393,7 @@
     <value>425, 41</value>
   </data>
   <data name="nicknameInputbox.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;nicknameInputbox.Name" xml:space="preserve">
     <value>nicknameInputbox</value>

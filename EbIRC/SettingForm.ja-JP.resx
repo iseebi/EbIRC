@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
+	<!-- 
     Microsoft ResX Schema 
     
     Version 2.0
@@ -59,285 +59,273 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
-  <resheader name="resmimetype">
-    <value>text/microsoft-resx</value>
-  </resheader>
-  <resheader name="version">
-    <value>2.0</value>
-  </resheader>
-  <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <data name="saveCloseMenuItem.Text" xml:space="preserve">
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0"/>
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string"/>
+							<xsd:attribute name="type" type="xsd:string"/>
+							<xsd:attribute name="mimetype" type="xsd:string"/>
+							<xsd:attribute ref="xml:space"/>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string"/>
+							<xsd:attribute name="name" type="xsd:string"/>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+							<xsd:attribute ref="xml:space"/>
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required"/>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<data name="saveCloseMenuItem.Text" xml:space="preserve">
     <value>保存して閉じる</value>
   </data>
-  <data name="serverTabPage.Text" xml:space="preserve">
+	<data name="serverTabPage.Text" xml:space="preserve">
     <value>接続</value>
   </data>
-  <data name="label5.Text" xml:space="preserve">
+	<data name="label5.Text" xml:space="preserve">
     <value>サーバー接続時に入室するチャンネル</value>
   </data>
-  <data name="label14.Text" xml:space="preserve">
+	<data name="label14.Text" xml:space="preserve">
     <value>エンコーディング</value>
   </data>
-  <data name="profileRemoveButton.Text" xml:space="preserve">
+	<data name="profileRemoveButton.Text" xml:space="preserve">
     <value>削除</value>
   </data>
-  <data name="profileAddButton.Text" xml:space="preserve">
+	<data name="profileAddButton.Text" xml:space="preserve">
     <value>追加</value>
   </data>
-  <data name="label13.Text" xml:space="preserve">
+	<data name="label13.Text" xml:space="preserve">
     <value>プロファイル</value>
   </data>
-  <data name="label6.Text" xml:space="preserve">
+	<data name="label6.Text" xml:space="preserve">
     <value>パスワード</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
+	<data name="label4.Text" xml:space="preserve">
     <value>名前</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
+	<data name="label3.Text" xml:space="preserve">
     <value>ログインネーム / ニックネーム</value>
   </data>
-  <data name="label2.Text" xml:space="preserve">
+	<data name="label2.Text" xml:space="preserve">
     <value>ポート</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
+	<data name="label1.Text" xml:space="preserve">
     <value>サーバー</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="communicationTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 492</value>
-  </data>
-  <data name="communicationTabPage.Text" xml:space="preserve">
+	<assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"/>
+	<data name="communicationTabPage.Size" type="System.Drawing.Size, System.Drawing">
+		<value>480, 492</value>
+	</data>
+	<data name="communicationTabPage.Text" xml:space="preserve">
     <value>通信</value>
   </data>
-  <data name="forcePongCheckBox.Text" xml:space="preserve">
+	<data name="forcePongCheckBox.Text" xml:space="preserve">
     <value>強制PONG送信(15秒毎)</value>
   </data>
-  <data name="cacheConnectionCheckBox.Text" xml:space="preserve">
+	<data name="cacheConnectionCheckBox.Text" xml:space="preserve">
     <value>ネットワーク接続を切断しない</value>
   </data>
-  <data name="nickNameTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 492</value>
-  </data>
-  <data name="nickNameTabPage.Text" xml:space="preserve">
+	<data name="nickNameTabPage.Size" type="System.Drawing.Size, System.Drawing">
+		<value>480, 492</value>
+	</data>
+	<data name="nickNameTabPage.Text" xml:space="preserve">
     <value>ニックネーム</value>
   </data>
-  <data name="subNicknameInputBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>446, 226</value>
-  </data>
-  <data name="label10.Text" xml:space="preserve">
+	<data name="subNicknameInputBox.Size" type="System.Drawing.Size, System.Drawing">
+		<value>446, 226</value>
+	</data>
+	<data name="label10.Text" xml:space="preserve">
     <value>メニューに登録するニックネーム(1行1個)</value>
   </data>
-  <data name="viewTabPage.Text" xml:space="preserve">
+	<data name="viewTabPage.Text" xml:space="preserve">
     <value>表示</value>
   </data>
-  <data name="defaultLoadOnConnectCheckBox.Text" xml:space="preserve">
+	<data name="defaultLoadOnConnectCheckBox.Text" xml:space="preserve">
     <value>接続時に最上位チャンネルへ切替</value>
   </data>
-  <data name="visibleTopicPanelCheckbox.Text" xml:space="preserve">
+	<data name="visibleTopicPanelCheckbox.Text" xml:space="preserve">
     <value>トピックパネルを表示</value>
   </data>
-  <data name="label7.Text" xml:space="preserve">
+	<data name="label7.Text" xml:space="preserve">
     <value>フォント</value>
   </data>
-  <data name="controlTabPage.Text" xml:space="preserve">
+	<data name="controlTabPage.Text" xml:space="preserve">
     <value>操作</value>
   </data>
-  <data name="reverseSoftKeyCheckBox.Text" xml:space="preserve">
+	<data name="reverseSoftKeyCheckBox.Text" xml:space="preserve">
     <value>ソフトキー左右入替(要再起動)</value>
   </data>
-  <data name="confimExitCheckBox.Text" xml:space="preserve">
+	<data name="confimExitCheckBox.Text" xml:space="preserve">
     <value>終了する前に確認する</value>
   </data>
-  <data name="confimDisconnectCheckBox.Text" xml:space="preserve">
+	<data name="confimDisconnectCheckBox.Text" xml:space="preserve">
     <value>切断する前に確認する</value>
   </data>
-  <data name="ctrlHorizontalKeySelectBox.Items" xml:space="preserve">
+	<data name="ctrlHorizontalKeySelectBox.Items" xml:space="preserve">
     <value>何もしない</value>
   </data>
-  <data name="ctrlHorizontalKeySelectBox.Items1" xml:space="preserve">
+	<data name="ctrlHorizontalKeySelectBox.Items1" xml:space="preserve">
     <value>チャンネル切り替え</value>
   </data>
-  <data name="ctrlHorizontalKeySelectBox.Items2" xml:space="preserve">
+	<data name="ctrlHorizontalKeySelectBox.Items2" xml:space="preserve">
     <value>ページ送り</value>
   </data>
-  <data name="ctrlHorizontalKeySelectBox.Items3" xml:space="preserve">
+	<data name="ctrlHorizontalKeySelectBox.Items3" xml:space="preserve">
     <value>入力ログブラウズ</value>
   </data>
-  <data name="ctrlHorizontalKeySelectBox.Items4" xml:space="preserve">
+	<data name="ctrlHorizontalKeySelectBox.Items4" xml:space="preserve">
     <value>フォントサイズ変更</value>
   </data>
-  <data name="scrollLinesLabel.Text" xml:space="preserve">
+	<data name="scrollLinesLabel.Text" xml:space="preserve">
     <value>ジョグでスクロールする行数:</value>
   </data>
-  <data name="label11.Text" xml:space="preserve">
+	<data name="label11.Text" xml:space="preserve">
     <value>Ctrl + 左右キー</value>
   </data>
-  <data name="ctrlVerticalKeySelectBox.Items" xml:space="preserve">
+	<data name="ctrlVerticalKeySelectBox.Items" xml:space="preserve">
     <value>何もしない</value>
   </data>
-  <data name="ctrlVerticalKeySelectBox.Items1" xml:space="preserve">
+	<data name="ctrlVerticalKeySelectBox.Items1" xml:space="preserve">
     <value>チャンネル切り替え</value>
   </data>
-  <data name="ctrlVerticalKeySelectBox.Items2" xml:space="preserve">
+	<data name="ctrlVerticalKeySelectBox.Items2" xml:space="preserve">
     <value>ページ送り</value>
   </data>
-  <data name="ctrlVerticalKeySelectBox.Items3" xml:space="preserve">
+	<data name="ctrlVerticalKeySelectBox.Items3" xml:space="preserve">
     <value>入力ログブラウズ</value>
   </data>
-  <data name="ctrlVerticalKeySelectBox.Items4" xml:space="preserve">
+	<data name="ctrlVerticalKeySelectBox.Items4" xml:space="preserve">
     <value>フォントサイズ変更</value>
   </data>
-  <data name="label12.Text" xml:space="preserve">
+	<data name="label12.Text" xml:space="preserve">
     <value>Ctrl + 上下キー</value>
   </data>
-  <data name="horizontalKeySelectBox.Items" xml:space="preserve">
+	<data name="horizontalKeySelectBox.Items" xml:space="preserve">
     <value>何もしない</value>
   </data>
-  <data name="horizontalKeySelectBox.Items1" xml:space="preserve">
+	<data name="horizontalKeySelectBox.Items1" xml:space="preserve">
     <value>チャンネル切り替え</value>
   </data>
-  <data name="horizontalKeySelectBox.Items2" xml:space="preserve">
+	<data name="horizontalKeySelectBox.Items2" xml:space="preserve">
     <value>ページ送り</value>
   </data>
-  <data name="horizontalKeySelectBox.Items3" xml:space="preserve">
+	<data name="horizontalKeySelectBox.Items3" xml:space="preserve">
     <value>入力ログブラウズ</value>
   </data>
-  <data name="horizontalKeySelectBox.Items4" xml:space="preserve">
+	<data name="horizontalKeySelectBox.Items4" xml:space="preserve">
     <value>フォントサイズ変更</value>
   </data>
-  <data name="label9.Text" xml:space="preserve">
+	<data name="label9.Text" xml:space="preserve">
     <value>文頭・文末での左右キー</value>
   </data>
-  <data name="verticalKeySelectBox.Items" xml:space="preserve">
+	<data name="verticalKeySelectBox.Items" xml:space="preserve">
     <value>何もしない</value>
   </data>
-  <data name="verticalKeySelectBox.Items1" xml:space="preserve">
+	<data name="verticalKeySelectBox.Items1" xml:space="preserve">
     <value>入力文字列の先頭へ・最終へ</value>
   </data>
-  <data name="verticalKeySelectBox.Items2" xml:space="preserve">
+	<data name="verticalKeySelectBox.Items2" xml:space="preserve">
     <value>チャンネル切り替え</value>
   </data>
-  <data name="verticalKeySelectBox.Items3" xml:space="preserve">
+	<data name="verticalKeySelectBox.Items3" xml:space="preserve">
     <value>ページ送り</value>
   </data>
-  <data name="verticalKeySelectBox.Items4" xml:space="preserve">
+	<data name="verticalKeySelectBox.Items4" xml:space="preserve">
     <value>入力ログブラウズ</value>
   </data>
-  <data name="verticalKeySelectBox.Items5" xml:space="preserve">
+	<data name="verticalKeySelectBox.Items5" xml:space="preserve">
     <value>フォントサイズ変更</value>
   </data>
-  <data name="label8.Text" xml:space="preserve">
+	<data name="label8.Text" xml:space="preserve">
     <value>上下キー</value>
   </data>
-  <data name="quickSwitchShortcutTabPage.Text" xml:space="preserve">
+	<data name="quickSwitchShortcutTabPage.Text" xml:space="preserve">
     <value>空打ち</value>
   </data>
-  <data name="qsSortHilightedCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>438, 37</value>
-  </data>
-  <data name="qsSortHilightedCheckBox.Text" xml:space="preserve">
+	<data name="qsSortHilightedCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+		<value>438, 37</value>
+	</data>
+	<data name="qsSortHilightedCheckBox.Text" xml:space="preserve">
     <value>ハイライトチャンネルを上に表示する</value>
   </data>
-  <data name="qsSortUnreadCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>288, 40</value>
-  </data>
-  <data name="qsSortUnreadCheckBox.Text" xml:space="preserve">
+	<data name="qsSortUnreadCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+		<value>288, 40</value>
+	</data>
+	<data name="qsSortUnreadCheckBox.Text" xml:space="preserve">
     <value>未読順にソートする</value>
   </data>
-  <data name="label20.Text" xml:space="preserve">
+	<data name="label20.Text" xml:space="preserve">
     <value>ソート順オプション</value>
   </data>
-  <data name="label19.Text" xml:space="preserve">
+	<data name="label19.Text" xml:space="preserve">
     <value>入力エリアに未入力の状態でEnterキーを押すと空打ちポップアップが表示されます。</value>
   </data>
-  <data name="keywordsTabPage.Text" xml:space="preserve">
+	<data name="keywordsTabPage.Text" xml:space="preserve">
     <value>キーワード</value>
   </data>
-  <data name="highlightChannelCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>179, 233</value>
-  </data>
-  <data name="highlightChannelCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 40</value>
-  </data>
-  <data name="highlightChannelCheckBox.Text" xml:space="preserve">
+	<data name="highlightChannelCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+		<value>179, 233</value>
+	</data>
+	<data name="highlightChannelCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+		<value>259, 40</value>
+	</data>
+	<data name="highlightChannelCheckBox.Text" xml:space="preserve">
     <value>チャンネル切り替え</value>
   </data>
-  <data name="label16.Text" xml:space="preserve">
+	<data name="label16.Text" xml:space="preserve">
     <value>通知方法</value>
   </data>
-  <data name="label17.Text" xml:space="preserve">
+	<data name="label17.Text" xml:space="preserve">
     <value>無視キーワード</value>
   </data>
-  <data name="label15.Text" xml:space="preserve">
+	<data name="label15.Text" xml:space="preserve">
     <value>キーワード</value>
   </data>
-  <data name="logTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 492</value>
-  </data>
-  <data name="logTabPage.Text" xml:space="preserve">
+	<data name="logTabPage.Size" type="System.Drawing.Size, System.Drawing">
+		<value>480, 492</value>
+	</data>
+	<data name="logTabPage.Text" xml:space="preserve">
     <value>ログ</value>
   </data>
-  <data name="enableLoggingCheckBox.Text" xml:space="preserve">
+	<data name="enableLoggingCheckBox.Text" xml:space="preserve">
     <value>ログ保存有効</value>
   </data>
-  <data name="logDirectoryBrowseButton.Text" xml:space="preserve">
+	<data name="logDirectoryBrowseButton.Text" xml:space="preserve">
     <value>参照...</value>
   </data>
-  <data name="label18.Text" xml:space="preserve">
+	<data name="label18.Text" xml:space="preserve">
     <value>保存先フォルダ</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
+	<data name="$this.Text" xml:space="preserve">
     <value>EbIRC 設定</value>
   </data>
-</root>
+	<resheader name="resmimetype"><value>text/microsoft-resx</value></resheader><resheader name="version"><value>2.0</value></resheader><resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader><resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader></root>

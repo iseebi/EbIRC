@@ -297,6 +297,7 @@ namespace EbiSoft.EbIRC
             prof.Nickname = nicknameInputbox.Text;
             prof.Realname = nameInputbox.Text;
             prof.Encoding = encodingSelectBox.Text;
+            prof.UseSsl = serverUseSslCheckBox.Checked;
         }
 
         /// <summary>
@@ -313,6 +314,7 @@ namespace EbiSoft.EbIRC
             nameInputbox.Text = prof.Realname;
             passwordInputBox.Text = prof.Password;
             encodingSelectBox.Text = prof.Encoding;
+            serverUseSslCheckBox.Checked = prof.UseSsl;
         }
 
         /// <summary>

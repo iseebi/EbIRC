@@ -42,6 +42,16 @@ namespace EbiSoft.EbIRC.Settings
         private int m_port = 6667;
 
         /// <summary>
+        /// SSLの使用
+        /// </summary>
+        public bool UseSsl
+        {
+            get { return m_useSsl; }
+            set { m_useSsl = value; }
+        }
+        private bool m_useSsl;
+
+        /// <summary>
         /// パスワード
         /// </summary>
         public string Password
