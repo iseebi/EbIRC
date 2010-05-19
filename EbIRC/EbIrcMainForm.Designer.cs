@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EbIrcMainForm));
             this.mainMenu1 = new System.Windows.Forms.MainMenu();
             this.connectionMenuItem = new System.Windows.Forms.MenuItem();
@@ -57,20 +58,21 @@
             this.contextUrlOpenMenuItem = new System.Windows.Forms.MenuItem();
             this.contextCopyMenuItem = new System.Windows.Forms.MenuItem();
             this.contextGoogleMenuItem = new System.Windows.Forms.MenuItem();
-            this.inputPanel = new Microsoft.WindowsCE.Forms.InputPanel();
+            this.inputPanel = new Microsoft.WindowsCE.Forms.InputPanel(this.components);
             this.mainPanel = new System.Windows.Forms.Panel();
             this.pongTimer = new System.Windows.Forms.Timer();
             this.clearHighlightTimer = new System.Windows.Forms.Timer();
             this.channelContextMenu = new System.Windows.Forms.ContextMenu();
             this.menuHilightedMessages = new System.Windows.Forms.MenuItem();
             this.menuHilightedSeparator = new System.Windows.Forms.MenuItem();
+            this.multiMenuItem = new System.Windows.Forms.MenuItem();
             this.infomationPanel.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainMenu1
             // 
-            this.mainMenu1.MenuItems.Add(this.connectionMenuItem);
+            this.mainMenu1.MenuItems.Add(this.multiMenuItem);
             this.mainMenu1.MenuItems.Add(this.menuMenuItem);
             // 
             // connectionMenuItem
@@ -82,6 +84,7 @@
             // 
             this.menuMenuItem.MenuItems.Add(this.menuChannelControlMenuItem);
             this.menuMenuItem.MenuItems.Add(this.menuChannelListMenuItem);
+            this.menuMenuItem.MenuItems.Add(this.connectionMenuItem);
             this.menuMenuItem.MenuItems.Add(this.menuItem8);
             this.menuMenuItem.MenuItems.Add(this.menuEditMenuItem);
             this.menuMenuItem.MenuItems.Add(this.nicknameSwitchMenuItem);
@@ -256,6 +259,11 @@
             // 
             resources.ApplyResources(this.menuHilightedSeparator, "menuHilightedSeparator");
             // 
+            // multiMenuItem
+            // 
+            resources.ApplyResources(this.multiMenuItem, "multiMenuItem");
+            this.multiMenuItem.Click += new System.EventHandler(this.multiMenuItem_Click);
+            // 
             // EbIrcMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
@@ -309,6 +317,7 @@
         private System.Windows.Forms.ContextMenu channelContextMenu;
         private System.Windows.Forms.MenuItem menuHilightedMessages;
         private System.Windows.Forms.MenuItem menuHilightedSeparator;
+        private System.Windows.Forms.MenuItem multiMenuItem;
     }
 }
 

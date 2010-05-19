@@ -297,6 +297,22 @@ namespace EbiSoft.EbIRC
         #region メニューイベント
 
         /// <summary>
+        /// マルチ機能ボタン
+        /// </summary>
+        private void multiMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ircClient.Status == IRCClientStatus.Disconnected)
+            {
+                connectionMenuItem_Click(sender, e);
+            }
+            else
+            {
+                channelContextMenu.Show(logTextBox, new Point(0, 0));
+            }
+        }
+
+
+        /// <summary>
         /// 接続・切断トグル
         /// </summary>
         private void connectionMenuItem_Click(object sender, EventArgs e)
@@ -1889,10 +1905,12 @@ namespace EbiSoft.EbIRC
             if (ircClient.Status == IRCClientStatus.Disconnected)
             {
                 connectionMenuItem.Text = Resources.ConnectionMenuCaption;
+                multiMenuItem.Text = Resources.ConnectionMenuCaption;
             }
             else
             {
                 connectionMenuItem.Text = Resources.DisconnectMenuCaption;
+                multiMenuItem.Text = Resources.SwitcherMenuCaption;
             }
         }
 

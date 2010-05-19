@@ -567,6 +567,15 @@ namespace EbiSoft.EbIRC.Properties {
         }
         
         /// <summary>
+        ///   Switch ch に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string SwitcherMenuCaption {
+            get {
+                return ResourceManager.GetString("SwitcherMenuCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   {0:00}:{1:00} に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string TimeFormat {
