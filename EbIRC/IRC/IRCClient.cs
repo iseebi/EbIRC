@@ -887,9 +887,9 @@ namespace EbiSoft.EbIRC.IRC {
         /// <param name="nickname">ニックネーム</param>
         /// <param name="realname">名前</param>
         /// <param name="useSsl">SSL使用</param>
-        public void Connect(string name, int port, string password, bool useSsl, string nickname, string realname)
+        public void Connect(string name, int port, string password, bool useSsl, bool noValidation, string nickname, string realname)
         {
-            Connect(new ServerInfo(name, port, password, useSsl), new UserInfo(nickname, realname));
+            Connect(new ServerInfo(name, port, password, useSsl, noValidation), new UserInfo(nickname, realname));
         }
 
 
@@ -944,6 +944,7 @@ namespace EbiSoft.EbIRC.IRC {
                 if (Server.UseSsl)
                 {
                     m_sslHelper = new SslHelper(m_socket, Server.Name);
+                    m_sslHelper.ValidateCertEnabled = !Server.NoValidation;
                 }
                 m_connectAsync = m_socket.BeginConnect(server.GetEndPoint(), new AsyncCallback(OnConnected), m_socket);
             }
@@ -1786,7 +1787,24 @@ namespace EbiSoft.EbIRC.IRC {
             get { return m_ownerControl; }
             set { m_ownerControl = value; }
         }
-	
+
+        /// <summary>
+        /// 最後のSSLエラーを取得します。
+        /// </summary>
+        public SslValidateErrors SslValidateError
+        {
+            get
+            {
+                if (m_sslHelper != null)
+                {
+                    return m_sslHelper.LastValidateCertError;
+                }
+                else
+                {
+                    return SslValidateErrors.Unknown;
+                }
+            }
+        }
 
         #endregion
 

@@ -313,4 +313,22 @@ euc-jp</value>
   <data name="SwitcherMenuCaption" xml:space="preserve">
     <value>CH変更</value>
   </data>
+  <data name="SslValidateErrorBadDataString" xml:space="preserve">
+    <value>SSL接続失敗：証明書が対応していない形式か、壊れています。</value>
+  </data>
+  <data name="SslValidateErrorExpiredString" xml:space="preserve">
+    <value>SSL接続失敗：証明書が有効期限切れです。</value>
+  </data>
+  <data name="SslValidateErrorInvalidIssuerString" xml:space="preserve">
+    <value>SSL接続失敗：発行機関が信頼されていないか、自己署名証明書です。</value>
+  </data>
+  <data name="SslValidateErrorNotEffectDateString" xml:space="preserve">
+    <value>SSL接続失敗：証明書の有効期間が始まっていません。</value>
+  </data>
+  <data name="SslValidateErrorNotValidateString" xml:space="preserve">
+    <value>SSL警告：署名検証をせずに暗号化接続しました。</value>
+  </data>
+  <data name="SslValidateErrorOtherSiteString" xml:space="preserve">
+    <value>SSL接続失敗：他のサイトの証明書です。</value>
+  </data>
 </root>

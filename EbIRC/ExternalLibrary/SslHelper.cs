@@ -44,6 +44,9 @@ namespace SslTest
         private IntPtr ptrHost;
         private IntPtr hookFunc;
 
+        private bool m_validateCertEnabled = true;
+        private SslValidateErrors m_lastValidateCertError = SslValidateErrors.Unknown;
+
         public SslHelper(Socket socket, string host)
         {
             //The managed SocketOptionName enum doesn't have SO_SECURE so here we cast the integer value
@@ -115,14 +118,25 @@ namespace SslTest
             //
             //So here we are responsible for validating the dates on the certificate and the CN
 
+            if (!m_validateCertEnabled)
+            {
+                m_lastValidateCertError = SslValidateErrors.NotValidate;
+                return SSL_ERR_OKAY;
+            }
 
             if (dwType != SSL_CERT_X59)
+            {
+                m_lastValidateCertError = SslValidateErrors.BadData;
                 return SSL_ERR_BAD_TYPE;
+            }
 
             //When in debug mode let self-signed certificates through ...
 #if !DEBUG
-            if ((dwFlags & SSL_CERT_FLAG_ISSUER_UNKNOWN) != 0)
+            if ((dwFlags & SSL_CERT_FLAG_ISSUER_UNKNOWN) != 0) 
+            {
+                m_lastValidateCertError = SslValidateErrors.InvalidIssuer;
                 return SSL_ERR_CERT_UNKNOWN;
+            }
 #endif
 
             Debug.Assert(dwChainLen == 1);
@@ -147,16 +161,29 @@ namespace SslTest
             {
                 cert = new X509Certificate2(certData);
             }
-            catch (ArgumentException) { return SSL_ERR_BAD_DATA; }
-            catch (CryptographicException) { return SSL_ERR_BAD_DATA; }
+            catch (ArgumentException) {
+                m_lastValidateCertError = SslValidateErrors.BadData;
+                return SSL_ERR_BAD_DATA; 
+            }
+            catch (CryptographicException)
+            {
+                m_lastValidateCertError = SslValidateErrors.BadData;
+                return SSL_ERR_BAD_DATA;
+            }
 
             //Validate the expiration date
             if (DateTime.Now > DateTime.Parse(cert.GetExpirationDateString(), CultureInfo.CurrentCulture))
+            {
+                m_lastValidateCertError = SslValidateErrors.Expired;
                 return SSL_ERR_CERT_EXPIRED;
+            }
 
             //Validate the effective date
             if (DateTime.Now < DateTime.Parse(cert.GetEffectiveDateString(), CultureInfo.CurrentCulture))
+            {
+                m_lastValidateCertError = SslValidateErrors.NotEffectDate;
                 return SSL_ERR_FAILED;
+            }
 
             string certName = cert.GetName();
             Debug.WriteLine(certName);
@@ -164,11 +191,14 @@ namespace SslTest
             //Validate the CN
             string host = ReadAnsiString(pvArg);
             if (!certName.Contains("CN=" + host))
+            {
+                m_lastValidateCertError = SslValidateErrors.OtherSite;
                 return SSL_ERR_FAILED;
+            }
 
+            m_lastValidateCertError = SslValidateErrors.Okay;
             return SSL_ERR_OKAY;
         }
-
         private static string ReadAnsiString(IntPtr pvArg)
         {
             byte[] buffer = new byte[1024];
@@ -180,6 +210,18 @@ namespace SslTest
             } while (buffer[j - 1] != 0);
             string host = Encoding.ASCII.GetString(buffer, 0, j - 1);
             return host;
+        }
+
+
+        public bool ValidateCertEnabled
+        {
+            get { return m_validateCertEnabled; }
+            set { m_validateCertEnabled = value; }
+        }
+
+        public SslValidateErrors LastValidateCertError
+        {
+            get { return m_lastValidateCertError; }
         }
     }
 }

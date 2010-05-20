@@ -57,6 +57,7 @@ namespace EbiSoft.EbIRC
         public SettingForm()
         {
             InitializeComponent();
+            InTheHand.WindowsMobile.Forms.TabControlHelper.EnableVisualStyle(tabControl);
         }
 
         private void SettingForm_Load(object sender, EventArgs e)
@@ -298,6 +299,7 @@ namespace EbiSoft.EbIRC
             prof.Realname = nameInputbox.Text;
             prof.Encoding = encodingSelectBox.Text;
             prof.UseSsl = serverUseSslCheckBox.Checked;
+            prof.NoValidation = serverSslNotValidateCheckBox.Checked;
         }
 
         /// <summary>
@@ -315,6 +317,8 @@ namespace EbiSoft.EbIRC
             passwordInputBox.Text = prof.Password;
             encodingSelectBox.Text = prof.Encoding;
             serverUseSslCheckBox.Checked = prof.UseSsl;
+            serverSslNotValidateCheckBox.Checked = prof.NoValidation;
+            serverSslNotValidateCheckBox.Enabled = prof.UseSsl;
         }
 
         /// <summary>
@@ -406,6 +410,11 @@ namespace EbiSoft.EbIRC
                     logDirectoryNameTextBox.Text = dialog.SelectedDirectory;
                 }
             }
+        }
+
+        private void serverUseSslCheckBox_CheckStateChanged(object sender, EventArgs e)
+        {
+            serverSslNotValidateCheckBox.Enabled = serverUseSslCheckBox.Checked;
         }
     }
 }

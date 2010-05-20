@@ -98,6 +98,8 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ChannelNameEqualityComparer.cs" />
+    <Compile Include="ExternalLibrary\SslErrors.cs" />
+    <Compile Include="ExternalLibrary\TabControlHelper.cs" />
     <Compile Include="Settings\ChannelSetting.cs" />
     <Compile Include="ChannelSettingForm.cs">
       <SubType>Form</SubType>

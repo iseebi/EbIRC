@@ -52,6 +52,16 @@ namespace EbiSoft.EbIRC.Settings
         private bool m_useSsl;
 
         /// <summary>
+        /// SSLの使用
+        /// </summary>
+        public bool NoValidation
+        {
+            get { return m_noValidation; }
+            set { m_noValidation = value; }
+        }
+        private bool m_noValidation;
+
+        /// <summary>
         /// パスワード
         /// </summary>
         public string Password

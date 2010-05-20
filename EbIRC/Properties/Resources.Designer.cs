@@ -567,6 +567,60 @@ namespace EbiSoft.EbIRC.Properties {
         }
         
         /// <summary>
+        ///   SSL Validation Error: Certification type not supported or broken. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string SslValidateErrorBadDataString {
+            get {
+                return ResourceManager.GetString("SslValidateErrorBadDataString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   SSL Validation Error: Expired. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string SslValidateErrorExpiredString {
+            get {
+                return ResourceManager.GetString("SslValidateErrorExpiredString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   SSL Validation Error: Invalid issuer. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string SslValidateErrorInvalidIssuerString {
+            get {
+                return ResourceManager.GetString("SslValidateErrorInvalidIssuerString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   SSL Validation Error: Not effect date. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string SslValidateErrorNotEffectDateString {
+            get {
+                return ResourceManager.GetString("SslValidateErrorNotEffectDateString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   SSL Warning: Not validation. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string SslValidateErrorNotValidateString {
+            get {
+                return ResourceManager.GetString("SslValidateErrorNotValidateString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   SSL Validation Error: Certification is for other site. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string SslValidateErrorOtherSiteString {
+            get {
+                return ResourceManager.GetString("SslValidateErrorOtherSiteString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Switch ch に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string SwitcherMenuCaption {

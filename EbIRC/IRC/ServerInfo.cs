@@ -10,6 +10,7 @@ namespace EbiSoft.EbIRC.IRC {
 		int    m_port;
 		string m_password;
         private bool m_useSsl;
+        private bool m_noValidation;
 
         /// <summary>
         /// サーバー名
@@ -43,7 +44,15 @@ namespace EbiSoft.EbIRC.IRC {
             get { return m_useSsl; }
             set { m_useSsl = value; }
         }
-	
+
+        /// <summary>
+        /// 署名検証しない
+        /// </summary>
+        public bool NoValidation
+        {
+            get { return m_noValidation; }
+            set { m_noValidation = value; }
+        }
 
         /// <summary>
         /// コンストラクタ
@@ -51,7 +60,7 @@ namespace EbiSoft.EbIRC.IRC {
         /// <param name="name">サーバー名</param>
         /// <param name="port">ポート</param>
         /// <param name="password">パスワード</param>
-		public ServerInfo(string name, int port, string password) : this (name,port,password,false)
+		public ServerInfo(string name, int port, string password) : this (name,port,password,false,false)
         {
 		}
 
@@ -62,12 +71,13 @@ namespace EbiSoft.EbIRC.IRC {
         /// <param name="port">ポート</param>
         /// <param name="password">パスワード</param>
         /// <param name="ssl">SSLの使用</param>
-        public ServerInfo(string name, int port, string password, bool useSsl)
+        public ServerInfo(string name, int port, string password, bool useSsl, bool noValidation)
         {
             m_name = name;
             m_port = port;
             m_password = password;
             m_useSsl = useSsl;
+            m_noValidation = noValidation;
         }
 
         /// <summary>

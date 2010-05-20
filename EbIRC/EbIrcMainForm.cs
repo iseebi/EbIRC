@@ -94,6 +94,8 @@ namespace EbiSoft.EbIRC
         {
             InitializeComponent();
 
+            logTextBox.BackColor = SystemColors.Window;
+
             // 定数ロード
             CONNMGR_URL_FORMAT = "http://{0}:{1}/";
             LOG_KEY_SERVER     = Resources.ChannelSelecterServerCaption;
@@ -341,9 +343,10 @@ namespace EbiSoft.EbIRC
                     }
 
                     BroadcastLog(Resources.BeginConnection);
-                    IRCClient.Encoding = SettingManager.Data.Profiles.ActiveProfile.GetEncoding();
+                    ircClient.Encoding = SettingManager.Data.Profiles.ActiveProfile.GetEncoding();
                     ircClient.Connect(SettingManager.Data.Profiles.ActiveProfile.Server, (int)SettingManager.Data.Profiles.ActiveProfile.Port,
                         SettingManager.Data.Profiles.ActiveProfile.Password, SettingManager.Data.Profiles.ActiveProfile.UseSsl,
+                        SettingManager.Data.Profiles.ActiveProfile.NoValidation,
                         SettingManager.Data.Profiles.ActiveProfile.Nickname, SettingManager.Data.Profiles.ActiveProfile.Realname);
                     SetConnectionMenuText();
 
@@ -891,6 +894,10 @@ namespace EbiSoft.EbIRC
         {
             // すべてのチャンネルにログを追加・デフォルトチャンネルなら接続
             BroadcastLog(Resources.Connected);
+            if (ircClient.SslValidateError == SslTest.SslValidateErrors.NotValidate)
+            {
+                BroadcastLog(Resources.SslValidateErrorNotValidateString);
+            }
             CommitStoredLog();
             SetConnectionMenuText();
         }
@@ -902,8 +909,29 @@ namespace EbiSoft.EbIRC
         /// <param name="e"></param>
         void ircClient_ConnectionFailed(object sender, EventArgs e)
         {
+            /*
             MessageBox.Show(Resources.CannotConnectMessage, Resources.ConnectionError, 
                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+             */
+            BroadcastLog(Resources.CannotConnectMessage);
+            switch (ircClient.SslValidateError)
+            {
+                case SslTest.SslValidateErrors.InvalidIssuer:
+                    BroadcastLog(Resources.SslValidateErrorInvalidIssuerString);
+                    break;
+                case SslTest.SslValidateErrors.BadData:
+                    BroadcastLog(Resources.SslValidateErrorBadDataString);
+                    break;
+                case SslTest.SslValidateErrors.Expired:
+                    BroadcastLog(Resources.SslValidateErrorExpiredString);
+                    break;
+                case SslTest.SslValidateErrors.NotEffectDate:
+                    BroadcastLog(Resources.SslValidateErrorNotEffectDateString);
+                    break;
+                case SslTest.SslValidateErrors.OtherSite:
+                    BroadcastLog(Resources.SslValidateErrorOtherSiteString);
+                    break;
+            }
             SetDisconnected();
         }
 

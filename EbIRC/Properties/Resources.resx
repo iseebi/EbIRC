@@ -314,4 +314,22 @@ UTF-8</value>
   <data name="SwitcherMenuCaption" xml:space="preserve">
     <value>Switch ch</value>
   </data>
+  <data name="SslValidateErrorBadDataString" xml:space="preserve">
+    <value>SSL Validation Error: Certification type not supported or broken.</value>
+  </data>
+  <data name="SslValidateErrorExpiredString" xml:space="preserve">
+    <value>SSL Validation Error: Expired.</value>
+  </data>
+  <data name="SslValidateErrorInvalidIssuerString" xml:space="preserve">
+    <value>SSL Validation Error: Invalid issuer.</value>
+  </data>
+  <data name="SslValidateErrorNotEffectDateString" xml:space="preserve">
+    <value>SSL Validation Error: Not effect date.</value>
+  </data>
+  <data name="SslValidateErrorNotValidateString" xml:space="preserve">
+    <value>SSL Warning: Not validation.</value>
+  </data>
+  <data name="SslValidateErrorOtherSiteString" xml:space="preserve">
+    <value>SSL Validation Error: Certification is for other site.</value>
+  </data>
 </root>
