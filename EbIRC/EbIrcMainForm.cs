@@ -149,6 +149,7 @@ namespace EbiSoft.EbIRC
             m_logBoxFilter = new LogBoxInputFilter(logTextBox);
             m_logBoxFilter.TapUp += new EventHandler(m_logBoxFilter_TapUp);
             m_logBoxFilter.Resize += new EventHandler(m_logBoxFilter_Resize);
+            m_logBoxFilter.Flick += new EventHandler<FlickEventArgs>(m_logBoxFilter_Flick);
 
             // UI設定をアップデートする
             SetConnectionMenuText(); // 接続メニュー
@@ -881,6 +882,32 @@ namespace EbiSoft.EbIRC
         {
             logTextBox.SelectionStart = logTextBox.TextLength;
             logTextBox.ScrollToCaret();
+        }
+
+        void m_logBoxFilter_Flick(object sender, FlickEventArgs e)
+        {
+            switch (e.Direction)
+            {
+                case FlickDirection.None:
+                    System.Diagnostics.Debug.WriteLine("Flick.None");
+                    break;
+                case FlickDirection.Down:
+                    System.Diagnostics.Debug.WriteLine("Flick.Down");
+                    break;
+                case FlickDirection.Left:
+                    System.Diagnostics.Debug.WriteLine("Flick.Left");
+                    this.SwitchNextChannel();
+                    break;
+                case FlickDirection.Up:
+                    System.Diagnostics.Debug.WriteLine("Flick.Up");
+                    break;
+                case FlickDirection.Right:
+                    System.Diagnostics.Debug.WriteLine("Flick.Right");
+                    this.SwitchPrevChannel();
+                    break;
+                default:
+                    break;
+            }
         }
 
         #endregion

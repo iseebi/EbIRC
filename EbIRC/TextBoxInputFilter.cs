@@ -18,14 +18,14 @@ namespace EbiSoft.EbIRC
         private const int GWL_WNDPROC = -4;
 
         [DllImport("coredll.dll")]
-        private extern static int CallWindowProc(IntPtr lpPrevWndFunc, IntPtr hwnd, uint msg, uint wParam, int lParam);
+        private extern static int CallWindowProc(IntPtr lpPrevWndFunc, IntPtr hwnd, uint msg, uint wParam, IntPtr lParam);
 
         #endregion
 
         /// <summary>
         /// サブクラス化するウィンドウプロシージャのデリゲート
         /// </summary>
-        private delegate int WndProcDelegate(IntPtr hwnd, uint msg, uint wParam, int lParam);
+        private delegate int WndProcDelegate(IntPtr hwnd, uint msg, uint wParam, IntPtr lParam);
 
         private bool disposed = false;    // Dispose が呼ばれたか
         private IntPtr oldWndProc;        // 前のハンドル
@@ -63,7 +63,7 @@ namespace EbiSoft.EbIRC
         /// <summary>
         /// ウィンドウプロシージャ
         /// </summary>
-        protected virtual int WndProc(IntPtr hwnd, uint msg, uint wParam, int lParam)
+        protected virtual int WndProc(IntPtr hwnd, uint msg, uint wParam, IntPtr lParam)
         {
             // デフォルトのプロシージャへ
             return CallWindowProc(oldWndProc, hwnd, msg, wParam, lParam);

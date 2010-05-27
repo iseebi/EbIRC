@@ -64,7 +64,7 @@ namespace EbiSoft.EbIRC
         /// <summary>
         /// ウィンドウプロシージャ
         /// </summary>
-        protected override int WndProc(IntPtr hwnd, uint msg, uint wParam, int lParam)
+        protected override int WndProc(IntPtr hwnd, uint msg, uint wParam, IntPtr lParam)
         {
             switch (msg)
             {
