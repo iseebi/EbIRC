@@ -332,4 +332,28 @@ UTF-8</value>
   <data name="SslValidateErrorOtherSiteString" xml:space="preserve">
     <value>SSL Validation Error: Certification is for other site.</value>
   </data>
+  <data name="ChannelSelecterWholeCaption" xml:space="preserve">
+    <value>&lt;All channels&gt;</value>
+  </data>
+  <data name="ChannelSelecterHilightsCaption" xml:space="preserve">
+    <value>&lt;Highlights&gt;</value>
+  </data>
+  <data name="HilightTitlebar" xml:space="preserve">
+    <value>EbIRC &lt;Hilights&gt;</value>
+  </data>
+  <data name="HilightTopicbar" xml:space="preserve">
+    <value>Hilights</value>
+  </data>
+  <data name="WholeNoticeLogFormat" xml:space="preserve">
+    <value>[{0}] {1}: {2}</value>
+  </data>
+  <data name="WholePrivmsgLogFormat" xml:space="preserve">
+    <value>[{0}] {1}&gt; {2}</value>
+  </data>
+  <data name="WholeTitlebar" xml:space="preserve">
+    <value>EbIRC &lt;All channels&gt;</value>
+  </data>
+  <data name="WholeTopicbar" xml:space="preserve">
+    <value>All channels</value>
+  </data>
 </root>

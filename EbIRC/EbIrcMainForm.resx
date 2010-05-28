@@ -123,9 +123,6 @@
   <data name="multiMenuItem.Text" xml:space="preserve">
     <value>Test</value>
   </data>
-  <data name="menuChannelControlMenuItem.Text" xml:space="preserve">
-    <value>Control channels</value>
-  </data>
   <data name="menuChannelListServerMenuItem.Text" xml:space="preserve">
     <value>Server message</value>
   </data>
@@ -134,6 +131,15 @@
   </data>
   <data name="menuChannelListMenuItem.Text" xml:space="preserve">
     <value>Channel list</value>
+  </data>
+  <data name="menuAllChannelMenuItem.Text" xml:space="preserve">
+    <value>All channels</value>
+  </data>
+  <data name="menuAllHilightsMenuItem.Text" xml:space="preserve">
+    <value>All Hilights</value>
+  </data>
+  <data name="menuChannelControlMenuItem.Text" xml:space="preserve">
+    <value>Control channels</value>
   </data>
   <data name="connectionMenuItem.Text" xml:space="preserve">
     <value />
@@ -312,17 +318,26 @@
   <metadata name="pongTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>365, 17</value>
   </metadata>
-  <metadata name="clearHighlightTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="clearHilightTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>473, 17</value>
   </metadata>
   <metadata name="channelContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>631, 17</value>
   </metadata>
   <data name="menuHilightedMessages.Text" xml:space="preserve">
-    <value>Highlighted</value>
+    <value>Hilighted</value>
   </data>
   <data name="menuHilightedSeparator.Text" xml:space="preserve">
     <value>-</value>
+  </data>
+  <data name="menuWholeSeparator.Text" xml:space="preserve">
+    <value>-</value>
+  </data>
+  <data name="menuAllChannelMessage.Text" xml:space="preserve">
+    <value>All channels</value>
+  </data>
+  <data name="menuAllHilightsMessages.Text" xml:space="preserve">
+    <value>All hilighted</value>
   </data>
   <metadata name="$this.FormFactorShadowProperty" xml:space="preserve">
     <value>Pocket_PC_Phone_VGA</value>
@@ -351,10 +366,10 @@
   <data name="&gt;&gt;mainMenu1.Type" xml:space="preserve">
     <value>System.Windows.Forms.MainMenu, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;connectionMenuItem.Name" xml:space="preserve">
-    <value>connectionMenuItem</value>
+  <data name="&gt;&gt;multiMenuItem.Name" xml:space="preserve">
+    <value>multiMenuItem</value>
   </data>
-  <data name="&gt;&gt;connectionMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;multiMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;menuMenuItem.Name" xml:space="preserve">
@@ -385,6 +400,12 @@
     <value>menuItem3</value>
   </data>
   <data name="&gt;&gt;menuItem3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;connectionMenuItem.Name" xml:space="preserve">
+    <value>connectionMenuItem</value>
+  </data>
+  <data name="&gt;&gt;connectionMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;menuItem8.Name" xml:space="preserve">
@@ -495,10 +516,10 @@
   <data name="&gt;&gt;pongTimer.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;clearHighlightTimer.Name" xml:space="preserve">
-    <value>clearHighlightTimer</value>
+  <data name="&gt;&gt;clearHilightTimer.Name" xml:space="preserve">
+    <value>clearHilightTimer</value>
   </data>
-  <data name="&gt;&gt;clearHighlightTimer.Type" xml:space="preserve">
+  <data name="&gt;&gt;clearHilightTimer.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;channelContextMenu.Name" xml:space="preserve">
@@ -519,10 +540,34 @@
   <data name="&gt;&gt;menuHilightedSeparator.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;multiMenuItem.Name" xml:space="preserve">
-    <value>multiMenuItem</value>
+  <data name="&gt;&gt;menuWholeSeparator.Name" xml:space="preserve">
+    <value>menuWholeSeparator</value>
   </data>
-  <data name="&gt;&gt;multiMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;menuWholeSeparator.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuAllChannelMessage.Name" xml:space="preserve">
+    <value>menuAllChannelMessage</value>
+  </data>
+  <data name="&gt;&gt;menuAllChannelMessage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuAllHilightsMessages.Name" xml:space="preserve">
+    <value>menuAllHilightsMessages</value>
+  </data>
+  <data name="&gt;&gt;menuAllHilightsMessages.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuAllChannelMenuItem.Name" xml:space="preserve">
+    <value>menuAllChannelMenuItem</value>
+  </data>
+  <data name="&gt;&gt;menuAllChannelMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuAllHilightsMenuItem.Name" xml:space="preserve">
+    <value>menuAllHilightsMenuItem</value>
+  </data>
+  <data name="&gt;&gt;menuAllHilightsMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

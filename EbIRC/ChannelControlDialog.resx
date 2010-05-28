@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <root>
-	<!-- 
+  <!-- 
     Microsoft ResX Schema 
     
     Version 2.0
@@ -59,400 +59,407 @@
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
-	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-		<xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
-		<xsd:element name="root" msdata:IsDataSet="true">
-			<xsd:complexType>
-				<xsd:choice maxOccurs="unbounded">
-					<xsd:element name="metadata">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0"/>
-							</xsd:sequence>
-							<xsd:attribute name="name" use="required" type="xsd:string"/>
-							<xsd:attribute name="type" type="xsd:string"/>
-							<xsd:attribute name="mimetype" type="xsd:string"/>
-							<xsd:attribute ref="xml:space"/>
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="assembly">
-						<xsd:complexType>
-							<xsd:attribute name="alias" type="xsd:string"/>
-							<xsd:attribute name="name" type="xsd:string"/>
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="data">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
-							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
-							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
-							<xsd:attribute ref="xml:space"/>
-						</xsd:complexType>
-					</xsd:element>
-					<xsd:element name="resheader">
-						<xsd:complexType>
-							<xsd:sequence>
-								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
-							</xsd:sequence>
-							<xsd:attribute name="name" type="xsd:string" use="required"/>
-						</xsd:complexType>
-					</xsd:element>
-				</xsd:choice>
-			</xsd:complexType>
-		</xsd:element>
-	</xsd:schema>
-	<data name="&gt;&gt;imageList.Type" xml:space="preserve">
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="&gt;&gt;imageList.Type" xml:space="preserve">
     <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
-	<data name="openedChannelListview.TabIndex" type="System.Int32, mscorlib">
-		<value>1</value>
-	</data>
-	<assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"/>
-	<data name="openedChannelListview.Size" type="System.Drawing.Size, System.Drawing">
-		<value>480, 211</value>
-	</data>
-	<data name="&gt;&gt;openedChannelContextMenu.Name" xml:space="preserve">
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="openedChannelListview.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="openedChannelListview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 211</value>
+  </data>
+  <data name="&gt;&gt;openedChannelContextMenu.Name" xml:space="preserve">
     <value>openedChannelContextMenu</value>
   </data>
-	<assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
-	<data name="memberListView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-		<value>Fill</value>
-	</data>
-	<data name="removeChannelMenuItem.Text" xml:space="preserve">
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="memberListView.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="removeChannelMenuItem.Text" xml:space="preserve">
     <value>Remove from view</value>
   </data>
-	<data name="&gt;&gt;leaveMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;leaveMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="&gt;&gt;memberLabel.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;memberPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="&gt;&gt;imageList.Name" xml:space="preserve">
+  <data name="&gt;&gt;imageList.Name" xml:space="preserve">
     <value>imageList</value>
   </data>
-	<data name="&gt;&gt;mainMenu.Type" xml:space="preserve">
+  <data name="&gt;&gt;mainMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.MainMenu, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="&gt;&gt;channelLabel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;channelLabel.Parent" xml:space="preserve">
     <value>openedChannelPanel</value>
   </data>
-	<data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-		<value>480, 536</value>
-	</data>
-	<data name="&gt;&gt;memberListView.Name" xml:space="preserve">
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>480, 536</value>
+  </data>
+  <data name="&gt;&gt;memberListView.Name" xml:space="preserve">
     <value>memberListView</value>
   </data>
-	<data name="&gt;&gt;openedChannelListview.Type" xml:space="preserve">
+  <data name="&gt;&gt;openedChannelListview.Type" xml:space="preserve">
     <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="memberHeader.Width" type="System.Int32, mscorlib">
-		<value>60</value>
-	</data>
-	<data name="&gt;&gt;memberPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="memberHeader.Width" type="System.Int32, mscorlib">
+    <value>60</value>
   </data>
-	<data name="closeMenuItem.Text" xml:space="preserve">
+  <data name="closeMenuItem.Text" xml:space="preserve">
     <value>Close</value>
   </data>
-	<data name="&gt;&gt;memberContextMenu.Type" xml:space="preserve">
+  <data name="&gt;&gt;memberContextMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenu, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="&gt;&gt;addPMMemberMenuItem.Name" xml:space="preserve">
+  <data name="&gt;&gt;addPMMemberMenuItem.Name" xml:space="preserve">
     <value>addPMMemberMenuItem</value>
   </data>
-	<data name="memberLabel.Location" type="System.Drawing.Point, System.Drawing">
-		<value>0, 0</value>
-	</data>
-	<data name="$this.Text" xml:space="preserve">
+  <data name="memberLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
     <value>Control channels</value>
   </data>
-	<data name="$this.Location" type="System.Drawing.Point, System.Drawing">
-		<value>0, 52</value>
-	</data>
-	<data name="openedChannelPanel.Size" type="System.Drawing.Size, System.Drawing">
-		<value>480, 245</value>
-	</data>
-	<data name="memberPanel.Location" type="System.Drawing.Point, System.Drawing">
-		<value>0, 245</value>
-	</data>
-	<data name="&gt;&gt;memberListView.ZOrder" xml:space="preserve">
+  <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 52</value>
+  </data>
+  <data name="openedChannelPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 245</value>
+  </data>
+  <data name="memberPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 245</value>
+  </data>
+  <data name="&gt;&gt;memberListView.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-	<data name="addSenderMenuItem.Text" xml:space="preserve">
+  <data name="addSenderMenuItem.Text" xml:space="preserve">
     <value>Add receiver...</value>
   </data>
-	<data name="joinMenuItem.Text" xml:space="preserve">
+  <data name="joinMenuItem.Text" xml:space="preserve">
     <value>Join to channel</value>
   </data>
-	<data name="&gt;&gt;addSenderMenuItem.Name" xml:space="preserve">
+  <data name="&gt;&gt;addSenderMenuItem.Name" xml:space="preserve">
     <value>addSenderMenuItem</value>
   </data>
-	<data name="&gt;&gt;openedChannelContextMenu.Type" xml:space="preserve">
+  <data name="&gt;&gt;openedChannelContextMenu.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenu, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="channelLabel.Text" xml:space="preserve">
+  <data name="channelLabel.Text" xml:space="preserve">
     <value>Channel / PM in view</value>
   </data>
-	<data name="memberPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-		<value>Fill</value>
-	</data>
-	<data name="openedChannelListview.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-		<value>Fill</value>
-	</data>
-	<data name="openedChannelHeader.Text" xml:space="preserve">
-    <value>ColumnHeader</value>
-  </data>
-	<data name="&gt;&gt;memberHeader.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-	<data name="&gt;&gt;menuItem3.Type" xml:space="preserve">
+  <data name="&gt;&gt;addPMMemberMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="resource1" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-		<value>
+  <data name="openedChannelListview.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="openedChannelHeader.Text" xml:space="preserve">
+    <value>ColumnHeader</value>
+  </data>
+  <data name="&gt;&gt;memberHeader.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuItem3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="resource1" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAV9JREFUOE+Nk79K
-        A0EQh+cewpfwHQTfIKUixCpFsBBLtRC7s1QQwcZUCYJY5ApFbFNoE8uAXSx8AAuVoLfeN/qLe7nzz8Aw
-        u8fNtzO/nU2ssIebozDK1lhW7OnZwntuycvEbPJm9lpEbG6+YSub/cSTr7YtEGftcTzKx/fDcDfoh8Fl
-        J1x0U/feXiO0Fs2jxclA5MNsJ7893wrXJ+2QHTb9Z3kMcQBGItR06XfXyUBYlwAk/9SOWuUfKqkFxMnd
-        3YVpNaxVpQBoUqqAntUOCUqSsNoDQBOEnQJQG8EE2G9+6qIqWJOoiLDcTgHI7WzD/Kr4mC5bzk9/ATiM
-        Q72C03XzcihLgLoW1AqV0C57B3Ta5kOCsgDUaywiSfFeQ+eA45ZNpwtADKmM5pcWJcDB6jcA4n+8AtBg
-        xOOKJgiLYPQcj3k8uRY/DD0WNEFYbge1Z1vR2BP9aQpSU75fVZ0r+QPf7ZfLz7/SXAAAAABJRU5ErkJg
-        gg==
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAUhJREFUOE+FkzFP
+        QkEQhPePmfAPLKXBioLK2EJB7J6lJsTERiqMiaGQAmNsKbTB0sQOCn/GrXwH87IPLnLJ5u5e3szNzs2Z
+        bcb6487fBlas50tLTxfm4575fdf89nxbj9enDrYGQ7I/flffafWz9K/Fiy9exz6fVLkAd1s7Ek4WmFm1
+        nA3T57Tv7w89n406GaSKJAYBAyCs1dn/pZMhYd0gABwVxZbkE/+gpEgQwZOrk1oNa6kUAZ40FNCz2gEg
+        kFRoDwGeYGxNgNsYJoKbztYXqWANUDPGcjsbgmTcMxs+Vm1L/HSMgMM4NCsgJMhBlghKLagVlNAu+0xA
+        wjAEZyFQr9FEQHGv3GQC4qlgQBBJDqK586JBQK5jsmA9VgcECkaMK55gLIbRc4x5TK7Fh6HHgicYy+3g
+        9n4rij1zfpEiKUjPV1Uqgf8AC6ukvfP1c/gAAAAASUVORK5CYII=
 </value>
-	</data>
-	<data name="resource2" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-		<value>
+  </data>
+  <data name="resource2" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAVxJREFUOE+Nkz1L
-        A0EQhkf/gIgfWMXaKq1YCGKhQQkKVmpIY6URrDWFYKMIEsEmWolgIXY2+i8E/8+s++zd3s3Gi1xg2NvN
-        7rMz77w74ZyTg8dTff35kOqfS5fzaXNhSb77n5OyP+yp9BaVcfj1ksTl+51evN3o8fO5dp/OdOfhKETz
-        akNldz4b7WEgMbbuu7o5ONTV2z1dvm6HzTEsJAC4OWSyMuWkPfdfhD2AgJBFAvAQ52GOMQcXc9bjfwVg
-        ezYFsIEbRke7FjNAE2nNlABqHgvIygxwMkMThJX16QyA2q1BpxIQ07YlICzdkbUAaGjfT1isWwLd4VKf
-        UQYgHdIaC/CdKUrw33m5JQBBULYuIJquyCAaI2mj6QbesBmkgJNGaU9UrhF/ANEY1q5ogrB0h5qtzY1z
-        VezDiI8FTRCW7qD26CPLbZ/Zn+ccIcHb2BOHYRL6TKsqgsOc/QX1KPcQv7wMoQAAAABJRU5ErkJggg==
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAU1JREFUOE+Nk79K
+        A0EQh/cNRPxTxkewFQtBLDQoQcFKlDRWmiK1Wgg2iiARbIKV2Ikv4MvNOt/uzWY25uSKYe/2br6d+c1v
+        Q4wxnE1HEkYbLdHTfRfX+qyx+bAv5JZkINOfzyruv1/k9utJrj5uZPg+luO3yxQkh5P1vHKyJbNaHL4O
+        5WByLjvPp7L1OEg/W3hIAnByamN7KYbB2n+R/gEEhCoqgEKiwiJrAy7v7Nu3AjharQH8wAnzq9+zCtAk
+        9FdmAHpuBeQ2E5zK0ARhw95yBqB2f3KxEGBl+xYQlumE3QToyZ2+sNm1BabDoVpRBlAOZbUCdDKlBX1u
+        2p0BEARluwLMN6UCM0Y1RjcNvOErqAHq6+IsVO4QfwBmDG9XNEFYpkPP3ubOuRL8xbDLgiYIy3RQe/6S
+        NbbP9udKGiR5G3viMEzCnBnVgiCZ3F9C5AfTwHnKugAAAABJRU5ErkJggg==
 </value>
-	</data>
-	<data name="resource3" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-		<value>
+  </data>
+  <data name="resource3" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAW1JREFUOE+Nk71K
-        A1EQhc++hT6BoIXYaOUrmLyAYJfEVhCCIFil0cIUiU2wEgIKkkLQwlJBBAVFBUELtbcRwb8d75ndu85d
-        NosLA5flnm/PnJmNRASLtxvSfRmg8Hn9FHxLhLcv4CMG3n/0WmNuAZ3xpQiNm3XB0ax0nvYdK3zunu/j
-        i4crGZwdyvZxX1p7ba1Kry6ojopqrZgQX6vn3bh50pb6wZrM7y6ryJeFKIAPhaRiZay83B2CCNH7AcCJ
-        fSsKTOF60ZyHA8wluqIwc5cDMJPAAXu2X7EAe6aImTDYDMC0m6eupzIHqRuKGCyn485urv2Z+PLxWl8O
-        A1Dks+GZ0+FHEwc702qHtjiBvN2iVtiufw9sTemSVHq1UoB1YM/A5mS6XQkgGKPp208k3w7QmvgDsKd/
-        VOjAAWg/Wc9aVsyEwXI67NmuebC5+kNURzIIQcyEwXI6TDv/k/m1Vy0XzkMIyrWQjKqgqKH2Fy+1eL7n
-        E28YAAAAAElFTkSuQmCC
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAVpJREFUOE+Nk7FK
+        A0EQhucx9AksFCRNrHyG5AWsTV5ACIJgdY2NKdQm2CgEFMRC0MJSQQQFRQRBC32PG/eby66zx+XwYMiw
+        2f+ff/6ZFVWV4dueys16c0zXSjnpqhx1VPZXVYoVCzBgE/jg+4KD7Hv/+SifPl/08uFaj2+nWpyPLXqT
+        gUp/0UiEyhHMb4ydx8NydDfWwdWubpxtGSiGJzECPoCwyvZSe4Q7EEFi9zOCAPZq4n92cVaIfD6Bu2QO
+        hctJXY0ATzIF9OyreAKfA8ITjE0EuD26Dz21KZipAYSxTCfkpUiY8/PXqx3OIwAUvSFnOhStFJx2TQ6y
+        mEBdblMrtBvPhQ3DkN5ks5XAK/C5sJ7VYlQE2Rhd33Ei9XZEiuU/Anr6R+QKAgHVowpyAk8wlunQs1/z
+        bHPtQfQXEglEeIKxTAe3648srr1h03MOJBDVWqhG1RDxOf8C4+yFq0pVTmwAAAAASUVORK5CYII=
 </value>
-	</data>
-	<data name="&gt;&gt;openedChannelHeader.Name" xml:space="preserve">
+  </data>
+  <data name="&gt;&gt;openedChannelHeader.Name" xml:space="preserve">
     <value>openedChannelHeader</value>
   </data>
-	<data name="&gt;&gt;closeMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;closeMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="&gt;&gt;memberPanel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;memberPanel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-	<data name="&gt;&gt;menuItem3.Name" xml:space="preserve">
+  <data name="&gt;&gt;menuItem3.Name" xml:space="preserve">
     <value>menuItem3</value>
   </data>
-	<data name="channelLabel.Size" type="System.Drawing.Size, System.Drawing">
-		<value>480, 34</value>
-	</data>
-	<data name="memberListView.Size" type="System.Drawing.Size, System.Drawing">
-		<value>480, 257</value>
-	</data>
-	<data name="&gt;&gt;memberLabel.Name" xml:space="preserve">
+  <data name="channelLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 34</value>
+  </data>
+  <data name="memberListView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 257</value>
+  </data>
+  <data name="&gt;&gt;memberLabel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;memberLabel.Name" xml:space="preserve">
     <value>memberLabel</value>
   </data>
-	<data name="openedChannelPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-		<value>Top</value>
-	</data>
-	<data name="memberLabel.Text" xml:space="preserve">
+  <data name="openedChannelPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="memberLabel.Text" xml:space="preserve">
     <value>Member in channel</value>
   </data>
-	<data name="&gt;&gt;channelLabel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;channelLabel.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-	<data name="memberPanel.Size" type="System.Drawing.Size, System.Drawing">
-		<value>480, 291</value>
-	</data>
-	<data name="&gt;&gt;joinMenuItem.Name" xml:space="preserve">
+  <data name="memberPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 291</value>
+  </data>
+  <data name="&gt;&gt;joinMenuItem.Name" xml:space="preserve">
     <value>joinMenuItem</value>
   </data>
-	<data name="&gt;&gt;removeChannelMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;removeChannelMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="&gt;&gt;openedChannelPanel.Name" xml:space="preserve">
-    <value>openedChannelPanel</value>
-  </data>
-	<data name="&gt;&gt;$this.Name" xml:space="preserve">
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ChannelControlDialog</value>
   </data>
-	<data name="&gt;&gt;memberLabel.Type" xml:space="preserve">
+  <data name="&gt;&gt;memberLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="&gt;&gt;openedChannelListview.ZOrder" xml:space="preserve">
+  <data name="memberPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="&gt;&gt;openedChannelListview.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-	<data name="memberLabel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-		<value>Top</value>
-	</data>
-	<data name="&gt;&gt;closeMenuItem.Name" xml:space="preserve">
+  <data name="memberLabel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="&gt;&gt;closeMenuItem.Name" xml:space="preserve">
     <value>closeMenuItem</value>
   </data>
-	<data name="&gt;&gt;addPMMemberMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-	<data name="&gt;&gt;memberHeader.Name" xml:space="preserve">
+  <data name="&gt;&gt;memberHeader.Name" xml:space="preserve">
     <value>memberHeader</value>
   </data>
-	<data name="memberLabel.Size" type="System.Drawing.Size, System.Drawing">
-		<value>480, 34</value>
-	</data>
-	<data name="&gt;&gt;memberLabel.Parent" xml:space="preserve">
+  <data name="memberLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 34</value>
+  </data>
+  <data name="&gt;&gt;memberLabel.Parent" xml:space="preserve">
     <value>memberPanel</value>
   </data>
-	<data name="&gt;&gt;openedChannelPanel.Parent" xml:space="preserve">
+  <data name="&gt;&gt;openedChannelPanel.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-	<data name="&gt;&gt;openedChannelListview.Parent" xml:space="preserve">
+  <data name="&gt;&gt;openedChannelListview.Parent" xml:space="preserve">
     <value>openedChannelPanel</value>
   </data>
-	<data name="menuItem3.Text" xml:space="preserve">
+  <data name="menuItem3.Text" xml:space="preserve">
     <value>-</value>
   </data>
-	<data name="&gt;&gt;channelLabel.Name" xml:space="preserve">
+  <data name="&gt;&gt;channelLabel.Name" xml:space="preserve">
     <value>channelLabel</value>
   </data>
-	<data name="openedChannelListview.Location" type="System.Drawing.Point, System.Drawing">
-		<value>0, 34</value>
-	</data>
-	<data name="&gt;&gt;$this.Type" xml:space="preserve">
+  <data name="openedChannelListview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 34</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="&gt;&gt;openedChannelHeader.Type" xml:space="preserve">
+  <data name="&gt;&gt;openedChannelHeader.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="&gt;&gt;memberListView.Parent" xml:space="preserve">
+  <data name="&gt;&gt;memberListView.Parent" xml:space="preserve">
     <value>memberPanel</value>
   </data>
-	<data name="channelLabel.Location" type="System.Drawing.Point, System.Drawing">
-		<value>0, 0</value>
-	</data>
-	<data name="&gt;&gt;joinMenuItem.Type" xml:space="preserve">
+  <data name="channelLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;joinMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="$this.AutoScroll" type="System.Boolean, mscorlib">
-		<value>True</value>
-	</data>
-	<data name="memberListView.Location" type="System.Drawing.Point, System.Drawing">
-		<value>0, 34</value>
-	</data>
-	<data name="&gt;&gt;removeChannelMenuItem.Name" xml:space="preserve">
+  <data name="&gt;&gt;addSenderMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="memberListView.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 34</value>
+  </data>
+  <data name="&gt;&gt;removeChannelMenuItem.Name" xml:space="preserve">
     <value>removeChannelMenuItem</value>
   </data>
-	<data name="openedChannelPanel.Location" type="System.Drawing.Point, System.Drawing">
-		<value>0, 0</value>
-	</data>
-	<data name="&gt;&gt;openedChannelListview.Name" xml:space="preserve">
+  <data name="openedChannelPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;openedChannelListview.Name" xml:space="preserve">
     <value>openedChannelListview</value>
   </data>
-	<data name="addPMMemberMenuItem.Text" xml:space="preserve">
+  <data name="addPMMemberMenuItem.Text" xml:space="preserve">
     <value>Add to PM receiver</value>
   </data>
-	<data name="memberListView.TabIndex" type="System.Int32, mscorlib">
-		<value>1</value>
-	</data>
-	<data name="&gt;&gt;addSenderMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-	<data name="&gt;&gt;memberListView.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-	<data name="&gt;&gt;memberPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-	<data name="&gt;&gt;openedChannelPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-	<data name="&gt;&gt;openedChannelPanel.ZOrder" xml:space="preserve">
+  <data name="memberListView.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-	<data name="channelLabel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-		<value>Top</value>
-	</data>
-	<data name="&gt;&gt;memberPanel.Name" xml:space="preserve">
+  <data name="&gt;&gt;openedChannelPanel.Name" xml:space="preserve">
+    <value>openedChannelPanel</value>
+  </data>
+  <data name="&gt;&gt;memberListView.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;memberPanel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;openedChannelPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;openedChannelPanel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="channelLabel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="&gt;&gt;memberPanel.Name" xml:space="preserve">
     <value>memberPanel</value>
   </data>
-	<data name="&gt;&gt;memberContextMenu.Name" xml:space="preserve">
+  <data name="&gt;&gt;memberContextMenu.Name" xml:space="preserve">
     <value>memberContextMenu</value>
   </data>
-	<data name="&gt;&gt;leaveMenuItem.Name" xml:space="preserve">
+  <data name="&gt;&gt;leaveMenuItem.Name" xml:space="preserve">
     <value>leaveMenuItem</value>
   </data>
-	<data name="leaveMenuItem.Text" xml:space="preserve">
+  <data name="leaveMenuItem.Text" xml:space="preserve">
     <value>Leave from channel</value>
   </data>
-	<data name="memberHeader.Text" xml:space="preserve">
+  <data name="memberHeader.Text" xml:space="preserve">
     <value>ColumnHeader</value>
   </data>
-	<data name="&gt;&gt;channelLabel.Type" xml:space="preserve">
+  <data name="&gt;&gt;channelLabel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-	<data name="resource" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-		<value>
+  <data name="resource" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAATZJREFUOE9jZACC
-        6aef/M/ccRvExATfP/9n+PeXkeHnDwaGP7+A+CdYTYCqMMOGomBGsGaG5v3/QTQ6uP7wxb9zdx7/33j8
-        8v/5u0/+71i9B4wD+tb+Z/DOh9DImkGGwHD9jkv/qjaf+5+55OD/uNk7wYphGNkQsAEgAHYJ0FSG5In4
-        MdRmkCFg9SgGgDQDDcSLgWpALqHYAFCYoLgA5Gew84lwAShMQAELNwAU2qAAI9YAUMCCYgdowD8GhqpN
-        4KgCCRJrAMgykKUQF1SsBzsH5CxiDQB5FxRzEAMKl4MTCThREBkGsEQHMSB3ISJ1kWVA5iyU5ElMQkJ1
-        AdAAWMJATq6gMAEFLCjAQH5GTuYoKRc5Y8AyCyhMQAELih1QaKNnMliyB9PgrAnNXeBAQcWQqMKCYZoB
-        pglqGcgpzI0AAAAASUVORK5CYII=
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAASdJREFUOE+lkzFL
+        A0EQhef/pckvsLFKIWInaVKkSSVYBWIhgmARJCRpIgqSSoKQQgsbG9HCX3HjfHM3x21IwmIGhuOWnTdv
+        3rwVsRi+/qj0n7dnd1bI+UTl7E7l5EalM/JsX9wrtXUxIJvx8fVbrD+/dfryrtePKx2Mnzy9uHVagVjn
+        KOYb2Vu8Fd35Wju3Sz26evDLkU0QgTrhYxiqHF/uz6ozIH4/AaB4lxZxbndgcjAAmiQMmNnpZzBAE4St
+        AVAbwXIBEJbtGEAhYnvmh8NcAJrRtGRgJoEOtHIBGJfNlQDmMARxc2RqEL4pAcyetTH+BWC+TpyVYaSU
+        QfUwAiTsiiYIi2DM3LR54tzmw4jHgiYIy3ZQe/ORhe39SwSIi5JmuaotGcV/H2135cShJTwAAAAASUVO
+        RK5CYII=
 </value>
-	</data>
-	<data name="openedChannelHeader.Width" type="System.Int32, mscorlib">
-		<value>60</value>
-	</data>
-	<data name="&gt;&gt;mainMenu.Name" xml:space="preserve">
+  </data>
+  <data name="openedChannelHeader.Width" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="&gt;&gt;mainMenu.Name" xml:space="preserve">
     <value>mainMenu</value>
   </data>
-	<data name="$this.FormRotation" type="System.Int32, mscorlib">
-		<value>180</value>
-	</data>
-	<data name="imageList.TrayLocation" type="System.Drawing.Point, System.Drawing">
-		<value>115, 18</value>
-	</data>
-	<data name="$this.FormFactorShadowProperty" xml:space="preserve">
+  <metadata name="$this.FormRotation" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>180</value>
+  </metadata>
+  <metadata name="imageList.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>115, 18</value>
+  </metadata>
+  <metadata name="$this.FormFactorShadowProperty" xml:space="preserve">
     <value>Pocket_PC_Phone_VGA</value>
-  </data>
-	<data name="$this.Skin" type="System.Boolean, mscorlib">
-		<value>False</value>
-	</data>
-	<data name="mainMenu.TrayLocation" type="System.Drawing.Point, System.Drawing">
-		<value>17, 17</value>
-	</data>
-	<data name="memberContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing">
-		<value>419, 17</value>
-	</data>
-	<data name="$this.FormFactor" xml:space="preserve">
+  </metadata>
+  <metadata name="$this.Skin" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="mainMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="memberContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>419, 17</value>
+  </metadata>
+  <metadata name="$this.FormFactor" xml:space="preserve">
     <value>Pocket_PC_Phone_VGA</value>
-  </data>
-	<data name="$this.Localizable" type="System.Boolean, mscorlib">
-		<value>True</value>
-	</data>
-	<data name="openedChannelContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing">
-		<value>225, 17</value>
-	</data>
-	<data name="$this.Language" type="System.Globalization.CultureInfo, mscorlib">
-		<value>Japanese (Japan)</value>
-	</data>
-	<resheader name="resmimetype"><value>text/microsoft-resx</value></resheader><resheader name="version"><value>2.0</value></resheader><resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader><resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value></resheader></root>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="openedChannelContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>225, 17</value>
+  </metadata>
+</root>

@@ -166,11 +166,29 @@ namespace EbiSoft.EbIRC.Properties {
         }
         
         /// <summary>
+        ///   &lt;Highlights&gt; に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ChannelSelecterHilightsCaption {
+            get {
+                return ResourceManager.GetString("ChannelSelecterHilightsCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   &lt;server&gt; に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string ChannelSelecterServerCaption {
             get {
                 return ResourceManager.GetString("ChannelSelecterServerCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   &lt;All channels&gt; に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ChannelSelecterWholeCaption {
+            get {
+                return ResourceManager.GetString("ChannelSelecterWholeCaption", resourceCulture);
             }
         }
         
@@ -374,6 +392,24 @@ namespace EbiSoft.EbIRC.Properties {
         internal static string GoogleURL {
             get {
                 return ResourceManager.GetString("GoogleURL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   EbIRC &lt;Hilights&gt; に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string HilightTitlebar {
+            get {
+                return ResourceManager.GetString("HilightTitlebar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Hilights に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string HilightTopicbar {
+            get {
+                return ResourceManager.GetString("HilightTopicbar", resourceCulture);
             }
         }
         
@@ -689,6 +725,42 @@ namespace EbiSoft.EbIRC.Properties {
         internal static string VersionInfomation {
             get {
                 return ResourceManager.GetString("VersionInfomation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   [{0}] {1}: {2} に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string WholeNoticeLogFormat {
+            get {
+                return ResourceManager.GetString("WholeNoticeLogFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   [{0}] {1}&gt; {2} に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string WholePrivmsgLogFormat {
+            get {
+                return ResourceManager.GetString("WholePrivmsgLogFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   EbIRC &lt;All channels&gt; に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string WholeTitlebar {
+            get {
+                return ResourceManager.GetString("WholeTitlebar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   All channels に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string WholeTopicbar {
+            get {
+                return ResourceManager.GetString("WholeTopicbar", resourceCulture);
             }
         }
     }
