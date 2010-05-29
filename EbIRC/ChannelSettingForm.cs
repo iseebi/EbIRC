@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace EbiSoft.EbIRC
 {
-    public partial class ChannelSettingForm : Form
+    public partial class ServerSettingForm : Form
     {
-        public ChannelSettingForm()
+        public ServerSettingForm()
         {
             InitializeComponent();
         }

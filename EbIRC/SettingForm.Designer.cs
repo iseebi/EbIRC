@@ -30,28 +30,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingForm));
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem();
             this.mainMenu1 = new System.Windows.Forms.MainMenu();
             this.saveCloseMenuItem = new System.Windows.Forms.MenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.serverTabPage = new System.Windows.Forms.TabPage();
-            this.serverSslNotValidateCheckBox = new System.Windows.Forms.CheckBox();
-            this.serverUseSslCheckBox = new System.Windows.Forms.CheckBox();
-            this.encodingSelectBox = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.profileRemoveButton = new System.Windows.Forms.Button();
             this.profileAddButton = new System.Windows.Forms.Button();
-            this.profileSelectBox = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.portInputBox = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.passwordInputBox = new System.Windows.Forms.TextBox();
-            this.nameInputbox = new System.Windows.Forms.TextBox();
-            this.nicknameInputbox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.serverInputbox = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.communicationTabPage = new System.Windows.Forms.TabPage();
             this.forcePongCheckBox = new System.Windows.Forms.CheckBox();
             this.cacheConnectionCheckBox = new System.Windows.Forms.CheckBox();
@@ -98,6 +84,7 @@
             this.logDirectoryBrowseButton = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.logDirectoryNameTextBox = new System.Windows.Forms.TextBox();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.tabControl.SuspendLayout();
             this.serverTabPage.SuspendLayout();
             this.communicationTabPage.SuspendLayout();
@@ -120,7 +107,6 @@
             // 
             // tabControl
             // 
-            resources.ApplyResources(this.tabControl, "tabControl");
             this.tabControl.Controls.Add(this.serverTabPage);
             this.tabControl.Controls.Add(this.communicationTabPage);
             this.tabControl.Controls.Add(this.nickNameTabPage);
@@ -129,53 +115,18 @@
             this.tabControl.Controls.Add(this.quickSwitchShortcutTabPage);
             this.tabControl.Controls.Add(this.keywordsTabPage);
             this.tabControl.Controls.Add(this.logTabPage);
+            resources.ApplyResources(this.tabControl, "tabControl");
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             // 
             // serverTabPage
             // 
             resources.ApplyResources(this.serverTabPage, "serverTabPage");
-            this.serverTabPage.Controls.Add(this.serverSslNotValidateCheckBox);
-            this.serverTabPage.Controls.Add(this.serverUseSslCheckBox);
-            this.serverTabPage.Controls.Add(this.encodingSelectBox);
-            this.serverTabPage.Controls.Add(this.label14);
+            this.serverTabPage.Controls.Add(this.listView1);
             this.serverTabPage.Controls.Add(this.profileRemoveButton);
             this.serverTabPage.Controls.Add(this.profileAddButton);
-            this.serverTabPage.Controls.Add(this.profileSelectBox);
             this.serverTabPage.Controls.Add(this.label13);
-            this.serverTabPage.Controls.Add(this.portInputBox);
-            this.serverTabPage.Controls.Add(this.label6);
-            this.serverTabPage.Controls.Add(this.label4);
-            this.serverTabPage.Controls.Add(this.passwordInputBox);
-            this.serverTabPage.Controls.Add(this.nameInputbox);
-            this.serverTabPage.Controls.Add(this.nicknameInputbox);
-            this.serverTabPage.Controls.Add(this.label3);
-            this.serverTabPage.Controls.Add(this.label2);
-            this.serverTabPage.Controls.Add(this.serverInputbox);
-            this.serverTabPage.Controls.Add(this.label1);
             this.serverTabPage.Name = "serverTabPage";
-            // 
-            // serverSslNotValidateCheckBox
-            // 
-            resources.ApplyResources(this.serverSslNotValidateCheckBox, "serverSslNotValidateCheckBox");
-            this.serverSslNotValidateCheckBox.Name = "serverSslNotValidateCheckBox";
-            // 
-            // serverUseSslCheckBox
-            // 
-            resources.ApplyResources(this.serverUseSslCheckBox, "serverUseSslCheckBox");
-            this.serverUseSslCheckBox.Name = "serverUseSslCheckBox";
-            this.serverUseSslCheckBox.CheckStateChanged += new System.EventHandler(this.serverUseSslCheckBox_CheckStateChanged);
-            // 
-            // encodingSelectBox
-            // 
-            resources.ApplyResources(this.encodingSelectBox, "encodingSelectBox");
-            this.encodingSelectBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.encodingSelectBox.Name = "encodingSelectBox";
-            // 
-            // label14
-            // 
-            resources.ApplyResources(this.label14, "label14");
-            this.label14.Name = "label14";
             // 
             // profileRemoveButton
             // 
@@ -189,79 +140,16 @@
             this.profileAddButton.Name = "profileAddButton";
             this.profileAddButton.Click += new System.EventHandler(this.profileAddButton_Click);
             // 
-            // profileSelectBox
-            // 
-            resources.ApplyResources(this.profileSelectBox, "profileSelectBox");
-            this.profileSelectBox.Name = "profileSelectBox";
-            this.profileSelectBox.SelectedIndexChanged += new System.EventHandler(this.profileSelectBox_SelectedIndexChanged);
-            // 
             // label13
             // 
             resources.ApplyResources(this.label13, "label13");
             this.label13.Name = "label13";
             // 
-            // portInputBox
-            // 
-            resources.ApplyResources(this.portInputBox, "portInputBox");
-            this.portInputBox.Name = "portInputBox";
-            // 
-            // label6
-            // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.Name = "label6";
-            // 
-            // label4
-            // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.Name = "label4";
-            // 
-            // passwordInputBox
-            // 
-            resources.ApplyResources(this.passwordInputBox, "passwordInputBox");
-            this.passwordInputBox.Name = "passwordInputBox";
-            // 
-            // nameInputbox
-            // 
-            resources.ApplyResources(this.nameInputbox, "nameInputbox");
-            this.nameInputbox.Name = "nameInputbox";
-            // 
-            // nicknameInputbox
-            // 
-            resources.ApplyResources(this.nicknameInputbox, "nicknameInputbox");
-            this.nicknameInputbox.Name = "nicknameInputbox";
-            // 
-            // label3
-            // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.Name = "label3";
-            this.label3.ParentChanged += new System.EventHandler(this.label3_ParentChanged);
-            // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
-            // 
-            // serverInputbox
-            // 
-            resources.ApplyResources(this.serverInputbox, "serverInputbox");
-            this.serverInputbox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.serverInputbox.Items.Add(resources.GetString("serverInputbox.Items"));
-            this.serverInputbox.Items.Add(resources.GetString("serverInputbox.Items1"));
-            this.serverInputbox.Items.Add(resources.GetString("serverInputbox.Items2"));
-            this.serverInputbox.Items.Add(resources.GetString("serverInputbox.Items3"));
-            this.serverInputbox.Items.Add(resources.GetString("serverInputbox.Items4"));
-            this.serverInputbox.Name = "serverInputbox";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
-            // 
             // communicationTabPage
             // 
-            resources.ApplyResources(this.communicationTabPage, "communicationTabPage");
             this.communicationTabPage.Controls.Add(this.forcePongCheckBox);
             this.communicationTabPage.Controls.Add(this.cacheConnectionCheckBox);
+            resources.ApplyResources(this.communicationTabPage, "communicationTabPage");
             this.communicationTabPage.Name = "communicationTabPage";
             // 
             // forcePongCheckBox
@@ -276,9 +164,9 @@
             // 
             // nickNameTabPage
             // 
-            resources.ApplyResources(this.nickNameTabPage, "nickNameTabPage");
             this.nickNameTabPage.Controls.Add(this.subNicknameInputBox);
             this.nickNameTabPage.Controls.Add(this.label10);
+            resources.ApplyResources(this.nickNameTabPage, "nickNameTabPage");
             this.nickNameTabPage.Name = "nickNameTabPage";
             // 
             // subNicknameInputBox
@@ -315,7 +203,6 @@
             // 
             // fontSizeComboBox
             // 
-            resources.ApplyResources(this.fontSizeComboBox, "fontSizeComboBox");
             this.fontSizeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.fontSizeComboBox.Items.Add(resources.GetString("fontSizeComboBox.Items"));
             this.fontSizeComboBox.Items.Add(resources.GetString("fontSizeComboBox.Items1"));
@@ -327,17 +214,18 @@
             this.fontSizeComboBox.Items.Add(resources.GetString("fontSizeComboBox.Items7"));
             this.fontSizeComboBox.Items.Add(resources.GetString("fontSizeComboBox.Items8"));
             this.fontSizeComboBox.Items.Add(resources.GetString("fontSizeComboBox.Items9"));
+            resources.ApplyResources(this.fontSizeComboBox, "fontSizeComboBox");
             this.fontSizeComboBox.Name = "fontSizeComboBox";
             // 
             // fontNameInputBox
             // 
-            resources.ApplyResources(this.fontNameInputBox, "fontNameInputBox");
             this.fontNameInputBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.fontNameInputBox.Items.Add(resources.GetString("fontNameInputBox.Items"));
             this.fontNameInputBox.Items.Add(resources.GetString("fontNameInputBox.Items1"));
             this.fontNameInputBox.Items.Add(resources.GetString("fontNameInputBox.Items2"));
             this.fontNameInputBox.Items.Add(resources.GetString("fontNameInputBox.Items3"));
             this.fontNameInputBox.Items.Add(resources.GetString("fontNameInputBox.Items4"));
+            resources.ApplyResources(this.fontNameInputBox, "fontNameInputBox");
             this.fontNameInputBox.Name = "fontNameInputBox";
             // 
             // label7
@@ -385,12 +273,12 @@
             // 
             // ctrlHorizontalKeySelectBox
             // 
-            resources.ApplyResources(this.ctrlHorizontalKeySelectBox, "ctrlHorizontalKeySelectBox");
             this.ctrlHorizontalKeySelectBox.Items.Add(resources.GetString("ctrlHorizontalKeySelectBox.Items"));
             this.ctrlHorizontalKeySelectBox.Items.Add(resources.GetString("ctrlHorizontalKeySelectBox.Items1"));
             this.ctrlHorizontalKeySelectBox.Items.Add(resources.GetString("ctrlHorizontalKeySelectBox.Items2"));
             this.ctrlHorizontalKeySelectBox.Items.Add(resources.GetString("ctrlHorizontalKeySelectBox.Items3"));
             this.ctrlHorizontalKeySelectBox.Items.Add(resources.GetString("ctrlHorizontalKeySelectBox.Items4"));
+            resources.ApplyResources(this.ctrlHorizontalKeySelectBox, "ctrlHorizontalKeySelectBox");
             this.ctrlHorizontalKeySelectBox.Name = "ctrlHorizontalKeySelectBox";
             // 
             // scrollLinesLabel
@@ -405,12 +293,12 @@
             // 
             // ctrlVerticalKeySelectBox
             // 
-            resources.ApplyResources(this.ctrlVerticalKeySelectBox, "ctrlVerticalKeySelectBox");
             this.ctrlVerticalKeySelectBox.Items.Add(resources.GetString("ctrlVerticalKeySelectBox.Items"));
             this.ctrlVerticalKeySelectBox.Items.Add(resources.GetString("ctrlVerticalKeySelectBox.Items1"));
             this.ctrlVerticalKeySelectBox.Items.Add(resources.GetString("ctrlVerticalKeySelectBox.Items2"));
             this.ctrlVerticalKeySelectBox.Items.Add(resources.GetString("ctrlVerticalKeySelectBox.Items3"));
             this.ctrlVerticalKeySelectBox.Items.Add(resources.GetString("ctrlVerticalKeySelectBox.Items4"));
+            resources.ApplyResources(this.ctrlVerticalKeySelectBox, "ctrlVerticalKeySelectBox");
             this.ctrlVerticalKeySelectBox.Name = "ctrlVerticalKeySelectBox";
             // 
             // label12
@@ -420,12 +308,12 @@
             // 
             // horizontalKeySelectBox
             // 
-            resources.ApplyResources(this.horizontalKeySelectBox, "horizontalKeySelectBox");
             this.horizontalKeySelectBox.Items.Add(resources.GetString("horizontalKeySelectBox.Items"));
             this.horizontalKeySelectBox.Items.Add(resources.GetString("horizontalKeySelectBox.Items1"));
             this.horizontalKeySelectBox.Items.Add(resources.GetString("horizontalKeySelectBox.Items2"));
             this.horizontalKeySelectBox.Items.Add(resources.GetString("horizontalKeySelectBox.Items3"));
             this.horizontalKeySelectBox.Items.Add(resources.GetString("horizontalKeySelectBox.Items4"));
+            resources.ApplyResources(this.horizontalKeySelectBox, "horizontalKeySelectBox");
             this.horizontalKeySelectBox.Name = "horizontalKeySelectBox";
             // 
             // label9
@@ -435,13 +323,13 @@
             // 
             // verticalKeySelectBox
             // 
-            resources.ApplyResources(this.verticalKeySelectBox, "verticalKeySelectBox");
             this.verticalKeySelectBox.Items.Add(resources.GetString("verticalKeySelectBox.Items"));
             this.verticalKeySelectBox.Items.Add(resources.GetString("verticalKeySelectBox.Items1"));
             this.verticalKeySelectBox.Items.Add(resources.GetString("verticalKeySelectBox.Items2"));
             this.verticalKeySelectBox.Items.Add(resources.GetString("verticalKeySelectBox.Items3"));
             this.verticalKeySelectBox.Items.Add(resources.GetString("verticalKeySelectBox.Items4"));
             this.verticalKeySelectBox.Items.Add(resources.GetString("verticalKeySelectBox.Items5"));
+            resources.ApplyResources(this.verticalKeySelectBox, "verticalKeySelectBox");
             this.verticalKeySelectBox.Name = "verticalKeySelectBox";
             // 
             // label8
@@ -499,11 +387,11 @@
             // 
             // highlightMethodComboBox
             // 
-            resources.ApplyResources(this.highlightMethodComboBox, "highlightMethodComboBox");
             this.highlightMethodComboBox.Items.Add(resources.GetString("highlightMethodComboBox.Items"));
             this.highlightMethodComboBox.Items.Add(resources.GetString("highlightMethodComboBox.Items1"));
             this.highlightMethodComboBox.Items.Add(resources.GetString("highlightMethodComboBox.Items2"));
             this.highlightMethodComboBox.Items.Add(resources.GetString("highlightMethodComboBox.Items3"));
+            resources.ApplyResources(this.highlightMethodComboBox, "highlightMethodComboBox");
             this.highlightMethodComboBox.Name = "highlightMethodComboBox";
             // 
             // dislikeWordsTextBox
@@ -545,11 +433,11 @@
             // 
             // logTabPage
             // 
-            resources.ApplyResources(this.logTabPage, "logTabPage");
             this.logTabPage.Controls.Add(this.enableLoggingCheckBox);
             this.logTabPage.Controls.Add(this.logDirectoryBrowseButton);
             this.logTabPage.Controls.Add(this.label18);
             this.logTabPage.Controls.Add(this.logDirectoryNameTextBox);
+            resources.ApplyResources(this.logTabPage, "logTabPage");
             this.logTabPage.Name = "logTabPage";
             // 
             // enableLoggingCheckBox
@@ -572,6 +460,15 @@
             // 
             resources.ApplyResources(this.logDirectoryNameTextBox, "logDirectoryNameTextBox");
             this.logDirectoryNameTextBox.Name = "logDirectoryNameTextBox";
+            // 
+            // listView1
+            // 
+            resources.ApplyResources(this.listView1, "listView1");
+            listViewItem1.Text = resources.GetString("listView1.Items");
+            this.listView1.Items.Add(listViewItem1);
+            this.listView1.Name = "listView1";
+            this.listView1.View = System.Windows.Forms.View.List;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // SettingForm
             // 
@@ -602,21 +499,11 @@
 
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage serverTabPage;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox serverInputbox;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox nameInputbox;
-        private System.Windows.Forms.TextBox nicknameInputbox;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox passwordInputBox;
         private System.Windows.Forms.TabPage viewTabPage;
         private System.Windows.Forms.ComboBox fontSizeComboBox;
         private System.Windows.Forms.ComboBox fontNameInputBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.CheckBox visibleTopicPanelCheckbox;
-        private System.Windows.Forms.TextBox portInputBox;
         private System.Windows.Forms.TabPage controlTabPage;
         private System.Windows.Forms.ComboBox verticalKeySelectBox;
         private System.Windows.Forms.Label label8;
@@ -636,13 +523,10 @@
         private System.Windows.Forms.Label scrollLinesLabel;
         private System.Windows.Forms.Button profileRemoveButton;
         private System.Windows.Forms.Button profileAddButton;
-        private System.Windows.Forms.ComboBox profileSelectBox;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TabPage communicationTabPage;
         private System.Windows.Forms.CheckBox forcePongCheckBox;
         private System.Windows.Forms.CheckBox cacheConnectionCheckBox;
-        private System.Windows.Forms.ComboBox encodingSelectBox;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.MenuItem saveCloseMenuItem;
         private System.Windows.Forms.CheckBox defaultLoadOnConnectCheckBox;
         private System.Windows.Forms.TabPage keywordsTabPage;
@@ -665,7 +549,6 @@
         private System.Windows.Forms.CheckBox qsSortHilightedCheckBox;
         private System.Windows.Forms.CheckBox qsSortUnreadCheckBox;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.CheckBox serverUseSslCheckBox;
-        private System.Windows.Forms.CheckBox serverSslNotValidateCheckBox;
+        private System.Windows.Forms.ListView listView1;
     }
 }
