@@ -128,32 +128,32 @@
     <value>0, 15</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="listView1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="profileSelectListview.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="listView1.Items" xml:space="preserve">
+  <data name="profileSelectListview.Items" xml:space="preserve">
     <value />
   </data>
-  <data name="listView1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="profileSelectListview.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 37</value>
   </data>
-  <data name="listView1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="profileSelectListview.Size" type="System.Drawing.Size, System.Drawing">
     <value>466, 394</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="listView1.TabIndex" type="System.Int32, mscorlib">
+  <data name="profileSelectListview.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
-  <data name="&gt;&gt;listView1.Name" xml:space="preserve">
-    <value>listView1</value>
+  <data name="&gt;&gt;profileSelectListview.Name" xml:space="preserve">
+    <value>profileSelectListview</value>
   </data>
-  <data name="&gt;&gt;listView1.Type" xml:space="preserve">
+  <data name="&gt;&gt;profileSelectListview.Type" xml:space="preserve">
     <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;listView1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;profileSelectListview.Parent" xml:space="preserve">
     <value>serverTabPage</value>
   </data>
-  <data name="&gt;&gt;listView1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;profileSelectListview.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="profileRemoveButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -281,7 +281,7 @@
     <value>0, 0</value>
   </data>
   <data name="communicationTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 492</value>
+    <value>472, 498</value>
   </data>
   <data name="communicationTabPage.Text" xml:space="preserve">
     <value>Communication</value>
@@ -308,7 +308,7 @@
     <value>True</value>
   </data>
   <data name="subNicknameInputBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>446, 226</value>
+    <value>438, 226</value>
   </data>
   <data name="subNicknameInputBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -350,7 +350,7 @@
     <value>0, 0</value>
   </data>
   <data name="nickNameTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 492</value>
+    <value>472, 498</value>
   </data>
   <data name="nickNameTabPage.Text" xml:space="preserve">
     <value>Nicknames</value>
@@ -506,7 +506,7 @@
     <value>0, 0</value>
   </data>
   <data name="viewTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 492</value>
+    <value>472, 498</value>
   </data>
   <data name="viewTabPage.Text" xml:space="preserve">
     <value>View</value>
@@ -845,7 +845,7 @@
     <value>0, 0</value>
   </data>
   <data name="controlTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 492</value>
+    <value>472, 498</value>
   </data>
   <data name="controlTabPage.Text" xml:space="preserve">
     <value>Control</value>
@@ -936,7 +936,7 @@
     <value>0, 0</value>
   </data>
   <data name="quickSwitchShortcutTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 492</value>
+    <value>472, 498</value>
   </data>
   <data name="quickSwitchShortcutTabPage.Text" xml:space="preserve">
     <value>Quick Switch</value>
@@ -1140,7 +1140,7 @@
     <value>0, 0</value>
   </data>
   <data name="keywordsTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 492</value>
+    <value>472, 498</value>
   </data>
   <data name="keywordsTabPage.Text" xml:space="preserve">
     <value>Keywords</value>

@@ -35,6 +35,7 @@
             this.saveCloseMenuItem = new System.Windows.Forms.MenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.serverTabPage = new System.Windows.Forms.TabPage();
+            this.profileSelectListview = new System.Windows.Forms.ListView();
             this.profileRemoveButton = new System.Windows.Forms.Button();
             this.profileAddButton = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
@@ -84,7 +85,6 @@
             this.logDirectoryBrowseButton = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.logDirectoryNameTextBox = new System.Windows.Forms.TextBox();
-            this.listView1 = new System.Windows.Forms.ListView();
             this.tabControl.SuspendLayout();
             this.serverTabPage.SuspendLayout();
             this.communicationTabPage.SuspendLayout();
@@ -122,11 +122,19 @@
             // serverTabPage
             // 
             resources.ApplyResources(this.serverTabPage, "serverTabPage");
-            this.serverTabPage.Controls.Add(this.listView1);
+            this.serverTabPage.Controls.Add(this.profileSelectListview);
             this.serverTabPage.Controls.Add(this.profileRemoveButton);
             this.serverTabPage.Controls.Add(this.profileAddButton);
             this.serverTabPage.Controls.Add(this.label13);
             this.serverTabPage.Name = "serverTabPage";
+            // 
+            // profileSelectListview
+            // 
+            resources.ApplyResources(this.profileSelectListview, "profileSelectListview");
+            listViewItem1.Text = resources.GetString("profileSelectListview.Items");
+            this.profileSelectListview.Items.Add(listViewItem1);
+            this.profileSelectListview.Name = "profileSelectListview";
+            this.profileSelectListview.View = System.Windows.Forms.View.List;
             // 
             // profileRemoveButton
             // 
@@ -461,15 +469,6 @@
             resources.ApplyResources(this.logDirectoryNameTextBox, "logDirectoryNameTextBox");
             this.logDirectoryNameTextBox.Name = "logDirectoryNameTextBox";
             // 
-            // listView1
-            // 
-            resources.ApplyResources(this.listView1, "listView1");
-            listViewItem1.Text = resources.GetString("listView1.Items");
-            this.listView1.Items.Add(listViewItem1);
-            this.listView1.Name = "listView1";
-            this.listView1.View = System.Windows.Forms.View.List;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
-            // 
             // SettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
@@ -549,6 +548,6 @@
         private System.Windows.Forms.CheckBox qsSortHilightedCheckBox;
         private System.Windows.Forms.CheckBox qsSortUnreadCheckBox;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView profileSelectListview;
     }
 }

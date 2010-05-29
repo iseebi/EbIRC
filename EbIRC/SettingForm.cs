@@ -72,7 +72,7 @@ namespace EbiSoft.EbIRC
                     ff.Dispose();
                 }
             }
-
+            /*
             // デフォルトサーバーリストの読み込み
             serverInputbox.Items.Clear();
             foreach (string server in SettingManager.Data.DefaultServers)
@@ -86,13 +86,15 @@ namespace EbiSoft.EbIRC
                 encodingSelectBox.Items.Add(encode);
             }
 
-            // 設定を読み込む
             profileSelectBox.Items.Clear();
             foreach (ConnectionProfile prof in SettingManager.Data.Profiles.Profile)
             {
                 profileSelectBox.Items.Add(prof);
             }
             profileSelectBox.SelectedIndex = SettingManager.Data.Profiles.ActiveProfileIndex;
+             */
+            // 設定を読み込む
+
             fontNameInputBox.Text = SettingManager.Data.FontName;
             fontSizeComboBox.Text = SettingManager.Data.FontSize.ToString();
             visibleTopicPanelCheckbox.Checked = SettingManager.Data.TopicVisible;
@@ -132,6 +134,7 @@ namespace EbiSoft.EbIRC
         private void SettingForm_Closing(object sender, CancelEventArgs e)
         {
             // 設定を書き込む
+            /*
             saveLastProfile();
             ConnectionProfileCollection data = new ConnectionProfileCollection();
             foreach (object obj in profileSelectBox.Items)
@@ -142,6 +145,7 @@ namespace EbiSoft.EbIRC
             data.ActiveProfileIndex = profileSelectBox.SelectedIndex;
             SettingManager.Data.Profiles = data;
             SettingManager.Data.Profiles.ActiveProfile.Password = passwordInputBox.Text;
+             */ 
             SettingManager.Data.SelectChannelAtConnect = defaultLoadOnConnectCheckBox.Checked;
             SettingManager.Data.FontName = fontNameInputBox.Text;
             SettingManager.Data.TopicVisible = visibleTopicPanelCheckbox.Checked;
@@ -281,6 +285,7 @@ namespace EbiSoft.EbIRC
 
         #endregion
 
+        /*
         /// <summary>
         /// プロファイルの設定をクラスに反映
         /// </summary>
@@ -320,7 +325,8 @@ namespace EbiSoft.EbIRC
             serverSslNotValidateCheckBox.Checked = prof.NoValidation;
             serverSslNotValidateCheckBox.Enabled = prof.UseSsl;
         }
-
+        */
+        /*
         /// <summary>
         /// リストの選択が変わったときに発生するイベント
         /// </summary>
@@ -330,12 +336,14 @@ namespace EbiSoft.EbIRC
             loadActiveProfile();
             lastProfileIndex = profileSelectBox.SelectedIndex;
         }
+        */
 
         /// <summary>
         /// プロファイルの追加ボタン
         /// </summary>
         private void profileAddButton_Click(object sender, EventArgs e)
         {
+            /*
             using (InputBoxForm form = new InputBoxForm())
             {
                 form.Text = Resources.ProfileAddDialogTitle;
@@ -349,6 +357,7 @@ namespace EbiSoft.EbIRC
                     }
                 }
             }
+            */
         }
 
         /// <summary>
@@ -356,6 +365,7 @@ namespace EbiSoft.EbIRC
         /// </summary>
         private void profileRemoveButton_Click(object sender, EventArgs e)
         {
+            /*
             if (profileSelectBox.SelectedIndex < 0) return;
             if (profileSelectBox.Items.Count == 1)
             {
@@ -373,6 +383,7 @@ namespace EbiSoft.EbIRC
 
             profileSelectBox.Items.RemoveAt(profileSelectBox.SelectedIndex);
             profileSelectBox.SelectedIndex = nextActiveIndex;
+            */
         }
 
         /// <summary>
@@ -411,10 +422,11 @@ namespace EbiSoft.EbIRC
                 }
             }
         }
-
+        /*
         private void serverUseSslCheckBox_CheckStateChanged(object sender, EventArgs e)
         {
             serverSslNotValidateCheckBox.Enabled = serverUseSslCheckBox.Checked;
         }
+        */
     }
 }
