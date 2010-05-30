@@ -355,7 +355,8 @@ namespace EbiSoft.EbIRC
                     ircClient.Connect(SettingManager.Data.Profiles.ActiveProfile.Server, (int)SettingManager.Data.Profiles.ActiveProfile.Port,
                         SettingManager.Data.Profiles.ActiveProfile.Password, SettingManager.Data.Profiles.ActiveProfile.UseSsl,
                         SettingManager.Data.Profiles.ActiveProfile.NoValidation,
-                        SettingManager.Data.Profiles.ActiveProfile.Nickname, SettingManager.Data.Profiles.ActiveProfile.Realname);
+                        SettingManager.Data.Profiles.ActiveProfile.Nickname, SettingManager.Data.Profiles.ActiveProfile.Realname,
+                        SettingManager.Data.Profiles.ActiveProfile.LoginName, SettingManager.Data.Profiles.ActiveProfile.NickServPassword);
                     SetConnectionMenuText();
 
                 }
@@ -1998,6 +1999,16 @@ namespace EbiSoft.EbIRC
             clearHilightTimer.Enabled = false;
         }
 
+        /// <summary>
+        /// ハイライト停止タイマー
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void clearHilightTimer_Tick(object sender, EventArgs e)
+        {
+            ClearHilight();
+        }
+
         #endregion
 
         #region UI表示コントロール
@@ -2243,16 +2254,6 @@ namespace EbiSoft.EbIRC
             {
                 ircClient.SendCommand("PONG :" + SettingManager.Data.Profiles.ActiveProfile.Server);
             }
-        }
-
-        /// <summary>
-        /// ハイライト停止タイマー
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void clearHilightTimer_Tick(object sender, EventArgs e)
-        {
-            ClearHilight();
         }
     }
 }

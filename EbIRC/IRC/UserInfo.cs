@@ -6,15 +6,17 @@ namespace EbiSoft.EbIRC.IRC {
 	/// </summary>
 	public class UserInfo 
 	{
-		string m_nickname;
-		string m_realname;
+		string m_nickName;
+		string m_realName;
+        string m_loginName;
+        string m_nickservPass;
 
         /// <summary>
         /// ニックネーム
         /// </summary>
 		public string NickName
 		{
-			get{ return m_nickname;  }
+			get{ return m_nickName;  }
 		}
 
         /// <summary>
@@ -23,7 +25,7 @@ namespace EbiSoft.EbIRC.IRC {
         /// <param name="value">設定するニックネーム</param>
 		internal void setNick(string value)
 		{
-			m_nickname = value;
+			m_nickName = value;
 		}
 
         /// <summary>
@@ -31,8 +33,24 @@ namespace EbiSoft.EbIRC.IRC {
         /// </summary>
 		public string RealName
 		{
-			get{ return m_realname;  }
+			get{ return m_realName;  }
 		}
+
+        /// <summary>
+        /// ログインネーム
+        /// </summary>
+        public string LoginName
+        {
+            get { return m_loginName; }
+        }
+
+        /// <summary>
+        /// Nickservパスワード
+        /// </summary>
+        public string NickservPass
+        {
+            get { return m_nickservPass; }
+        }
 
         /// <summary>
         /// コンストラクタ
@@ -41,8 +59,21 @@ namespace EbiSoft.EbIRC.IRC {
         /// <param name="realName">ログインネーム</param>
 		public UserInfo(string nickName, string realName)
 		{
-			m_nickname = nickName;
-			m_realname = realName;
+			m_nickName = nickName;
+			m_realName = realName;
 		}
-	}
+
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        /// <param name="nickName">ニックネーム</param>
+        /// <param name="realName">ログインネーム</param>
+        public UserInfo(string nickName, string realName, string loginName, string nickServPass)
+        {
+            m_nickName = nickName;
+            m_realName = realName;
+            m_loginName = loginName;
+            m_nickservPass = nickServPass;
+        }
+    }
 }

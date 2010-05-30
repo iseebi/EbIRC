@@ -6,7 +6,7 @@ using EbiSoft.EbIRC.Properties;
 
 namespace EbiSoft.EbIRC.Settings
 {
-    public class ConnectionProfileCollection
+    public class ConnectionProfileCollection : ICloneable
     {
 
         /// <summary>
@@ -62,5 +62,24 @@ namespace EbiSoft.EbIRC.Settings
                 return Profile[ActiveProfileIndex];
             }
         }
-	}
+
+        #region ICloneable メンバ
+
+        /// <summary>
+        /// このオブジェクトのクローンを作成します
+        /// </summary>
+        /// <returns>作成されたクローン</returns>
+        public object Clone()
+        {
+            ConnectionProfileCollection clone = new ConnectionProfileCollection();
+            clone.m_activeProfileIndex = m_activeProfileIndex;
+            foreach (ConnectionProfile prof in m_profiles)
+            {
+                clone.m_profiles.Add((ConnectionProfile)prof.Clone());
+            }
+            return clone;
+        }
+
+        #endregion
+    }
 }

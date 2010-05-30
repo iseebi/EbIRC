@@ -356,4 +356,7 @@ UTF-8</value>
   <data name="WholeTopicbar" xml:space="preserve">
     <value>All channels</value>
   </data>
+  <data name="NewProfileName" xml:space="preserve">
+    <value>New Profile</value>
+  </data>
 </root>

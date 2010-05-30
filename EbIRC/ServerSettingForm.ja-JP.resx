@@ -117,18 +117,84 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="button2.Text" xml:space="preserve">
-    <value>↓</value>
+  <data name="closeMenuItem.Text" xml:space="preserve">
+    <value>閉じる</value>
   </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>↑</value>
+  <data name="label10.Text" xml:space="preserve">
+    <value>プロファイル名</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="disableUnreadSortCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>474, 40</value>
+  <data name="serverSslNotValidateCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 244</value>
   </data>
-  <data name="disableUnreadSortCheckBox.Text" xml:space="preserve">
+  <data name="serverSslNotValidateCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>310, 40</value>
+  </data>
+  <data name="serverSslNotValidateCheckBox.Text" xml:space="preserve">
+    <value>証明書検証をスキップ</value>
+  </data>
+  <data name="serverUseSslCheckBox.Text" xml:space="preserve">
+    <value>SSLを使う</value>
+  </data>
+  <data name="encodingComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 417</value>
+  </data>
+  <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 374</value>
+  </data>
+  <data name="nicknameTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 330</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 287</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>ポート</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>サーバー</value>
+  </data>
+  <data name="basicsTabPage.Text" xml:space="preserve">
+    <value>基本</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Nickserv パスワード</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>ログイン名</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>サーバーパスワード</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>名前</value>
+  </data>
+  <data name="advancedTabPage.Text" xml:space="preserve">
+    <value>高度な設定</value>
+  </data>
+  <data name="channelListView.Size" type="System.Drawing.Size, System.Drawing">
+    <value>425, 266</value>
+  </data>
+  <data name="channelDownButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>424, 143</value>
+  </data>
+  <data name="channelUpButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>424, 0</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>472, 266</value>
+  </data>
+  <data name="addChannelButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>387, 3</value>
+  </data>
+  <data name="channelIgnoreUnreadSortCheckBox.Text" xml:space="preserve">
     <value>未読数ソートの対象外にする</value>
+  </data>
+  <data name="channelNameTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>466, 41</value>
+  </data>
+  <data name="channelPasswordTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>466, 41</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>チャンネル名</value>
@@ -136,7 +202,19 @@
   <data name="label1.Text" xml:space="preserve">
     <value>チャンネルパスワード</value>
   </data>
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 266</value>
+  </data>
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>472, 232</value>
+  </data>
+  <data name="channelsTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>472, 498</value>
+  </data>
+  <data name="channelsTabPage.Text" xml:space="preserve">
+    <value>チャンネル</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>チャンネル設定</value>
+    <value>サーバー設定</value>
   </data>
 </root>

@@ -8,7 +8,7 @@ namespace EbiSoft.EbIRC.Settings
     /// <summary>
     /// 接続プロファイル
     /// </summary>
-    public class ConnectionProfile
+    public class ConnectionProfile : ICloneable
     {
         /// <summary>
         /// プロファイル名
@@ -122,6 +122,27 @@ namespace EbiSoft.EbIRC.Settings
         }
         private ChannelSettingCollection m_channels = new ChannelSettingCollection();
 
+        /// <summary>
+        /// ログインネーム
+        /// </summary>
+        public string LoginName
+        {
+            get { return m_loginName; }
+            set { m_loginName = value; }
+        }
+        private string m_loginName;
+
+        /// <summary>
+        /// Nickserv パスワード
+        /// </summary>
+        public string NickServPassword
+        {
+            get { return m_nickServPassword; }
+            set { m_nickServPassword = value; }
+        }
+        private string m_nickServPassword;
+
+
         #region コンストラクタ
 
         /// <summary>
@@ -170,5 +191,30 @@ namespace EbiSoft.EbIRC.Settings
         {
             return ProfileName;
         }
+
+        #region ICloneable メンバ
+
+        /// <summary>
+        /// このオブジェクトのクローンを作成します
+        /// </summary>
+        /// <returns>作成されたクローン</returns>
+        public object Clone()
+        {
+            ConnectionProfile prof = new ConnectionProfile();
+            prof.m_channels = m_channels;
+            prof.m_defchannels = m_defchannels;
+            prof.m_encoding = m_encoding;
+            prof.m_nickname = m_nickname;
+            prof.m_noValidation = m_noValidation;
+            prof.m_password = m_password;
+            prof.m_port = m_port;
+            prof.m_profileName = m_profileName;
+            prof.m_realname = m_realname;
+            prof.m_server = m_server;
+            prof.m_useSsl = m_useSsl;
+            return prof;
+        }
+
+        #endregion
     }
 }

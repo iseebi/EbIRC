@@ -52,13 +52,15 @@ namespace EbiSoft.EbIRC
         #endregion
 
         TextBox currentMultilineBox = null;
-        int     lastProfileIndex    = -1;
+        ConnectionProfileCollection m_editingProfiles;
 
         public SettingForm()
         {
             InitializeComponent();
             InTheHand.WindowsMobile.Forms.TabControlHelper.EnableVisualStyle(tabControl);
         }
+
+        #region フォームロード/アンロード(設定読み書き)
 
         private void SettingForm_Load(object sender, EventArgs e)
         {
@@ -72,29 +74,10 @@ namespace EbiSoft.EbIRC
                     ff.Dispose();
                 }
             }
-            /*
-            // デフォルトサーバーリストの読み込み
-            serverInputbox.Items.Clear();
-            foreach (string server in SettingManager.Data.DefaultServers)
-            {
-                serverInputbox.Items.Add(server);
-            }
 
-            // エンコーディングリストの読み込み
-            encodingSelectBox.Items.Clear();
-            foreach (string encode in Resources.EncodeList.Replace("\r\n", "\n").Replace("\r", "\n").Split('\n')) {
-                encodingSelectBox.Items.Add(encode);
-            }
-
-            profileSelectBox.Items.Clear();
-            foreach (ConnectionProfile prof in SettingManager.Data.Profiles.Profile)
-            {
-                profileSelectBox.Items.Add(prof);
-            }
-            profileSelectBox.SelectedIndex = SettingManager.Data.Profiles.ActiveProfileIndex;
-             */
             // 設定を読み込む
-
+            m_editingProfiles = (ConnectionProfileCollection)SettingManager.Data.Profiles.Clone();
+            ReloadProfileList();
             fontNameInputBox.Text = SettingManager.Data.FontName;
             fontSizeComboBox.Text = SettingManager.Data.FontSize.ToString();
             visibleTopicPanelCheckbox.Checked = SettingManager.Data.TopicVisible;
@@ -134,18 +117,7 @@ namespace EbiSoft.EbIRC
         private void SettingForm_Closing(object sender, CancelEventArgs e)
         {
             // 設定を書き込む
-            /*
-            saveLastProfile();
-            ConnectionProfileCollection data = new ConnectionProfileCollection();
-            foreach (object obj in profileSelectBox.Items)
-            {
-                ConnectionProfile prof = obj as ConnectionProfile;
-                data.Profile.Add(prof);
-            }
-            data.ActiveProfileIndex = profileSelectBox.SelectedIndex;
-            SettingManager.Data.Profiles = data;
-            SettingManager.Data.Profiles.ActiveProfile.Password = passwordInputBox.Text;
-             */ 
+            SettingManager.Data.Profiles = m_editingProfiles;
             SettingManager.Data.SelectChannelAtConnect = defaultLoadOnConnectCheckBox.Checked;
             SettingManager.Data.FontName = fontNameInputBox.Text;
             SettingManager.Data.TopicVisible = visibleTopicPanelCheckbox.Checked;
@@ -191,6 +163,103 @@ namespace EbiSoft.EbIRC
 
             SettingManager.WriteSetting();
         }
+
+        #endregion
+
+        #region プロファイルの編集
+
+        /// <summary>
+        /// プロファイルの追加ボタン
+        /// </summary>
+        private void profileAddButton_Click(object sender, EventArgs e)
+        {
+            using (ServerSettingForm serverSettingForm = new ServerSettingForm())
+            {
+                ConnectionProfile prof = new ConnectionProfile(Resources.NewProfileName);
+                serverSettingForm.Profile = prof;
+
+                if (serverSettingForm.ShowDialog() == DialogResult.OK)
+                {
+                    m_editingProfiles.Profile.Add(serverSettingForm.Profile);
+                    ReloadProfileList();
+                }
+            }
+        }
+
+        /// <summary>
+        /// プロファイルの編集ボタン
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void profileEditButton_Click(object sender, EventArgs e)
+        {
+            using (ServerSettingForm serverSettingForm = new ServerSettingForm())
+            {
+                ConnectionProfile prof = m_editingProfiles.Profile[profileSelectListview.SelectedIndices[0]];
+                serverSettingForm.Profile = prof;
+                if (serverSettingForm.ShowDialog() == DialogResult.OK)
+                {
+                    m_editingProfiles.Profile[profileSelectListview.SelectedIndices[0]] = serverSettingForm.Profile;
+                    ReloadProfileList();
+                }
+            }
+        }
+
+        /// <summary>
+        /// プロファイルの削除ボタン
+        /// </summary>
+        private void profileRemoveButton_Click(object sender, EventArgs e)
+        {
+            m_editingProfiles.Profile.RemoveAt(profileSelectListview.SelectedIndices[0]);
+            ReloadProfileList();
+        }
+
+        /// <summary>
+        /// プロファイルの選択ボタン
+        /// </summary>
+        private void profileMarkActiveButton_Click(object sender, EventArgs e)
+        {
+            m_editingProfiles.ActiveProfileIndex = profileSelectListview.SelectedIndices[0];
+            ReloadProfileList();
+        }
+
+        /// <summary>
+        /// プロファイルの選択(ボタンの有効状態の切り替え)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void profileSelectListview_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            profileEditButton.Enabled = (profileSelectListview.SelectedIndices.Count > 0);
+            profileRemoveButton.Enabled = ((profileSelectListview.SelectedIndices.Count > 0) && (profileSelectListview.Items.Count > 1) && (m_editingProfiles.ActiveProfileIndex != profileSelectListview.SelectedIndices[0]));
+            profileMarkActiveButton.Enabled = ((profileSelectListview.SelectedIndices.Count > 0) && (m_editingProfiles.ActiveProfileIndex != profileSelectListview.SelectedIndices[0]));
+        }
+
+        /// <summary>
+        /// プロファイル一覧の再読み込み
+        /// </summary>
+        private void ReloadProfileList()
+        {
+            profileSelectListview.Items.Clear();
+            foreach (ConnectionProfile prof in m_editingProfiles.Profile)
+            {
+                ListViewItem item = new ListViewItem();
+
+                if (m_editingProfiles.ActiveProfile == prof)
+                {
+                    item.Text = "* " + prof.ProfileName;
+                }
+                else
+                {
+                    item.Text = prof.ProfileName;
+                }
+
+                item.Tag = prof;
+                profileSelectListview.Items.Add(item);
+            }
+        }
+
+        #endregion
 
         #region キー移動関連
 
@@ -285,107 +354,6 @@ namespace EbiSoft.EbIRC
 
         #endregion
 
-        /*
-        /// <summary>
-        /// プロファイルの設定をクラスに反映
-        /// </summary>
-        private void saveLastProfile()
-        {
-            if (lastProfileIndex < 0) return;
-
-            ConnectionProfile prof = profileSelectBox.Items[lastProfileIndex] as ConnectionProfile;
-            prof.Server = serverInputbox.Text;
-            try
-            {
-                prof.Port = int.Parse(portInputBox.Text);
-            }
-            catch (Exception) { } // 設定を保存しない
-            prof.Nickname = nicknameInputbox.Text;
-            prof.Realname = nameInputbox.Text;
-            prof.Encoding = encodingSelectBox.Text;
-            prof.UseSsl = serverUseSslCheckBox.Checked;
-            prof.NoValidation = serverSslNotValidateCheckBox.Checked;
-        }
-
-        /// <summary>
-        /// プロファイルの設定をコントロールに読み込み
-        /// </summary>
-        private void loadActiveProfile()
-        {
-            if (profileSelectBox.SelectedIndex < 0) return;
-
-            ConnectionProfile prof = profileSelectBox.SelectedItem as ConnectionProfile;
-            serverInputbox.Text = prof.Server;
-            portInputBox.Text = prof.Port.ToString();
-            nicknameInputbox.Text = prof.Nickname;
-            nameInputbox.Text = prof.Realname;
-            passwordInputBox.Text = prof.Password;
-            encodingSelectBox.Text = prof.Encoding;
-            serverUseSslCheckBox.Checked = prof.UseSsl;
-            serverSslNotValidateCheckBox.Checked = prof.NoValidation;
-            serverSslNotValidateCheckBox.Enabled = prof.UseSsl;
-        }
-        */
-        /*
-        /// <summary>
-        /// リストの選択が変わったときに発生するイベント
-        /// </summary>
-        private void profileSelectBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            saveLastProfile();
-            loadActiveProfile();
-            lastProfileIndex = profileSelectBox.SelectedIndex;
-        }
-        */
-
-        /// <summary>
-        /// プロファイルの追加ボタン
-        /// </summary>
-        private void profileAddButton_Click(object sender, EventArgs e)
-        {
-            /*
-            using (InputBoxForm form = new InputBoxForm())
-            {
-                form.Text = Resources.ProfileAddDialogTitle;
-                form.Description = Resources.ProfileAddDialogCaption;
-                if (form.ShowDialog() == DialogResult.OK)
-                {
-                    if (!string.IsNullOrEmpty(form.Value))
-                    {
-                        profileSelectBox.Items.Add(new ConnectionProfile(form.Value));
-                        profileSelectBox.SelectedIndex = profileSelectBox.Items.Count - 1;
-                    }
-                }
-            }
-            */
-        }
-
-        /// <summary>
-        /// プロファイルの削除ボタン
-        /// </summary>
-        private void profileRemoveButton_Click(object sender, EventArgs e)
-        {
-            /*
-            if (profileSelectBox.SelectedIndex < 0) return;
-            if (profileSelectBox.Items.Count == 1)
-            {
-                MessageBox.Show(Resources.CannotRemoveAllProfileMessage);
-                return;
-            }
-
-            // 次にロードするプロファイルを決める
-            int nextActiveIndex = lastProfileIndex;
-            if (nextActiveIndex <= profileSelectBox.Items.Count - 1)
-            {
-                nextActiveIndex--;
-            }
-            lastProfileIndex = -1;
-
-            profileSelectBox.Items.RemoveAt(profileSelectBox.SelectedIndex);
-            profileSelectBox.SelectedIndex = nextActiveIndex;
-            */
-        }
-
         /// <summary>
         /// 保存して閉じるメニュー
         /// </summary>
@@ -422,11 +390,5 @@ namespace EbiSoft.EbIRC
                 }
             }
         }
-        /*
-        private void serverUseSslCheckBox_CheckStateChanged(object sender, EventArgs e)
-        {
-            serverSslNotValidateCheckBox.Enabled = serverUseSslCheckBox.Checked;
-        }
-        */
     }
 }

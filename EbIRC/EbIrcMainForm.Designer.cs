@@ -34,10 +34,12 @@
             this.mainMenu1 = new System.Windows.Forms.MainMenu();
             this.multiMenuItem = new System.Windows.Forms.MenuItem();
             this.menuMenuItem = new System.Windows.Forms.MenuItem();
-            this.menuChannelControlMenuItem = new System.Windows.Forms.MenuItem();
             this.menuChannelListMenuItem = new System.Windows.Forms.MenuItem();
             this.menuChannelListServerMenuItem = new System.Windows.Forms.MenuItem();
             this.menuItem3 = new System.Windows.Forms.MenuItem();
+            this.menuAllChannelMenuItem = new System.Windows.Forms.MenuItem();
+            this.menuAllHilightsMenuItem = new System.Windows.Forms.MenuItem();
+            this.menuChannelControlMenuItem = new System.Windows.Forms.MenuItem();
             this.connectionMenuItem = new System.Windows.Forms.MenuItem();
             this.menuItem8 = new System.Windows.Forms.MenuItem();
             this.menuEditMenuItem = new System.Windows.Forms.MenuItem();
@@ -69,8 +71,6 @@
             this.menuWholeSeparator = new System.Windows.Forms.MenuItem();
             this.menuAllChannelMessage = new System.Windows.Forms.MenuItem();
             this.menuAllHilightsMessages = new System.Windows.Forms.MenuItem();
-            this.menuAllChannelMenuItem = new System.Windows.Forms.MenuItem();
-            this.menuAllHilightsMenuItem = new System.Windows.Forms.MenuItem();
             this.infomationPanel.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
@@ -87,6 +87,7 @@
             // 
             // menuMenuItem
             // 
+            resources.ApplyResources(this.menuMenuItem, "menuMenuItem");
             this.menuMenuItem.MenuItems.Add(this.menuChannelListMenuItem);
             this.menuMenuItem.MenuItems.Add(this.menuAllChannelMenuItem);
             this.menuMenuItem.MenuItems.Add(this.menuAllHilightsMenuItem);
@@ -98,18 +99,12 @@
             this.menuMenuItem.MenuItems.Add(this.menuItem1);
             this.menuMenuItem.MenuItems.Add(this.menuSettingMenuItem);
             this.menuMenuItem.MenuItems.Add(this.menuExitMenuItem);
-            resources.ApplyResources(this.menuMenuItem, "menuMenuItem");
-            // 
-            // menuChannelControlMenuItem
-            // 
-            resources.ApplyResources(this.menuChannelControlMenuItem, "menuChannelControlMenuItem");
-            this.menuChannelControlMenuItem.Click += new System.EventHandler(this.menuChannelControlMenuItem_Click);
             // 
             // menuChannelListMenuItem
             // 
+            resources.ApplyResources(this.menuChannelListMenuItem, "menuChannelListMenuItem");
             this.menuChannelListMenuItem.MenuItems.Add(this.menuChannelListServerMenuItem);
             this.menuChannelListMenuItem.MenuItems.Add(this.menuItem3);
-            resources.ApplyResources(this.menuChannelListMenuItem, "menuChannelListMenuItem");
             // 
             // menuChannelListServerMenuItem
             // 
@@ -119,6 +114,21 @@
             // menuItem3
             // 
             resources.ApplyResources(this.menuItem3, "menuItem3");
+            // 
+            // menuAllChannelMenuItem
+            // 
+            resources.ApplyResources(this.menuAllChannelMenuItem, "menuAllChannelMenuItem");
+            this.menuAllChannelMenuItem.Click += new System.EventHandler(this.menuAllChannelMessage_Click);
+            // 
+            // menuAllHilightsMenuItem
+            // 
+            resources.ApplyResources(this.menuAllHilightsMenuItem, "menuAllHilightsMenuItem");
+            this.menuAllHilightsMenuItem.Click += new System.EventHandler(this.menuAllHilightsMessage_Click);
+            // 
+            // menuChannelControlMenuItem
+            // 
+            resources.ApplyResources(this.menuChannelControlMenuItem, "menuChannelControlMenuItem");
+            this.menuChannelControlMenuItem.Click += new System.EventHandler(this.menuChannelControlMenuItem_Click);
             // 
             // connectionMenuItem
             // 
@@ -131,12 +141,12 @@
             // 
             // menuEditMenuItem
             // 
+            resources.ApplyResources(this.menuEditMenuItem, "menuEditMenuItem");
             this.menuEditMenuItem.MenuItems.Add(this.menuEditCopyMenuItem);
             this.menuEditMenuItem.MenuItems.Add(this.menuEditGoogleMenuItem);
             this.menuEditMenuItem.MenuItems.Add(this.menuEditOpenURLMenuItem);
             this.menuEditMenuItem.MenuItems.Add(this.menuEditPasteMenuItem);
             this.menuEditMenuItem.MenuItems.Add(this.menuEditClearMenuItem);
-            resources.ApplyResources(this.menuEditMenuItem, "menuEditMenuItem");
             // 
             // menuEditCopyMenuItem
             // 
@@ -165,8 +175,8 @@
             // 
             // nicknameSwitchMenuItem
             // 
-            this.nicknameSwitchMenuItem.MenuItems.Add(this.menuNicknameInputMenuItem);
             resources.ApplyResources(this.nicknameSwitchMenuItem, "nicknameSwitchMenuItem");
+            this.nicknameSwitchMenuItem.MenuItems.Add(this.menuNicknameInputMenuItem);
             // 
             // menuNicknameInputMenuItem
             // 
@@ -189,9 +199,9 @@
             // 
             // infomationPanel
             // 
+            resources.ApplyResources(this.infomationPanel, "infomationPanel");
             this.infomationPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.infomationPanel.Controls.Add(this.topicLabel);
-            resources.ApplyResources(this.infomationPanel, "infomationPanel");
             this.infomationPanel.Name = "infomationPanel";
             // 
             // topicLabel
@@ -209,8 +219,8 @@
             // 
             // logTextBox
             // 
-            this.logTextBox.ContextMenu = this.logContextMenu;
             resources.ApplyResources(this.logTextBox, "logTextBox");
+            this.logTextBox.ContextMenu = this.logContextMenu;
             this.logTextBox.Name = "logTextBox";
             this.logTextBox.ReadOnly = true;
             // 
@@ -242,10 +252,10 @@
             // 
             // mainPanel
             // 
+            resources.ApplyResources(this.mainPanel, "mainPanel");
             this.mainPanel.Controls.Add(this.logTextBox);
             this.mainPanel.Controls.Add(this.inputTextBox);
             this.mainPanel.Controls.Add(this.infomationPanel);
-            resources.ApplyResources(this.mainPanel, "mainPanel");
             this.mainPanel.Name = "mainPanel";
             // 
             // pongTimer
@@ -287,16 +297,6 @@
             // 
             resources.ApplyResources(this.menuAllHilightsMessages, "menuAllHilightsMessages");
             this.menuAllHilightsMessages.Click += new System.EventHandler(this.menuAllHilightsMessage_Click);
-            // 
-            // menuAllChannelMenuItem
-            // 
-            resources.ApplyResources(this.menuAllChannelMenuItem, "menuAllChannelMenuItem");
-            this.menuAllChannelMenuItem.Click += new System.EventHandler(this.menuAllChannelMessage_Click);
-            // 
-            // menuAllHilightsMenuItem
-            // 
-            resources.ApplyResources(this.menuAllHilightsMenuItem, "menuAllHilightsMenuItem");
-            this.menuAllHilightsMenuItem.Click += new System.EventHandler(this.menuAllHilightsMessage_Click);
             // 
             // EbIrcMainForm
             // 

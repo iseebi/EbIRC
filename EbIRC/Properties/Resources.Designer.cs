@@ -513,6 +513,15 @@ namespace EbiSoft.EbIRC.Properties {
         }
         
         /// <summary>
+        ///   New Profile に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string NewProfileName {
+            get {
+                return ResourceManager.GetString("NewProfileName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   {0} is changed nickname to {1} に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string NicknameChangedMessage {

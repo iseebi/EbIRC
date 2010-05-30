@@ -892,6 +892,19 @@ namespace EbiSoft.EbIRC.IRC {
             Connect(new ServerInfo(name, port, password, useSsl, noValidation), new UserInfo(nickname, realname));
         }
 
+        /// <summary>
+        /// 接続
+        /// </summary>
+        /// <param name="name">サーバー名</param>
+        /// <param name="port">接続ポート</param>
+        /// <param name="password">サーバーパスワード</param>
+        /// <param name="nickname">ニックネーム</param>
+        /// <param name="realname">名前</param>
+        /// <param name="useSsl">SSL使用</param>
+        public void Connect(string name, int port, string password, bool useSsl, bool noValidation, string nickname, string realname, string loginname, string nickservPass)
+        {
+            Connect(new ServerInfo(name, port, password, useSsl, noValidation), new UserInfo(nickname, realname, loginname, nickservPass));
+        }
 
         /// <summary>
         /// 接続
@@ -1618,7 +1631,31 @@ namespace EbiSoft.EbIRC.IRC {
             ChangeNickname(m_user.NickName);
 
             // ユーザー情報送信
-            SendCommand(string.Format("USER {0} {1} {2} :{3}", m_user.NickName, "LocalEndPoint", "RemoteEndPoint", m_user.RealName));
+            string loginName;
+            string realName;
+            if (!string.IsNullOrEmpty(m_user.LoginName))
+            {
+                loginName = m_user.LoginName;
+            }
+            else
+            {
+                loginName = m_user.NickName;
+            }
+            if (!string.IsNullOrEmpty(m_user.RealName))
+            {
+                realName = m_user.RealName;
+            }
+            else
+            {
+                realName = m_user.NickName;
+            }
+            SendCommand(string.Format("USER {0} {1} {2} :{3}", loginName, "LocalEndPoint", "RemoteEndPoint", realName));
+
+            // NickServパスワードが設定されているときは送信する
+            if (!string.IsNullOrEmpty(m_user.NickservPass))
+            {
+                SendCommand(string.Format("PRIVMSG NickServ :identify {0}", m_user.NickservPass));
+            }
         }
 
         /// <summary>
