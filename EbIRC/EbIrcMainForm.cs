@@ -1750,13 +1750,13 @@ namespace EbiSoft.EbIRC
             else if (m_currentCh == m_wholeCh) {
                 if (m_channel.Count == 0)
                 {
-                    // 最後のチャンネルへ
-                    LoadChannel(list[list.Count - 1]);
+                    // サーバーへ
+                    LoadChannel(m_serverCh);
                 }
                 else
                 {
-                    // サーバーへ
-                    LoadChannel(m_serverCh);
+                    // 最後のチャンネルへ
+                    LoadChannel(list[list.Count - 1]);
                 }
             }
             // ハイライトなら
@@ -1776,7 +1776,7 @@ namespace EbiSoft.EbIRC
                 {
                     LoadChannel(m_serverCh);
                 }
-                // 先頭でないなら+1
+                // 先頭でないなら-1
                 else
                 {
                     LoadChannel(list[index - 1]);
