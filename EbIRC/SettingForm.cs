@@ -110,7 +110,7 @@ namespace EbiSoft.EbIRC
             dislikeUseRegexCheckBox.Checked = SettingManager.Data.UseRegexDislike;
             enableLoggingCheckBox.Checked = SettingManager.Data.LogingEnable;
             logDirectoryNameTextBox.Text = SettingManager.Data.LogDirectory;
-            qsSortHilightedCheckBox.Checked = SettingManager.Data.QuickSwitchHilightsSort;
+            qsSortHighlightedCheckBox.Checked = SettingManager.Data.QuickSwitchHilightsSort;
             qsSortUnreadCheckBox.Checked = SettingManager.Data.QuickSwitchUnreadCountSort;
         }
 
@@ -152,13 +152,13 @@ namespace EbiSoft.EbIRC
             SettingManager.Data.ForcePong = forcePongCheckBox.Checked;
             SettingManager.Data.HighlightKeywords = highlightWordsTextBox.Text.Replace("\r", "").Split('\n');
             SettingManager.Data.UseRegexHighlight=highlightUseRegexCheckbox.Checked;
-            SettingManager.Data.HighlightMethod = (EbIRCHilightMethod)highlightMethodComboBox.SelectedIndex;
+            SettingManager.Data.HighlightMethod = (EbIRCHighlightMethod)highlightMethodComboBox.SelectedIndex;
             SettingManager.Data.HighlightChannelChange = highlightChannelCheckBox.Checked;
             SettingManager.Data.DislikeKeywords = dislikeWordsTextBox.Text.Replace("\r", "").Split('\n');
             SettingManager.Data.UseRegexDislike = dislikeUseRegexCheckBox.Checked;
             SettingManager.Data.LogingEnable = enableLoggingCheckBox.Checked;
             SettingManager.Data.LogDirectory = logDirectoryNameTextBox.Text;
-            SettingManager.Data.QuickSwitchHilightsSort = qsSortHilightedCheckBox.Checked;
+            SettingManager.Data.QuickSwitchHilightsSort = qsSortHighlightedCheckBox.Checked;
             SettingManager.Data.QuickSwitchUnreadCountSort = qsSortUnreadCheckBox.Checked;
 
             SettingManager.WriteSetting();

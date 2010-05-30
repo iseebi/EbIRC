@@ -38,7 +38,7 @@
             this.menuChannelListServerMenuItem = new System.Windows.Forms.MenuItem();
             this.menuItem3 = new System.Windows.Forms.MenuItem();
             this.menuAllChannelMenuItem = new System.Windows.Forms.MenuItem();
-            this.menuAllHilightsMenuItem = new System.Windows.Forms.MenuItem();
+            this.menuAllHighlightsMenuItem = new System.Windows.Forms.MenuItem();
             this.menuChannelControlMenuItem = new System.Windows.Forms.MenuItem();
             this.connectionMenuItem = new System.Windows.Forms.MenuItem();
             this.menuItem8 = new System.Windows.Forms.MenuItem();
@@ -64,13 +64,13 @@
             this.inputPanel = new Microsoft.WindowsCE.Forms.InputPanel(this.components);
             this.mainPanel = new System.Windows.Forms.Panel();
             this.pongTimer = new System.Windows.Forms.Timer();
-            this.clearHilightTimer = new System.Windows.Forms.Timer();
+            this.clearHighlightTimer = new System.Windows.Forms.Timer();
             this.channelContextMenu = new System.Windows.Forms.ContextMenu();
-            this.menuHilightedMessages = new System.Windows.Forms.MenuItem();
-            this.menuHilightedSeparator = new System.Windows.Forms.MenuItem();
+            this.menuHighlightedMessages = new System.Windows.Forms.MenuItem();
+            this.menuHighlightedSeparator = new System.Windows.Forms.MenuItem();
             this.menuWholeSeparator = new System.Windows.Forms.MenuItem();
             this.menuAllChannelMessage = new System.Windows.Forms.MenuItem();
-            this.menuAllHilightsMessages = new System.Windows.Forms.MenuItem();
+            this.menuAllHighlightsMessages = new System.Windows.Forms.MenuItem();
             this.infomationPanel.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
@@ -90,7 +90,7 @@
             resources.ApplyResources(this.menuMenuItem, "menuMenuItem");
             this.menuMenuItem.MenuItems.Add(this.menuChannelListMenuItem);
             this.menuMenuItem.MenuItems.Add(this.menuAllChannelMenuItem);
-            this.menuMenuItem.MenuItems.Add(this.menuAllHilightsMenuItem);
+            this.menuMenuItem.MenuItems.Add(this.menuAllHighlightsMenuItem);
             this.menuMenuItem.MenuItems.Add(this.menuChannelControlMenuItem);
             this.menuMenuItem.MenuItems.Add(this.connectionMenuItem);
             this.menuMenuItem.MenuItems.Add(this.menuItem8);
@@ -120,10 +120,10 @@
             resources.ApplyResources(this.menuAllChannelMenuItem, "menuAllChannelMenuItem");
             this.menuAllChannelMenuItem.Click += new System.EventHandler(this.menuAllChannelMessage_Click);
             // 
-            // menuAllHilightsMenuItem
+            // menuAllHighlightsMenuItem
             // 
-            resources.ApplyResources(this.menuAllHilightsMenuItem, "menuAllHilightsMenuItem");
-            this.menuAllHilightsMenuItem.Click += new System.EventHandler(this.menuAllHilightsMessage_Click);
+            resources.ApplyResources(this.menuAllHighlightsMenuItem, "menuAllHighlightsMenuItem");
+            this.menuAllHighlightsMenuItem.Click += new System.EventHandler(this.menuAllHighlightsMessage_Click);
             // 
             // menuChannelControlMenuItem
             // 
@@ -263,26 +263,26 @@
             this.pongTimer.Interval = 15000;
             this.pongTimer.Tick += new System.EventHandler(this.pongTimer_Tick);
             // 
-            // clearHilightTimer
+            // clearHighlightTimer
             // 
-            this.clearHilightTimer.Tick += new System.EventHandler(this.clearHilightTimer_Tick);
+            this.clearHighlightTimer.Tick += new System.EventHandler(this.clearHighlightTimer_Tick);
             // 
             // channelContextMenu
             // 
-            this.channelContextMenu.MenuItems.Add(this.menuHilightedMessages);
-            this.channelContextMenu.MenuItems.Add(this.menuHilightedSeparator);
+            this.channelContextMenu.MenuItems.Add(this.menuHighlightedMessages);
+            this.channelContextMenu.MenuItems.Add(this.menuHighlightedSeparator);
             this.channelContextMenu.MenuItems.Add(this.menuWholeSeparator);
             this.channelContextMenu.MenuItems.Add(this.menuAllChannelMessage);
-            this.channelContextMenu.MenuItems.Add(this.menuAllHilightsMessages);
+            this.channelContextMenu.MenuItems.Add(this.menuAllHighlightsMessages);
             this.channelContextMenu.Popup += new System.EventHandler(this.channelContextMenu_Popup);
             // 
-            // menuHilightedMessages
+            // menuHighlightedMessages
             // 
-            resources.ApplyResources(this.menuHilightedMessages, "menuHilightedMessages");
+            resources.ApplyResources(this.menuHighlightedMessages, "menuHighlightedMessages");
             // 
-            // menuHilightedSeparator
+            // menuHighlightedSeparator
             // 
-            resources.ApplyResources(this.menuHilightedSeparator, "menuHilightedSeparator");
+            resources.ApplyResources(this.menuHighlightedSeparator, "menuHighlightedSeparator");
             // 
             // menuWholeSeparator
             // 
@@ -293,10 +293,10 @@
             resources.ApplyResources(this.menuAllChannelMessage, "menuAllChannelMessage");
             this.menuAllChannelMessage.Click += new System.EventHandler(this.menuAllChannelMessage_Click);
             // 
-            // menuAllHilightsMessages
+            // menuAllHighlightsMessages
             // 
-            resources.ApplyResources(this.menuAllHilightsMessages, "menuAllHilightsMessages");
-            this.menuAllHilightsMessages.Click += new System.EventHandler(this.menuAllHilightsMessage_Click);
+            resources.ApplyResources(this.menuAllHighlightsMessages, "menuAllHighlightsMessages");
+            this.menuAllHighlightsMessages.Click += new System.EventHandler(this.menuAllHighlightsMessage_Click);
             // 
             // EbIrcMainForm
             // 
@@ -347,16 +347,16 @@
         private Microsoft.WindowsCE.Forms.InputPanel inputPanel;
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Timer pongTimer;
-        private System.Windows.Forms.Timer clearHilightTimer;
+        private System.Windows.Forms.Timer clearHighlightTimer;
         private System.Windows.Forms.ContextMenu channelContextMenu;
-        private System.Windows.Forms.MenuItem menuHilightedMessages;
-        private System.Windows.Forms.MenuItem menuHilightedSeparator;
+        private System.Windows.Forms.MenuItem menuHighlightedMessages;
+        private System.Windows.Forms.MenuItem menuHighlightedSeparator;
         private System.Windows.Forms.MenuItem multiMenuItem;
         private System.Windows.Forms.MenuItem menuWholeSeparator;
         private System.Windows.Forms.MenuItem menuAllChannelMessage;
-        private System.Windows.Forms.MenuItem menuAllHilightsMessages;
+        private System.Windows.Forms.MenuItem menuAllHighlightsMessages;
         private System.Windows.Forms.MenuItem menuAllChannelMenuItem;
-        private System.Windows.Forms.MenuItem menuAllHilightsMenuItem;
+        private System.Windows.Forms.MenuItem menuAllHighlightsMenuItem;
     }
 }
 

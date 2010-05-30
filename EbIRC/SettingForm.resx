@@ -149,6 +149,12 @@
   <data name="fontSizeComboBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="&gt;&gt;highlightMethodComboBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="verticalKeySelectBox.Items5" xml:space="preserve">
+    <value>Change font size</value>
+  </data>
   <data name="logDirectoryNameTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>441, 41</value>
   </data>
@@ -169,9 +175,6 @@
   </data>
   <data name="&gt;&gt;fontNameInputBox.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Left / Right</value>
   </data>
   <data name="&gt;&gt;verticalKeySelectBox.Parent" xml:space="preserve">
     <value>controlTabPage</value>
@@ -282,9 +285,6 @@
   <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 304</value>
   </data>
-  <data name="verticalKeySelectBox.Items" xml:space="preserve">
-    <value>No operation</value>
-  </data>
   <data name="profileAddButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
   </data>
@@ -293,9 +293,6 @@
   </data>
   <data name="profileSelectListview.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;viewTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="$this.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -320,6 +317,9 @@
   </data>
   <data name="&gt;&gt;profileSelectListview.Name" xml:space="preserve">
     <value>profileSelectListview</value>
+  </data>
+  <data name="defaultLoadOnConnectCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 224</value>
   </data>
   <data name="&gt;&gt;keywordsTabPage.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -378,14 +378,17 @@
   <data name="&gt;&gt;ctrlHorizontalKeySelectBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;controlTabPage.Name" xml:space="preserve">
+    <value>controlTabPage</value>
+  </data>
   <data name="&gt;&gt;label13.Name" xml:space="preserve">
     <value>label13</value>
   </data>
   <data name="dislikeWordsTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 347</value>
   </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
+  <data name="&gt;&gt;profileRemoveButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="qsSortUnreadCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>466, 40</value>
@@ -444,9 +447,6 @@
   <data name="communicationTabPage.Size" type="System.Drawing.Size, System.Drawing">
     <value>472, 498</value>
   </data>
-  <data name="confimExitCheckBox.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
   <data name="label17.Text" xml:space="preserve">
     <value>Dislike words</value>
   </data>
@@ -486,8 +486,8 @@
   <data name="logDirectoryBrowseButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>304, 140</value>
   </data>
-  <data name="&gt;&gt;highlightMethodComboBox.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="verticalKeySelectBox.Items" xml:space="preserve">
+    <value>No operation</value>
   </data>
   <data name="&gt;&gt;label10.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -522,14 +522,14 @@
   <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
     <value>410, 40</value>
   </data>
+  <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 50</value>
+  </data>
   <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
     <value>466, 98</value>
   </data>
   <data name="fontNameInputBox.Items" xml:space="preserve">
     <value>Courier New</value>
-  </data>
-  <data name="label12.Text" xml:space="preserve">
-    <value>Ctrl + Up / Down</value>
   </data>
   <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -554,6 +554,9 @@
   </data>
   <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
     <value>247, 40</value>
+  </data>
+  <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 52</value>
   </data>
   <data name="&gt;&gt;label12.Parent" xml:space="preserve">
     <value>controlTabPage</value>
@@ -587,9 +590,6 @@
   </data>
   <data name="profileSelectListview.Items" xml:space="preserve">
     <value />
-  </data>
-  <data name="fontSizeComboBox.Items3" xml:space="preserve">
-    <value>8</value>
   </data>
   <data name="scrollLinesLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>310, 40</value>
@@ -660,6 +660,9 @@
   <data name="&gt;&gt;label20.Name" xml:space="preserve">
     <value>label20</value>
   </data>
+  <data name="&gt;&gt;ctrlVerticalKeySelectBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;serverTabPage.Parent" xml:space="preserve">
     <value>tabControl</value>
   </data>
@@ -729,8 +732,8 @@
   <data name="&gt;&gt;label13.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="qsSortHilightedCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 215</value>
+  <data name="confimExitCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
   <data name="defaultLoadOnConnectCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -774,17 +777,11 @@
   <data name="&gt;&gt;dislikeWordsTextBox.Parent" xml:space="preserve">
     <value>keywordsTabPage</value>
   </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Font</value>
-  </data>
   <data name="fontSizeComboBox.Items9" xml:space="preserve">
     <value>14</value>
   </data>
   <data name="&gt;&gt;label9.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
-    <value>tabControl</value>
   </data>
   <data name="subNicknameInputBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>438, 226</value>
@@ -822,9 +819,6 @@
   <data name="&gt;&gt;quickSwitchShortcutTabPage.Name" xml:space="preserve">
     <value>quickSwitchShortcutTabPage</value>
   </data>
-  <data name="qsSortUnreadCheckBox.Text" xml:space="preserve">
-    <value>Sort by unread count</value>
-  </data>
   <data name="&gt;&gt;label18.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
@@ -861,8 +855,8 @@
   <data name="&gt;&gt;nickNameTabPage.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>428, 40</value>
+  <data name="qsSortHilightedCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 215</value>
   </data>
   <data name="verticalKeySelectBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 47</value>
@@ -873,9 +867,6 @@
   <data name="profileEditButton.Text" xml:space="preserve">
     <value>Edit</value>
   </data>
-  <data name="&gt;&gt;scrollLinesTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 10</value>
   </data>
@@ -884,9 +875,6 @@
   </data>
   <data name="&gt;&gt;nickNameTabPage.Name" xml:space="preserve">
     <value>nickNameTabPage</value>
-  </data>
-  <data name="&gt;&gt;dislikeWordsTextBox.Name" xml:space="preserve">
-    <value>dislikeWordsTextBox</value>
   </data>
   <data name="quickSwitchShortcutTabPage.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -921,6 +909,9 @@
   <data name="nickNameTabPage.Text" xml:space="preserve">
     <value>Nicknames</value>
   </data>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
+  </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
     <value>466, 40</value>
   </data>
@@ -939,8 +930,8 @@
   <data name="&gt;&gt;saveCloseMenuItem.Name" xml:space="preserve">
     <value>saveCloseMenuItem</value>
   </data>
-  <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 50</value>
+  <data name="&gt;&gt;dislikeWordsTextBox.Name" xml:space="preserve">
+    <value>dislikeWordsTextBox</value>
   </data>
   <data name="profileMarkActiveButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left</value>
@@ -960,8 +951,8 @@
   <data name="verticalKeySelectBox.Items3" xml:space="preserve">
     <value>Page Up/Down</value>
   </data>
-  <data name="highlightWordsTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="qsSortUnreadCheckBox.Text" xml:space="preserve">
+    <value>Sort by unread count</value>
   </data>
   <data name="controlTabPage.Size" type="System.Drawing.Size, System.Drawing">
     <value>472, 498</value>
@@ -971,6 +962,9 @@
   </data>
   <data name="&gt;&gt;fontNameInputBox.Name" xml:space="preserve">
     <value>fontNameInputBox</value>
+  </data>
+  <data name="&gt;&gt;scrollLinesLabel.Name" xml:space="preserve">
+    <value>scrollLinesLabel</value>
   </data>
   <data name="cacheConnectionCheckBox.Text" xml:space="preserve">
     <value>No disconnect network
@@ -992,6 +986,9 @@
     <value>tabControl</value>
   </data>
   <data name="quickSwitchShortcutTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>472, 498</value>
+  </data>
+  <data name="keywordsTabPage.Size" type="System.Drawing.Size, System.Drawing">
     <value>472, 498</value>
   </data>
   <data name="profileRemoveButton.TabIndex" type="System.Int32, mscorlib">
@@ -1025,6 +1022,9 @@
   <data name="&gt;&gt;ctrlHorizontalKeySelectBox.Parent" xml:space="preserve">
     <value>controlTabPage</value>
   </data>
+  <data name="&gt;&gt;fontNameInputBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="profileSelectListview.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 37</value>
   </data>
@@ -1039,6 +1039,9 @@
   </data>
   <data name="controlTabPage.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;label11.Name" xml:space="preserve">
+    <value>label11</value>
   </data>
   <data name="verticalKeySelectBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>428, 41</value>
@@ -1097,8 +1100,8 @@
   <data name="fontNameInputBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="keywordsTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>472, 498</value>
+  <data name="fontSizeComboBox.Items3" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="horizontalKeySelectBox.Items" xml:space="preserve">
     <value>Nothing</value>
@@ -1132,9 +1135,6 @@
   </data>
   <data name="&gt;&gt;profileEditButton.Name" xml:space="preserve">
     <value>profileEditButton</value>
-  </data>
-  <data name="&gt;&gt;profileRemoveButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="fontNameInputBox.Items1" xml:space="preserve">
     <value>ＭＳ Ｐゴシック</value>
@@ -1184,9 +1184,6 @@
   <data name="&gt;&gt;profileAddButton.Name" xml:space="preserve">
     <value>profileAddButton</value>
   </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>410, 40</value>
-  </data>
   <data name="qsSortHilightedCheckBox.Text" xml:space="preserve">
     <value>Sort by Hilights</value>
   </data>
@@ -1214,8 +1211,8 @@
   <data name="fontSizeComboBox.Items8" xml:space="preserve">
     <value>13</value>
   </data>
-  <data name="&gt;&gt;label11.Name" xml:space="preserve">
-    <value>label11</value>
+  <data name="highlightWordsTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -1253,11 +1250,14 @@
   <data name="&gt;&gt;communicationTabPage.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>428, 40</value>
+  </data>
   <data name="&gt;&gt;saveCloseMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="verticalKeySelectBox.Items5" xml:space="preserve">
-    <value>Change font size</value>
+  <data name="&gt;&gt;viewTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="ctrlVerticalKeySelectBox.Items1" xml:space="preserve">
     <value>Change channel</value>
@@ -1268,8 +1268,8 @@
   <data name="enableLoggingCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 52</value>
+  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
+    <value>tabControl</value>
   </data>
   <data name="&gt;&gt;subNicknameInputBox.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -1286,23 +1286,29 @@
   <data name="&gt;&gt;logDirectoryNameTextBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="qsSortHighlightedCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
   <data name="&gt;&gt;highlightWordsTextBox.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;scrollLinesLabel.Name" xml:space="preserve">
-    <value>scrollLinesLabel</value>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Left / Right</value>
   </data>
-  <data name="&gt;&gt;controlTabPage.Name" xml:space="preserve">
-    <value>controlTabPage</value>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Ctrl + Up / Down</value>
   </data>
-  <data name="defaultLoadOnConnectCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 224</value>
+  <data name="&gt;&gt;scrollLinesTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ctrlVerticalKeySelectBox.Parent" xml:space="preserve">
     <value>controlTabPage</value>
   </data>
   <data name="highlightMethodComboBox.Items2" xml:space="preserve">
     <value>LED</value>
+  </data>
+  <data name="qsSortHighlightedCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 215</value>
   </data>
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
     <value>12</value>
@@ -1313,8 +1319,8 @@
   <data name="visibleTopicPanelCheckbox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;ctrlVerticalKeySelectBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>410, 40</value>
   </data>
   <data name="profileSelectListview.Size" type="System.Drawing.Size, System.Drawing">
     <value>466, 346</value>
@@ -1355,8 +1361,8 @@
   <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
     <value>441, 40</value>
   </data>
-  <data name="&gt;&gt;fontNameInputBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Font</value>
   </data>
   <data name="scrollLinesTextBox.Text" xml:space="preserve">
     <value>2</value>
@@ -1378,8 +1384,5 @@
   </metadata>
   <metadata name="$this.FormFactorShadowProperty" xml:space="preserve">
     <value>Pocket_PC_Phone_VGA</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>Japanese (Japan)</value>
   </metadata>
 </root>

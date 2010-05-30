@@ -24,7 +24,7 @@ namespace EbiSoft.EbIRC
         private readonly string CONNMGR_URL_FORMAT;
         private readonly string LOG_KEY_SERVER;
         private readonly string LOG_KEY_WHOLE;
-        private readonly string LOG_KEY_HILIGHTS;
+        private readonly string LOG_KEY_HIGHLIGHTS;
 
         private readonly Regex UrlRegex = new Regex(@"([A-Za-z]+)://([^:/]+)(:(\d+))?(/[^#\s]*)(#(\S+))?", RegexOptions.Compiled);
 
@@ -70,7 +70,7 @@ namespace EbiSoft.EbIRC
         Channel m_currentCh;                           // 現在のチャンネル
         Channel m_serverCh;                            // サーバーメッセージ
         Channel m_wholeCh;                             // ホールチャンネル
-        Channel m_hilightsCh;                        // ハイライトメッセージチャンネル
+        Channel m_highlightsCh;                        // ハイライトメッセージチャンネル
         string m_nickname = string.Empty;              // 自分の現在のニックネーム
         List<string> m_inputlog;                       // 入力テキストログ
         int m_inputlogPtr;                             // テキストログ現在位置
@@ -83,10 +83,10 @@ namespace EbiSoft.EbIRC
         bool m_storeFlag = false;                           // ログ蓄積モードフラグ
         StringBuilder m_storedLog = new StringBuilder();    // 蓄積ログ
 
-        Regex hilightMatcher = null;   // ハイライトマッチオブジェクト
+        Regex highlightMatcher = null;   // ハイライトマッチオブジェクト
         Regex dislikeMatcher = null;     // 無視マッチオブジェクト
-        bool hilightFlag = false;      // ハイライトするフラグ
-        Channel hilightChannel = null; // ハイライトするチャンネル
+        bool highlightFlag = false;      // ハイライトするフラグ
+        Channel highlightChannel = null; // ハイライトするチャンネル
 
         List<ChannelMenuItem> m_channelPopupMenus; // チャンネルポップアップメニューに出すチャンネルの項目
         int m_lastSendTick = 0;                    // 最後に発言したTicktime (無効時間判定に使用)
@@ -104,7 +104,7 @@ namespace EbiSoft.EbIRC
             CONNMGR_URL_FORMAT = "http://{0}:{1}/";
             LOG_KEY_SERVER     = Resources.ChannelSelecterServerCaption;
             LOG_KEY_WHOLE = Resources.ChannelSelecterWholeCaption;
-            LOG_KEY_HILIGHTS = Resources.ChannelSelecterHilightsCaption;
+            LOG_KEY_HIGHLIGHTS = Resources.ChannelSelecterHighlightsCaption;
 
             // IRCクライアント初期化、イベントハンドラ結合
             ircClient = new IRCClient();
@@ -137,7 +137,7 @@ namespace EbiSoft.EbIRC
 
             // サーバーチャンネルを用意する
             m_serverCh = new Channel(LOG_KEY_SERVER, false);
-            m_hilightsCh = new Channel(LOG_KEY_HILIGHTS, false);
+            m_highlightsCh = new Channel(LOG_KEY_HIGHLIGHTS, false);
             m_wholeCh = new Channel(LOG_KEY_WHOLE, false);
 
             // バージョン情報出力
@@ -439,9 +439,9 @@ namespace EbiSoft.EbIRC
         /// <summary>
         /// ハイライトメッセージ一覧を表示
         /// </summary>
-        private void menuAllHilightsMessage_Click(object sender, EventArgs e)
+        private void menuAllHighlightsMessage_Click(object sender, EventArgs e)
         {
-            LoadChannel(m_hilightsCh);
+            LoadChannel(m_highlightsCh);
         }
 
         /// <summary>
@@ -616,10 +616,10 @@ namespace EbiSoft.EbIRC
             channelContextMenu.MenuItems.Clear();
 
             // ハイライトメッセージの処理
-            if (menuHilightedMessages.MenuItems.Count > 0)
+            if (menuHighlightedMessages.MenuItems.Count > 0)
             {
-                channelContextMenu.MenuItems.Add(menuHilightedMessages);
-                channelContextMenu.MenuItems.Add(menuHilightedSeparator);
+                channelContextMenu.MenuItems.Add(menuHighlightedMessages);
+                channelContextMenu.MenuItems.Add(menuHighlightedSeparator);
             }
 
             // その他のチャンネルセレクタの処理
@@ -643,7 +643,7 @@ namespace EbiSoft.EbIRC
             // ホール関連追加
             channelContextMenu.MenuItems.Add(menuWholeSeparator);
             channelContextMenu.MenuItems.Add(menuAllChannelMessage);
-            channelContextMenu.MenuItems.Add(menuAllHilightsMessages);
+            channelContextMenu.MenuItems.Add(menuAllHighlightsMessages);
         }
 
         #endregion
@@ -1228,8 +1228,8 @@ namespace EbiSoft.EbIRC
             AddLog(m_wholeCh, string.Format(Resources.WholePrivmsgLogFormat, channel, IRCClient.GetUserName(e.Sender), e.Message));
 
             // ハイライトキーワードフィルタ
-            if ((hilightMatcher != null) && hilightMatcher.Match(e.Message).Success)
-                SetHilight(m_channel[channel], IRCClient.GetUserName(e.Sender), e.Message);
+            if ((highlightMatcher != null) && highlightMatcher.Match(e.Message).Success)
+                SetHighlight(m_channel[channel], IRCClient.GetUserName(e.Sender), e.Message);
         }
 
         /// <summary>
@@ -1607,12 +1607,12 @@ namespace EbiSoft.EbIRC
                 // トピックバー設定
                 topicLabel.Text = Resources.WholeTopicbar;
             }
-            else if (channel == m_hilightsCh)
+            else if (channel == m_highlightsCh)
             {
                 // タイトルバー設定
-                this.Text = Resources.HilightTitlebar;
+                this.Text = Resources.HighlightTitlebar;
                 // トピックバー設定
-                topicLabel.Text = Resources.HilightTopicbar;
+                topicLabel.Text = Resources.HighlightTopicbar;
             }
             else
             {
@@ -1653,12 +1653,12 @@ namespace EbiSoft.EbIRC
             }
 
             // このチャンネルのハイライトメッセージを消す
-            for (int i = (menuHilightedMessages.MenuItems.Count - 1); i >= 0; i--)
+            for (int i = (menuHighlightedMessages.MenuItems.Count - 1); i >= 0; i--)
             {
-                ChannelMenuItem menu = menuHilightedMessages.MenuItems[i] as ChannelMenuItem;
+                ChannelMenuItem menu = menuHighlightedMessages.MenuItems[i] as ChannelMenuItem;
                 if (menu.Channel == channel)
                 {
-                    menuHilightedMessages.MenuItems.RemoveAt(i);
+                    menuHighlightedMessages.MenuItems.RemoveAt(i);
                 }
             }
 
@@ -1684,7 +1684,7 @@ namespace EbiSoft.EbIRC
             // チャンネルのリストを作る
             List<Channel> list = new List<Channel>(m_channel.Values);
 
-            // Server -> other -> Whole -> Hilight
+            // Server -> other -> Whole -> Highlight
 
             // 現在のチャンネルがサーバーなら
             if (m_currentCh == m_serverCh)
@@ -1702,10 +1702,10 @@ namespace EbiSoft.EbIRC
             else if (m_currentCh == m_wholeCh)
             {
                 // ハイライトへ
-                LoadChannel(m_hilightsCh);
+                LoadChannel(m_highlightsCh);
             }
             // ハイライトの場合
-            else if (m_currentCh == m_hilightsCh)
+            else if (m_currentCh == m_highlightsCh)
             {
                 // サーバーへ
                 LoadChannel(m_serverCh);
@@ -1738,13 +1738,13 @@ namespace EbiSoft.EbIRC
             // チャンネルのリストを作る
             List<Channel> list = new List<Channel>(m_channel.Values);
 
-            // Server -> other -> Whole -> Hilight
+            // Server -> other -> Whole -> Highlight
 
             // 現在のチャンネルがサーバーなら
             if (m_currentCh == m_serverCh)
             {
                 // ハイライトへ
-                LoadChannel(m_hilightsCh);
+                LoadChannel(m_highlightsCh);
             }
             // ホールなら
             else if (m_currentCh == m_wholeCh) {
@@ -1760,7 +1760,7 @@ namespace EbiSoft.EbIRC
                 }
             }
             // ハイライトなら
-            else if (m_currentCh == m_hilightsCh) {
+            else if (m_currentCh == m_highlightsCh) {
                 // ホールへ
                 LoadChannel(m_wholeCh);
             }
@@ -1890,8 +1890,8 @@ namespace EbiSoft.EbIRC
         /// </summary>
         private void BeginStoreLog()
         {
-            hilightFlag = false;
-            hilightChannel = null;
+            highlightFlag = false;
+            highlightChannel = null;
             m_storedLog = new StringBuilder();
             m_storeFlag = true;
         }
@@ -1905,7 +1905,7 @@ namespace EbiSoft.EbIRC
             {
                 PrintLog(m_storedLog.ToString());
                 ClearStoredLog();
-                DoHilight();
+                DoHighlight();
             }
         }
 
@@ -1925,18 +1925,18 @@ namespace EbiSoft.EbIRC
         /// 指定されたチャンネルでのハイライトをセットします
         /// </summary>
         /// <param name="channel">ハイライトするチャンネル</param>
-        private void SetHilight(Channel channel, string sender, string message)
+        private void SetHighlight(Channel channel, string sender, string message)
         {
-            hilightFlag = true;
-            hilightChannel = channel;
+            highlightFlag = true;
+            highlightChannel = channel;
 
             // ハイライトメッセージ一覧に追加
             ChannelMenuItem mesMenu = new ChannelMenuItem(channel);
             mesMenu.Text = string.Format(Resources.PrivmsgLogFormat, sender, message);
             mesMenu.Click += new EventHandler(menuChannelListChannelsMenuItem_Click);
-            menuHilightedMessages.MenuItems.Add(mesMenu);
+            menuHighlightedMessages.MenuItems.Add(mesMenu);
 
-            AddLog(m_hilightsCh, string.Format(Resources.WholePrivmsgLogFormat, channel.Name, sender, message));
+            AddLog(m_highlightsCh, string.Format(Resources.WholePrivmsgLogFormat, channel.Name, sender, message));
 
             // 該当チャンネルをハイライトチェックする
             foreach (ChannelMenuItem menu in m_channelPopupMenus)
@@ -1948,45 +1948,45 @@ namespace EbiSoft.EbIRC
                 }
             }
 
-            if (!m_storeFlag) DoHilight();
+            if (!m_storeFlag) DoHighlight();
         }
 
         /// <summary>
         /// ハイライト処理を実行します
         /// </summary>
-        private void DoHilight()
+        private void DoHighlight()
         {
-            if (hilightFlag && (hilightChannel != null))
+            if (highlightFlag && (highlightChannel != null))
             {
-                if ((SettingManager.Data.HighlightMethod == EbIRCHilightMethod.Vibration) || (SettingManager.Data.HighlightMethod == EbIRCHilightMethod.VibrationAndLed))
+                if ((SettingManager.Data.HighlightMethod == EbIRCHighlightMethod.Vibration) || (SettingManager.Data.HighlightMethod == EbIRCHighlightMethod.VibrationAndLed))
                 {
                     if (Led.AvailableLed(LedType.Vibrartion))
                     {
                         Led.SetLedStatus(LedType.Vibrartion, LedStatus.On);
-                        clearHilightTimer.Enabled = true;
+                        clearHighlightTimer.Enabled = true;
                     }
                 }
-                if ((SettingManager.Data.HighlightMethod == EbIRCHilightMethod.Led) || (SettingManager.Data.HighlightMethod == EbIRCHilightMethod.VibrationAndLed))
+                if ((SettingManager.Data.HighlightMethod == EbIRCHighlightMethod.Led) || (SettingManager.Data.HighlightMethod == EbIRCHighlightMethod.VibrationAndLed))
                 {
                     if (Led.AvailableLed(LedType.Yellow))
                     {
                         Led.SetLedStatus(LedType.Yellow, LedStatus.On);
-                        clearHilightTimer.Enabled = true;
+                        clearHighlightTimer.Enabled = true;
                     }
                 }
                 if (SettingManager.Data.HighlightChannelChange)
                 {
-                    LoadChannel(hilightChannel);
+                    LoadChannel(highlightChannel);
                 }
             }
-            hilightFlag = false;
-            hilightChannel = null;
+            highlightFlag = false;
+            highlightChannel = null;
         }
 
         /// <summary>
         /// ハイライトの設定をクリアします
         /// </summary>
-        private void ClearHilight()
+        private void ClearHighlight()
         {
             if (Led.AvailableLed(LedType.Vibrartion))
             {
@@ -1996,7 +1996,7 @@ namespace EbiSoft.EbIRC
             {
                 Led.SetLedStatus(LedType.Yellow, LedStatus.Off);
             }
-            clearHilightTimer.Enabled = false;
+            clearHighlightTimer.Enabled = false;
         }
 
         /// <summary>
@@ -2004,9 +2004,9 @@ namespace EbiSoft.EbIRC
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void clearHilightTimer_Tick(object sender, EventArgs e)
+        private void clearHighlightTimer_Tick(object sender, EventArgs e)
         {
-            ClearHilight();
+            ClearHighlight();
         }
 
         #endregion
@@ -2073,11 +2073,11 @@ namespace EbiSoft.EbIRC
             pongTimer.Enabled = SettingManager.Data.ForcePong;
 
             // キーワード反応マッチオブジェクト
-            hilightMatcher = SettingManager.Data.GetHighlightKeywordMatcher();
+            highlightMatcher = SettingManager.Data.GetHighlightKeywordMatcher();
             dislikeMatcher = SettingManager.Data.GetDislikeKeywordMatcher();
 
             // ハイライト停止タイマーの周期
-            clearHilightTimer.Interval = SettingManager.Data.HighlightContinueTime;
+            clearHighlightTimer.Interval = SettingManager.Data.HighlightContinueTime;
         }
 
         #endregion

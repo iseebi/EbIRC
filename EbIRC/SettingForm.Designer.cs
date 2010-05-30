@@ -68,7 +68,7 @@
             this.verticalKeySelectBox = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.quickSwitchShortcutTabPage = new System.Windows.Forms.TabPage();
-            this.qsSortHilightedCheckBox = new System.Windows.Forms.CheckBox();
+            this.qsSortHighlightedCheckBox = new System.Windows.Forms.CheckBox();
             this.qsSortUnreadCheckBox = new System.Windows.Forms.CheckBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -366,16 +366,16 @@
             // quickSwitchShortcutTabPage
             // 
             resources.ApplyResources(this.quickSwitchShortcutTabPage, "quickSwitchShortcutTabPage");
-            this.quickSwitchShortcutTabPage.Controls.Add(this.qsSortHilightedCheckBox);
+            this.quickSwitchShortcutTabPage.Controls.Add(this.qsSortHighlightedCheckBox);
             this.quickSwitchShortcutTabPage.Controls.Add(this.qsSortUnreadCheckBox);
             this.quickSwitchShortcutTabPage.Controls.Add(this.label20);
             this.quickSwitchShortcutTabPage.Controls.Add(this.label19);
             this.quickSwitchShortcutTabPage.Name = "quickSwitchShortcutTabPage";
             // 
-            // qsSortHilightedCheckBox
+            // qsSortHighlightedCheckBox
             // 
-            resources.ApplyResources(this.qsSortHilightedCheckBox, "qsSortHilightedCheckBox");
-            this.qsSortHilightedCheckBox.Name = "qsSortHilightedCheckBox";
+            resources.ApplyResources(this.qsSortHighlightedCheckBox, "qsSortHighlightedCheckBox");
+            this.qsSortHighlightedCheckBox.Name = "qsSortHighlightedCheckBox";
             // 
             // qsSortUnreadCheckBox
             // 
@@ -563,7 +563,7 @@
         private System.Windows.Forms.CheckBox enableLoggingCheckBox;
         private System.Windows.Forms.TabPage quickSwitchShortcutTabPage;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.CheckBox qsSortHilightedCheckBox;
+        private System.Windows.Forms.CheckBox qsSortHighlightedCheckBox;
         private System.Windows.Forms.CheckBox qsSortUnreadCheckBox;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ListView profileSelectListview;

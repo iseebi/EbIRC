@@ -335,14 +335,14 @@ UTF-8</value>
   <data name="ChannelSelecterWholeCaption" xml:space="preserve">
     <value>&lt;All channels&gt;</value>
   </data>
-  <data name="ChannelSelecterHilightsCaption" xml:space="preserve">
+  <data name="ChannelSelecterHighlightsCaption" xml:space="preserve">
     <value>&lt;Highlights&gt;</value>
   </data>
-  <data name="HilightTitlebar" xml:space="preserve">
-    <value>EbIRC &lt;Hilights&gt;</value>
+  <data name="HighlightTitlebar" xml:space="preserve">
+    <value>EbIRC &lt;Highlights&gt;</value>
   </data>
-  <data name="HilightTopicbar" xml:space="preserve">
-    <value>Hilights</value>
+  <data name="HighlightTopicbar" xml:space="preserve">
+    <value>Highlights</value>
   </data>
   <data name="WholeNoticeLogFormat" xml:space="preserve">
     <value>[{0}] {1}: {2}</value>

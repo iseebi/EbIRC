@@ -54,7 +54,7 @@ namespace EbiSoft.EbIRC
     /// <summary>
     /// キーワード反応の方法
     /// </summary>
-    public enum EbIRCHilightMethod
+    public enum EbIRCHighlightMethod
     {
         /// <summary>
         /// 反応なし

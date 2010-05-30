@@ -41,7 +41,7 @@ namespace EbiSoft.EbIRC.Settings
         private string[] m_highlightKeywords = new string[] { };
         private bool m_regexHighlight = false;
         private bool m_regexDislike = false;
-        private EbIRCHilightMethod m_highlightMethod = EbIRCHilightMethod.None;
+        private EbIRCHighlightMethod m_highlightMethod = EbIRCHighlightMethod.None;
         private bool m_highlightChannelChange = false;
         private int m_highlightContinueTime = 1500;
         private int m_channelShortcutIgnoreTimes = 400;
@@ -309,7 +309,7 @@ namespace EbiSoft.EbIRC.Settings
         /// <summary>
         /// ハイライト種別
         /// </summary>
-        public EbIRCHilightMethod HighlightMethod
+        public EbIRCHighlightMethod HighlightMethod
         {
             get { return m_highlightMethod; }
             set { m_highlightMethod = value; }

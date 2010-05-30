@@ -168,9 +168,9 @@ namespace EbiSoft.EbIRC.Properties {
         /// <summary>
         ///   &lt;Highlights&gt; に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        internal static string ChannelSelecterHilightsCaption {
+        internal static string ChannelSelecterHighlightsCaption {
             get {
-                return ResourceManager.GetString("ChannelSelecterHilightsCaption", resourceCulture);
+                return ResourceManager.GetString("ChannelSelecterHighlightsCaption", resourceCulture);
             }
         }
         
@@ -396,20 +396,20 @@ namespace EbiSoft.EbIRC.Properties {
         }
         
         /// <summary>
-        ///   EbIRC &lt;Hilights&gt; に類似しているローカライズされた文字列を検索します。
+        ///   EbIRC &lt;Highlights&gt; に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        internal static string HilightTitlebar {
+        internal static string HighlightTitlebar {
             get {
-                return ResourceManager.GetString("HilightTitlebar", resourceCulture);
+                return ResourceManager.GetString("HighlightTitlebar", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Hilights に類似しているローカライズされた文字列を検索します。
+        ///   Highlights に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        internal static string HilightTopicbar {
+        internal static string HighlightTopicbar {
             get {
-                return ResourceManager.GetString("HilightTopicbar", resourceCulture);
+                return ResourceManager.GetString("HighlightTopicbar", resourceCulture);
             }
         }
         
