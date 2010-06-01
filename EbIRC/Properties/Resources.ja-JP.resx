@@ -331,4 +331,34 @@ euc-jp</value>
   <data name="SslValidateErrorOtherSiteString" xml:space="preserve">
     <value>SSL接続失敗：他のサイトの証明書です。</value>
   </data>
+  <data name="ChannelSelecterHighlightsCaption" xml:space="preserve">
+    <value>＜ハイライト＞</value>
+  </data>
+  <data name="ChannelSelecterWholeCaption" xml:space="preserve">
+    <value>＜全チャンネル＞</value>
+  </data>
+  <data name="CrashReportFile" xml:space="preserve">
+    <value>EbIRC_ExceptionReport.txt</value>
+  </data>
+  <data name="HighlightTitlebar" xml:space="preserve">
+    <value>EbIRC ＜ハイライト＞</value>
+  </data>
+  <data name="HighlightTopicbar" xml:space="preserve">
+    <value>ハイライトメッセージ</value>
+  </data>
+  <data name="NewProfileName" xml:space="preserve">
+    <value>新しいプロファイル</value>
+  </data>
+  <data name="WholeNoticeLogFormat" xml:space="preserve">
+    <value>[{0}] {1}: {2}</value>
+  </data>
+  <data name="WholePrivmsgLogFormat" xml:space="preserve">
+    <value>[{0}] {1}&gt; {2}</value>
+  </data>
+  <data name="WholeTitlebar" xml:space="preserve">
+    <value>EbIRC ＜全チャンネル＞</value>
+  </data>
+  <data name="WholeTopicbar" xml:space="preserve">
+    <value>全チャンネル</value>
+  </data>
 </root>

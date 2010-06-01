@@ -51,6 +51,9 @@ namespace EbiSoft.EbIRC.Settings
         private bool m_logingEnable = false;
         private string m_logDirectory = string.Empty;
 
+        private uint m_ledIdLight = 0;
+        private uint m_ledIdVibration = 1;
+
         /// <summary>
         /// 接続プロファイル
         /// </summary>
@@ -395,6 +398,24 @@ namespace EbiSoft.EbIRC.Settings
         {
             get { return m_QuickSwitchHilightsSort; }
             set { m_QuickSwitchHilightsSort = value; }
+        }
+
+        /// <summary>
+        /// LEDID:点灯
+        /// </summary>
+        public uint LedIdLight
+        {
+            get { return m_ledIdLight; }
+            set { m_ledIdLight = value; }
+        }
+
+        /// <summary>
+        /// LEDID:バイブ
+        /// </summary>
+        public uint LedIdVibration
+        {
+            get { return m_ledIdVibration; }
+            set { m_ledIdVibration = value; }
         }
 
         #region 設定からデータを作成するメソッドとプロパティ

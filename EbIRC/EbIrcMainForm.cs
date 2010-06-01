@@ -1962,7 +1962,7 @@ namespace EbiSoft.EbIRC
                 {
                     if (Led.AvailableLed(LedType.Vibrartion))
                     {
-                        Led.SetLedStatus(LedType.Vibrartion, LedStatus.On);
+                        Led.SetLedStatus(SettingManager.Data.LedIdLight, LedStatus.On);
                         clearHighlightTimer.Enabled = true;
                     }
                 }
@@ -1970,7 +1970,7 @@ namespace EbiSoft.EbIRC
                 {
                     if (Led.AvailableLed(LedType.Yellow))
                     {
-                        Led.SetLedStatus(LedType.Yellow, LedStatus.On);
+                        Led.SetLedStatus(SettingManager.Data.LedIdVibration, LedStatus.On);
                         clearHighlightTimer.Enabled = true;
                     }
                 }
@@ -1990,11 +1990,11 @@ namespace EbiSoft.EbIRC
         {
             if (Led.AvailableLed(LedType.Vibrartion))
             {
-                Led.SetLedStatus(LedType.Vibrartion, LedStatus.Off);
+                Led.SetLedStatus(SettingManager.Data.LedIdVibration, LedStatus.Off);
             }
             if (Led.AvailableLed(LedType.Yellow))
             {
-                Led.SetLedStatus(LedType.Yellow, LedStatus.Off);
+                Led.SetLedStatus(SettingManager.Data.LedIdLight, LedStatus.Off);
             }
             clearHighlightTimer.Enabled = false;
         }

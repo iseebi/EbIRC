@@ -142,11 +142,17 @@
   <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 374</value>
   </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>エンコーディング</value>
+  </data>
   <data name="nicknameTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 330</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 287</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>ニックネーム</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>ポート</value>
@@ -169,47 +175,20 @@
   <data name="label4.Text" xml:space="preserve">
     <value>名前</value>
   </data>
+  <data name="advancedTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 492</value>
+  </data>
   <data name="advancedTabPage.Text" xml:space="preserve">
     <value>高度な設定</value>
   </data>
-  <data name="channelListView.Size" type="System.Drawing.Size, System.Drawing">
-    <value>425, 266</value>
-  </data>
-  <data name="channelDownButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>424, 143</value>
-  </data>
-  <data name="channelUpButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>424, 0</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>472, 266</value>
-  </data>
-  <data name="addChannelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>387, 3</value>
-  </data>
   <data name="channelIgnoreUnreadSortCheckBox.Text" xml:space="preserve">
     <value>未読数ソートの対象外にする</value>
-  </data>
-  <data name="channelNameTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>466, 41</value>
-  </data>
-  <data name="channelPasswordTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>466, 41</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>チャンネル名</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>チャンネルパスワード</value>
-  </data>
-  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 266</value>
-  </data>
-  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>472, 232</value>
-  </data>
-  <data name="channelsTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>472, 498</value>
   </data>
   <data name="channelsTabPage.Text" xml:space="preserve">
     <value>チャンネル</value>

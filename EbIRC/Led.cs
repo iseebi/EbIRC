@@ -72,17 +72,27 @@ namespace EbiSoft.EbIRC
             return led < GetLedCount();
         }
 
-        public static void SetLedStatus(LedType led, LedStatus status)
+        public static bool AvailableLed(uint led)
         {
-            SetLedStatus((int)led, (int)status);
+            return led < GetLedCount();
         }
 
-        public static void SetLedStatus(int wLed, int wStatus)
+        public static void SetLedStatus(LedType led, LedStatus status)
+        {
+            SetLedStatus((uint)led, (int)status);
+        }
+
+        public static void SetLedStatus(uint wLed, LedStatus status)
+        {
+            SetLedStatus(wLed, (int)status);
+        }
+
+        public static void SetLedStatus(uint wLed, int wStatus)
         {
             if (!AvailableLed(wLed)) throw new InvalidOperationException();
 
             NLED_SETTINGS_INFO settingInfo = new NLED_SETTINGS_INFO();
-            settingInfo.LedNum = System.Convert.ToUInt32(wLed);
+            settingInfo.LedNum = wLed;
             settingInfo.OffOnBlink = System.Convert.ToUInt16(wStatus);
             settingInfo.OnTime = 1000000;
             settingInfo.OffTime = 500000;

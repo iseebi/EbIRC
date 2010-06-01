@@ -126,6 +126,9 @@
   <data name="menuAllChannelMenuItem.Text" xml:space="preserve">
     <value>全チャンネル</value>
   </data>
+  <data name="menuAllHighlightsMenuItem.Text" xml:space="preserve">
+    <value>ハイライト</value>
+  </data>
   <data name="menuChannelControlMenuItem.Text" xml:space="preserve">
     <value>チャンネル操作</value>
   </data>
@@ -177,8 +180,5 @@
   </data>
   <data name="menuHighlightedMessages.Text" xml:space="preserve">
     <value>Highlighted</value>
-  </data>
-  <data name="menuAllHighlightsMessages.Text" xml:space="preserve">
-    <value>All highlighted</value>
   </data>
 </root>
