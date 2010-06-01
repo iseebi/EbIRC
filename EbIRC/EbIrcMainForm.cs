@@ -136,9 +136,9 @@ namespace EbiSoft.EbIRC
             m_channelPopupMenus = new List<ChannelMenuItem>();
 
             // サーバーチャンネルを用意する
-            m_serverCh = new Channel(LOG_KEY_SERVER, false);
-            m_highlightsCh = new Channel(LOG_KEY_HIGHLIGHTS, false);
-            m_wholeCh = new Channel(LOG_KEY_WHOLE, false);
+            m_serverCh = new Channel(LOG_KEY_SERVER, false, null);
+            m_highlightsCh = new Channel(LOG_KEY_HIGHLIGHTS, false, null);
+            m_wholeCh = new Channel(LOG_KEY_WHOLE, false, null);
 
             // バージョン情報出力
             Assembly asm = Assembly.GetExecutingAssembly();
@@ -1014,12 +1014,12 @@ namespace EbiSoft.EbIRC
                 // デフォルトチャンネルなら接続
                 if (channel.IsDefaultChannel)
                 {
-                    ircClient.JoinChannel(channel.Name);
+                    ircClient.JoinChannel(channel.Name, channel.Password);
 
                     // デフォルトチャンネル選択設定ONのときは、選択する
                     if (SettingManager.Data.SelectChannelAtConnect
-                        && (SettingManager.Data.Profiles.ActiveProfile.DefaultChannels.Length > 0)
-                        && (channel.Name == SettingManager.Data.Profiles.ActiveProfile.DefaultChannels[0]))
+                        && (SettingManager.Data.Profiles.ActiveProfile.Channels.Count > 0)
+                        && (channel.Name == SettingManager.Data.Profiles.ActiveProfile.Channels[0].Name))
                     {
                         LoadChannel(channel);
                     }
@@ -1207,7 +1207,7 @@ namespace EbiSoft.EbIRC
             // 存在しないチャンネルのときは追加
             if (!m_channel.ContainsKey(channel))
             {
-                AddChannel(channel, false);
+                AddChannel(channel, false, null);
                 m_channel[channel].IsJoin = true;
             }
 
@@ -1243,7 +1243,7 @@ namespace EbiSoft.EbIRC
                 // 存在しないチャンネルのときは追加
                 if (!m_channel.ContainsKey(e.Channel))
                 {
-                    AddChannel(e.Channel, false);
+                    AddChannel(e.Channel, false, null);
                     m_channel[e.Channel].IsJoin = true;
                 }
 
@@ -1287,7 +1287,7 @@ namespace EbiSoft.EbIRC
                 // 存在しないチャンネルのときは追加
                 if (!m_channel.ContainsKey(channel))
                 {
-                    AddChannel(channel, false);
+                    AddChannel(channel, false, null);
                     m_channel[channel].IsJoin = true;
                     return;
                 }
@@ -1341,7 +1341,7 @@ namespace EbiSoft.EbIRC
                         if ((e.Channel != string.Empty)
                             && !m_channel.ContainsKey(e.Channel))
                         {
-                            AddChannel(e.Channel, false);
+                            AddChannel(e.Channel, false, null);
                         }
                         // 参加フラグ変更
                         m_channel[e.Channel].IsJoin = true;
@@ -1482,24 +1482,25 @@ namespace EbiSoft.EbIRC
                 // 一度デフォルトをはずす
                 channel.IsDefaultChannel = false;
                 // デフォルトリストを走査する
-                foreach (string ch in SettingManager.Data.Profiles.ActiveProfile.DefaultChannels)
+                foreach (ChannelSetting ch in SettingManager.Data.Profiles.ActiveProfile.Channels)
                 {
                     // デフォルトチャンネルだったらtrueにして抜ける
-                    if (channel.Name == ch)
+                    if (channel.Name == ch.Name)
                     {
                         channel.IsDefaultChannel = true;
+                        channel.Password = ch.Password;
                         break;
                     }
                 }
             }
 
             // 新しく追加されたチャンネルを追加
-            foreach (string ch in SettingManager.Data.Profiles.ActiveProfile.DefaultChannels)
+            foreach (ChannelSetting ch in SettingManager.Data.Profiles.ActiveProfile.Channels)
             {
                 // チャンネルリストに存在しないなら追加する
-                if (!m_channel.ContainsKey(ch))
+                if (!m_channel.ContainsKey(ch.Name))
                 {
-                    AddChannel(ch, true);
+                    AddChannel(ch.Name, true, ch.Password);
                 }
             }
         }
@@ -1509,8 +1510,9 @@ namespace EbiSoft.EbIRC
         /// </summary>
         /// <param name="name">追加するチャンネル名</param>
         /// <param name="defaultChannel">デフォルトチャンネルかどうか</param>
+        /// <param name="password">パスワード</param>
         /// <returns>追加されたチャンネル</returns>
-        internal Channel AddChannel(string name, bool defaultChannel)
+        internal Channel AddChannel(string name, bool defaultChannel, string password)
         {
             // 空文字列なら抜ける
             if (string.IsNullOrEmpty(name.Trim()))
@@ -1530,7 +1532,7 @@ namespace EbiSoft.EbIRC
                 return m_channel[name];
             }
 
-            Channel channel = new Channel(name, defaultChannel); // チャンネルを作成
+            Channel channel = new Channel(name, defaultChannel, password); // チャンネルを作成
             m_channel.Add(name, channel);                        // リストに追加
 
             // メニューへの追加用
