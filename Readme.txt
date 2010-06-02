@@ -77,6 +77,11 @@ W-SIM を提供してくれた Nihondo さんに感謝します。
 6. 更新履歴
 ================================================================================
 
+2010/06/01(Thr) Ver 1.10 Release.90
+* Release to Windows Marketplace for Mobile
+* チャンネルパスワードのバグ修正
+* 設定画面でSIPが使えるようになった
+
 2010/06/01(Thr) Ver 1.01 Release.85
 * Version 1.10 RC 1
 * .NET Framework を 3.5 にバージョンアップ
