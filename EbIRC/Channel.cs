@@ -3,6 +3,7 @@ using System.Text;
 using System.Windows.Forms;
 using EbiSoft.Library;
 using System.IO;
+using EbiSoft.EbIRC.Settings;
 
 namespace EbiSoft.EbIRC
 {
@@ -18,6 +19,7 @@ namespace EbiSoft.EbIRC
         private string m_topic;
         private string[] m_members;
         private int m_unreadCount;
+        private string m_password;
 
         private static char[] escapeForFilenameTargets = "\\/:*?<>\"|".ToCharArray();
 
@@ -26,14 +28,15 @@ namespace EbiSoft.EbIRC
         /// </summary>
         /// <param name="name">チャンネル名</param>
         /// <param name="defaultChannel">デフォルトチャンネル指定ON/OFF</param>
-        public Channel(string name, bool defaultChannel)
+        public Channel(string name, bool defaultChannel, string password)
         {
-            m_log = new RingBuffer<string>(Settings.Data.MaxLogs);
+            m_log = new RingBuffer<string>(SettingManager.Data.MaxLogs);
             m_topic = string.Empty;
             m_name = name;
             m_defaultChannel = defaultChannel;
             m_members = new string[] { };
             m_unreadCount = 0;
+            m_password = password;
         }
 
         /// <summary>
@@ -54,14 +57,15 @@ namespace EbiSoft.EbIRC
         {
             // ログを追加する
             m_log.Add(logLine);
-            if (Settings.Data.LogingEnable) {
+            if (SettingManager.Data.LogingEnable)
+            {
                 try
                 {
                     string baseDir;
-                    if (!String.IsNullOrEmpty(Settings.Data.LogDirectory)
-                        && Directory.Exists(Settings.Data.LogDirectory))
+                    if (!String.IsNullOrEmpty(SettingManager.Data.LogDirectory)
+                        && Directory.Exists(SettingManager.Data.LogDirectory))
                     {
-                        baseDir = Path.Combine(Settings.Data.LogDirectory, "Log");
+                        baseDir = Path.Combine(SettingManager.Data.LogDirectory, "Log");
                     }
                     else
                     {
@@ -173,6 +177,14 @@ namespace EbiSoft.EbIRC
             get { return m_unreadCount; }
             set { m_unreadCount = value; }
         }
-	
+
+        /// <summary>
+        /// パスワード
+        /// </summary>
+        public string Password
+        {
+            get { return m_password; }
+            set { m_password = value; }
+        }
     }
 }

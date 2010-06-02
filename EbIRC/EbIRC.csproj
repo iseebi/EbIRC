@@ -1,8 +1,8 @@
-﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.50727</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{82124F8F-1A07-4475-9704-EA254A183FBC}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -14,10 +14,16 @@
     <PlatformID>b2c48bd2-963d-4549-9169-1fa021dce484</PlatformID>
     <OSVersion>5.02</OSVersion>
     <DeployDirSuffix>EbIRC</DeployDirSuffix>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FormFactorID>
     </FormFactorID>
     <ApplicationIcon>ebirc_icon.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <NativePlatformName>Windows Mobile 6 Professional SDK</NativePlatformName>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -92,15 +98,27 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ChannelNameEqualityComparer.cs" />
+    <Compile Include="ExternalLibrary\SslErrors.cs" />
+    <Compile Include="ExternalLibrary\TabControlHelper.cs" />
+    <Compile Include="Settings\ChannelSetting.cs" />
+    <Compile Include="ServerSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServerSettingForm.Designer.cs">
+      <DependentUpon>ServerSettingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ConnectionManager.cs" />
-    <Compile Include="ConnectionProfile.cs" />
-    <Compile Include="ConnectionProfileData.cs" />
+    <Compile Include="Settings\ChannelSettingCollection.cs" />
+    <Compile Include="Settings\ConnectionProfile.cs" />
+    <Compile Include="Settings\ConnectionProfileCollection.cs" />
     <Compile Include="EbIrcMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EbIrcMainForm.Designer.cs">
       <DependentUpon>EbIrcMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Enums.cs" />
+    <Compile Include="ExternalLibrary\SslHelper.cs" />
     <Compile Include="FolderSelectDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +159,14 @@
     <EmbeddedResource Include="ChannelControlDialog.resx">
       <SubType>Designer</SubType>
       <DependentUpon>ChannelControlDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServerSettingForm.ja-JP.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ServerSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServerSettingForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ServerSettingForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EbIrcMainForm.ja-JP.resx">
       <SubType>Designer</SubType>
@@ -184,14 +210,14 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="RingBuffer.cs" />
-    <Compile Include="SettingData.cs" />
+    <Compile Include="Settings\Setting.cs" />
     <Compile Include="SettingForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SettingForm.Designer.cs">
       <DependentUpon>SettingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Settings.cs" />
+    <Compile Include="Settings\SettingManager.cs" />
     <Compile Include="TextBoxInputFilter.cs" />
     <Compile Include="TextWriterTraceListener.cs" />
   </ItemGroup>
@@ -217,4 +243,5 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Import Condition="'$(TargetFrameworkVersion)' == 'v3.5'" Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
 </Project>

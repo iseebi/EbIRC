@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System.ComponentModel;
+using SslTest;
 
 namespace EbiSoft.EbIRC.IRC {
 	/// <summary>
@@ -19,6 +20,7 @@ namespace EbiSoft.EbIRC.IRC {
     {
         private Thread m_thread;        // 送信スレッド
         private Socket m_socket;        // ソケット
+        private SslHelper m_sslHelper;  // SSLヘルパ
         private NetworkStream m_stream; // ストリーム
         private StreamReader m_reader;  // 受信用ストリームリーダー
         private StreamWriter m_writer;  // 送信用ストリームライター
@@ -839,7 +841,7 @@ namespace EbiSoft.EbIRC.IRC {
         /// </summary>
         public IRCClient()
         {
-            m_encoding = Encoding.GetEncoding("iso-2022-jp");
+            m_encoding = new UTF8Encoding(false);
 
             m_sendQueue = new Queue();
             m_namelist = new Dictionary<string, string[]>();
@@ -874,6 +876,34 @@ namespace EbiSoft.EbIRC.IRC {
         public void Connect(string name, int port, string password, string nickname, string realname)
         {
             Connect(new ServerInfo(name, port, password), new UserInfo(nickname, realname));
+        }
+
+        /// <summary>
+        /// 接続
+        /// </summary>
+        /// <param name="name">サーバー名</param>
+        /// <param name="port">接続ポート</param>
+        /// <param name="password">サーバーパスワード</param>
+        /// <param name="nickname">ニックネーム</param>
+        /// <param name="realname">名前</param>
+        /// <param name="useSsl">SSL使用</param>
+        public void Connect(string name, int port, string password, bool useSsl, bool noValidation, string nickname, string realname)
+        {
+            Connect(new ServerInfo(name, port, password, useSsl, noValidation), new UserInfo(nickname, realname));
+        }
+
+        /// <summary>
+        /// 接続
+        /// </summary>
+        /// <param name="name">サーバー名</param>
+        /// <param name="port">接続ポート</param>
+        /// <param name="password">サーバーパスワード</param>
+        /// <param name="nickname">ニックネーム</param>
+        /// <param name="realname">名前</param>
+        /// <param name="useSsl">SSL使用</param>
+        public void Connect(string name, int port, string password, bool useSsl, bool noValidation, string nickname, string realname, string loginname, string nickservPass)
+        {
+            Connect(new ServerInfo(name, port, password, useSsl, noValidation), new UserInfo(nickname, realname, loginname, nickservPass));
         }
 
         /// <summary>
@@ -924,6 +954,11 @@ namespace EbiSoft.EbIRC.IRC {
                 // ソケット作成・接続
                 Debug.WriteLine("接続を開始します。", "IRCClient");
                 m_socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                if (Server.UseSsl)
+                {
+                    m_sslHelper = new SslHelper(m_socket, Server.Name);
+                    m_sslHelper.ValidateCertEnabled = !Server.NoValidation;
+                }
                 m_connectAsync = m_socket.BeginConnect(server.GetEndPoint(), new AsyncCallback(OnConnected), m_socket);
             }
             catch
@@ -952,6 +987,8 @@ namespace EbiSoft.EbIRC.IRC {
 
                 // ストリーム作成
                 m_stream = new NetworkStream(socket);
+
+                // ストリームリーダ・ライタ作成
                 m_reader = new StreamReader(m_stream, this.Encoding);
                 m_writer = new StreamWriter(m_stream, this.Encoding);
                 m_writer.NewLine = "\r\n";
@@ -1073,6 +1110,10 @@ namespace EbiSoft.EbIRC.IRC {
                     }
 
                     // 受信処理
+                    if (Server.UseSsl && !m_stream.DataAvailable)
+                    {
+                        m_socket.Poll(100, SelectMode.SelectRead);
+                    }
                     while (m_stream.DataAvailable)
                     {
                         try
@@ -1190,9 +1231,14 @@ namespace EbiSoft.EbIRC.IRC {
                     }
                     catch (Exception) { }
                 }
+                if (m_sslHelper != null)
+                {
+                    m_sslHelper.Dispose();
+                }
 
                 // 使用したデータをクリアする
                 m_socket = null;
+                m_sslHelper = null;
                 m_reader = null;
                 m_writer = null;
                 m_online = false;
@@ -1585,7 +1631,31 @@ namespace EbiSoft.EbIRC.IRC {
             ChangeNickname(m_user.NickName);
 
             // ユーザー情報送信
-            SendCommand(string.Format("USER {0} {1} {2} :{3}", m_user.NickName, "LocalEndPoint", "RemoteEndPoint", m_user.RealName));
+            string loginName;
+            string realName;
+            if (!string.IsNullOrEmpty(m_user.LoginName))
+            {
+                loginName = m_user.LoginName;
+            }
+            else
+            {
+                loginName = m_user.NickName;
+            }
+            if (!string.IsNullOrEmpty(m_user.RealName))
+            {
+                realName = m_user.RealName;
+            }
+            else
+            {
+                realName = m_user.NickName;
+            }
+            SendCommand(string.Format("USER {0} {1} {2} :{3}", loginName, "LocalEndPoint", "RemoteEndPoint", realName));
+
+            // NickServパスワードが設定されているときは送信する
+            if (!string.IsNullOrEmpty(m_user.NickservPass))
+            {
+                SendCommand(string.Format("PRIVMSG NickServ :identify {0}", m_user.NickservPass));
+            }
         }
 
         /// <summary>
@@ -1625,7 +1695,24 @@ namespace EbiSoft.EbIRC.IRC {
         /// <param name="channel">参加するチャンネル</param>
         public void JoinChannel(string channel)
         {
-            SendCommand(string.Format("JOIN {0}", channel));
+            JoinChannel(channel, null);
+        }
+
+        /// <summary>
+        /// チャンネルに参加
+        /// </summary>
+        /// <param name="channel">参加するチャンネル</param>
+        /// <param name="password">パスワード</param>
+        public void JoinChannel(string channel, string password)
+        {
+            if (!string.IsNullOrEmpty(password))
+            {
+                SendCommand(string.Format("JOIN {0} {1}", channel, password));
+            }
+            else
+            {
+                SendCommand(string.Format("JOIN {0}", channel));
+            }
         }
 
         /// <summary>
@@ -1754,7 +1841,24 @@ namespace EbiSoft.EbIRC.IRC {
             get { return m_ownerControl; }
             set { m_ownerControl = value; }
         }
-	
+
+        /// <summary>
+        /// 最後のSSLエラーを取得します。
+        /// </summary>
+        public SslValidateErrors SslValidateError
+        {
+            get
+            {
+                if (m_sslHelper != null)
+                {
+                    return m_sslHelper.LastValidateCertError;
+                }
+                else
+                {
+                    return SslValidateErrors.Unknown;
+                }
+            }
+        }
 
         #endregion
 
@@ -1896,7 +2000,7 @@ namespace EbiSoft.EbIRC.IRC {
         }
 
         #endregion
-	}
+    }
 
     /// <summary>
     /// IRCClient のステータスをあらわす定数

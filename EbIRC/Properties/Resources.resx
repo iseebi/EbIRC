@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -310,5 +310,56 @@ UTF-8</value>
   </data>
   <data name="VersionInfomation" xml:space="preserve">
     <value>EbIRC Ver{0}.{1:D2} Release.{2} Copyright(C) 2006-2007 Shin ISE.</value>
+  </data>
+  <data name="SwitcherMenuCaption" xml:space="preserve">
+    <value>Switch ch</value>
+  </data>
+  <data name="SslValidateErrorBadDataString" xml:space="preserve">
+    <value>SSL Validation Error: Certification type not supported or broken.</value>
+  </data>
+  <data name="SslValidateErrorExpiredString" xml:space="preserve">
+    <value>SSL Validation Error: Expired.</value>
+  </data>
+  <data name="SslValidateErrorInvalidIssuerString" xml:space="preserve">
+    <value>SSL Validation Error: Invalid issuer.</value>
+  </data>
+  <data name="SslValidateErrorNotEffectDateString" xml:space="preserve">
+    <value>SSL Validation Error: Not effect date.</value>
+  </data>
+  <data name="SslValidateErrorNotValidateString" xml:space="preserve">
+    <value>SSL Warning: Not validation.</value>
+  </data>
+  <data name="SslValidateErrorOtherSiteString" xml:space="preserve">
+    <value>SSL Validation Error: Certification is for other site.</value>
+  </data>
+  <data name="ChannelSelecterWholeCaption" xml:space="preserve">
+    <value>&lt;All channels&gt;</value>
+  </data>
+  <data name="ChannelSelecterHighlightsCaption" xml:space="preserve">
+    <value>&lt;Highlights&gt;</value>
+  </data>
+  <data name="HighlightTitlebar" xml:space="preserve">
+    <value>EbIRC &lt;Highlights&gt;</value>
+  </data>
+  <data name="HighlightTopicbar" xml:space="preserve">
+    <value>Highlights</value>
+  </data>
+  <data name="WholeNoticeLogFormat" xml:space="preserve">
+    <value>[{0}] {1}: {2}</value>
+  </data>
+  <data name="WholePrivmsgLogFormat" xml:space="preserve">
+    <value>[{0}] {1}&gt; {2}</value>
+  </data>
+  <data name="WholeTitlebar" xml:space="preserve">
+    <value>EbIRC &lt;All channels&gt;</value>
+  </data>
+  <data name="WholeTopicbar" xml:space="preserve">
+    <value>All channels</value>
+  </data>
+  <data name="NewProfileName" xml:space="preserve">
+    <value>New Profile</value>
+  </data>
+  <data name="ChannelSettingNewChannel" xml:space="preserve">
+    <value>#NewChannel</value>
   </data>
 </root>

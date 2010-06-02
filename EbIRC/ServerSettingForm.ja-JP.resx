@@ -117,68 +117,86 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="menuChannelListServerMenuItem.Text" xml:space="preserve">
-    <value>サーバー</value>
+  <data name="closeMenuItem.Text" xml:space="preserve">
+    <value>閉じる</value>
   </data>
-  <data name="menuChannelListMenuItem.Text" xml:space="preserve">
-    <value>チャンネル一覧</value>
+  <data name="basicsTabPage.Text" xml:space="preserve">
+    <value>基本</value>
   </data>
-  <data name="menuAllChannelMenuItem.Text" xml:space="preserve">
-    <value>全チャンネル</value>
+  <data name="label10.Text" xml:space="preserve">
+    <value>プロファイル名</value>
   </data>
-  <data name="menuAllHighlightsMenuItem.Text" xml:space="preserve">
-    <value>ハイライト</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="serverSslNotValidateCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 244</value>
   </data>
-  <data name="menuChannelControlMenuItem.Text" xml:space="preserve">
-    <value>チャンネル操作</value>
+  <data name="serverSslNotValidateCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>310, 40</value>
   </data>
-  <data name="menuEditCopyMenuItem.Text" xml:space="preserve">
-    <value>選択範囲コピー</value>
+  <data name="serverSslNotValidateCheckBox.Text" xml:space="preserve">
+    <value>証明書検証をスキップ</value>
   </data>
-  <data name="menuEditGoogleMenuItem.Text" xml:space="preserve">
-    <value>選択範囲をGoogle検索</value>
+  <data name="serverUseSslCheckBox.Text" xml:space="preserve">
+    <value>SSLを使う</value>
   </data>
-  <data name="menuEditOpenURLMenuItem.Text" xml:space="preserve">
-    <value>カーソル位置のURLを開く</value>
+  <data name="encodingComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 417</value>
   </data>
-  <data name="menuEditPasteMenuItem.Text" xml:space="preserve">
-    <value>メッセージエリアに貼り付け</value>
+  <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 374</value>
   </data>
-  <data name="menuEditClearMenuItem.Text" xml:space="preserve">
-    <value>ログクリア</value>
+  <data name="label14.Text" xml:space="preserve">
+    <value>エンコーディング</value>
   </data>
-  <data name="menuEditMenuItem.Text" xml:space="preserve">
-    <value>編集</value>
+  <data name="nicknameTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 330</value>
   </data>
-  <data name="menuNicknameInputMenuItem.Text" xml:space="preserve">
-    <value>新しく入力...</value>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 287</value>
   </data>
-  <data name="nicknameSwitchMenuItem.Text" xml:space="preserve">
+  <data name="label3.Text" xml:space="preserve">
     <value>ニックネーム</value>
   </data>
-  <data name="menuSettingMenuItem.Text" xml:space="preserve">
-    <value>設定</value>
+  <data name="label5.Text" xml:space="preserve">
+    <value>ポート</value>
   </data>
-  <data name="menuExitMenuItem.Text" xml:space="preserve">
-    <value>終了</value>
+  <data name="label7.Text" xml:space="preserve">
+    <value>サーバー</value>
   </data>
-  <data name="menuMenuItem.Text" xml:space="preserve">
-    <value>メニュー</value>
+  <data name="advancedTabPage.Text" xml:space="preserve">
+    <value>高度な設定</value>
   </data>
-  <data name="contextUrlOpenMenuItem.Text" xml:space="preserve">
-    <value>カーソル周辺のURLをオープン</value>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Nickserv パスワード</value>
   </data>
-  <data name="contextCopyMenuItem.Text" xml:space="preserve">
-    <value>コピー</value>
+  <data name="label8.Text" xml:space="preserve">
+    <value>ログイン名</value>
   </data>
-  <data name="contextGoogleMenuItem.Text" xml:space="preserve">
-    <value>Googleで検索</value>
+  <data name="label6.Text" xml:space="preserve">
+    <value>サーバーパスワード</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="logTextBox.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="label4.Text" xml:space="preserve">
+    <value>名前</value>
   </data>
-  <data name="menuHighlightedMessages.Text" xml:space="preserve">
-    <value>Highlighted</value>
+  <data name="channelsTabPage.Text" xml:space="preserve">
+    <value>チャンネル</value>
+  </data>
+  <data name="channelDownButton.Text" xml:space="preserve">
+    <value>↓</value>
+  </data>
+  <data name="channelUpButton.Text" xml:space="preserve">
+    <value>↑</value>
+  </data>
+  <data name="channelIgnoreUnreadSortCheckBox.Text" xml:space="preserve">
+    <value>未読数ソートの対象外にする</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>チャンネル名</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>チャンネルパスワード</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>サーバー設定</value>
   </data>
 </root>

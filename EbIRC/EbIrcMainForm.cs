@@ -12,6 +12,7 @@ using System.Text.RegularExpressions;
 using System.Reflection;
 using Microsoft.WindowsCE.Forms;
 using EbiSoft.EbIRC.Properties;
+using EbiSoft.EbIRC.Settings;
 
 namespace EbiSoft.EbIRC
 {
@@ -22,6 +23,8 @@ namespace EbiSoft.EbIRC
     {
         private readonly string CONNMGR_URL_FORMAT;
         private readonly string LOG_KEY_SERVER;
+        private readonly string LOG_KEY_WHOLE;
+        private readonly string LOG_KEY_HIGHLIGHTS;
 
         private readonly Regex UrlRegex = new Regex(@"([A-Za-z]+)://([^:/]+)(:(\d+))?(/[^#\s]*)(#(\S+))?", RegexOptions.Compiled);
 
@@ -66,6 +69,8 @@ namespace EbiSoft.EbIRC
         Dictionary<string, Channel> m_channel;         // チャンネルリスト
         Channel m_currentCh;                           // 現在のチャンネル
         Channel m_serverCh;                            // サーバーメッセージ
+        Channel m_wholeCh;                             // ホールチャンネル
+        Channel m_highlightsCh;                        // ハイライトメッセージチャンネル
         string m_nickname = string.Empty;              // 自分の現在のニックネーム
         List<string> m_inputlog;                       // 入力テキストログ
         int m_inputlogPtr;                             // テキストログ現在位置
@@ -93,9 +98,13 @@ namespace EbiSoft.EbIRC
         {
             InitializeComponent();
 
+            logTextBox.BackColor = SystemColors.Window;
+
             // 定数ロード
             CONNMGR_URL_FORMAT = "http://{0}:{1}/";
             LOG_KEY_SERVER     = Resources.ChannelSelecterServerCaption;
+            LOG_KEY_WHOLE = Resources.ChannelSelecterWholeCaption;
+            LOG_KEY_HIGHLIGHTS = Resources.ChannelSelecterHighlightsCaption;
 
             // IRCクライアント初期化、イベントハンドラ結合
             ircClient = new IRCClient();
@@ -120,14 +129,16 @@ namespace EbiSoft.EbIRC
             ircClient.FinishMessageEvents += new EventHandler(ircClient_FinishMessageEvents);
 
             // 設定を読み込む
-            Settings.ReadSetting();
+            SettingManager.ReadSetting();
 
             // チャンネルリスト初期化
             m_channel = new Dictionary<string, Channel>(new ChannelNameEqualityComparer());
             m_channelPopupMenus = new List<ChannelMenuItem>();
 
             // サーバーチャンネルを用意する
-            m_serverCh = new Channel(LOG_KEY_SERVER, false);
+            m_serverCh = new Channel(LOG_KEY_SERVER, false, null);
+            m_highlightsCh = new Channel(LOG_KEY_HIGHLIGHTS, false, null);
+            m_wholeCh = new Channel(LOG_KEY_WHOLE, false, null);
 
             // バージョン情報出力
             Assembly asm = Assembly.GetExecutingAssembly();
@@ -135,7 +146,7 @@ namespace EbiSoft.EbIRC
             AddLog(m_serverCh, string.Format(Resources.VersionInfomation, asmName.Version.Major, asmName.Version.Minor, asmName.Version.Build));
 
             // テキストログ初期化
-            m_inputlog = new List<string>(Settings.Data.InputLogBufferSize);
+            m_inputlog = new List<string>(SettingManager.Data.InputLogBufferSize);
             m_inputlogPtr = 0;
 
             // メッセージフィルタ設定
@@ -154,7 +165,7 @@ namespace EbiSoft.EbIRC
             UpdateUISettings();      // その他のUI設定のアップデート
 
             // ソフトキーの入れ替え
-            if (Settings.Data.ReverseSoftKey)
+            if (SettingManager.Data.ReverseSoftKey)
             {
                 mainMenu1.MenuItems.Remove(connectionMenuItem);
                 mainMenu1.MenuItems.Add(connectionMenuItem);
@@ -296,6 +307,22 @@ namespace EbiSoft.EbIRC
         #region メニューイベント
 
         /// <summary>
+        /// マルチ機能ボタン
+        /// </summary>
+        private void multiMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ircClient.Status == IRCClientStatus.Disconnected)
+            {
+                connectionMenuItem_Click(sender, e);
+            }
+            else
+            {
+                channelContextMenu.Show(logTextBox, new Point(0, 0));
+            }
+        }
+
+
+        /// <summary>
         /// 接続・切断トグル
         /// </summary>
         private void connectionMenuItem_Click(object sender, EventArgs e)
@@ -307,7 +334,7 @@ namespace EbiSoft.EbIRC
             if (ircClient.Status == IRCClientStatus.Disconnected)
             {
                 // サーバーが空欄のときには接続処理を行わない。
-                if (Settings.Data.Profiles.ActiveProfile.Server == string.Empty)
+                if (SettingManager.Data.Profiles.ActiveProfile.Server == string.Empty)
                 {
                     MessageBox.Show(Resources.NullServerSettingError,
                         Resources.ConnectionError, MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
@@ -317,17 +344,19 @@ namespace EbiSoft.EbIRC
                 try
                 {
                     // ダイアルアップ処理
-                    if (Settings.Data.UseNetworkControl)
+                    if (SettingManager.Data.UseNetworkControl)
                     {
                         ConnectionManager.Connection(string.Format(CONNMGR_URL_FORMAT,
-                            Settings.Data.Profiles.ActiveProfile.Server, Settings.Data.Profiles.ActiveProfile.Port.ToString()));
+                            SettingManager.Data.Profiles.ActiveProfile.Server, SettingManager.Data.Profiles.ActiveProfile.Port.ToString()));
                     }
 
                     BroadcastLog(Resources.BeginConnection);
-                    IRCClient.Encoding = Settings.Data.Profiles.ActiveProfile.GetEncoding();
-                    ircClient.Connect(Settings.Data.Profiles.ActiveProfile.Server, (int)Settings.Data.Profiles.ActiveProfile.Port, 
-                        Settings.Data.Profiles.ActiveProfile.Password, Settings.Data.Profiles.ActiveProfile.Nickname, 
-                        Settings.Data.Profiles.ActiveProfile.Realname);
+                    ircClient.Encoding = SettingManager.Data.Profiles.ActiveProfile.GetEncoding();
+                    ircClient.Connect(SettingManager.Data.Profiles.ActiveProfile.Server, (int)SettingManager.Data.Profiles.ActiveProfile.Port,
+                        SettingManager.Data.Profiles.ActiveProfile.Password, SettingManager.Data.Profiles.ActiveProfile.UseSsl,
+                        SettingManager.Data.Profiles.ActiveProfile.NoValidation,
+                        SettingManager.Data.Profiles.ActiveProfile.Nickname, SettingManager.Data.Profiles.ActiveProfile.Realname,
+                        SettingManager.Data.Profiles.ActiveProfile.LoginName, SettingManager.Data.Profiles.ActiveProfile.NickServPassword);
                     SetConnectionMenuText();
 
                 }
@@ -343,7 +372,7 @@ namespace EbiSoft.EbIRC
             else
             {
                 // 確認メッセージ表示設定がONなら確認メッセージを表示する
-                if (Settings.Data.ConfimDisconnect)
+                if (SettingManager.Data.ConfimDisconnect)
                 {
                     // いいえが選択された場合は抜ける
                     if (MessageBox.Show(Resources.DisconnectConfim, Resources.Confim,
@@ -400,11 +429,27 @@ namespace EbiSoft.EbIRC
         }
 
         /// <summary>
+        /// ホールチャンネルを表示
+        /// </summary>
+        private void menuAllChannelMessage_Click(object sender, EventArgs e)
+        {
+            LoadChannel(m_wholeCh);
+        }
+
+        /// <summary>
+        /// ハイライトメッセージ一覧を表示
+        /// </summary>
+        private void menuAllHighlightsMessage_Click(object sender, EventArgs e)
+        {
+            LoadChannel(m_highlightsCh);
+        }
+
+        /// <summary>
         /// 終了
         /// </summary>
         private void menuExitMenuItem_Click(object sender, EventArgs e)
         {
-            if (Settings.Data.ConfimExit)
+            if (SettingManager.Data.ConfimExit)
             {
                 // いいえが選択された場合は抜ける
                 if (MessageBox.Show(Resources.ExitConfim, Resources.Confim,
@@ -571,14 +616,22 @@ namespace EbiSoft.EbIRC
             channelContextMenu.MenuItems.Clear();
 
             // ハイライトメッセージの処理
-            if (menuHilightedMessages.MenuItems.Count > 0)
+            if (menuHighlightedMessages.MenuItems.Count > 0)
             {
-                channelContextMenu.MenuItems.Add(menuHilightedMessages);
-                channelContextMenu.MenuItems.Add(menuHilightedSeparator);
+                channelContextMenu.MenuItems.Add(menuHighlightedMessages);
+                channelContextMenu.MenuItems.Add(menuHighlightedSeparator);
             }
 
             // その他のチャンネルセレクタの処理
             List<ChannelMenuItem> menus = new List<ChannelMenuItem>(m_channelPopupMenus);
+
+            // インデックス付与
+            for (int i = 0; i < menus.Count; i++)
+            {
+                menus[i].Index = i;
+            }
+
+            // ソートして追加
             menus.Sort();
             menus.Reverse(); // 降順に
             foreach (ChannelMenuItem menu in menus)
@@ -586,6 +639,11 @@ namespace EbiSoft.EbIRC
                 menu.UpdateText();
                 channelContextMenu.MenuItems.Add(menu);
             }
+
+            // ホール関連追加
+            channelContextMenu.MenuItems.Add(menuWholeSeparator);
+            channelContextMenu.MenuItems.Add(menuAllChannelMessage);
+            channelContextMenu.MenuItems.Add(menuAllHighlightsMessages);
         }
 
         #endregion
@@ -639,7 +697,7 @@ namespace EbiSoft.EbIRC
                     else
                     {
                         // 無効時間内でなければポップアップする
-                        if ((Environment.TickCount - m_lastSendTick) > Settings.Data.ChannelShortcutIgnoreTimes)
+                        if ((Environment.TickCount - m_lastSendTick) > SettingManager.Data.ChannelShortcutIgnoreTimes)
                         {
                             channelContextMenu.Show(logTextBox, new Point(0, 0));
                             e.Handled = true;
@@ -670,7 +728,7 @@ namespace EbiSoft.EbIRC
         /// </summary>
         void m_inputBoxFilter_MouseWheelMoveUp(object sender, EventArgs e)
         {
-            SendMessage2(logTextBox.Handle, EM_LINESCROLL, 0, -Settings.Data.ScrollLines);
+            SendMessage2(logTextBox.Handle, EM_LINESCROLL, 0, -SettingManager.Data.ScrollLines);
         }
 
         /// <summary>
@@ -678,7 +736,7 @@ namespace EbiSoft.EbIRC
         /// </summary>
         void m_inputBoxFilter_MouseWheelMoveDown(object sender, EventArgs e)
         {
-            SendMessage2(logTextBox.Handle, EM_LINESCROLL, 0, Settings.Data.ScrollLines);
+            SendMessage2(logTextBox.Handle, EM_LINESCROLL, 0, SettingManager.Data.ScrollLines);
         }
 
         /// <summary>
@@ -705,16 +763,16 @@ namespace EbiSoft.EbIRC
                 switch (e.KeyCode)
                 {
                     case Keys.Right:
-                        e.Handled = ProcessKeyOperation(Settings.Data.CtrlRightKeyOperation);
+                        e.Handled = ProcessKeyOperation(SettingManager.Data.CtrlRightKeyOperation);
                         break;
                     case Keys.Left:
-                        e.Handled = ProcessKeyOperation(Settings.Data.CtrlLeftKeyOperation);
+                        e.Handled = ProcessKeyOperation(SettingManager.Data.CtrlLeftKeyOperation);
                         break;
                     case Keys.Up:
-                        e.Handled = ProcessKeyOperation(Settings.Data.CtrlUpKeyOperation);
+                        e.Handled = ProcessKeyOperation(SettingManager.Data.CtrlUpKeyOperation);
                         break;
                     case Keys.Down:
-                        e.Handled = ProcessKeyOperation(Settings.Data.CtrlDownKeyOperation);
+                        e.Handled = ProcessKeyOperation(SettingManager.Data.CtrlDownKeyOperation);
                         break;
                     default:
                         break;
@@ -735,7 +793,7 @@ namespace EbiSoft.EbIRC
                             }
                             else
                             {
-                                e.Handled = ProcessKeyOperation(Settings.Data.RightKeyOperation);
+                                e.Handled = ProcessKeyOperation(SettingManager.Data.RightKeyOperation);
                             }
                         }
                         break;
@@ -743,7 +801,7 @@ namespace EbiSoft.EbIRC
                         if ((inputTextBox.Text == "")
                             || (inputTextBox.SelectionStart == 0))
                         {
-                            e.Handled = ProcessKeyOperation(Settings.Data.LeftKeyOperation);
+                            e.Handled = ProcessKeyOperation(SettingManager.Data.LeftKeyOperation);
                         }
                         break;
                     case Keys.Up:
@@ -790,13 +848,13 @@ namespace EbiSoft.EbIRC
                         if (m_scrollFlag)
                         {
                             System.Diagnostics.Debug.WriteLine("Xcrawl Up");
-                            SendMessage2(logTextBox.Handle, EM_LINESCROLL, 0, -Settings.Data.ScrollLines);
+                            SendMessage2(logTextBox.Handle, EM_LINESCROLL, 0, -SettingManager.Data.ScrollLines);
                             e.Handled = true;
                         }
                         else
                         {
                             System.Diagnostics.Debug.WriteLine("Up");
-                            if (!ProcessKeyOperation(Settings.Data.UpKeyOperation))
+                            if (!ProcessKeyOperation(SettingManager.Data.UpKeyOperation))
                             {
                                 // デフォルトキー操作のエミュレーション
                                 inputTextBox.SelectionStart = 0;
@@ -808,12 +866,12 @@ namespace EbiSoft.EbIRC
                         if (m_scrollFlag)
                         {
                             System.Diagnostics.Debug.WriteLine("Xcrawl Down");
-                            SendMessage2(logTextBox.Handle, EM_LINESCROLL, 0, Settings.Data.ScrollLines);
+                            SendMessage2(logTextBox.Handle, EM_LINESCROLL, 0, SettingManager.Data.ScrollLines);
                             e.Handled = true;
                         }
                         else
                         {
-                            if (!ProcessKeyOperation(Settings.Data.DownKeyOperation))
+                            if (!ProcessKeyOperation(SettingManager.Data.DownKeyOperation))
                             {
                                 // デフォルトキー操作のエミュレーション
                                 inputTextBox.SelectionStart = inputTextBox.Text.Length;
@@ -866,6 +924,10 @@ namespace EbiSoft.EbIRC
         {
             // すべてのチャンネルにログを追加・デフォルトチャンネルなら接続
             BroadcastLog(Resources.Connected);
+            if (ircClient.SslValidateError == SslTest.SslValidateErrors.NotValidate)
+            {
+                BroadcastLog(Resources.SslValidateErrorNotValidateString);
+            }
             CommitStoredLog();
             SetConnectionMenuText();
         }
@@ -877,8 +939,29 @@ namespace EbiSoft.EbIRC
         /// <param name="e"></param>
         void ircClient_ConnectionFailed(object sender, EventArgs e)
         {
+            /*
             MessageBox.Show(Resources.CannotConnectMessage, Resources.ConnectionError, 
                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+             */
+            BroadcastLog(Resources.CannotConnectMessage);
+            switch (ircClient.SslValidateError)
+            {
+                case SslTest.SslValidateErrors.InvalidIssuer:
+                    BroadcastLog(Resources.SslValidateErrorInvalidIssuerString);
+                    break;
+                case SslTest.SslValidateErrors.BadData:
+                    BroadcastLog(Resources.SslValidateErrorBadDataString);
+                    break;
+                case SslTest.SslValidateErrors.Expired:
+                    BroadcastLog(Resources.SslValidateErrorExpiredString);
+                    break;
+                case SslTest.SslValidateErrors.NotEffectDate:
+                    BroadcastLog(Resources.SslValidateErrorNotEffectDateString);
+                    break;
+                case SslTest.SslValidateErrors.OtherSite:
+                    BroadcastLog(Resources.SslValidateErrorOtherSiteString);
+                    break;
+            }
             SetDisconnected();
         }
 
@@ -888,13 +971,9 @@ namespace EbiSoft.EbIRC
         private void ircClient_Disconnected(object sender, EventArgs e)
         {
             // すべてのチャンネルにログを追加・Join を False に
-            AddLog(m_serverCh, Resources.Disconnected);
+            BroadcastLog(Resources.Disconnected);
             foreach (Channel channel in m_channel.Values)
             {
-                // ログ追加
-                AddLog(channel, Resources.Disconnected);
-
-                // Join状態を解除
                 channel.IsJoin = false;
             }
             CommitStoredLog();
@@ -929,21 +1008,27 @@ namespace EbiSoft.EbIRC
         private void ircClient_ProcessedConnection(object sender, EventArgs e)
         {
             // デフォルトチャンネルに接続
-            AddLog(m_serverCh, Resources.Connected);
+            BroadcastLog(Resources.Connected);
             foreach (Channel channel in m_channel.Values)
             {
-                // ログ追加
-                AddLog(channel, Resources.Connected);
-
                 // デフォルトチャンネルなら接続
                 if (channel.IsDefaultChannel)
                 {
-                    ircClient.JoinChannel(channel.Name);
+                    // チャンネルパスワード指定接続
+                    ChannelSetting chSetting = SettingManager.Data.Profiles.ActiveProfile.Channels.SearchChannel(channel.Name);
+                    if ((chSetting != null) && (!string.IsNullOrEmpty(chSetting.Password)))
+                    {
+                        ircClient.JoinChannel(channel.Name, chSetting.Password);
+                    }
+                    else
+                    {
+                        ircClient.JoinChannel(channel.Name, channel.Password);
+                    }
 
                     // デフォルトチャンネル選択設定ONのときは、選択する
-                    if (Settings.Data.SelectChannelAtConnect
-                        && (Settings.Data.Profiles.ActiveProfile.DefaultChannels.Length > 0)
-                        && (channel.Name == Settings.Data.Profiles.ActiveProfile.DefaultChannels[0]))
+                    if (SettingManager.Data.SelectChannelAtConnect
+                        && (SettingManager.Data.Profiles.ActiveProfile.Channels.Count > 0)
+                        && (channel.Name == SettingManager.Data.Profiles.ActiveProfile.Channels[0].Name))
                     {
                         LoadChannel(channel);
                     }
@@ -1023,7 +1108,7 @@ namespace EbiSoft.EbIRC
             LoadChannel(m_currentCh);
 
             // ダイアルアップ処理
-            if (Settings.Data.UseNetworkControl)
+            if (SettingManager.Data.UseNetworkControl)
             {
                 ConnectionManager.ReleaseAll();
             }
@@ -1131,7 +1216,7 @@ namespace EbiSoft.EbIRC
             // 存在しないチャンネルのときは追加
             if (!m_channel.ContainsKey(channel))
             {
-                AddChannel(channel, false);
+                AddChannel(channel, false, null);
                 m_channel[channel].IsJoin = true;
             }
 
@@ -1148,9 +1233,12 @@ namespace EbiSoft.EbIRC
                 m_channel[channel].UnreadCount++;
             }
 
+            // Whole に追加する
+            AddLog(m_wholeCh, string.Format(Resources.WholePrivmsgLogFormat, channel, IRCClient.GetUserName(e.Sender), e.Message));
+
             // ハイライトキーワードフィルタ
             if ((highlightMatcher != null) && highlightMatcher.Match(e.Message).Success)
-                SetHighlight(m_channel[channel], message);
+                SetHighlight(m_channel[channel], IRCClient.GetUserName(e.Sender), e.Message);
         }
 
         /// <summary>
@@ -1164,7 +1252,7 @@ namespace EbiSoft.EbIRC
                 // 存在しないチャンネルのときは追加
                 if (!m_channel.ContainsKey(e.Channel))
                 {
-                    AddChannel(e.Channel, false);
+                    AddChannel(e.Channel, false, null);
                     m_channel[e.Channel].IsJoin = true;
                 }
 
@@ -1208,7 +1296,7 @@ namespace EbiSoft.EbIRC
                 // 存在しないチャンネルのときは追加
                 if (!m_channel.ContainsKey(channel))
                 {
-                    AddChannel(channel, false);
+                    AddChannel(channel, false, null);
                     m_channel[channel].IsJoin = true;
                     return;
                 }
@@ -1223,6 +1311,9 @@ namespace EbiSoft.EbIRC
                 
                 // ログ追加
                 AddLog(m_channel[channel], string.Format(Resources.NoticeLogFormat, IRCClient.GetUserName(e.Sender), e.Message));
+
+                // Whole に追加する
+                AddLog(m_wholeCh, string.Format(Resources.WholeNoticeLogFormat, channel, IRCClient.GetUserName(e.Sender), e.Message));
             }
             // サーバーのとき
             else
@@ -1259,7 +1350,7 @@ namespace EbiSoft.EbIRC
                         if ((e.Channel != string.Empty)
                             && !m_channel.ContainsKey(e.Channel))
                         {
-                            AddChannel(e.Channel, false);
+                            AddChannel(e.Channel, false, null);
                         }
                         // 参加フラグ変更
                         m_channel[e.Channel].IsJoin = true;
@@ -1400,24 +1491,25 @@ namespace EbiSoft.EbIRC
                 // 一度デフォルトをはずす
                 channel.IsDefaultChannel = false;
                 // デフォルトリストを走査する
-                foreach (string ch in Settings.Data.Profiles.ActiveProfile.DefaultChannels)
+                foreach (ChannelSetting ch in SettingManager.Data.Profiles.ActiveProfile.Channels)
                 {
                     // デフォルトチャンネルだったらtrueにして抜ける
-                    if (channel.Name == ch)
+                    if (channel.Name == ch.Name)
                     {
                         channel.IsDefaultChannel = true;
+                        channel.Password = ch.Password;
                         break;
                     }
                 }
             }
 
             // 新しく追加されたチャンネルを追加
-            foreach (string ch in Settings.Data.Profiles.ActiveProfile.DefaultChannels)
+            foreach (ChannelSetting ch in SettingManager.Data.Profiles.ActiveProfile.Channels)
             {
                 // チャンネルリストに存在しないなら追加する
-                if (!m_channel.ContainsKey(ch))
+                if (!m_channel.ContainsKey(ch.Name))
                 {
-                    AddChannel(ch, true);
+                    AddChannel(ch.Name, true, ch.Password);
                 }
             }
         }
@@ -1427,8 +1519,9 @@ namespace EbiSoft.EbIRC
         /// </summary>
         /// <param name="name">追加するチャンネル名</param>
         /// <param name="defaultChannel">デフォルトチャンネルかどうか</param>
+        /// <param name="password">パスワード</param>
         /// <returns>追加されたチャンネル</returns>
-        internal Channel AddChannel(string name, bool defaultChannel)
+        internal Channel AddChannel(string name, bool defaultChannel, string password)
         {
             // 空文字列なら抜ける
             if (string.IsNullOrEmpty(name.Trim()))
@@ -1448,7 +1541,7 @@ namespace EbiSoft.EbIRC
                 return m_channel[name];
             }
 
-            Channel channel = new Channel(name, defaultChannel); // チャンネルを作成
+            Channel channel = new Channel(name, defaultChannel, password); // チャンネルを作成
             m_channel.Add(name, channel);                        // リストに追加
 
             // メニューへの追加用
@@ -1511,13 +1604,26 @@ namespace EbiSoft.EbIRC
         /// <param name="ch">チャンネル</param>
         void LoadChannel(Channel channel)
         {
-            // サーバーチャンネルのときは特別
             if (channel == m_serverCh)
             {
                 // タイトルバー設定
                 this.Text = Resources.ServerMessageTitlebar;
                 // トピックバー設定
                 topicLabel.Text = Resources.ServerMessageTopicbar;
+            }
+            else if (channel == m_wholeCh)
+            {
+                // タイトルバー設定
+                this.Text = Resources.WholeTitlebar;
+                // トピックバー設定
+                topicLabel.Text = Resources.WholeTopicbar;
+            }
+            else if (channel == m_highlightsCh)
+            {
+                // タイトルバー設定
+                this.Text = Resources.HighlightTitlebar;
+                // トピックバー設定
+                topicLabel.Text = Resources.HighlightTopicbar;
             }
             else
             {
@@ -1558,12 +1664,12 @@ namespace EbiSoft.EbIRC
             }
 
             // このチャンネルのハイライトメッセージを消す
-            for (int i = (menuHilightedMessages.MenuItems.Count - 1); i >= 0; i--)
+            for (int i = (menuHighlightedMessages.MenuItems.Count - 1); i >= 0; i--)
             {
-                ChannelMenuItem menu = menuHilightedMessages.MenuItems[i] as ChannelMenuItem;
+                ChannelMenuItem menu = menuHighlightedMessages.MenuItems[i] as ChannelMenuItem;
                 if (menu.Channel == channel)
                 {
-                    menuHilightedMessages.MenuItems.RemoveAt(i);
+                    menuHighlightedMessages.MenuItems.RemoveAt(i);
                 }
             }
 
@@ -1586,17 +1692,34 @@ namespace EbiSoft.EbIRC
         /// </summary>
         void SwitchNextChannel()
         {
-            // チャンネルリストが空なら何もしない
-            if (m_channel.Count == 0) return;
-
             // チャンネルのリストを作る
             List<Channel> list = new List<Channel>(m_channel.Values);
+
+            // Server -> other -> Whole -> Highlight
 
             // 現在のチャンネルがサーバーなら
             if (m_currentCh == m_serverCh)
             {
-                // 最初のチャンネルへ
-                LoadChannel(list[0]);
+                if (m_channel.Count > 0)
+                {
+                    LoadChannel(list[0]);
+                }
+                else
+                {
+                    LoadChannel(m_wholeCh);
+                }
+            }
+            // ホールの場合
+            else if (m_currentCh == m_wholeCh)
+            {
+                // ハイライトへ
+                LoadChannel(m_highlightsCh);
+            }
+            // ハイライトの場合
+            else if (m_currentCh == m_highlightsCh)
+            {
+                // サーバーへ
+                LoadChannel(m_serverCh);
             }
             // 現在のチャンネルがサーバー以外なら
             else
@@ -1605,10 +1728,10 @@ namespace EbiSoft.EbIRC
                 int index = list.IndexOf(m_currentCh);
                 if (index == -1) return;
 
-                // 末尾ならサーバーに切り替える
+                // 末尾ならWholeに切り替える
                 if (index == list.Count - 1)
                 {
-                    LoadChannel(m_serverCh);
+                    LoadChannel(m_wholeCh);
                 }
                 // 末尾でないなら+1
                 else
@@ -1623,17 +1746,34 @@ namespace EbiSoft.EbIRC
         /// </summary>
         void SwitchPrevChannel()
         {
-            // チャンネルリストが空なら何もしない
-            if (m_channel.Count == 0) return;
-
             // チャンネルのリストを作る
             List<Channel> list = new List<Channel>(m_channel.Values);
+
+            // Server -> other -> Whole -> Highlight
 
             // 現在のチャンネルがサーバーなら
             if (m_currentCh == m_serverCh)
             {
-                // 最後のチャンネルへ
-                LoadChannel(list[list.Count - 1]);
+                // ハイライトへ
+                LoadChannel(m_highlightsCh);
+            }
+            // ホールなら
+            else if (m_currentCh == m_wholeCh) {
+                if (m_channel.Count == 0)
+                {
+                    // サーバーへ
+                    LoadChannel(m_serverCh);
+                }
+                else
+                {
+                    // 最後のチャンネルへ
+                    LoadChannel(list[list.Count - 1]);
+                }
+            }
+            // ハイライトなら
+            else if (m_currentCh == m_highlightsCh) {
+                // ホールへ
+                LoadChannel(m_wholeCh);
             }
             // 現在のチャンネルがサーバー以外なら
             else
@@ -1647,12 +1787,11 @@ namespace EbiSoft.EbIRC
                 {
                     LoadChannel(m_serverCh);
                 }
-                // 先頭でないなら+1
+                // 先頭でないなら-1
                 else
                 {
                     LoadChannel(list[index - 1]);
                 }
-
             }
         }
 
@@ -1749,6 +1888,7 @@ namespace EbiSoft.EbIRC
         private void BroadcastLog(string message)
         {
             AddLog(m_serverCh, message);
+            AddLog(m_wholeCh, message);
             foreach (Channel channel in m_channel.Values)
             {
                 // ログ追加
@@ -1796,16 +1936,18 @@ namespace EbiSoft.EbIRC
         /// 指定されたチャンネルでのハイライトをセットします
         /// </summary>
         /// <param name="channel">ハイライトするチャンネル</param>
-        private void SetHighlight(Channel channel, string message)
+        private void SetHighlight(Channel channel, string sender, string message)
         {
             highlightFlag = true;
             highlightChannel = channel;
 
             // ハイライトメッセージ一覧に追加
             ChannelMenuItem mesMenu = new ChannelMenuItem(channel);
-            mesMenu.Text = message;
+            mesMenu.Text = string.Format(Resources.PrivmsgLogFormat, sender, message);
             mesMenu.Click += new EventHandler(menuChannelListChannelsMenuItem_Click);
-            menuHilightedMessages.MenuItems.Add(mesMenu);
+            menuHighlightedMessages.MenuItems.Add(mesMenu);
+
+            AddLog(m_highlightsCh, string.Format(Resources.WholePrivmsgLogFormat, channel.Name, sender, message));
 
             // 該当チャンネルをハイライトチェックする
             foreach (ChannelMenuItem menu in m_channelPopupMenus)
@@ -1827,23 +1969,23 @@ namespace EbiSoft.EbIRC
         {
             if (highlightFlag && (highlightChannel != null))
             {
-                if ((Settings.Data.HighlightMethod == EbIRCHilightMethod.Vibration) || (Settings.Data.HighlightMethod == EbIRCHilightMethod.VibrationAndLed))
+                if ((SettingManager.Data.HighlightMethod == EbIRCHighlightMethod.Vibration) || (SettingManager.Data.HighlightMethod == EbIRCHighlightMethod.VibrationAndLed))
                 {
                     if (Led.AvailableLed(LedType.Vibrartion))
                     {
-                        Led.SetLedStatus(LedType.Vibrartion, LedStatus.On);
+                        Led.SetLedStatus(SettingManager.Data.LedIdLight, LedStatus.On);
                         clearHighlightTimer.Enabled = true;
                     }
                 }
-                if ((Settings.Data.HighlightMethod == EbIRCHilightMethod.Led) || (Settings.Data.HighlightMethod == EbIRCHilightMethod.VibrationAndLed))
+                if ((SettingManager.Data.HighlightMethod == EbIRCHighlightMethod.Led) || (SettingManager.Data.HighlightMethod == EbIRCHighlightMethod.VibrationAndLed))
                 {
                     if (Led.AvailableLed(LedType.Yellow))
                     {
-                        Led.SetLedStatus(LedType.Yellow, LedStatus.On);
+                        Led.SetLedStatus(SettingManager.Data.LedIdVibration, LedStatus.On);
                         clearHighlightTimer.Enabled = true;
                     }
                 }
-                if (Settings.Data.HighlightChannelChange)
+                if (SettingManager.Data.HighlightChannelChange)
                 {
                     LoadChannel(highlightChannel);
                 }
@@ -1859,13 +2001,23 @@ namespace EbiSoft.EbIRC
         {
             if (Led.AvailableLed(LedType.Vibrartion))
             {
-                Led.SetLedStatus(LedType.Vibrartion, LedStatus.Off);
+                Led.SetLedStatus(SettingManager.Data.LedIdVibration, LedStatus.Off);
             }
             if (Led.AvailableLed(LedType.Yellow))
             {
-                Led.SetLedStatus(LedType.Yellow, LedStatus.Off);
+                Led.SetLedStatus(SettingManager.Data.LedIdLight, LedStatus.Off);
             }
             clearHighlightTimer.Enabled = false;
+        }
+
+        /// <summary>
+        /// ハイライト停止タイマー
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void clearHighlightTimer_Tick(object sender, EventArgs e)
+        {
+            ClearHighlight();
         }
 
         #endregion
@@ -1880,10 +2032,12 @@ namespace EbiSoft.EbIRC
             if (ircClient.Status == IRCClientStatus.Disconnected)
             {
                 connectionMenuItem.Text = Resources.ConnectionMenuCaption;
+                multiMenuItem.Text = Resources.ConnectionMenuCaption;
             }
             else
             {
                 connectionMenuItem.Text = Resources.DisconnectMenuCaption;
+                multiMenuItem.Text = Resources.SwitcherMenuCaption;
             }
         }
 
@@ -1892,8 +2046,8 @@ namespace EbiSoft.EbIRC
         /// </summary>
         void UpdateUISettings()
         {
-            logTextBox.Font = Settings.Data.GetFont();
-            infomationPanel.Visible = Settings.Data.TopicVisible;
+            logTextBox.Font = SettingManager.Data.GetFont();
+            infomationPanel.Visible = SettingManager.Data.TopicVisible;
 
             // サブニックネームリストを作成 ------------------------
 
@@ -1904,12 +2058,12 @@ namespace EbiSoft.EbIRC
 
             // デフォルトニックネームをセット
             newItem = new MenuItem();
-            newItem.Text = Settings.Data.Profiles.ActiveProfile.Nickname;
+            newItem.Text = SettingManager.Data.Profiles.ActiveProfile.Nickname;
             newItem.Click += new EventHandler(nicknameSwitcher_Click);
             nicknameSwitchMenuItem.MenuItems.Add(newItem);
 
             // ニックネームリストを登録
-            foreach (string itemName in Settings.Data.SubNicknames)
+            foreach (string itemName in SettingManager.Data.SubNicknames)
             {
                 if (!string.IsNullOrEmpty(itemName.Trim()))
                 {
@@ -1924,17 +2078,17 @@ namespace EbiSoft.EbIRC
             nicknameSwitchMenuItem.MenuItems.Add(menuNicknameInputMenuItem);
 
             // 接続キャッシュ設定
-            ConnectionManager.ConnectionCacheLength = Settings.Data.CacheConnection ? 1 : 0;
+            ConnectionManager.ConnectionCacheLength = SettingManager.Data.CacheConnection ? 1 : 0;
 
             // 強制PONG
-            pongTimer.Enabled = Settings.Data.ForcePong;
+            pongTimer.Enabled = SettingManager.Data.ForcePong;
 
             // キーワード反応マッチオブジェクト
-            highlightMatcher = Settings.Data.GetHighlightKeywordMatcher();
-            dislikeMatcher = Settings.Data.GetDislikeKeywordMatcher();
+            highlightMatcher = SettingManager.Data.GetHighlightKeywordMatcher();
+            dislikeMatcher = SettingManager.Data.GetDislikeKeywordMatcher();
 
             // ハイライト停止タイマーの周期
-            clearHighlightTimer.Interval = Settings.Data.HighlightContinueTime;
+            clearHighlightTimer.Interval = SettingManager.Data.HighlightContinueTime;
         }
 
         #endregion
@@ -2000,15 +2154,15 @@ namespace EbiSoft.EbIRC
                     return true;
 
                 case EbIRCKeyOperations.FontSizeUp:
-                    Settings.Data.FontSize++;
-                    logTextBox.Font = Settings.Data.GetFont();
+                    SettingManager.Data.FontSize++;
+                    logTextBox.Font = SettingManager.Data.GetFont();
                     return true;
 
                 case EbIRCKeyOperations.FontSizeDown:
-                    if (Settings.Data.FontSize > 1)
+                    if (SettingManager.Data.FontSize > 1)
                     {
-                        Settings.Data.FontSize--;
-                        logTextBox.Font = Settings.Data.GetFont();
+                        SettingManager.Data.FontSize--;
+                        logTextBox.Font = SettingManager.Data.GetFont();
                     }
                     return true;
 
@@ -2109,18 +2263,8 @@ namespace EbiSoft.EbIRC
         {
             if (ircClient.Status == IRCClientStatus.Online)
             {
-                ircClient.SendCommand("PONG :" + Settings.Data.Profiles.ActiveProfile.Server);
+                ircClient.SendCommand("PONG :" + SettingManager.Data.Profiles.ActiveProfile.Server);
             }
-        }
-
-        /// <summary>
-        /// ハイライト停止タイマー
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void clearHighlightTimer_Tick(object sender, EventArgs e)
-        {
-            ClearHighlight();
         }
     }
 }

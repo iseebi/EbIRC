@@ -7,12 +7,12 @@ using System.IO;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 
-namespace EbiSoft.EbIRC
+namespace EbiSoft.EbIRC.Settings
 {
     /// <summary>
     /// 設定
     /// </summary>
-    class Settings
+    public class SettingManager
     {
         private static readonly string settingFile = Path.Combine(Path.GetDirectoryName(
         System.Reflection.Assembly.GetExecutingAssembly().GetModules()[0].FullyQualifiedName),
@@ -20,16 +20,16 @@ namespace EbiSoft.EbIRC
 
         private const string REG_KEY = @"Software\EbiSoft\EbIRC\";
 
-        private static SettingData m_data;
+        private static Setting m_data;
 
         /// <summary>
         /// インスタンス
         /// </summary>
-        public static SettingData Data
+        public static Setting Data
         {
             get {
                 if (m_data == null)
-                    m_data = new SettingData();
+                    m_data = new Setting();
                 return m_data;
             }
         }
@@ -69,11 +69,11 @@ namespace EbiSoft.EbIRC
             // 設定ファイルの存在を確認
             if (File.Exists(settingFile))
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(SettingData));
+                XmlSerializer serializer = new XmlSerializer(typeof(Setting));
                 using (FileStream fs = new FileStream(settingFile, FileMode.Open, FileAccess.Read))
                 {
                     m_deserializing = true;
-                    m_data = (SettingData)serializer.Deserialize(fs);
+                    m_data = (Setting)serializer.Deserialize(fs);
                     m_deserializing = false;
 
                     // 旧設定変換処理
@@ -90,13 +90,20 @@ namespace EbiSoft.EbIRC
                         {
                             prof.DefaultChannels = m_data.DefaultChannels;
                         }
-                    }
 
+                        // チャンネル設定が存在する場合は上書きする
+                        if ((prof.DefaultChannels.Length > 0) && (prof.Channels.Count == 0)) {
+                            foreach (string ch in prof.DefaultChannels)
+                            {
+                                prof.Channels.Add(new ChannelSetting(ch));
+                            }
+                        }
+                    }
                 }
             }
             else
             {
-                m_data = new SettingData();
+                m_data = new Setting();
             }
 
             // サーバー一覧読み込み
@@ -136,87 +143,26 @@ namespace EbiSoft.EbIRC
         /// </summary>
         public static void WriteSetting()
         {
-            // 旧設定変換：デフォルトチャンネル設定を無視
-            XmlAttributeOverrides overrides = new XmlAttributeOverrides();
-            XmlAttributes attr = new XmlAttributes();
-            attr.XmlIgnore = true;
-            overrides.Add(typeof(SettingData), "DefaultChannels", attr);
+            XmlAttributeOverrides overrides;
+            XmlAttributes attr;
 
-            XmlSerializer serializer = new XmlSerializer(typeof(SettingData), overrides);
+            // 旧設定変換：デフォルトチャンネル設定を無視
+            overrides = new XmlAttributeOverrides();
+            attr = new XmlAttributes();
+            attr.XmlIgnore = true;
+            overrides.Add(typeof(Setting), "DefaultChannels", attr);
+
+            // 旧設定変換：デフォルトチャンネル設定を無視(プロファイル側)
+            overrides = new XmlAttributeOverrides();
+            attr = new XmlAttributes();
+            attr.XmlIgnore = true;
+            overrides.Add(typeof(ConnectionProfile), "DefaultChannels", attr);
+
+            XmlSerializer serializer = new XmlSerializer(typeof(Setting), overrides);
             using (FileStream fs = new FileStream(settingFile, FileMode.Create, FileAccess.Write))
             {
                 serializer.Serialize(fs, m_data);
             }
         }
-    }
-
-    /// <summary>
-    /// キーオペレーションの種類
-    /// </summary>
-    public enum EbIRCKeyOperations
-    {
-        /// <summary>
-        /// デフォルト動作
-        /// </summary>
-        Default,
-        /// <summary>
-        /// クイックチャンネルセレクト、次へ
-        /// </summary>
-        QuickChannelNext,
-        /// <summary>
-        /// クイックチャンネルセレクト、前へ
-        /// </summary>
-        QuickChannelPrev,
-        /// <summary>
-        /// 次ページへ
-        /// </summary>
-        PageUp,
-        /// <summary>
-        /// 前ページへ
-        /// </summary>
-        PageDown,
-        /// <summary>
-        /// 入力ログ巻き戻し
-        /// </summary>
-        InputLogPrev,
-        /// <summary>
-        /// 入力ログ先送り
-        /// </summary>
-        InputLogNext,
-        /// <summary>
-        /// フォントサイズ拡大
-        /// </summary>
-        FontSizeUp,
-        /// <summary>
-        /// フォントサイズ縮小
-        /// </summary>
-        FontSizeDown,
-        /// <summary>
-        /// 動作なし
-        /// </summary>
-        NoOperation
-    }
-
-    /// <summary>
-    /// キーワード反応の方法
-    /// </summary>
-    public enum EbIRCHilightMethod
-    {
-        /// <summary>
-        /// 反応なし
-        /// </summary>
-        None,
-        /// <summary>
-        /// バイブレーション
-        /// </summary>
-        Vibration,
-        /// <summary>
-        /// LED点灯
-        /// </summary>
-        Led,
-        /// <summary>
-        /// バイブ＋LED
-        /// </summary>
-        VibrationAndLed
     }
 }

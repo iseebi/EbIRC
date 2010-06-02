@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -309,5 +309,59 @@ euc-jp</value>
   </data>
   <data name="CrashMessage" xml:space="preserve">
     <value>回復不能のエラーが起こりました。おそらくバグなので、インストール先の EbIRC_ExceptionReport.txt を作者へ送ってください。</value>
+  </data>
+  <data name="SwitcherMenuCaption" xml:space="preserve">
+    <value>CH変更</value>
+  </data>
+  <data name="SslValidateErrorBadDataString" xml:space="preserve">
+    <value>SSL接続失敗：証明書が対応していない形式か、壊れています。</value>
+  </data>
+  <data name="SslValidateErrorExpiredString" xml:space="preserve">
+    <value>SSL接続失敗：証明書が有効期限切れです。</value>
+  </data>
+  <data name="SslValidateErrorInvalidIssuerString" xml:space="preserve">
+    <value>SSL接続失敗：発行機関が信頼されていないか、自己署名証明書です。</value>
+  </data>
+  <data name="SslValidateErrorNotEffectDateString" xml:space="preserve">
+    <value>SSL接続失敗：証明書の有効期間が始まっていません。</value>
+  </data>
+  <data name="SslValidateErrorNotValidateString" xml:space="preserve">
+    <value>SSL警告：署名検証をせずに暗号化接続しました。</value>
+  </data>
+  <data name="SslValidateErrorOtherSiteString" xml:space="preserve">
+    <value>SSL接続失敗：他のサイトの証明書です。</value>
+  </data>
+  <data name="ChannelSelecterHighlightsCaption" xml:space="preserve">
+    <value>＜ハイライト＞</value>
+  </data>
+  <data name="ChannelSelecterWholeCaption" xml:space="preserve">
+    <value>＜全チャンネル＞</value>
+  </data>
+  <data name="CrashReportFile" xml:space="preserve">
+    <value>EbIRC_ExceptionReport.txt</value>
+  </data>
+  <data name="HighlightTitlebar" xml:space="preserve">
+    <value>EbIRC ＜ハイライト＞</value>
+  </data>
+  <data name="HighlightTopicbar" xml:space="preserve">
+    <value>ハイライトメッセージ</value>
+  </data>
+  <data name="NewProfileName" xml:space="preserve">
+    <value>新しいプロファイル</value>
+  </data>
+  <data name="WholeNoticeLogFormat" xml:space="preserve">
+    <value>[{0}] {1}: {2}</value>
+  </data>
+  <data name="WholePrivmsgLogFormat" xml:space="preserve">
+    <value>[{0}] {1}&gt; {2}</value>
+  </data>
+  <data name="WholeTitlebar" xml:space="preserve">
+    <value>EbIRC ＜全チャンネル＞</value>
+  </data>
+  <data name="WholeTopicbar" xml:space="preserve">
+    <value>全チャンネル</value>
+  </data>
+  <data name="ChannelSettingNewChannel" xml:space="preserve">
+    <value>#新しいチャンネル</value>
   </data>
 </root>

@@ -166,11 +166,38 @@ namespace EbiSoft.EbIRC.Properties {
         }
         
         /// <summary>
+        ///   &lt;Highlights&gt; に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ChannelSelecterHighlightsCaption {
+            get {
+                return ResourceManager.GetString("ChannelSelecterHighlightsCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   &lt;server&gt; に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string ChannelSelecterServerCaption {
             get {
                 return ResourceManager.GetString("ChannelSelecterServerCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   &lt;All channels&gt; に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ChannelSelecterWholeCaption {
+            get {
+                return ResourceManager.GetString("ChannelSelecterWholeCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   #NewChannel に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ChannelSettingNewChannel {
+            get {
+                return ResourceManager.GetString("ChannelSettingNewChannel", resourceCulture);
             }
         }
         
@@ -378,6 +405,24 @@ namespace EbiSoft.EbIRC.Properties {
         }
         
         /// <summary>
+        ///   EbIRC &lt;Highlights&gt; に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string HighlightTitlebar {
+            get {
+                return ResourceManager.GetString("HighlightTitlebar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Highlights に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string HighlightTopicbar {
+            get {
+                return ResourceManager.GetString("HighlightTopicbar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Input new nickname に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string InputNewNicknamePrompt {
@@ -477,6 +522,15 @@ namespace EbiSoft.EbIRC.Properties {
         }
         
         /// <summary>
+        ///   New Profile に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string NewProfileName {
+            get {
+                return ResourceManager.GetString("NewProfileName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   {0} is changed nickname to {1} に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string NicknameChangedMessage {
@@ -567,6 +621,69 @@ namespace EbiSoft.EbIRC.Properties {
         }
         
         /// <summary>
+        ///   SSL Validation Error: Certification type not supported or broken. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string SslValidateErrorBadDataString {
+            get {
+                return ResourceManager.GetString("SslValidateErrorBadDataString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   SSL Validation Error: Expired. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string SslValidateErrorExpiredString {
+            get {
+                return ResourceManager.GetString("SslValidateErrorExpiredString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   SSL Validation Error: Invalid issuer. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string SslValidateErrorInvalidIssuerString {
+            get {
+                return ResourceManager.GetString("SslValidateErrorInvalidIssuerString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   SSL Validation Error: Not effect date. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string SslValidateErrorNotEffectDateString {
+            get {
+                return ResourceManager.GetString("SslValidateErrorNotEffectDateString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   SSL Warning: Not validation. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string SslValidateErrorNotValidateString {
+            get {
+                return ResourceManager.GetString("SslValidateErrorNotValidateString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   SSL Validation Error: Certification is for other site. に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string SslValidateErrorOtherSiteString {
+            get {
+                return ResourceManager.GetString("SslValidateErrorOtherSiteString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Switch ch に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string SwitcherMenuCaption {
+            get {
+                return ResourceManager.GetString("SwitcherMenuCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   {0:00}:{1:00} に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string TimeFormat {
@@ -626,6 +743,42 @@ namespace EbiSoft.EbIRC.Properties {
         internal static string VersionInfomation {
             get {
                 return ResourceManager.GetString("VersionInfomation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   [{0}] {1}: {2} に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string WholeNoticeLogFormat {
+            get {
+                return ResourceManager.GetString("WholeNoticeLogFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   [{0}] {1}&gt; {2} に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string WholePrivmsgLogFormat {
+            get {
+                return ResourceManager.GetString("WholePrivmsgLogFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   EbIRC &lt;All channels&gt; に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string WholeTitlebar {
+            get {
+                return ResourceManager.GetString("WholeTitlebar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   All channels に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string WholeTopicbar {
+            get {
+                return ResourceManager.GetString("WholeTopicbar", resourceCulture);
             }
         }
     }

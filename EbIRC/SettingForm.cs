@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using EbiSoft.EbIRC.Properties;
 using EbiSoft.Library.Mobile;
+using EbiSoft.EbIRC.Settings;
 
 namespace EbiSoft.EbIRC
 {
@@ -51,12 +52,15 @@ namespace EbiSoft.EbIRC
         #endregion
 
         TextBox currentMultilineBox = null;
-        int     lastProfileIndex    = -1;
+        ConnectionProfileCollection m_editingProfiles;
 
         public SettingForm()
         {
             InitializeComponent();
+            InTheHand.WindowsMobile.Forms.TabControlHelper.EnableVisualStyle(tabControl);
         }
+
+        #region フォームロード/アンロード(設定読み書き)
 
         private void SettingForm_Load(object sender, EventArgs e)
         {
@@ -71,116 +75,191 @@ namespace EbiSoft.EbIRC
                 }
             }
 
-            // デフォルトサーバーリストの読み込み
-            serverInputbox.Items.Clear();
-            foreach (string server in Settings.Data.DefaultServers)
-            {
-                serverInputbox.Items.Add(server);
-            }
-
-            // エンコーディングリストの読み込み
-            encodingSelectBox.Items.Clear();
-            foreach (string encode in Resources.EncodeList.Replace("\r\n", "\n").Replace("\r", "\n").Split('\n')) {
-                encodingSelectBox.Items.Add(encode);
-            }
-
             // 設定を読み込む
-            profileSelectBox.Items.Clear();
-            foreach (ConnectionProfile prof in Settings.Data.Profiles.Profile)
-            {
-                profileSelectBox.Items.Add(prof);
-            }
-            profileSelectBox.SelectedIndex = Settings.Data.Profiles.ActiveProfileIndex;
-            fontNameInputBox.Text = Settings.Data.FontName;
-            fontSizeComboBox.Text = Settings.Data.FontSize.ToString();
-            visibleTopicPanelCheckbox.Checked = Settings.Data.TopicVisible;
-            defaultLoadOnConnectCheckBox.Checked = Settings.Data.SelectChannelAtConnect;
+            m_editingProfiles = (ConnectionProfileCollection)SettingManager.Data.Profiles.Clone();
+            ReloadProfileList();
+            fontNameInputBox.Text = SettingManager.Data.FontName;
+            fontSizeComboBox.Text = SettingManager.Data.FontSize.ToString();
+            visibleTopicPanelCheckbox.Checked = SettingManager.Data.TopicVisible;
+            defaultLoadOnConnectCheckBox.Checked = SettingManager.Data.SelectChannelAtConnect;
 
-            if (Settings.Data.VerticalKeyOperation == 5)
+            if (SettingManager.Data.VerticalKeyOperation == 5)
             {
                 verticalKeySelectBox.SelectedIndex = 0;
             }
             else
             {
-                verticalKeySelectBox.SelectedIndex = Settings.Data.VerticalKeyOperation + 1;
+                verticalKeySelectBox.SelectedIndex = SettingManager.Data.VerticalKeyOperation + 1;
             }
-            horizontalKeySelectBox.SelectedIndex = Settings.Data.HorizontalKeyOperation;
-            ctrlVerticalKeySelectBox.SelectedIndex = Settings.Data.VerticalKeyWithCtrlOperation;
-            ctrlHorizontalKeySelectBox.SelectedIndex = Settings.Data.HorizontalKeyWithCtrlOperation;
+            horizontalKeySelectBox.SelectedIndex = SettingManager.Data.HorizontalKeyOperation;
+            ctrlVerticalKeySelectBox.SelectedIndex = SettingManager.Data.VerticalKeyWithCtrlOperation;
+            ctrlHorizontalKeySelectBox.SelectedIndex = SettingManager.Data.HorizontalKeyWithCtrlOperation;
 
-            subNicknameInputBox.Text = string.Join("\r\n", Settings.Data.SubNicknames);
-            confimDisconnectCheckBox.Checked = Settings.Data.ConfimDisconnect;
-            confimExitCheckBox.Checked = Settings.Data.ConfimExit;
-            cacheConnectionCheckBox.Checked = Settings.Data.CacheConnection;
-            reverseSoftKeyCheckBox.Checked = Settings.Data.ReverseSoftKey;
-            scrollLinesTextBox.Text = Settings.Data.ScrollLines.ToString();
-            forcePongCheckBox.Checked = Settings.Data.ForcePong;
-            highlightWordsTextBox.Text = string.Join("\r\n", Settings.Data.HighlightKeywords);
-            highlightUseRegexCheckbox.Checked = Settings.Data.UseRegexHighlight;
-            highlightMethodComboBox.SelectedIndex = (int)Settings.Data.HighlightMethod;
-            highlightChannelCheckBox.Checked = Settings.Data.HighlightChannelChange;
-            dislikeWordsTextBox.Text = string.Join("\r\n", Settings.Data.DislikeKeywords);
-            dislikeUseRegexCheckBox.Checked = Settings.Data.UseRegexDislike;
-            enableLoggingCheckBox.Checked = Settings.Data.LogingEnable;
-            logDirectoryNameTextBox.Text = Settings.Data.LogDirectory;
+            subNicknameInputBox.Text = string.Join("\r\n", SettingManager.Data.SubNicknames);
+            confimDisconnectCheckBox.Checked = SettingManager.Data.ConfimDisconnect;
+            confimExitCheckBox.Checked = SettingManager.Data.ConfimExit;
+            cacheConnectionCheckBox.Checked = SettingManager.Data.CacheConnection;
+            reverseSoftKeyCheckBox.Checked = SettingManager.Data.ReverseSoftKey;
+            scrollLinesTextBox.Text = SettingManager.Data.ScrollLines.ToString();
+            forcePongCheckBox.Checked = SettingManager.Data.ForcePong;
+            highlightWordsTextBox.Text = string.Join("\r\n", SettingManager.Data.HighlightKeywords);
+            highlightUseRegexCheckbox.Checked = SettingManager.Data.UseRegexHighlight;
+            highlightMethodComboBox.SelectedIndex = (int)SettingManager.Data.HighlightMethod;
+            highlightChannelCheckBox.Checked = SettingManager.Data.HighlightChannelChange;
+            dislikeWordsTextBox.Text = string.Join("\r\n", SettingManager.Data.DislikeKeywords);
+            dislikeUseRegexCheckBox.Checked = SettingManager.Data.UseRegexDislike;
+            enableLoggingCheckBox.Checked = SettingManager.Data.LogingEnable;
+            logDirectoryNameTextBox.Text = SettingManager.Data.LogDirectory;
+            qsSortHighlightedCheckBox.Checked = SettingManager.Data.QuickSwitchHilightsSort;
+            qsSortUnreadCheckBox.Checked = SettingManager.Data.QuickSwitchUnreadCountSort;
         }
 
         private void SettingForm_Closing(object sender, CancelEventArgs e)
         {
             // 設定を書き込む
-            saveLastProfile();
-            ConnectionProfileData data = new ConnectionProfileData();
-            foreach (object obj in profileSelectBox.Items)
-            {
-                ConnectionProfile prof = obj as ConnectionProfile;
-                data.Profile.Add(prof);
-            }
-            data.ActiveProfileIndex = profileSelectBox.SelectedIndex;
-            Settings.Data.Profiles = data;
-            Settings.Data.Profiles.ActiveProfile.Password = passwordInputBox.Text;
-            Settings.Data.SelectChannelAtConnect = defaultLoadOnConnectCheckBox.Checked;
-            Settings.Data.FontName = fontNameInputBox.Text;
-            Settings.Data.TopicVisible = visibleTopicPanelCheckbox.Checked;
+            SettingManager.Data.Profiles = m_editingProfiles;
+            SettingManager.Data.SelectChannelAtConnect = defaultLoadOnConnectCheckBox.Checked;
+            SettingManager.Data.FontName = fontNameInputBox.Text;
+            SettingManager.Data.TopicVisible = visibleTopicPanelCheckbox.Checked;
 
             if (verticalKeySelectBox.SelectedIndex == 0)
             {
-                Settings.Data.VerticalKeyOperation = 5;
+                SettingManager.Data.VerticalKeyOperation = 5;
             }
             else
             {
-                Settings.Data.VerticalKeyOperation = verticalKeySelectBox.SelectedIndex - 1;
+                SettingManager.Data.VerticalKeyOperation = verticalKeySelectBox.SelectedIndex - 1;
             }
-            Settings.Data.HorizontalKeyOperation = horizontalKeySelectBox.SelectedIndex;
-            Settings.Data.VerticalKeyWithCtrlOperation = ctrlVerticalKeySelectBox.SelectedIndex;
-            Settings.Data.HorizontalKeyWithCtrlOperation = ctrlHorizontalKeySelectBox.SelectedIndex;
+            SettingManager.Data.HorizontalKeyOperation = horizontalKeySelectBox.SelectedIndex;
+            SettingManager.Data.VerticalKeyWithCtrlOperation = ctrlVerticalKeySelectBox.SelectedIndex;
+            SettingManager.Data.HorizontalKeyWithCtrlOperation = ctrlHorizontalKeySelectBox.SelectedIndex;
 
             try
             {
-                Settings.Data.FontSize = int.Parse(fontSizeComboBox.Text);
+                SettingManager.Data.FontSize = int.Parse(fontSizeComboBox.Text);
             }
             catch (Exception) { } // 設定を保存しない
-            Settings.Data.SubNicknames = subNicknameInputBox.Text.Replace("\r", "").Split('\n');
-            Settings.Data.ConfimDisconnect = confimDisconnectCheckBox.Checked;
-            Settings.Data.ConfimExit = confimExitCheckBox.Checked;
-            Settings.Data.CacheConnection = cacheConnectionCheckBox.Checked;
-            Settings.Data.ReverseSoftKey = reverseSoftKeyCheckBox.Checked;
+            SettingManager.Data.SubNicknames = subNicknameInputBox.Text.Replace("\r", "").Split('\n');
+            SettingManager.Data.ConfimDisconnect = confimDisconnectCheckBox.Checked;
+            SettingManager.Data.ConfimExit = confimExitCheckBox.Checked;
+            SettingManager.Data.CacheConnection = cacheConnectionCheckBox.Checked;
+            SettingManager.Data.ReverseSoftKey = reverseSoftKeyCheckBox.Checked;
             try
             {
-                Settings.Data.ScrollLines = int.Parse(scrollLinesTextBox.Text);
+                SettingManager.Data.ScrollLines = int.Parse(scrollLinesTextBox.Text);
             }
             catch (Exception) { }
-            Settings.Data.ForcePong = forcePongCheckBox.Checked;
-            Settings.Data.HighlightKeywords = highlightWordsTextBox.Text.Replace("\r", "").Split('\n');
-            Settings.Data.UseRegexHighlight=highlightUseRegexCheckbox.Checked;
-            Settings.Data.HighlightMethod = (EbIRCHilightMethod)highlightMethodComboBox.SelectedIndex;
-            Settings.Data.HighlightChannelChange = highlightChannelCheckBox.Checked;
-            Settings.Data.DislikeKeywords = dislikeWordsTextBox.Text.Replace("\r", "").Split('\n');
-            Settings.Data.UseRegexDislike = dislikeUseRegexCheckBox.Checked;
-            Settings.Data.LogingEnable = enableLoggingCheckBox.Checked;
-            Settings.Data.LogDirectory = logDirectoryNameTextBox.Text;
+            SettingManager.Data.ForcePong = forcePongCheckBox.Checked;
+            SettingManager.Data.HighlightKeywords = highlightWordsTextBox.Text.Replace("\r", "").Split('\n');
+            SettingManager.Data.UseRegexHighlight=highlightUseRegexCheckbox.Checked;
+            SettingManager.Data.HighlightMethod = (EbIRCHighlightMethod)highlightMethodComboBox.SelectedIndex;
+            SettingManager.Data.HighlightChannelChange = highlightChannelCheckBox.Checked;
+            SettingManager.Data.DislikeKeywords = dislikeWordsTextBox.Text.Replace("\r", "").Split('\n');
+            SettingManager.Data.UseRegexDislike = dislikeUseRegexCheckBox.Checked;
+            SettingManager.Data.LogingEnable = enableLoggingCheckBox.Checked;
+            SettingManager.Data.LogDirectory = logDirectoryNameTextBox.Text;
+            SettingManager.Data.QuickSwitchHilightsSort = qsSortHighlightedCheckBox.Checked;
+            SettingManager.Data.QuickSwitchUnreadCountSort = qsSortUnreadCheckBox.Checked;
 
-            Settings.WriteSetting();
+            SettingManager.WriteSetting();
         }
+
+        #endregion
+
+        #region プロファイルの編集
+
+        /// <summary>
+        /// プロファイルの追加ボタン
+        /// </summary>
+        private void profileAddButton_Click(object sender, EventArgs e)
+        {
+            using (ServerSettingForm serverSettingForm = new ServerSettingForm())
+            {
+                ConnectionProfile prof = new ConnectionProfile(Resources.NewProfileName);
+                serverSettingForm.Profile = prof;
+
+                if (serverSettingForm.ShowDialog() == DialogResult.OK)
+                {
+                    m_editingProfiles.Profile.Add(serverSettingForm.Profile);
+                    ReloadProfileList();
+                }
+            }
+        }
+
+        /// <summary>
+        /// プロファイルの編集ボタン
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void profileEditButton_Click(object sender, EventArgs e)
+        {
+            using (ServerSettingForm serverSettingForm = new ServerSettingForm())
+            {
+                ConnectionProfile prof = m_editingProfiles.Profile[profileSelectListview.SelectedIndices[0]];
+                serverSettingForm.Profile = prof;
+                if (serverSettingForm.ShowDialog() == DialogResult.OK)
+                {
+                    m_editingProfiles.Profile[profileSelectListview.SelectedIndices[0]] = serverSettingForm.Profile;
+                    ReloadProfileList();
+                }
+            }
+        }
+
+        /// <summary>
+        /// プロファイルの削除ボタン
+        /// </summary>
+        private void profileRemoveButton_Click(object sender, EventArgs e)
+        {
+            m_editingProfiles.Profile.RemoveAt(profileSelectListview.SelectedIndices[0]);
+            ReloadProfileList();
+        }
+
+        /// <summary>
+        /// プロファイルの選択ボタン
+        /// </summary>
+        private void profileMarkActiveButton_Click(object sender, EventArgs e)
+        {
+            m_editingProfiles.ActiveProfileIndex = profileSelectListview.SelectedIndices[0];
+            ReloadProfileList();
+        }
+
+        /// <summary>
+        /// プロファイルの選択(ボタンの有効状態の切り替え)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void profileSelectListview_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            profileEditButton.Enabled = (profileSelectListview.SelectedIndices.Count > 0);
+            profileRemoveButton.Enabled = ((profileSelectListview.SelectedIndices.Count > 0) && (profileSelectListview.Items.Count > 1) && (m_editingProfiles.ActiveProfileIndex != profileSelectListview.SelectedIndices[0]));
+            profileMarkActiveButton.Enabled = ((profileSelectListview.SelectedIndices.Count > 0) && (m_editingProfiles.ActiveProfileIndex != profileSelectListview.SelectedIndices[0]));
+        }
+
+        /// <summary>
+        /// プロファイル一覧の再読み込み
+        /// </summary>
+        private void ReloadProfileList()
+        {
+            profileSelectListview.Items.Clear();
+            foreach (ConnectionProfile prof in m_editingProfiles.Profile)
+            {
+                ListViewItem item = new ListViewItem();
+
+                if (m_editingProfiles.ActiveProfile == prof)
+                {
+                    item.Text = "* " + prof.ProfileName;
+                }
+                else
+                {
+                    item.Text = prof.ProfileName;
+                }
+
+                item.Tag = prof;
+                profileSelectListview.Items.Add(item);
+            }
+        }
+
+        #endregion
 
         #region キー移動関連
 
@@ -268,103 +347,33 @@ namespace EbiSoft.EbIRC
             currentMultilineBox = null;
         }
 
-        private void label3_ParentChanged(object sender, EventArgs e)
-        {
+        #endregion
 
+        #region リサイズアクション
+
+        private void inputPanel_EnabledChanged(object sender, EventArgs e)
+        {
+            ResizeAction();
+        }
+
+        private void SettingForm_Resize(object sender, EventArgs e)
+        {
+            ResizeAction();
+        }
+
+        private void ResizeAction()
+        {
+            if (inputPanel.Enabled)
+            {
+                tabControl.Height = this.ClientSize.Height - inputPanel.Bounds.Height;
+            }
+            else
+            {
+                tabControl.Height = this.ClientSize.Height;
+            }
         }
 
         #endregion
-
-        /// <summary>
-        /// プロファイルの設定をクラスに反映
-        /// </summary>
-        private void saveLastProfile()
-        {
-            if (lastProfileIndex < 0) return;
-
-            ConnectionProfile prof = profileSelectBox.Items[lastProfileIndex] as ConnectionProfile;
-            prof.Server = serverInputbox.Text;
-            try
-            {
-                prof.Port = int.Parse(portInputBox.Text);
-            }
-            catch (Exception) { } // 設定を保存しない
-            prof.Nickname = nicknameInputbox.Text;
-            prof.Realname = nameInputbox.Text;
-            prof.Encoding = encodingSelectBox.Text;
-            prof.DefaultChannels = defaultChannelInputbox.Text.Replace("\r", "").Split('\n');
-        }
-
-        /// <summary>
-        /// プロファイルの設定をコントロールに読み込み
-        /// </summary>
-        private void loadActiveProfile()
-        {
-            if (profileSelectBox.SelectedIndex < 0) return;
-
-            ConnectionProfile prof = profileSelectBox.SelectedItem as ConnectionProfile;
-            serverInputbox.Text = prof.Server;
-            portInputBox.Text = prof.Port.ToString();
-            nicknameInputbox.Text = prof.Nickname;
-            nameInputbox.Text = prof.Realname;
-            passwordInputBox.Text = prof.Password;
-            encodingSelectBox.Text = prof.Encoding;
-            defaultChannelInputbox.Text = string.Join("\r\n", prof.DefaultChannels);
-        }
-
-        /// <summary>
-        /// リストの選択が変わったときに発生するイベント
-        /// </summary>
-        private void profileSelectBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            saveLastProfile();
-            loadActiveProfile();
-            lastProfileIndex = profileSelectBox.SelectedIndex;
-        }
-
-        /// <summary>
-        /// プロファイルの追加ボタン
-        /// </summary>
-        private void profileAddButton_Click(object sender, EventArgs e)
-        {
-            using (InputBoxForm form = new InputBoxForm())
-            {
-                form.Text = Resources.ProfileAddDialogTitle;
-                form.Description = Resources.ProfileAddDialogCaption;
-                if (form.ShowDialog() == DialogResult.OK)
-                {
-                    if (!string.IsNullOrEmpty(form.Value))
-                    {
-                        profileSelectBox.Items.Add(new ConnectionProfile(form.Value));
-                        profileSelectBox.SelectedIndex = profileSelectBox.Items.Count - 1;
-                    }
-                }
-            }
-        }
-
-        /// <summary>
-        /// プロファイルの削除ボタン
-        /// </summary>
-        private void profileRemoveButton_Click(object sender, EventArgs e)
-        {
-            if (profileSelectBox.SelectedIndex < 0) return;
-            if (profileSelectBox.Items.Count == 1)
-            {
-                MessageBox.Show(Resources.CannotRemoveAllProfileMessage);
-                return;
-            }
-
-            // 次にロードするプロファイルを決める
-            int nextActiveIndex = lastProfileIndex;
-            if (nextActiveIndex <= profileSelectBox.Items.Count - 1)
-            {
-                nextActiveIndex--;
-            }
-            lastProfileIndex = -1;
-
-            profileSelectBox.Items.RemoveAt(profileSelectBox.SelectedIndex);
-            profileSelectBox.SelectedIndex = nextActiveIndex;
-        }
 
         /// <summary>
         /// 保存して閉じるメニュー

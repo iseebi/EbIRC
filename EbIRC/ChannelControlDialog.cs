@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using EbiSoft.EbIRC.Properties;
+using EbiSoft.EbIRC.Settings;
 
 namespace EbiSoft.EbIRC
 {
@@ -145,7 +146,7 @@ namespace EbiSoft.EbIRC
                 form.Description = Resources.ChannelAddDialogCaption;
                 if (form.ShowDialog() == DialogResult.OK)
                 {
-                    (Owner as EbIrcMainForm).AddChannel(form.Value, false);
+                    (Owner as EbIrcMainForm).AddChannel(form.Value, false, null);
                     LoadChannelList();
                 }
             }
@@ -200,7 +201,16 @@ namespace EbiSoft.EbIRC
             Channel ch = openedChannelListview.Items[openedChannelListview.SelectedIndices[0]].Tag as Channel;
             if (ch.IsChannel && (!ch.IsJoin))
             {
-                (Owner as EbIrcMainForm).IRCClient.JoinChannel(ch.Name);
+                // チャンネルパスワード指定接続
+                ChannelSetting chSetting = SettingManager.Data.Profiles.ActiveProfile.Channels.SearchChannel(ch.Name);
+                if ((chSetting != null) && (!string.IsNullOrEmpty(chSetting.Password)))
+                {
+                    (Owner as EbIrcMainForm).IRCClient.JoinChannel(ch.Name, chSetting.Password);
+                }
+                else
+                {
+                    (Owner as EbIrcMainForm).IRCClient.JoinChannel(ch.Name, ch.Password);
+                }
             }
         }
 
@@ -272,7 +282,7 @@ namespace EbiSoft.EbIRC
             Channel ch = openedChannelListview.Items[openedChannelListview.SelectedIndices[0]].Tag as Channel;
 
             // チャンネルを追加する
-            (Owner as EbIrcMainForm).AddChannel(memberListView.Items[memberListView.SelectedIndices[0]].Text, false);
+            (Owner as EbIrcMainForm).AddChannel(memberListView.Items[memberListView.SelectedIndices[0]].Text, false, null);
 
             // チャンネル一覧の再構築
             LoadChannelList();
