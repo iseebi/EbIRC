@@ -91,16 +91,16 @@
             // 
             // containerPanel
             // 
-            resources.ApplyResources(this.containerPanel, "containerPanel");
             this.containerPanel.Controls.Add(this.tabControl);
+            resources.ApplyResources(this.containerPanel, "containerPanel");
             this.containerPanel.Name = "containerPanel";
             // 
             // tabControl
             // 
-            resources.ApplyResources(this.tabControl, "tabControl");
             this.tabControl.Controls.Add(this.basicsTabPage);
             this.tabControl.Controls.Add(this.advancedTabPage);
             this.tabControl.Controls.Add(this.channelsTabPage);
+            resources.ApplyResources(this.tabControl, "tabControl");
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             // 
@@ -144,8 +144,8 @@
             // 
             // encodingComboBox
             // 
-            resources.ApplyResources(this.encodingComboBox, "encodingComboBox");
             this.encodingComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            resources.ApplyResources(this.encodingComboBox, "encodingComboBox");
             this.encodingComboBox.Name = "encodingComboBox";
             // 
             // label14
@@ -244,17 +244,17 @@
             // 
             // channelsTabPage
             // 
-            resources.ApplyResources(this.channelsTabPage, "channelsTabPage");
             this.channelsTabPage.Controls.Add(this.panel1);
             this.channelsTabPage.Controls.Add(this.panel2);
+            resources.ApplyResources(this.channelsTabPage, "channelsTabPage");
             this.channelsTabPage.Name = "channelsTabPage";
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this.channelListView);
             this.panel1.Controls.Add(this.channelDownButton);
             this.panel1.Controls.Add(this.channelUpButton);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // channelListView
@@ -278,7 +278,6 @@
             // 
             // panel2
             // 
-            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Controls.Add(this.removeChannelButton);
             this.panel2.Controls.Add(this.addChannelButton);
             this.panel2.Controls.Add(this.channelIgnoreUnreadSortCheckBox);
@@ -286,6 +285,7 @@
             this.panel2.Controls.Add(this.channelPasswordTextBox);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
             // removeChannelButton
@@ -309,6 +309,7 @@
             // 
             resources.ApplyResources(this.channelNameTextBox, "channelNameTextBox");
             this.channelNameTextBox.Name = "channelNameTextBox";
+            this.channelNameTextBox.TextChanged += new System.EventHandler(this.channelNameTextBox_TextChanged);
             // 
             // channelPasswordTextBox
             // 
@@ -325,17 +326,23 @@
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
+            // inputPanel
+            // 
+            this.inputPanel.EnabledChanged += new System.EventHandler(this.inputPanel_EnabledChanged);
+            // 
             // ServerSettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             resources.ApplyResources(this, "$this");
             this.Controls.Add(this.containerPanel);
+            this.KeyPreview = true;
             this.Menu = this.mainMenu;
             this.MinimizeBox = false;
             this.Name = "ServerSettingForm";
             this.Load += new System.EventHandler(this.ServerSettingForm_Load);
-            this.Resize += new System.EventHandler(this.ChannelSettingForm_Resize);
+            this.Resize += new System.EventHandler(this.ServerSettingForm_Resize);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ServerSettingForm_KeyDown);
             this.containerPanel.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
             this.basicsTabPage.ResumeLayout(false);

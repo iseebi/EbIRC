@@ -127,163 +127,17 @@
   <data name="serverTabPage.AutoScrollMargin" type="System.Drawing.Size, System.Drawing">
     <value>0, 15</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="profileSelectListview.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left, Right</value>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="profileSelectListview.Items" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="profileSelectListview.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 37</value>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>serverTabPage</value>
   </data>
-  <data name="profileSelectListview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>466, 346</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="profileSelectListview.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;profileSelectListview.Name" xml:space="preserve">
-    <value>profileSelectListview</value>
-  </data>
-  <data name="&gt;&gt;profileSelectListview.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;profileSelectListview.Parent" xml:space="preserve">
-    <value>serverTabPage</value>
-  </data>
-  <data name="&gt;&gt;profileSelectListview.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="profileEditButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="profileEditButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>167, 389</value>
-  </data>
-  <data name="profileEditButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 40</value>
-  </data>
-  <data name="profileEditButton.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="profileEditButton.Text" xml:space="preserve">
-    <value>Edit</value>
-  </data>
-  <data name="&gt;&gt;profileEditButton.Name" xml:space="preserve">
-    <value>profileEditButton</value>
-  </data>
-  <data name="&gt;&gt;profileEditButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;profileEditButton.Parent" xml:space="preserve">
-    <value>serverTabPage</value>
-  </data>
-  <data name="&gt;&gt;profileEditButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="profileMarkActiveButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="profileMarkActiveButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 435</value>
-  </data>
-  <data name="profileMarkActiveButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 40</value>
-  </data>
-  <data name="profileMarkActiveButton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="profileMarkActiveButton.Text" xml:space="preserve">
-    <value>Mark active</value>
-  </data>
-  <data name="&gt;&gt;profileMarkActiveButton.Name" xml:space="preserve">
-    <value>profileMarkActiveButton</value>
-  </data>
-  <data name="&gt;&gt;profileMarkActiveButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;profileMarkActiveButton.Parent" xml:space="preserve">
-    <value>serverTabPage</value>
-  </data>
-  <data name="&gt;&gt;profileMarkActiveButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="profileRemoveButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="profileRemoveButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>327, 389</value>
-  </data>
-  <data name="profileRemoveButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 40</value>
-  </data>
-  <data name="profileRemoveButton.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="profileRemoveButton.Text" xml:space="preserve">
-    <value>Remove</value>
-  </data>
-  <data name="&gt;&gt;profileRemoveButton.Name" xml:space="preserve">
-    <value>profileRemoveButton</value>
-  </data>
-  <data name="&gt;&gt;profileRemoveButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;profileRemoveButton.Parent" xml:space="preserve">
-    <value>serverTabPage</value>
-  </data>
-  <data name="&gt;&gt;profileRemoveButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="profileAddButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
-  </data>
-  <data name="profileAddButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 389</value>
-  </data>
-  <data name="profileAddButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 40</value>
-  </data>
-  <data name="profileAddButton.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="profileAddButton.Text" xml:space="preserve">
-    <value>Add</value>
-  </data>
-  <data name="&gt;&gt;profileAddButton.Name" xml:space="preserve">
-    <value>profileAddButton</value>
-  </data>
-  <data name="&gt;&gt;profileAddButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;profileAddButton.Parent" xml:space="preserve">
-    <value>serverTabPage</value>
-  </data>
-  <data name="&gt;&gt;profileAddButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 4</value>
-  </data>
-  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>200, 40</value>
-  </data>
-  <data name="label13.Text" xml:space="preserve">
-    <value>Profiles</value>
-  </data>
-  <data name="&gt;&gt;label13.Name" xml:space="preserve">
-    <value>label13</value>
-  </data>
-  <data name="&gt;&gt;label13.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label13.Parent" xml:space="preserve">
-    <value>serverTabPage</value>
-  </data>
-  <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="serverTabPage.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -312,6 +166,7 @@
   <data name="forcePongCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>441, 40</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="forcePongCheckBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
@@ -352,6 +207,7 @@
   <data name="&gt;&gt;communicationTabPage.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="subNicknameInputBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -423,6 +279,453 @@
   </data>
   <data name="viewTabPage.AutoScrollMargin" type="System.Drawing.Size, System.Drawing">
     <value>0, 15</value>
+  </data>
+  <data name="&gt;&gt;fontSizeComboBox.Name" xml:space="preserve">
+    <value>fontSizeComboBox</value>
+  </data>
+  <data name="&gt;&gt;fontSizeComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fontSizeComboBox.Parent" xml:space="preserve">
+    <value>viewTabPage</value>
+  </data>
+  <data name="&gt;&gt;fontSizeComboBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;fontNameInputBox.Name" xml:space="preserve">
+    <value>fontNameInputBox</value>
+  </data>
+  <data name="&gt;&gt;fontNameInputBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;fontNameInputBox.Parent" xml:space="preserve">
+    <value>viewTabPage</value>
+  </data>
+  <data name="&gt;&gt;fontNameInputBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>viewTabPage</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="viewTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="viewTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>472, 189</value>
+  </data>
+  <data name="viewTabPage.Text" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="&gt;&gt;viewTabPage.Name" xml:space="preserve">
+    <value>viewTabPage</value>
+  </data>
+  <data name="&gt;&gt;viewTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;viewTabPage.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;viewTabPage.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="controlTabPage.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="controlTabPage.AutoScrollMargin" type="System.Drawing.Size, System.Drawing">
+    <value>0, 15</value>
+  </data>
+  <data name="&gt;&gt;scrollLinesTextBox.Name" xml:space="preserve">
+    <value>scrollLinesTextBox</value>
+  </data>
+  <data name="&gt;&gt;scrollLinesTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;scrollLinesTextBox.Parent" xml:space="preserve">
+    <value>controlTabPage</value>
+  </data>
+  <data name="&gt;&gt;scrollLinesTextBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;ctrlHorizontalKeySelectBox.Name" xml:space="preserve">
+    <value>ctrlHorizontalKeySelectBox</value>
+  </data>
+  <data name="&gt;&gt;ctrlHorizontalKeySelectBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ctrlHorizontalKeySelectBox.Parent" xml:space="preserve">
+    <value>controlTabPage</value>
+  </data>
+  <data name="&gt;&gt;ctrlHorizontalKeySelectBox.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;scrollLinesLabel.Name" xml:space="preserve">
+    <value>scrollLinesLabel</value>
+  </data>
+  <data name="&gt;&gt;scrollLinesLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;scrollLinesLabel.Parent" xml:space="preserve">
+    <value>controlTabPage</value>
+  </data>
+  <data name="&gt;&gt;scrollLinesLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;label11.Name" xml:space="preserve">
+    <value>label11</value>
+  </data>
+  <data name="&gt;&gt;label11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label11.Parent" xml:space="preserve">
+    <value>controlTabPage</value>
+  </data>
+  <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;ctrlVerticalKeySelectBox.Name" xml:space="preserve">
+    <value>ctrlVerticalKeySelectBox</value>
+  </data>
+  <data name="&gt;&gt;ctrlVerticalKeySelectBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ctrlVerticalKeySelectBox.Parent" xml:space="preserve">
+    <value>controlTabPage</value>
+  </data>
+  <data name="&gt;&gt;ctrlVerticalKeySelectBox.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;label12.Name" xml:space="preserve">
+    <value>label12</value>
+  </data>
+  <data name="&gt;&gt;label12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label12.Parent" xml:space="preserve">
+    <value>controlTabPage</value>
+  </data>
+  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;horizontalKeySelectBox.Name" xml:space="preserve">
+    <value>horizontalKeySelectBox</value>
+  </data>
+  <data name="&gt;&gt;horizontalKeySelectBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;horizontalKeySelectBox.Parent" xml:space="preserve">
+    <value>controlTabPage</value>
+  </data>
+  <data name="&gt;&gt;horizontalKeySelectBox.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;label9.Name" xml:space="preserve">
+    <value>label9</value>
+  </data>
+  <data name="&gt;&gt;label9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label9.Parent" xml:space="preserve">
+    <value>controlTabPage</value>
+  </data>
+  <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;verticalKeySelectBox.Name" xml:space="preserve">
+    <value>verticalKeySelectBox</value>
+  </data>
+  <data name="&gt;&gt;verticalKeySelectBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;verticalKeySelectBox.Parent" xml:space="preserve">
+    <value>controlTabPage</value>
+  </data>
+  <data name="&gt;&gt;verticalKeySelectBox.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;label8.Name" xml:space="preserve">
+    <value>label8</value>
+  </data>
+  <data name="&gt;&gt;label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
+    <value>controlTabPage</value>
+  </data>
+  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="controlTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="controlTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>472, 189</value>
+  </data>
+  <data name="controlTabPage.Text" xml:space="preserve">
+    <value>Control</value>
+  </data>
+  <data name="&gt;&gt;controlTabPage.Name" xml:space="preserve">
+    <value>controlTabPage</value>
+  </data>
+  <data name="&gt;&gt;controlTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;controlTabPage.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;controlTabPage.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="quickSwitchShortcutTabPage.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;label20.Name" xml:space="preserve">
+    <value>label20</value>
+  </data>
+  <data name="&gt;&gt;label20.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label20.Parent" xml:space="preserve">
+    <value>quickSwitchShortcutTabPage</value>
+  </data>
+  <data name="&gt;&gt;label20.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;label19.Name" xml:space="preserve">
+    <value>label19</value>
+  </data>
+  <data name="&gt;&gt;label19.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label19.Parent" xml:space="preserve">
+    <value>quickSwitchShortcutTabPage</value>
+  </data>
+  <data name="&gt;&gt;label19.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="quickSwitchShortcutTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="quickSwitchShortcutTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>472, 189</value>
+  </data>
+  <data name="quickSwitchShortcutTabPage.Text" xml:space="preserve">
+    <value>Quick Switch</value>
+  </data>
+  <data name="&gt;&gt;quickSwitchShortcutTabPage.Name" xml:space="preserve">
+    <value>quickSwitchShortcutTabPage</value>
+  </data>
+  <data name="&gt;&gt;quickSwitchShortcutTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;quickSwitchShortcutTabPage.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;quickSwitchShortcutTabPage.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="keywordsTabPage.AutoScroll" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;highlightMethodComboBox.Name" xml:space="preserve">
+    <value>highlightMethodComboBox</value>
+  </data>
+  <data name="&gt;&gt;highlightMethodComboBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;highlightMethodComboBox.Parent" xml:space="preserve">
+    <value>keywordsTabPage</value>
+  </data>
+  <data name="&gt;&gt;highlightMethodComboBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;highlightWordsTextBox.Name" xml:space="preserve">
+    <value>highlightWordsTextBox</value>
+  </data>
+  <data name="&gt;&gt;highlightWordsTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;highlightWordsTextBox.Parent" xml:space="preserve">
+    <value>keywordsTabPage</value>
+  </data>
+  <data name="&gt;&gt;highlightWordsTextBox.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;label16.Name" xml:space="preserve">
+    <value>label16</value>
+  </data>
+  <data name="&gt;&gt;label16.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label16.Parent" xml:space="preserve">
+    <value>keywordsTabPage</value>
+  </data>
+  <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;label15.Name" xml:space="preserve">
+    <value>label15</value>
+  </data>
+  <data name="&gt;&gt;label15.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label15.Parent" xml:space="preserve">
+    <value>keywordsTabPage</value>
+  </data>
+  <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="keywordsTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="keywordsTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>472, 189</value>
+  </data>
+  <data name="keywordsTabPage.Text" xml:space="preserve">
+    <value>Keywords</value>
+  </data>
+  <data name="&gt;&gt;keywordsTabPage.Name" xml:space="preserve">
+    <value>keywordsTabPage</value>
+  </data>
+  <data name="&gt;&gt;keywordsTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;keywordsTabPage.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;keywordsTabPage.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;dislikeWordsTextBox.Name" xml:space="preserve">
+    <value>dislikeWordsTextBox</value>
+  </data>
+  <data name="&gt;&gt;dislikeWordsTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dislikeWordsTextBox.Parent" xml:space="preserve">
+    <value>filterTabPage</value>
+  </data>
+  <data name="&gt;&gt;dislikeWordsTextBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label17.Name" xml:space="preserve">
+    <value>label17</value>
+  </data>
+  <data name="&gt;&gt;label17.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label17.Parent" xml:space="preserve">
+    <value>filterTabPage</value>
+  </data>
+  <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="filterTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="filterTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>472, 189</value>
+  </data>
+  <data name="filterTabPage.Text" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="&gt;&gt;filterTabPage.Name" xml:space="preserve">
+    <value>filterTabPage</value>
+  </data>
+  <data name="&gt;&gt;filterTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;filterTabPage.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;filterTabPage.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;logDirectoryBrowseButton.Name" xml:space="preserve">
+    <value>logDirectoryBrowseButton</value>
+  </data>
+  <data name="&gt;&gt;logDirectoryBrowseButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;logDirectoryBrowseButton.Parent" xml:space="preserve">
+    <value>logTabPage</value>
+  </data>
+  <data name="&gt;&gt;logDirectoryBrowseButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;label18.Name" xml:space="preserve">
+    <value>label18</value>
+  </data>
+  <data name="&gt;&gt;label18.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label18.Parent" xml:space="preserve">
+    <value>logTabPage</value>
+  </data>
+  <data name="&gt;&gt;label18.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;logDirectoryNameTextBox.Name" xml:space="preserve">
+    <value>logDirectoryNameTextBox</value>
+  </data>
+  <data name="&gt;&gt;logDirectoryNameTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;logDirectoryNameTextBox.Parent" xml:space="preserve">
+    <value>logTabPage</value>
+  </data>
+  <data name="&gt;&gt;logDirectoryNameTextBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="logTabPage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="logTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>472, 189</value>
+  </data>
+  <data name="logTabPage.Text" xml:space="preserve">
+    <value>Logging</value>
+  </data>
+  <data name="&gt;&gt;logTabPage.Name" xml:space="preserve">
+    <value>logTabPage</value>
+  </data>
+  <data name="&gt;&gt;logTabPage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;logTabPage.Parent" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;logTabPage.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 536</value>
+  </data>
+  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
+    <value>tabControl</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="defaultLoadOnConnectCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 224</value>
@@ -555,33 +858,6 @@
   </data>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="viewTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="viewTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 492</value>
-  </data>
-  <data name="viewTabPage.Text" xml:space="preserve">
-    <value>View</value>
-  </data>
-  <data name="&gt;&gt;viewTabPage.Name" xml:space="preserve">
-    <value>viewTabPage</value>
-  </data>
-  <data name="&gt;&gt;viewTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;viewTabPage.Parent" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;viewTabPage.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="controlTabPage.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="controlTabPage.AutoScrollMargin" type="System.Drawing.Size, System.Drawing">
-    <value>0, 15</value>
   </data>
   <data name="scrollLinesTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>323, 354</value>
@@ -895,30 +1171,6 @@
   <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="controlTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="controlTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 492</value>
-  </data>
-  <data name="controlTabPage.Text" xml:space="preserve">
-    <value>Control</value>
-  </data>
-  <data name="&gt;&gt;controlTabPage.Name" xml:space="preserve">
-    <value>controlTabPage</value>
-  </data>
-  <data name="&gt;&gt;controlTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;controlTabPage.Parent" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;controlTabPage.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="quickSwitchShortcutTabPage.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="qsSortHighlightedCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 215</value>
   </data>
@@ -985,30 +1237,6 @@
   </data>
   <data name="&gt;&gt;label19.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="quickSwitchShortcutTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="quickSwitchShortcutTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 492</value>
-  </data>
-  <data name="quickSwitchShortcutTabPage.Text" xml:space="preserve">
-    <value>Quick Switch</value>
-  </data>
-  <data name="&gt;&gt;quickSwitchShortcutTabPage.Name" xml:space="preserve">
-    <value>quickSwitchShortcutTabPage</value>
-  </data>
-  <data name="&gt;&gt;quickSwitchShortcutTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;quickSwitchShortcutTabPage.Parent" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;quickSwitchShortcutTabPage.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="keywordsTabPage.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="highlightChannelCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>208, 233</value>
@@ -1133,27 +1361,6 @@
   <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="keywordsTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="keywordsTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 492</value>
-  </data>
-  <data name="keywordsTabPage.Text" xml:space="preserve">
-    <value>Keywords</value>
-  </data>
-  <data name="&gt;&gt;keywordsTabPage.Name" xml:space="preserve">
-    <value>keywordsTabPage</value>
-  </data>
-  <data name="&gt;&gt;keywordsTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;keywordsTabPage.Parent" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;keywordsTabPage.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="dislikeWordsTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 47</value>
   </data>
@@ -1210,27 +1417,6 @@
   </data>
   <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="filterTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="filterTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 492</value>
-  </data>
-  <data name="filterTabPage.Text" xml:space="preserve">
-    <value>Filter</value>
-  </data>
-  <data name="&gt;&gt;filterTabPage.Name" xml:space="preserve">
-    <value>filterTabPage</value>
-  </data>
-  <data name="&gt;&gt;filterTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;filterTabPage.Parent" xml:space="preserve">
-    <value>tabControl</value>
-  </data>
-  <data name="&gt;&gt;filterTabPage.ZOrder" xml:space="preserve">
-    <value>7</value>
   </data>
   <data name="enableLoggingCheckBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>7, 7</value>
@@ -1313,50 +1499,257 @@
   <data name="&gt;&gt;logDirectoryNameTextBox.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="logTabPage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <metadata name="inputPanel.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>139, 17</value>
+  </metadata>
+  <data name="&gt;&gt;profileSelectListview.Name" xml:space="preserve">
+    <value>profileSelectListview</value>
   </data>
-  <data name="logTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 492</value>
+  <data name="&gt;&gt;profileSelectListview.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="logTabPage.Text" xml:space="preserve">
-    <value>Logging</value>
+  <data name="&gt;&gt;profileSelectListview.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="&gt;&gt;logTabPage.Name" xml:space="preserve">
-    <value>logTabPage</value>
+  <data name="&gt;&gt;profileSelectListview.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;logTabPage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;profileEditButton.Name" xml:space="preserve">
+    <value>profileEditButton</value>
   </data>
-  <data name="&gt;&gt;logTabPage.Parent" xml:space="preserve">
-    <value>tabControl</value>
+  <data name="&gt;&gt;profileEditButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;logTabPage.ZOrder" xml:space="preserve">
-    <value>8</value>
+  <data name="&gt;&gt;profileEditButton.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
-  <data name="tabControl.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+  <data name="&gt;&gt;profileEditButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;profileMarkActiveButton.Name" xml:space="preserve">
+    <value>profileMarkActiveButton</value>
+  </data>
+  <data name="&gt;&gt;profileMarkActiveButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;profileMarkActiveButton.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;profileMarkActiveButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;profileRemoveButton.Name" xml:space="preserve">
+    <value>profileRemoveButton</value>
+  </data>
+  <data name="&gt;&gt;profileRemoveButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;profileRemoveButton.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;profileRemoveButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;profileAddButton.Name" xml:space="preserve">
+    <value>profileAddButton</value>
+  </data>
+  <data name="&gt;&gt;profileAddButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;profileAddButton.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;profileAddButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;label13.Name" xml:space="preserve">
+    <value>label13</value>
+  </data>
+  <data name="&gt;&gt;label13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label13.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="panel1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="tabControl.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="tabControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 536</value>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 492</value>
   </data>
-  <data name="tabControl.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+    <value>serverTabPage</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;tabControl.Name" xml:space="preserve">
-    <value>tabControl</value>
+  <data name="profileSelectListview.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="&gt;&gt;tabControl.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="profileSelectListview.Items" xml:space="preserve">
+    <value />
   </data>
-  <data name="&gt;&gt;tabControl.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="profileSelectListview.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 43</value>
   </data>
-  <data name="&gt;&gt;tabControl.ZOrder" xml:space="preserve">
+  <data name="profileSelectListview.Size" type="System.Drawing.Size, System.Drawing">
+    <value>466, 345</value>
+  </data>
+  <data name="profileSelectListview.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;profileSelectListview.Name" xml:space="preserve">
+    <value>profileSelectListview</value>
+  </data>
+  <data name="&gt;&gt;profileSelectListview.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;profileSelectListview.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;profileSelectListview.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="profileEditButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="profileEditButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>167, 394</value>
+  </data>
+  <data name="profileEditButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 40</value>
+  </data>
+  <data name="profileEditButton.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="profileEditButton.Text" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="&gt;&gt;profileEditButton.Name" xml:space="preserve">
+    <value>profileEditButton</value>
+  </data>
+  <data name="&gt;&gt;profileEditButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;profileEditButton.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;profileEditButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="profileMarkActiveButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="profileMarkActiveButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 440</value>
+  </data>
+  <data name="profileMarkActiveButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 40</value>
+  </data>
+  <data name="profileMarkActiveButton.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="profileMarkActiveButton.Text" xml:space="preserve">
+    <value>Mark active</value>
+  </data>
+  <data name="&gt;&gt;profileMarkActiveButton.Name" xml:space="preserve">
+    <value>profileMarkActiveButton</value>
+  </data>
+  <data name="&gt;&gt;profileMarkActiveButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;profileMarkActiveButton.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;profileMarkActiveButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="profileRemoveButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="profileRemoveButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>327, 394</value>
+  </data>
+  <data name="profileRemoveButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 40</value>
+  </data>
+  <data name="profileRemoveButton.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="profileRemoveButton.Text" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="&gt;&gt;profileRemoveButton.Name" xml:space="preserve">
+    <value>profileRemoveButton</value>
+  </data>
+  <data name="&gt;&gt;profileRemoveButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;profileRemoveButton.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;profileRemoveButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="profileAddButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left</value>
+  </data>
+  <data name="profileAddButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 394</value>
+  </data>
+  <data name="profileAddButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>146, 40</value>
+  </data>
+  <data name="profileAddButton.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="profileAddButton.Text" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="&gt;&gt;profileAddButton.Name" xml:space="preserve">
+    <value>profileAddButton</value>
+  </data>
+  <data name="&gt;&gt;profileAddButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;profileAddButton.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;profileAddButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 4</value>
+  </data>
+  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 40</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Profiles</value>
+  </data>
+  <data name="&gt;&gt;label13.Name" xml:space="preserve">
+    <value>label13</value>
+  </data>
+  <data name="&gt;&gt;label13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label13.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <metadata name="$this.FormFactorShadowProperty" xml:space="preserve">
     <value>Pocket_PC_Phone_VGA</value>
@@ -1393,6 +1786,12 @@
   </data>
   <data name="&gt;&gt;saveCloseMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;inputPanel.Name" xml:space="preserve">
+    <value>inputPanel</value>
+  </data>
+  <data name="&gt;&gt;inputPanel.Type" xml:space="preserve">
+    <value>Microsoft.CompactFramework.Design.UnsafeComponent, Microsoft.CompactFramework.Design, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SettingForm</value>

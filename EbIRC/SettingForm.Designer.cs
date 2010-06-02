@@ -29,18 +29,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingForm));
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem();
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem();
             this.mainMenu1 = new System.Windows.Forms.MainMenu();
             this.saveCloseMenuItem = new System.Windows.Forms.MenuItem();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.serverTabPage = new System.Windows.Forms.TabPage();
-            this.profileSelectListview = new System.Windows.Forms.ListView();
-            this.profileEditButton = new System.Windows.Forms.Button();
-            this.profileMarkActiveButton = new System.Windows.Forms.Button();
-            this.profileRemoveButton = new System.Windows.Forms.Button();
-            this.profileAddButton = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
             this.communicationTabPage = new System.Windows.Forms.TabPage();
             this.forcePongCheckBox = new System.Windows.Forms.CheckBox();
             this.cacheConnectionCheckBox = new System.Windows.Forms.CheckBox();
@@ -88,6 +83,14 @@
             this.logDirectoryBrowseButton = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.logDirectoryNameTextBox = new System.Windows.Forms.TextBox();
+            this.inputPanel = new Microsoft.WindowsCE.Forms.InputPanel(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.profileSelectListview = new System.Windows.Forms.ListView();
+            this.profileEditButton = new System.Windows.Forms.Button();
+            this.profileMarkActiveButton = new System.Windows.Forms.Button();
+            this.profileRemoveButton = new System.Windows.Forms.Button();
+            this.profileAddButton = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.serverTabPage.SuspendLayout();
             this.communicationTabPage.SuspendLayout();
@@ -98,6 +101,7 @@
             this.keywordsTabPage.SuspendLayout();
             this.filterTabPage.SuspendLayout();
             this.logTabPage.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainMenu1
@@ -127,51 +131,8 @@
             // serverTabPage
             // 
             resources.ApplyResources(this.serverTabPage, "serverTabPage");
-            this.serverTabPage.Controls.Add(this.profileSelectListview);
-            this.serverTabPage.Controls.Add(this.profileEditButton);
-            this.serverTabPage.Controls.Add(this.profileMarkActiveButton);
-            this.serverTabPage.Controls.Add(this.profileRemoveButton);
-            this.serverTabPage.Controls.Add(this.profileAddButton);
-            this.serverTabPage.Controls.Add(this.label13);
+            this.serverTabPage.Controls.Add(this.panel1);
             this.serverTabPage.Name = "serverTabPage";
-            // 
-            // profileSelectListview
-            // 
-            resources.ApplyResources(this.profileSelectListview, "profileSelectListview");
-            listViewItem1.Text = resources.GetString("profileSelectListview.Items");
-            this.profileSelectListview.Items.Add(listViewItem1);
-            this.profileSelectListview.Name = "profileSelectListview";
-            this.profileSelectListview.View = System.Windows.Forms.View.List;
-            this.profileSelectListview.SelectedIndexChanged += new System.EventHandler(this.profileSelectListview_SelectedIndexChanged);
-            // 
-            // profileEditButton
-            // 
-            resources.ApplyResources(this.profileEditButton, "profileEditButton");
-            this.profileEditButton.Name = "profileEditButton";
-            this.profileEditButton.Click += new System.EventHandler(this.profileEditButton_Click);
-            // 
-            // profileMarkActiveButton
-            // 
-            resources.ApplyResources(this.profileMarkActiveButton, "profileMarkActiveButton");
-            this.profileMarkActiveButton.Name = "profileMarkActiveButton";
-            this.profileMarkActiveButton.Click += new System.EventHandler(this.profileMarkActiveButton_Click);
-            // 
-            // profileRemoveButton
-            // 
-            resources.ApplyResources(this.profileRemoveButton, "profileRemoveButton");
-            this.profileRemoveButton.Name = "profileRemoveButton";
-            this.profileRemoveButton.Click += new System.EventHandler(this.profileRemoveButton_Click);
-            // 
-            // profileAddButton
-            // 
-            resources.ApplyResources(this.profileAddButton, "profileAddButton");
-            this.profileAddButton.Name = "profileAddButton";
-            this.profileAddButton.Click += new System.EventHandler(this.profileAddButton_Click);
-            // 
-            // label13
-            // 
-            resources.ApplyResources(this.label13, "label13");
-            this.label13.Name = "label13";
             // 
             // communicationTabPage
             // 
@@ -493,6 +454,59 @@
             resources.ApplyResources(this.logDirectoryNameTextBox, "logDirectoryNameTextBox");
             this.logDirectoryNameTextBox.Name = "logDirectoryNameTextBox";
             // 
+            // inputPanel
+            // 
+            this.inputPanel.EnabledChanged += new System.EventHandler(this.inputPanel_EnabledChanged);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.profileSelectListview);
+            this.panel1.Controls.Add(this.profileEditButton);
+            this.panel1.Controls.Add(this.profileMarkActiveButton);
+            this.panel1.Controls.Add(this.profileRemoveButton);
+            this.panel1.Controls.Add(this.profileAddButton);
+            this.panel1.Controls.Add(this.label13);
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
+            // 
+            // profileSelectListview
+            // 
+            resources.ApplyResources(this.profileSelectListview, "profileSelectListview");
+            listViewItem2.Text = resources.GetString("profileSelectListview.Items");
+            this.profileSelectListview.Items.Add(listViewItem2);
+            this.profileSelectListview.Name = "profileSelectListview";
+            this.profileSelectListview.View = System.Windows.Forms.View.List;
+            this.profileSelectListview.SelectedIndexChanged += new System.EventHandler(this.profileSelectListview_SelectedIndexChanged);
+            // 
+            // profileEditButton
+            // 
+            resources.ApplyResources(this.profileEditButton, "profileEditButton");
+            this.profileEditButton.Name = "profileEditButton";
+            this.profileEditButton.Click += new System.EventHandler(this.profileEditButton_Click);
+            // 
+            // profileMarkActiveButton
+            // 
+            resources.ApplyResources(this.profileMarkActiveButton, "profileMarkActiveButton");
+            this.profileMarkActiveButton.Name = "profileMarkActiveButton";
+            this.profileMarkActiveButton.Click += new System.EventHandler(this.profileMarkActiveButton_Click);
+            // 
+            // profileRemoveButton
+            // 
+            resources.ApplyResources(this.profileRemoveButton, "profileRemoveButton");
+            this.profileRemoveButton.Name = "profileRemoveButton";
+            this.profileRemoveButton.Click += new System.EventHandler(this.profileRemoveButton_Click);
+            // 
+            // profileAddButton
+            // 
+            resources.ApplyResources(this.profileAddButton, "profileAddButton");
+            this.profileAddButton.Name = "profileAddButton";
+            this.profileAddButton.Click += new System.EventHandler(this.profileAddButton_Click);
+            // 
+            // label13
+            // 
+            resources.ApplyResources(this.label13, "label13");
+            this.label13.Name = "label13";
+            // 
             // SettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
@@ -504,6 +518,7 @@
             this.Name = "SettingForm";
             this.Load += new System.EventHandler(this.SettingForm_Load);
             this.Closing += new System.ComponentModel.CancelEventHandler(this.SettingForm_Closing);
+            this.Resize += new System.EventHandler(this.SettingForm_Resize);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SettingForm_KeyDown);
             this.tabControl.ResumeLayout(false);
             this.serverTabPage.ResumeLayout(false);
@@ -515,6 +530,7 @@
             this.keywordsTabPage.ResumeLayout(false);
             this.filterTabPage.ResumeLayout(false);
             this.logTabPage.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -545,9 +561,6 @@
         private System.Windows.Forms.CheckBox reverseSoftKeyCheckBox;
         private System.Windows.Forms.TextBox scrollLinesTextBox;
         private System.Windows.Forms.Label scrollLinesLabel;
-        private System.Windows.Forms.Button profileRemoveButton;
-        private System.Windows.Forms.Button profileAddButton;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TabPage communicationTabPage;
         private System.Windows.Forms.CheckBox forcePongCheckBox;
         private System.Windows.Forms.CheckBox cacheConnectionCheckBox;
@@ -570,12 +583,17 @@
         private System.Windows.Forms.CheckBox qsSortHighlightedCheckBox;
         private System.Windows.Forms.CheckBox qsSortUnreadCheckBox;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.ListView profileSelectListview;
-        private System.Windows.Forms.Button profileMarkActiveButton;
-        private System.Windows.Forms.Button profileEditButton;
         private System.Windows.Forms.TabPage filterTabPage;
         private System.Windows.Forms.TextBox dislikeWordsTextBox;
         private System.Windows.Forms.CheckBox dislikeUseRegexCheckBox;
         private System.Windows.Forms.Label label17;
+        private Microsoft.WindowsCE.Forms.InputPanel inputPanel;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ListView profileSelectListview;
+        private System.Windows.Forms.Button profileEditButton;
+        private System.Windows.Forms.Button profileMarkActiveButton;
+        private System.Windows.Forms.Button profileRemoveButton;
+        private System.Windows.Forms.Button profileAddButton;
+        private System.Windows.Forms.Label label13;
     }
 }

@@ -359,4 +359,7 @@ UTF-8</value>
   <data name="NewProfileName" xml:space="preserve">
     <value>New Profile</value>
   </data>
+  <data name="ChannelSettingNewChannel" xml:space="preserve">
+    <value>#NewChannel</value>
+  </data>
 </root>

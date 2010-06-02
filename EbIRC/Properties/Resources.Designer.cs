@@ -193,6 +193,15 @@ namespace EbiSoft.EbIRC.Properties {
         }
         
         /// <summary>
+        ///   #NewChannel に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        internal static string ChannelSettingNewChannel {
+            get {
+                return ResourceManager.GetString("ChannelSettingNewChannel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Cleared logs. に類似しているローカライズされた文字列を検索します。
         /// </summary>
         internal static string ClearedLog {

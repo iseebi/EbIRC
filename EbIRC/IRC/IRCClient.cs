@@ -1705,7 +1705,7 @@ namespace EbiSoft.EbIRC.IRC {
         /// <param name="password">パスワード</param>
         public void JoinChannel(string channel, string password)
         {
-            if (string.IsNullOrEmpty(password))
+            if (!string.IsNullOrEmpty(password))
             {
                 SendCommand(string.Format("JOIN {0} {1}", channel, password));
             }

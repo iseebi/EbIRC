@@ -1014,7 +1014,16 @@ namespace EbiSoft.EbIRC
                 // デフォルトチャンネルなら接続
                 if (channel.IsDefaultChannel)
                 {
-                    ircClient.JoinChannel(channel.Name, channel.Password);
+                    // チャンネルパスワード指定接続
+                    ChannelSetting chSetting = SettingManager.Data.Profiles.ActiveProfile.Channels.SearchChannel(channel.Name);
+                    if ((chSetting != null) && (!string.IsNullOrEmpty(chSetting.Password)))
+                    {
+                        ircClient.JoinChannel(channel.Name, chSetting.Password);
+                    }
+                    else
+                    {
+                        ircClient.JoinChannel(channel.Name, channel.Password);
+                    }
 
                     // デフォルトチャンネル選択設定ONのときは、選択する
                     if (SettingManager.Data.SelectChannelAtConnect

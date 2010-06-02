@@ -361,4 +361,7 @@ euc-jp</value>
   <data name="WholeTopicbar" xml:space="preserve">
     <value>全チャンネル</value>
   </data>
+  <data name="ChannelSettingNewChannel" xml:space="preserve">
+    <value>#新しいチャンネル</value>
+  </data>
 </root>

@@ -347,9 +347,30 @@ namespace EbiSoft.EbIRC
             currentMultilineBox = null;
         }
 
-        private void label3_ParentChanged(object sender, EventArgs e)
-        {
+        #endregion
 
+        #region リサイズアクション
+
+        private void inputPanel_EnabledChanged(object sender, EventArgs e)
+        {
+            ResizeAction();
+        }
+
+        private void SettingForm_Resize(object sender, EventArgs e)
+        {
+            ResizeAction();
+        }
+
+        private void ResizeAction()
+        {
+            if (inputPanel.Enabled)
+            {
+                tabControl.Height = this.ClientSize.Height - inputPanel.Bounds.Height;
+            }
+            else
+            {
+                tabControl.Height = this.ClientSize.Height;
+            }
         }
 
         #endregion

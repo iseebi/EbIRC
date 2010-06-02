@@ -120,6 +120,9 @@
   <data name="closeMenuItem.Text" xml:space="preserve">
     <value>閉じる</value>
   </data>
+  <data name="basicsTabPage.Text" xml:space="preserve">
+    <value>基本</value>
+  </data>
   <data name="label10.Text" xml:space="preserve">
     <value>プロファイル名</value>
   </data>
@@ -160,8 +163,8 @@
   <data name="label7.Text" xml:space="preserve">
     <value>サーバー</value>
   </data>
-  <data name="basicsTabPage.Text" xml:space="preserve">
-    <value>基本</value>
+  <data name="advancedTabPage.Text" xml:space="preserve">
+    <value>高度な設定</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Nickserv パスワード</value>
@@ -175,11 +178,14 @@
   <data name="label4.Text" xml:space="preserve">
     <value>名前</value>
   </data>
-  <data name="advancedTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 492</value>
+  <data name="channelsTabPage.Text" xml:space="preserve">
+    <value>チャンネル</value>
   </data>
-  <data name="advancedTabPage.Text" xml:space="preserve">
-    <value>高度な設定</value>
+  <data name="channelDownButton.Text" xml:space="preserve">
+    <value>↓</value>
+  </data>
+  <data name="channelUpButton.Text" xml:space="preserve">
+    <value>↑</value>
   </data>
   <data name="channelIgnoreUnreadSortCheckBox.Text" xml:space="preserve">
     <value>未読数ソートの対象外にする</value>
@@ -189,9 +195,6 @@
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>チャンネルパスワード</value>
-  </data>
-  <data name="channelsTabPage.Text" xml:space="preserve">
-    <value>チャンネル</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>サーバー設定</value>

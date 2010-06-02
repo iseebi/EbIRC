@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using EbiSoft.EbIRC.Properties;
+using EbiSoft.EbIRC.Settings;
 
 namespace EbiSoft.EbIRC
 {
@@ -200,7 +201,16 @@ namespace EbiSoft.EbIRC
             Channel ch = openedChannelListview.Items[openedChannelListview.SelectedIndices[0]].Tag as Channel;
             if (ch.IsChannel && (!ch.IsJoin))
             {
-                (Owner as EbIrcMainForm).IRCClient.JoinChannel(ch.Name);
+                // チャンネルパスワード指定接続
+                ChannelSetting chSetting = SettingManager.Data.Profiles.ActiveProfile.Channels.SearchChannel(ch.Name);
+                if ((chSetting != null) && (!string.IsNullOrEmpty(chSetting.Password)))
+                {
+                    (Owner as EbIrcMainForm).IRCClient.JoinChannel(ch.Name, chSetting.Password);
+                }
+                else
+                {
+                    (Owner as EbIrcMainForm).IRCClient.JoinChannel(ch.Name, ch.Password);
+                }
             }
         }
 
