@@ -33,7 +33,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ServerSettingForm));
             this.mainMenu = new System.Windows.Forms.MainMenu();
             this.closeMenuItem = new System.Windows.Forms.MenuItem();
-            this.containerPanel = new System.Windows.Forms.Panel();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.basicsTabPage = new System.Windows.Forms.TabPage();
             this.profileNameTextBox = new System.Windows.Forms.TextBox();
@@ -71,7 +70,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.inputPanel = new Microsoft.WindowsCE.Forms.InputPanel(this.components);
-            this.containerPanel.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.basicsTabPage.SuspendLayout();
             this.advancedTabPage.SuspendLayout();
@@ -89,18 +87,12 @@
             resources.ApplyResources(this.closeMenuItem, "closeMenuItem");
             this.closeMenuItem.Click += new System.EventHandler(this.closeMenuItem_Click);
             // 
-            // containerPanel
-            // 
-            this.containerPanel.Controls.Add(this.tabControl);
-            resources.ApplyResources(this.containerPanel, "containerPanel");
-            this.containerPanel.Name = "containerPanel";
-            // 
             // tabControl
             // 
+            resources.ApplyResources(this.tabControl, "tabControl");
             this.tabControl.Controls.Add(this.basicsTabPage);
             this.tabControl.Controls.Add(this.advancedTabPage);
             this.tabControl.Controls.Add(this.channelsTabPage);
-            resources.ApplyResources(this.tabControl, "tabControl");
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             // 
@@ -144,8 +136,8 @@
             // 
             // encodingComboBox
             // 
-            this.encodingComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             resources.ApplyResources(this.encodingComboBox, "encodingComboBox");
+            this.encodingComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.encodingComboBox.Name = "encodingComboBox";
             // 
             // label14
@@ -244,17 +236,17 @@
             // 
             // channelsTabPage
             // 
+            resources.ApplyResources(this.channelsTabPage, "channelsTabPage");
             this.channelsTabPage.Controls.Add(this.panel1);
             this.channelsTabPage.Controls.Add(this.panel2);
-            resources.ApplyResources(this.channelsTabPage, "channelsTabPage");
             this.channelsTabPage.Name = "channelsTabPage";
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this.channelListView);
             this.panel1.Controls.Add(this.channelDownButton);
             this.panel1.Controls.Add(this.channelUpButton);
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // channelListView
@@ -278,6 +270,7 @@
             // 
             // panel2
             // 
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Controls.Add(this.removeChannelButton);
             this.panel2.Controls.Add(this.addChannelButton);
             this.panel2.Controls.Add(this.channelIgnoreUnreadSortCheckBox);
@@ -285,7 +278,6 @@
             this.panel2.Controls.Add(this.channelPasswordTextBox);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
-            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
             // removeChannelButton
@@ -335,7 +327,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             resources.ApplyResources(this, "$this");
-            this.Controls.Add(this.containerPanel);
+            this.Controls.Add(this.tabControl);
             this.KeyPreview = true;
             this.Menu = this.mainMenu;
             this.MinimizeBox = false;
@@ -343,7 +335,6 @@
             this.Load += new System.EventHandler(this.ServerSettingForm_Load);
             this.Resize += new System.EventHandler(this.ServerSettingForm_Resize);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ServerSettingForm_KeyDown);
-            this.containerPanel.ResumeLayout(false);
             this.tabControl.ResumeLayout(false);
             this.basicsTabPage.ResumeLayout(false);
             this.advancedTabPage.ResumeLayout(false);
@@ -357,7 +348,6 @@
         #endregion
 
         private System.Windows.Forms.MenuItem closeMenuItem;
-        private System.Windows.Forms.Panel containerPanel;
         private Microsoft.WindowsCE.Forms.InputPanel inputPanel;
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage basicsTabPage;

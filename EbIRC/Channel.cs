@@ -20,6 +20,7 @@ namespace EbiSoft.EbIRC
         private string[] m_members;
         private int m_unreadCount;
         private string m_password;
+        private bool m_isSortTarget = true;
 
         private static char[] escapeForFilenameTargets = "\\/:*?<>\"|".ToCharArray();
 
@@ -28,7 +29,7 @@ namespace EbiSoft.EbIRC
         /// </summary>
         /// <param name="name">チャンネル名</param>
         /// <param name="defaultChannel">デフォルトチャンネル指定ON/OFF</param>
-        public Channel(string name, bool defaultChannel, string password)
+        public Channel(string name, bool defaultChannel, string password, bool isSortTarget)
         {
             m_log = new RingBuffer<string>(SettingManager.Data.MaxLogs);
             m_topic = string.Empty;
@@ -37,6 +38,7 @@ namespace EbiSoft.EbIRC
             m_members = new string[] { };
             m_unreadCount = 0;
             m_password = password;
+            m_isSortTarget = isSortTarget;
         }
 
         /// <summary>
@@ -185,6 +187,12 @@ namespace EbiSoft.EbIRC
         {
             get { return m_password; }
             set { m_password = value; }
+        }
+
+        public bool IsSortTarget
+        {
+            get { return m_isSortTarget; }
+            set { m_isSortTarget = value; }
         }
     }
 }

@@ -136,9 +136,9 @@ namespace EbiSoft.EbIRC
             m_channelPopupMenus = new List<ChannelMenuItem>();
 
             // サーバーチャンネルを用意する
-            m_serverCh = new Channel(LOG_KEY_SERVER, false, null);
-            m_highlightsCh = new Channel(LOG_KEY_HIGHLIGHTS, false, null);
-            m_wholeCh = new Channel(LOG_KEY_WHOLE, false, null);
+            m_serverCh = new Channel(LOG_KEY_SERVER, false, null, true);
+            m_highlightsCh = new Channel(LOG_KEY_HIGHLIGHTS, false, null, true);
+            m_wholeCh = new Channel(LOG_KEY_WHOLE, false, null, true);
 
             // バージョン情報出力
             Assembly asm = Assembly.GetExecutingAssembly();
@@ -1216,7 +1216,7 @@ namespace EbiSoft.EbIRC
             // 存在しないチャンネルのときは追加
             if (!m_channel.ContainsKey(channel))
             {
-                AddChannel(channel, false, null);
+                AddChannel(channel, false, null, true);
                 m_channel[channel].IsJoin = true;
             }
 
@@ -1252,7 +1252,7 @@ namespace EbiSoft.EbIRC
                 // 存在しないチャンネルのときは追加
                 if (!m_channel.ContainsKey(e.Channel))
                 {
-                    AddChannel(e.Channel, false, null);
+                    AddChannel(e.Channel, false, null, true);
                     m_channel[e.Channel].IsJoin = true;
                 }
 
@@ -1296,7 +1296,7 @@ namespace EbiSoft.EbIRC
                 // 存在しないチャンネルのときは追加
                 if (!m_channel.ContainsKey(channel))
                 {
-                    AddChannel(channel, false, null);
+                    AddChannel(channel, false, null, true);
                     m_channel[channel].IsJoin = true;
                     return;
                 }
@@ -1350,7 +1350,7 @@ namespace EbiSoft.EbIRC
                         if ((e.Channel != string.Empty)
                             && !m_channel.ContainsKey(e.Channel))
                         {
-                            AddChannel(e.Channel, false, null);
+                            AddChannel(e.Channel, false, null, true);
                         }
                         // 参加フラグ変更
                         m_channel[e.Channel].IsJoin = true;
@@ -1498,6 +1498,7 @@ namespace EbiSoft.EbIRC
                     {
                         channel.IsDefaultChannel = true;
                         channel.Password = ch.Password;
+                        channel.IsSortTarget = !ch.IgnoreInUnreadCountSort;
                         break;
                     }
                 }
@@ -1509,7 +1510,7 @@ namespace EbiSoft.EbIRC
                 // チャンネルリストに存在しないなら追加する
                 if (!m_channel.ContainsKey(ch.Name))
                 {
-                    AddChannel(ch.Name, true, ch.Password);
+                    AddChannel(ch.Name, true, ch.Password, !ch.IgnoreInUnreadCountSort);
                 }
             }
         }
@@ -1521,7 +1522,7 @@ namespace EbiSoft.EbIRC
         /// <param name="defaultChannel">デフォルトチャンネルかどうか</param>
         /// <param name="password">パスワード</param>
         /// <returns>追加されたチャンネル</returns>
-        internal Channel AddChannel(string name, bool defaultChannel, string password)
+        internal Channel AddChannel(string name, bool defaultChannel, string password, bool isSortTarget)
         {
             // 空文字列なら抜ける
             if (string.IsNullOrEmpty(name.Trim()))
@@ -1541,7 +1542,7 @@ namespace EbiSoft.EbIRC
                 return m_channel[name];
             }
 
-            Channel channel = new Channel(name, defaultChannel, password); // チャンネルを作成
+            Channel channel = new Channel(name, defaultChannel, password, isSortTarget); // チャンネルを作成
             m_channel.Add(name, channel);                        // リストに追加
 
             // メニューへの追加用

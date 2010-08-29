@@ -146,7 +146,7 @@ namespace EbiSoft.EbIRC
                 form.Description = Resources.ChannelAddDialogCaption;
                 if (form.ShowDialog() == DialogResult.OK)
                 {
-                    (Owner as EbIrcMainForm).AddChannel(form.Value, false, null);
+                    (Owner as EbIrcMainForm).AddChannel(form.Value, false, null, true);
                     LoadChannelList();
                 }
             }
@@ -282,7 +282,7 @@ namespace EbiSoft.EbIRC
             Channel ch = openedChannelListview.Items[openedChannelListview.SelectedIndices[0]].Tag as Channel;
 
             // チャンネルを追加する
-            (Owner as EbIrcMainForm).AddChannel(memberListView.Items[memberListView.SelectedIndices[0]].Text, false, null);
+            (Owner as EbIrcMainForm).AddChannel(memberListView.Items[memberListView.SelectedIndices[0]].Text, false, null, true);
 
             // チャンネル一覧の再構築
             LoadChannelList();

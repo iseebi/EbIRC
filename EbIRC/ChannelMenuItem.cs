@@ -67,24 +67,26 @@ namespace EbiSoft.EbIRC
                 Channel ch1 = m_channel;
                 Channel ch2 = chItem.Channel;
 
+                // ハイライト優先
                 if (SettingManager.Data.QuickSwitchHilightsSort)
                 {
-                    if (this.Checked && !chItem.Checked)
+                    if ((this.Checked && ch1.IsSortTarget) && !(chItem.Checked && ch2.IsSortTarget))
                     {
                         return 1;
                     }
-                    else if (!this.Checked && chItem.Checked)
+                    else if (!(this.Checked && ch1.IsSortTarget) && (chItem.Checked && ch2.IsSortTarget))
                     {
                         return -1;
                     }
                 }
+                // 未読数優先
                 if (SettingManager.Data.QuickSwitchUnreadCountSort)
                 {
-                    int dx = ch1.UnreadCount.CompareTo(ch2.UnreadCount);
+                    int count1 = ch1.IsSortTarget ? ch1.UnreadCount : 0;
+                    int count2 = ch2.IsSortTarget ? ch2.UnreadCount : 0;
+                    int dx = count1.CompareTo(count2);
                     if (dx != 0)
-                    {
                         return dx;
-                    }
                 }
                 return chItem.Index.CompareTo(this.Index);
             }
