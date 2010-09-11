@@ -35,6 +35,7 @@ namespace EbiSoft.EbIRC.Settings
         private int m_channelControlSplitHorizonal = 240 / 2;
 */
         private bool m_reverseSoftKey = false;
+        private EbIRCMultiMenuOperations m_multiMenuOperation;
         private int m_scrollLines = 5;
         private bool m_forcePong = false;
         private string[] m_dislikeKeywords = new string[] { };
@@ -398,6 +399,20 @@ namespace EbiSoft.EbIRC.Settings
         {
             get { return m_QuickSwitchHilightsSort; }
             set { m_QuickSwitchHilightsSort = value; }
+        }
+
+        /// <summary>
+        /// Ctrl+上下キーオペレーション
+        /// </summary>
+        /// <remarks>
+        /// 0:CH切替
+        /// 1:URLオープン
+        /// 2:切断
+        /// </remarks>
+        public EbIRCMultiMenuOperations MultiMenuOperation
+        {
+            get { return m_multiMenuOperation; }
+            set { m_multiMenuOperation = value; }
         }
 
         /// <summary>

@@ -117,11 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="menuChannelListServerMenuItem.Text" xml:space="preserve">
-    <value>サーバー</value>
+  <data name="menuMenuItem.Text" xml:space="preserve">
+    <value>メニュー</value>
   </data>
   <data name="menuChannelListMenuItem.Text" xml:space="preserve">
     <value>チャンネル一覧</value>
+  </data>
+  <data name="menuChannelListServerMenuItem.Text" xml:space="preserve">
+    <value>サーバー</value>
   </data>
   <data name="menuAllChannelMenuItem.Text" xml:space="preserve">
     <value>全チャンネル</value>
@@ -131,6 +134,9 @@
   </data>
   <data name="menuChannelControlMenuItem.Text" xml:space="preserve">
     <value>チャンネル操作</value>
+  </data>
+  <data name="menuEditMenuItem.Text" xml:space="preserve">
+    <value>編集</value>
   </data>
   <data name="menuEditCopyMenuItem.Text" xml:space="preserve">
     <value>選択範囲コピー</value>
@@ -147,14 +153,11 @@
   <data name="menuEditClearMenuItem.Text" xml:space="preserve">
     <value>ログクリア</value>
   </data>
-  <data name="menuEditMenuItem.Text" xml:space="preserve">
-    <value>編集</value>
+  <data name="nicknameSwitchMenuItem.Text" xml:space="preserve">
+    <value>ニックネーム</value>
   </data>
   <data name="menuNicknameInputMenuItem.Text" xml:space="preserve">
     <value>新しく入力...</value>
-  </data>
-  <data name="nicknameSwitchMenuItem.Text" xml:space="preserve">
-    <value>ニックネーム</value>
   </data>
   <data name="menuSettingMenuItem.Text" xml:space="preserve">
     <value>設定</value>
@@ -162,8 +165,9 @@
   <data name="menuExitMenuItem.Text" xml:space="preserve">
     <value>終了</value>
   </data>
-  <data name="menuMenuItem.Text" xml:space="preserve">
-    <value>メニュー</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="logTextBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="contextUrlOpenMenuItem.Text" xml:space="preserve">
     <value>カーソル周辺のURLをオープン</value>
@@ -173,10 +177,6 @@
   </data>
   <data name="contextGoogleMenuItem.Text" xml:space="preserve">
     <value>Googleで検索</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="logTextBox.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="menuHighlightedMessages.Text" xml:space="preserve">
     <value>Highlighted</value>

@@ -124,7 +124,8 @@
     <value>接続できませんでした。ネットワークに繋がってない可能性があります。</value>
   </data>
   <data name="CannotOpenURL" xml:space="preserve">
-    <value>URLを開けませんでした。\n標準ブラウザの設定が壊れている可能性があります。</value>
+    <value>URLを開けませんでした。
+標準ブラウザの設定が壊れている可能性があります。</value>
   </data>
   <data name="ChannelSelecterServerCaption" xml:space="preserve">
     <value>＜サーバー＞</value>
@@ -363,5 +364,11 @@ euc-jp</value>
   </data>
   <data name="ChannelSettingNewChannel" xml:space="preserve">
     <value>#新しいチャンネル</value>
+  </data>
+  <data name="NoUrlMenuCaption" xml:space="preserve">
+    <value>(URLがみつかりませんでした)</value>
+  </data>
+  <data name="UrlMenuCaption" xml:space="preserve">
+    <value>直近URL</value>
   </data>
 </root>

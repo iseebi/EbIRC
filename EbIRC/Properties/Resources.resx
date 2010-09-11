@@ -362,4 +362,10 @@ UTF-8</value>
   <data name="ChannelSettingNewChannel" xml:space="preserve">
     <value>#NewChannel</value>
   </data>
+  <data name="NoUrlMenuCaption" xml:space="preserve">
+    <value>(No URLs)</value>
+  </data>
+  <data name="UrlMenuCaption" xml:space="preserve">
+    <value>Recent URL</value>
+  </data>
 </root>

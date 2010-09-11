@@ -74,4 +74,23 @@ namespace EbiSoft.EbIRC
         VibrationAndLed
     }
 
+    /// <summary>
+    /// マルチメニューの動作
+    /// </summary>
+    public enum EbIRCMultiMenuOperations
+    {
+        /// <summary>
+        /// 空打ちポップアップ
+        /// </summary>
+        QuickSwitch,
+        /// <summary>
+        /// URL選択
+        /// </summary>
+        UrlOpen,
+        /// <summary>
+        /// 切断
+        /// </summary>
+        Disconnect
+    }
+
 }

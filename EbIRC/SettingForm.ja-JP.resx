@@ -169,9 +169,6 @@
   <data name="viewTabPage.Text" xml:space="preserve">
     <value>表示</value>
   </data>
-  <data name="reverseSoftKeyCheckBox.Text" xml:space="preserve">
-    <value>ソフトキー左右入替(要再起動)</value>
-  </data>
   <data name="confimExitCheckBox.Text" xml:space="preserve">
     <value>終了する前に確認する</value>
   </data>
@@ -259,6 +256,27 @@
   <data name="controlTabPage.Text" xml:space="preserve">
     <value>操作</value>
   </data>
+  <data name="reverseSoftKeyCheckBox.Text" xml:space="preserve">
+    <value>ソフトキー左右入替(要再起動)</value>
+  </data>
+  <data name="multiMenuFunctionComboBox.Items" xml:space="preserve">
+    <value>CH切替</value>
+  </data>
+  <data name="multiMenuFunctionComboBox.Items1" xml:space="preserve">
+    <value>URLオープン</value>
+  </data>
+  <data name="multiMenuFunctionComboBox.Items2" xml:space="preserve">
+    <value>切断</value>
+  </data>
+  <data name="functionMenuLabel.Text" xml:space="preserve">
+    <value>接続中のソフトキー機能</value>
+  </data>
+  <data name="functionMenuTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>472, 498</value>
+  </data>
+  <data name="functionMenuTabPage.Text" xml:space="preserve">
+    <value>ソフトキー</value>
+  </data>
   <data name="qsSortHighlightedCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>438, 37</value>
   </data>
@@ -295,23 +313,14 @@
   <data name="label15.Text" xml:space="preserve">
     <value>キーワード</value>
   </data>
-  <data name="keywordsTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>472, 498</value>
-  </data>
   <data name="keywordsTabPage.Text" xml:space="preserve">
     <value>キーワード</value>
   </data>
   <data name="label17.Text" xml:space="preserve">
     <value>無視キーワード</value>
   </data>
-  <data name="filterTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>472, 498</value>
-  </data>
   <data name="filterTabPage.Text" xml:space="preserve">
     <value>フィルタ</value>
-  </data>
-  <data name="logTabPage.Text" xml:space="preserve">
-    <value>ログ</value>
   </data>
   <data name="enableLoggingCheckBox.Text" xml:space="preserve">
     <value>ログ保存有効</value>
@@ -321,6 +330,9 @@
   </data>
   <data name="label18.Text" xml:space="preserve">
     <value>保存先フォルダ</value>
+  </data>
+  <data name="logTabPage.Text" xml:space="preserve">
+    <value>ログ</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>EbIRC 設定</value>
