@@ -43,6 +43,7 @@ namespace EbiSoft.EbIRC.Settings
         private bool m_regexHighlight = false;
         private bool m_regexDislike = false;
         private EbIRCHighlightMethod m_highlightMethod = EbIRCHighlightMethod.None;
+        private bool m_highlightToast = false;
         private bool m_highlightChannelChange = false;
         private int m_highlightContinueTime = 1500;
         private int m_channelShortcutIgnoreTimes = 400;
@@ -336,7 +337,15 @@ namespace EbiSoft.EbIRC.Settings
             get { return m_highlightContinueTime; }
             set { m_highlightContinueTime = value; }
         }
-	
+
+        /// <summary>
+        /// ハイライトトースト
+        /// </summary>
+        public bool HighlightToast
+        {
+            get { return m_highlightToast; }
+            set { m_highlightToast = value; }
+        }
 
         /// <summary>
         /// 無視キーワード

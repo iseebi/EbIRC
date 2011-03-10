@@ -106,6 +106,7 @@ namespace EbiSoft.EbIRC
             highlightUseRegexCheckbox.Checked = SettingManager.Data.UseRegexHighlight;
             highlightMethodComboBox.SelectedIndex = (int)SettingManager.Data.HighlightMethod;
             highlightChannelCheckBox.Checked = SettingManager.Data.HighlightChannelChange;
+            highlightToastCheckBox.Checked = SettingManager.Data.HighlightToast;
             dislikeWordsTextBox.Text = string.Join("\r\n", SettingManager.Data.DislikeKeywords);
             dislikeUseRegexCheckBox.Checked = SettingManager.Data.UseRegexDislike;
             enableLoggingCheckBox.Checked = SettingManager.Data.LogingEnable;
@@ -155,6 +156,7 @@ namespace EbiSoft.EbIRC
             SettingManager.Data.UseRegexHighlight=highlightUseRegexCheckbox.Checked;
             SettingManager.Data.HighlightMethod = (EbIRCHighlightMethod)highlightMethodComboBox.SelectedIndex;
             SettingManager.Data.HighlightChannelChange = highlightChannelCheckBox.Checked;
+            SettingManager.Data.HighlightToast = highlightToastCheckBox.Checked;
             SettingManager.Data.DislikeKeywords = dislikeWordsTextBox.Text.Replace("\r", "").Split('\n');
             SettingManager.Data.UseRegexDislike = dislikeUseRegexCheckBox.Checked;
             SettingManager.Data.LogingEnable = enableLoggingCheckBox.Checked;

@@ -77,6 +77,7 @@
             this.menuItem5 = new System.Windows.Forms.MenuItem();
             this.menuItem6 = new System.Windows.Forms.MenuItem();
             this.menuItem7 = new System.Windows.Forms.MenuItem();
+            this.notification = new Microsoft.WindowsCE.Forms.Notification();
             this.infomationPanel.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
@@ -333,6 +334,12 @@
             // 
             resources.ApplyResources(this.menuItem7, "menuItem7");
             // 
+            // notification
+            // 
+            resources.ApplyResources(this.notification, "notification");
+            this.notification.BalloonChanged += new Microsoft.WindowsCE.Forms.BalloonChangedEventHandler(this.notification_BalloonChanged);
+            this.notification.ResponseSubmitted += new Microsoft.WindowsCE.Forms.ResponseSubmittedEventHandler(this.notification_ResponseSubmitted);
+            // 
             // EbIrcMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
@@ -398,6 +405,7 @@
         private System.Windows.Forms.MenuItem menuItem5;
         private System.Windows.Forms.MenuItem menuItem6;
         private System.Windows.Forms.MenuItem menuItem7;
+        private Microsoft.WindowsCE.Forms.Notification notification;
     }
 }
 

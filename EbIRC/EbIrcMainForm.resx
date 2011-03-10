@@ -123,14 +123,17 @@
   <data name="multiMenuItem.Text" xml:space="preserve">
     <value>Test</value>
   </data>
+  <data name="menuMenuItem.Text" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="menuChannelListMenuItem.Text" xml:space="preserve">
+    <value>Channel list</value>
+  </data>
   <data name="menuChannelListServerMenuItem.Text" xml:space="preserve">
     <value>Server message</value>
   </data>
   <data name="menuItem3.Text" xml:space="preserve">
     <value>-</value>
-  </data>
-  <data name="menuChannelListMenuItem.Text" xml:space="preserve">
-    <value>Channel list</value>
   </data>
   <data name="menuAllChannelMenuItem.Text" xml:space="preserve">
     <value>All channels</value>
@@ -147,6 +150,9 @@
   <data name="menuItem8.Text" xml:space="preserve">
     <value>-</value>
   </data>
+  <data name="menuEditMenuItem.Text" xml:space="preserve">
+    <value>Edit</value>
+  </data>
   <data name="menuEditCopyMenuItem.Text" xml:space="preserve">
     <value>Copy selection</value>
   </data>
@@ -162,14 +168,11 @@
   <data name="menuEditClearMenuItem.Text" xml:space="preserve">
     <value>Scrollback</value>
   </data>
-  <data name="menuEditMenuItem.Text" xml:space="preserve">
-    <value>Edit</value>
+  <data name="nicknameSwitchMenuItem.Text" xml:space="preserve">
+    <value>Nickname</value>
   </data>
   <data name="menuNicknameInputMenuItem.Text" xml:space="preserve">
     <value>Input new nickname...</value>
-  </data>
-  <data name="nicknameSwitchMenuItem.Text" xml:space="preserve">
-    <value>Nickname</value>
   </data>
   <data name="menuItem1.Text" xml:space="preserve">
     <value>-</value>
@@ -179,20 +182,6 @@
   </data>
   <data name="menuExitMenuItem.Text" xml:space="preserve">
     <value>Exit</value>
-  </data>
-  <data name="menuMenuItem.Text" xml:space="preserve">
-    <value>Menu</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="topicLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="topicLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="topicLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 29</value>
   </data>
   <data name="&gt;&gt;topicLabel.Name" xml:space="preserve">
     <value>topicLabel</value>
@@ -206,9 +195,11 @@
   <data name="&gt;&gt;topicLabel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="infomationPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="infomationPanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -226,6 +217,27 @@
   </data>
   <data name="&gt;&gt;infomationPanel.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="topicLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="topicLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="topicLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 29</value>
+  </data>
+  <data name="&gt;&gt;topicLabel.Name" xml:space="preserve">
+    <value>topicLabel</value>
+  </data>
+  <data name="&gt;&gt;topicLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;topicLabel.Parent" xml:space="preserve">
+    <value>infomationPanel</value>
+  </data>
+  <data name="&gt;&gt;topicLabel.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="inputTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Bottom</value>
@@ -255,15 +267,6 @@
   <metadata name="logContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>126, 17</value>
   </metadata>
-  <data name="contextUrlOpenMenuItem.Text" xml:space="preserve">
-    <value>Open URL</value>
-  </data>
-  <data name="contextCopyMenuItem.Text" xml:space="preserve">
-    <value>Copy</value>
-  </data>
-  <data name="contextGoogleMenuItem.Text" xml:space="preserve">
-    <value>Search in Google</value>
-  </data>
   <data name="logTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -293,6 +296,15 @@
   </data>
   <data name="&gt;&gt;logTextBox.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="contextUrlOpenMenuItem.Text" xml:space="preserve">
+    <value>Open URL</value>
+  </data>
+  <data name="contextCopyMenuItem.Text" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="contextGoogleMenuItem.Text" xml:space="preserve">
+    <value>Search in Google</value>
   </data>
   <metadata name="inputPanel.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>261, 17</value>
@@ -356,6 +368,15 @@
   </data>
   <data name="menuItem7.Text" xml:space="preserve">
     <value>All highlighted</value>
+  </data>
+  <metadata name="notification.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>955, 17</value>
+  </metadata>
+  <data name="notification.InitialDuration" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="notification.Text" xml:space="preserve">
+    <value />
   </data>
   <metadata name="$this.FormFactorShadowProperty" xml:space="preserve">
     <value>Pocket_PC_Phone_VGA</value>
@@ -623,6 +644,12 @@
   </data>
   <data name="&gt;&gt;menuItem7.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;notification.Name" xml:space="preserve">
+    <value>notification</value>
+  </data>
+  <data name="&gt;&gt;notification.Type" xml:space="preserve">
+    <value>Microsoft.CompactFramework.Design.UnsafeComponent, Microsoft.CompactFramework.Design, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>EbIrcMainForm</value>

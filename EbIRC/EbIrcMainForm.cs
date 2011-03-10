@@ -1990,9 +1990,11 @@ namespace EbiSoft.EbIRC
             highlightFlag = true;
             highlightChannel = channel;
 
+            string formattedMessage = string.Format(Resources.PrivmsgLogFormat, sender, message);
+
             // ハイライトメッセージ一覧に追加
             ChannelMenuItem mesMenu = new ChannelMenuItem(channel);
-            mesMenu.Text = string.Format(Resources.PrivmsgLogFormat, sender, message);
+            mesMenu.Text = formattedMessage;
             mesMenu.Click += new EventHandler(menuChannelListChannelsMenuItem_Click);
             menuHighlightedMessages.MenuItems.Add(mesMenu);
 
@@ -2006,6 +2008,14 @@ namespace EbiSoft.EbIRC
                     menu.Checked = true;
                     break;
                 }
+            }
+
+            // トースト
+            if (SettingManager.Data.HighlightToast)
+            {
+                notification.Caption = channel.Name;
+                notification.Text = formattedMessage;
+                notification.Visible = true;
             }
 
             if (!m_storeFlag) DoHighlight();
@@ -2327,6 +2337,19 @@ namespace EbiSoft.EbIRC
             if (ircClient.Status == IRCClientStatus.Online)
             {
                 ircClient.SendCommand("PONG :" + SettingManager.Data.Profiles.ActiveProfile.Server);
+            }
+        }
+
+        private void notification_ResponseSubmitted(object sender, ResponseSubmittedEventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine(e.Response);
+        }
+
+        private void notification_BalloonChanged(object sender, BalloonChangedEventArgs e)
+        {
+            if (e.Visible == false)
+            {
+                notification.Visible = false;
             }
         }
     }
