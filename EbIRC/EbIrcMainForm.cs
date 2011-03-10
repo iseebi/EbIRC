@@ -317,7 +317,20 @@ namespace EbiSoft.EbIRC
             }
             else
             {
-                channelContextMenu.Show(logTextBox, new Point(0, 0));
+                switch (SettingManager.Data.MultiMenuOperation)
+                {
+                    case EbIRCMultiMenuOperations.QuickSwitch:
+                        channelContextMenu.Show(logTextBox, new Point(0, 0));
+                        break;
+                    case EbIRCMultiMenuOperations.UrlOpen:
+                        urlContextMenu.Show(logTextBox, new Point(0, 0));
+                        break;
+                    case EbIRCMultiMenuOperations.Disconnect:
+                        break;
+                    default:
+                        break;
+                }
+
             }
         }
 
@@ -645,6 +658,41 @@ namespace EbiSoft.EbIRC
             channelContextMenu.MenuItems.Add(menuAllChannelMessage);
             channelContextMenu.MenuItems.Add(menuAllHighlightsMessages);
         }
+
+
+        /// <summary>
+        /// URLコンテキストメニューオープン
+        /// </summary>
+        private void urlContextMenu_Popup(object sender, EventArgs e)
+        {
+            List<string> urls = new List<string>();
+            foreach (Match m in UrlRegex.Matches(logTextBox.Text))
+            {
+                urls.Add(m.Value);
+            }
+            urlContextMenu.MenuItems.Clear();
+            if (urls.Count > 0)
+            {
+                for (int i = (urls.Count - 1); i >= 0; i--)
+                {
+                    MenuItem menu = new MenuItem();
+                    menu.Text = urls[i];
+                    menu.Click += delegate(object s, EventArgs ev)
+                    {
+                        OpenUrl((s as MenuItem).Text);
+                    };
+                    urlContextMenu.MenuItems.Add(menu);
+                }
+            }
+            else
+            {
+                MenuItem menu = new MenuItem();
+                menu.Text = Resources.NoUrlMenuCaption;
+                menu.Enabled = false;
+                urlContextMenu.MenuItems.Add(menu);
+            }
+        }
+
 
         #endregion
 
@@ -2038,7 +2086,18 @@ namespace EbiSoft.EbIRC
             else
             {
                 connectionMenuItem.Text = Resources.DisconnectMenuCaption;
-                multiMenuItem.Text = Resources.SwitcherMenuCaption;
+                switch (SettingManager.Data.MultiMenuOperation)
+                {
+                    case EbIRCMultiMenuOperations.QuickSwitch:
+                        multiMenuItem.Text = Resources.SwitcherMenuCaption;
+                        break;
+                    case EbIRCMultiMenuOperations.UrlOpen:
+                        multiMenuItem.Text = Resources.UrlMenuCaption;
+                        break;
+                    case EbIRCMultiMenuOperations.Disconnect:
+                        multiMenuItem.Text = Resources.DisconnectMenuCaption;
+                        break;
+                }
             }
         }
 
@@ -2090,6 +2149,9 @@ namespace EbiSoft.EbIRC
 
             // ハイライト停止タイマーの周期
             clearHighlightTimer.Interval = SettingManager.Data.HighlightContinueTime;
+
+            // 接続メニューのキャプションアップデート
+            SetConnectionMenuText();
         }
 
         #endregion

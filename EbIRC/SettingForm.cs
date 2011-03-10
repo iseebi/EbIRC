@@ -112,6 +112,7 @@ namespace EbiSoft.EbIRC
             logDirectoryNameTextBox.Text = SettingManager.Data.LogDirectory;
             qsSortHighlightedCheckBox.Checked = SettingManager.Data.QuickSwitchHilightsSort;
             qsSortUnreadCheckBox.Checked = SettingManager.Data.QuickSwitchUnreadCountSort;
+            multiMenuFunctionComboBox.SelectedIndex = (int)SettingManager.Data.MultiMenuOperation;
         }
 
         private void SettingForm_Closing(object sender, CancelEventArgs e)
@@ -160,6 +161,9 @@ namespace EbiSoft.EbIRC
             SettingManager.Data.LogDirectory = logDirectoryNameTextBox.Text;
             SettingManager.Data.QuickSwitchHilightsSort = qsSortHighlightedCheckBox.Checked;
             SettingManager.Data.QuickSwitchUnreadCountSort = qsSortUnreadCheckBox.Checked;
+
+            SettingManager.Data.MultiMenuOperation = (EbIRCMultiMenuOperations)multiMenuFunctionComboBox.SelectedIndex;
+
 
             SettingManager.WriteSetting();
         }

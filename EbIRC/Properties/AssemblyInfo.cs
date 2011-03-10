@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("EbiSoft")]
 [assembly: AssemblyProduct("EbIRC")]
-[assembly: AssemblyCopyright("Copyright(C)2006-2009 Shin ISE.")]
+[assembly: AssemblyCopyright("Copyright(C)2006-2010 Shin ISE.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -29,5 +29,5 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("1.20.91")]
+[assembly: AssemblyVersion("1.2.92")]
 

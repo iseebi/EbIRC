@@ -71,6 +71,12 @@
             this.menuWholeSeparator = new System.Windows.Forms.MenuItem();
             this.menuAllChannelMessage = new System.Windows.Forms.MenuItem();
             this.menuAllHighlightsMessages = new System.Windows.Forms.MenuItem();
+            this.urlContextMenu = new System.Windows.Forms.ContextMenu();
+            this.menuItem2 = new System.Windows.Forms.MenuItem();
+            this.menuItem4 = new System.Windows.Forms.MenuItem();
+            this.menuItem5 = new System.Windows.Forms.MenuItem();
+            this.menuItem6 = new System.Windows.Forms.MenuItem();
+            this.menuItem7 = new System.Windows.Forms.MenuItem();
             this.infomationPanel.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
@@ -87,7 +93,6 @@
             // 
             // menuMenuItem
             // 
-            resources.ApplyResources(this.menuMenuItem, "menuMenuItem");
             this.menuMenuItem.MenuItems.Add(this.menuChannelListMenuItem);
             this.menuMenuItem.MenuItems.Add(this.menuAllChannelMenuItem);
             this.menuMenuItem.MenuItems.Add(this.menuAllHighlightsMenuItem);
@@ -99,12 +104,13 @@
             this.menuMenuItem.MenuItems.Add(this.menuItem1);
             this.menuMenuItem.MenuItems.Add(this.menuSettingMenuItem);
             this.menuMenuItem.MenuItems.Add(this.menuExitMenuItem);
+            resources.ApplyResources(this.menuMenuItem, "menuMenuItem");
             // 
             // menuChannelListMenuItem
             // 
-            resources.ApplyResources(this.menuChannelListMenuItem, "menuChannelListMenuItem");
             this.menuChannelListMenuItem.MenuItems.Add(this.menuChannelListServerMenuItem);
             this.menuChannelListMenuItem.MenuItems.Add(this.menuItem3);
+            resources.ApplyResources(this.menuChannelListMenuItem, "menuChannelListMenuItem");
             // 
             // menuChannelListServerMenuItem
             // 
@@ -141,12 +147,12 @@
             // 
             // menuEditMenuItem
             // 
-            resources.ApplyResources(this.menuEditMenuItem, "menuEditMenuItem");
             this.menuEditMenuItem.MenuItems.Add(this.menuEditCopyMenuItem);
             this.menuEditMenuItem.MenuItems.Add(this.menuEditGoogleMenuItem);
             this.menuEditMenuItem.MenuItems.Add(this.menuEditOpenURLMenuItem);
             this.menuEditMenuItem.MenuItems.Add(this.menuEditPasteMenuItem);
             this.menuEditMenuItem.MenuItems.Add(this.menuEditClearMenuItem);
+            resources.ApplyResources(this.menuEditMenuItem, "menuEditMenuItem");
             // 
             // menuEditCopyMenuItem
             // 
@@ -175,8 +181,8 @@
             // 
             // nicknameSwitchMenuItem
             // 
-            resources.ApplyResources(this.nicknameSwitchMenuItem, "nicknameSwitchMenuItem");
             this.nicknameSwitchMenuItem.MenuItems.Add(this.menuNicknameInputMenuItem);
+            resources.ApplyResources(this.nicknameSwitchMenuItem, "nicknameSwitchMenuItem");
             // 
             // menuNicknameInputMenuItem
             // 
@@ -199,9 +205,9 @@
             // 
             // infomationPanel
             // 
-            resources.ApplyResources(this.infomationPanel, "infomationPanel");
             this.infomationPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.infomationPanel.Controls.Add(this.topicLabel);
+            resources.ApplyResources(this.infomationPanel, "infomationPanel");
             this.infomationPanel.Name = "infomationPanel";
             // 
             // topicLabel
@@ -219,8 +225,8 @@
             // 
             // logTextBox
             // 
-            resources.ApplyResources(this.logTextBox, "logTextBox");
             this.logTextBox.ContextMenu = this.logContextMenu;
+            resources.ApplyResources(this.logTextBox, "logTextBox");
             this.logTextBox.Name = "logTextBox";
             this.logTextBox.ReadOnly = true;
             // 
@@ -252,10 +258,10 @@
             // 
             // mainPanel
             // 
-            resources.ApplyResources(this.mainPanel, "mainPanel");
             this.mainPanel.Controls.Add(this.logTextBox);
             this.mainPanel.Controls.Add(this.inputTextBox);
             this.mainPanel.Controls.Add(this.infomationPanel);
+            resources.ApplyResources(this.mainPanel, "mainPanel");
             this.mainPanel.Name = "mainPanel";
             // 
             // pongTimer
@@ -297,6 +303,35 @@
             // 
             resources.ApplyResources(this.menuAllHighlightsMessages, "menuAllHighlightsMessages");
             this.menuAllHighlightsMessages.Click += new System.EventHandler(this.menuAllHighlightsMessage_Click);
+            // 
+            // urlContextMenu
+            // 
+            this.urlContextMenu.MenuItems.Add(this.menuItem2);
+            this.urlContextMenu.MenuItems.Add(this.menuItem4);
+            this.urlContextMenu.MenuItems.Add(this.menuItem5);
+            this.urlContextMenu.MenuItems.Add(this.menuItem6);
+            this.urlContextMenu.MenuItems.Add(this.menuItem7);
+            this.urlContextMenu.Popup += new System.EventHandler(this.urlContextMenu_Popup);
+            // 
+            // menuItem2
+            // 
+            resources.ApplyResources(this.menuItem2, "menuItem2");
+            // 
+            // menuItem4
+            // 
+            resources.ApplyResources(this.menuItem4, "menuItem4");
+            // 
+            // menuItem5
+            // 
+            resources.ApplyResources(this.menuItem5, "menuItem5");
+            // 
+            // menuItem6
+            // 
+            resources.ApplyResources(this.menuItem6, "menuItem6");
+            // 
+            // menuItem7
+            // 
+            resources.ApplyResources(this.menuItem7, "menuItem7");
             // 
             // EbIrcMainForm
             // 
@@ -357,6 +392,12 @@
         private System.Windows.Forms.MenuItem menuAllHighlightsMessages;
         private System.Windows.Forms.MenuItem menuAllChannelMenuItem;
         private System.Windows.Forms.MenuItem menuAllHighlightsMenuItem;
+        private System.Windows.Forms.ContextMenu urlContextMenu;
+        private System.Windows.Forms.MenuItem menuItem2;
+        private System.Windows.Forms.MenuItem menuItem4;
+        private System.Windows.Forms.MenuItem menuItem5;
+        private System.Windows.Forms.MenuItem menuItem6;
+        private System.Windows.Forms.MenuItem menuItem7;
     }
 }
 
