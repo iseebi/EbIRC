@@ -220,6 +220,7 @@
     <Compile Include="Settings\SettingManager.cs" />
     <Compile Include="TextBoxInputFilter.cs" />
     <Compile Include="TextWriterTraceListener.cs" />
+    <Compile Include="ToastItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ebirc_icon.ico" />

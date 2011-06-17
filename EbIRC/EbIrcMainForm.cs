@@ -91,6 +91,8 @@ namespace EbiSoft.EbIRC
         List<ChannelMenuItem> m_channelPopupMenus; // チャンネルポップアップメニューに出すチャンネルの項目
         int m_lastSendTick = 0;                    // 最後に発言したTicktime (無効時間判定に使用)
 
+        Queue<ToastItem> m_toastQueue = null;
+
         /// <summary>
         /// コンストラクタ
         /// </summary>
@@ -2013,9 +2015,24 @@ namespace EbiSoft.EbIRC
             // トースト
             if (SettingManager.Data.HighlightToast)
             {
-                notification.Caption = channel.Name;
-                notification.Text = formattedMessage;
-                notification.Visible = true;
+                if (m_toastQueue == null)
+                {
+                    m_toastQueue = new Queue<ToastItem>();
+                }
+
+                lock (notification)
+                {
+                    if (notification.Visible)
+                    {
+                        m_toastQueue.Enqueue(new ToastItem() { Caption = channel.Name, Text = formattedMessage });
+                    }
+                    else
+                    {
+                        notification.Caption = channel.Name;
+                        notification.Text = formattedMessage;
+                        notification.Visible = true;
+                    }
+                }
             }
 
             if (!m_storeFlag) DoHighlight();
@@ -2342,15 +2359,39 @@ namespace EbiSoft.EbIRC
 
         private void notification_ResponseSubmitted(object sender, ResponseSubmittedEventArgs e)
         {
-            System.Diagnostics.Debug.WriteLine(e.Response);
+            if (e.Response == "clear")
+            {
+                lock (notification)
+                {
+                    m_toastQueue.Clear();
+                    notification.Visible = false;
+                }
+            }
         }
 
         private void notification_BalloonChanged(object sender, BalloonChangedEventArgs e)
         {
-            if (e.Visible == false)
+            lock (notification)
             {
-                notification.Visible = false;
-            }
+                if (e.Visible == false)
+                {
+                    notification.Visible = false;
+                    if ((m_toastQueue != null) && (m_toastQueue.Count > 0))
+                    {
+                        ToastItem item = m_toastQueue.Dequeue();
+                        notification.Caption = item.Caption;
+                        if (m_toastQueue.Count > 0)
+                        {
+                            notification.Text = string.Format("{0}<br><br>Remain:{1} <a href=\"clear\">clear</a>", item.Text, m_toastQueue.Count);
+                        }
+                        else
+                        {
+                            notification.Text = item.Text;
+                        }
+                        notification.Visible = true;
+                    }
+                }
+             }
         }
     }
 }

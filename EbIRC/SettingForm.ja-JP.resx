@@ -120,10 +120,103 @@
   <data name="saveCloseMenuItem.Text" xml:space="preserve">
     <value>保存して閉じる</value>
   </data>
+  <data name="serverTabPage.Text" xml:space="preserve">
+    <value>接続</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="communicationTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>472, 498</value>
+  </data>
+  <data name="communicationTabPage.Text" xml:space="preserve">
+    <value>通信</value>
+  </data>
+  <data name="nickNameTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>472, 498</value>
+  </data>
+  <data name="nickNameTabPage.Text" xml:space="preserve">
+    <value>ニックネーム</value>
+  </data>
+  <data name="viewTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>472, 498</value>
+  </data>
+  <data name="viewTabPage.Text" xml:space="preserve">
+    <value>表示</value>
+  </data>
+  <data name="controlTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>472, 498</value>
+  </data>
+  <data name="controlTabPage.Text" xml:space="preserve">
+    <value>操作</value>
+  </data>
+  <data name="functionMenuTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>472, 498</value>
+  </data>
+  <data name="functionMenuTabPage.Text" xml:space="preserve">
+    <value>ソフトキー</value>
+  </data>
+  <data name="quickSwitchShortcutTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>472, 498</value>
+  </data>
+  <data name="quickSwitchShortcutTabPage.Text" xml:space="preserve">
+    <value>空打ち</value>
+  </data>
+  <data name="highlightToastCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>179, 279</value>
+  </data>
+  <data name="highlightToastCheckBox.Text" xml:space="preserve">
+    <value>トースト</value>
+  </data>
+  <data name="highlightChannelCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>179, 233</value>
+  </data>
+  <data name="highlightChannelCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>259, 40</value>
+  </data>
+  <data name="highlightChannelCheckBox.Text" xml:space="preserve">
+    <value>チャンネル切り替え</value>
+  </data>
+  <data name="highlightMethodComboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>179, 186</value>
+  </data>
+  <data name="highlightMethodComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>259, 41</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>通知方法</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>キーワード</value>
+  </data>
+  <data name="keywordsTabPage.Text" xml:space="preserve">
+    <value>キーワード</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>無視キーワード</value>
+  </data>
+  <data name="filterTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 492</value>
+  </data>
+  <data name="filterTabPage.Text" xml:space="preserve">
+    <value>フィルタ</value>
+  </data>
+  <data name="enableLoggingCheckBox.Text" xml:space="preserve">
+    <value>ログ保存有効</value>
+  </data>
+  <data name="logDirectoryBrowseButton.Text" xml:space="preserve">
+    <value>参照...</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>保存先フォルダ</value>
+  </data>
+  <data name="logTabPage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 492</value>
+  </data>
+  <data name="logTabPage.Text" xml:space="preserve">
+    <value>ログ</value>
+  </data>
   <data name="profileEditButton.Text" xml:space="preserve">
     <value>編集</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="profileMarkActiveButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>219, 40</value>
   </data>
@@ -139,23 +232,17 @@
   <data name="label13.Text" xml:space="preserve">
     <value>プロファイル</value>
   </data>
-  <data name="serverTabPage.Text" xml:space="preserve">
-    <value>接続</value>
-  </data>
   <data name="forcePongCheckBox.Text" xml:space="preserve">
     <value>強制PONG送信(15秒毎)</value>
   </data>
   <data name="cacheConnectionCheckBox.Text" xml:space="preserve">
     <value>ネットワーク接続を切断しない</value>
   </data>
-  <data name="communicationTabPage.Text" xml:space="preserve">
-    <value>通信</value>
+  <data name="subNicknameInputBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>438, 226</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>メニューに登録するニックネーム(1行1個)</value>
-  </data>
-  <data name="nickNameTabPage.Text" xml:space="preserve">
-    <value>ニックネーム</value>
   </data>
   <data name="defaultLoadOnConnectCheckBox.Text" xml:space="preserve">
     <value>接続時に最上位チャンネルへ切替</value>
@@ -165,9 +252,6 @@
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>フォント</value>
-  </data>
-  <data name="viewTabPage.Text" xml:space="preserve">
-    <value>表示</value>
   </data>
   <data name="confimExitCheckBox.Text" xml:space="preserve">
     <value>終了する前に確認する</value>
@@ -253,9 +337,6 @@
   <data name="label8.Text" xml:space="preserve">
     <value>上下キー</value>
   </data>
-  <data name="controlTabPage.Text" xml:space="preserve">
-    <value>操作</value>
-  </data>
   <data name="reverseSoftKeyCheckBox.Text" xml:space="preserve">
     <value>ソフトキー左右入替(要再起動)</value>
   </data>
@@ -270,12 +351,6 @@
   </data>
   <data name="functionMenuLabel.Text" xml:space="preserve">
     <value>接続中のソフトキー機能</value>
-  </data>
-  <data name="functionMenuTabPage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>472, 498</value>
-  </data>
-  <data name="functionMenuTabPage.Text" xml:space="preserve">
-    <value>ソフトキー</value>
   </data>
   <data name="qsSortHighlightedCheckBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>438, 37</value>
@@ -294,45 +369,6 @@
   </data>
   <data name="label19.Text" xml:space="preserve">
     <value>入力エリアに未入力の状態でEnterキーを押すと空打ちポップアップが表示されます。</value>
-  </data>
-  <data name="quickSwitchShortcutTabPage.Text" xml:space="preserve">
-    <value>空打ち</value>
-  </data>
-  <data name="highlightChannelCheckBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>179, 233</value>
-  </data>
-  <data name="highlightChannelCheckBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 40</value>
-  </data>
-  <data name="highlightChannelCheckBox.Text" xml:space="preserve">
-    <value>チャンネル切り替え</value>
-  </data>
-  <data name="label16.Text" xml:space="preserve">
-    <value>通知方法</value>
-  </data>
-  <data name="label15.Text" xml:space="preserve">
-    <value>キーワード</value>
-  </data>
-  <data name="keywordsTabPage.Text" xml:space="preserve">
-    <value>キーワード</value>
-  </data>
-  <data name="label17.Text" xml:space="preserve">
-    <value>無視キーワード</value>
-  </data>
-  <data name="filterTabPage.Text" xml:space="preserve">
-    <value>フィルタ</value>
-  </data>
-  <data name="enableLoggingCheckBox.Text" xml:space="preserve">
-    <value>ログ保存有効</value>
-  </data>
-  <data name="logDirectoryBrowseButton.Text" xml:space="preserve">
-    <value>参照...</value>
-  </data>
-  <data name="label18.Text" xml:space="preserve">
-    <value>保存先フォルダ</value>
-  </data>
-  <data name="logTabPage.Text" xml:space="preserve">
-    <value>ログ</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>EbIRC 設定</value>
