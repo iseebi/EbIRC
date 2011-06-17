@@ -371,4 +371,7 @@ euc-jp</value>
   <data name="UrlMenuCaption" xml:space="preserve">
     <value>直近URL</value>
   </data>
+  <data name="AutoReconnectTry" xml:space="preserve">
+    <value>自動再接続待ち... ({0}/{1})</value>
+  </data>
 </root>

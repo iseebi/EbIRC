@@ -1049,7 +1049,14 @@ namespace EbiSoft.EbIRC.IRC {
             // 接続中なら、接続を完了させる
             if ((m_connectAsync != null) && (!m_connectAsync.IsCompleted))
             {
-                ((Socket)m_connectAsync.AsyncState).EndConnect(m_connectAsync);
+                try
+                {
+                    ((Socket)m_connectAsync.AsyncState).EndConnect(m_connectAsync);
+                }
+                catch (SocketException)
+                {
+                    // 何かしらエラーが起きても、このまま終了させてしまうためケアする必要がない。
+                }
             }
 
             // スレッドを止める

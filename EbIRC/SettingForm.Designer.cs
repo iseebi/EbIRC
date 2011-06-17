@@ -95,6 +95,11 @@
             this.label18 = new System.Windows.Forms.Label();
             this.logDirectoryNameTextBox = new System.Windows.Forms.TextBox();
             this.inputPanel = new Microsoft.WindowsCE.Forms.InputPanel(this.components);
+            this.autoReconnectCheckBox = new System.Windows.Forms.CheckBox();
+            this.autoReconnectWaitLabel = new System.Windows.Forms.Label();
+            this.autoReconnectWaitTextBox = new System.Windows.Forms.TextBox();
+            this.autoReconnectRetryCountLabel = new System.Windows.Forms.Label();
+            this.autoReconnectRetryCountTextBox = new System.Windows.Forms.TextBox();
             this.tabControl.SuspendLayout();
             this.serverTabPage.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -120,7 +125,6 @@
             // 
             // tabControl
             // 
-            resources.ApplyResources(this.tabControl, "tabControl");
             this.tabControl.Controls.Add(this.serverTabPage);
             this.tabControl.Controls.Add(this.communicationTabPage);
             this.tabControl.Controls.Add(this.nickNameTabPage);
@@ -131,30 +135,30 @@
             this.tabControl.Controls.Add(this.keywordsTabPage);
             this.tabControl.Controls.Add(this.filterTabPage);
             this.tabControl.Controls.Add(this.logTabPage);
+            resources.ApplyResources(this.tabControl, "tabControl");
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             // 
             // serverTabPage
             // 
-            resources.ApplyResources(this.serverTabPage, "serverTabPage");
             this.serverTabPage.Controls.Add(this.panel1);
+            resources.ApplyResources(this.serverTabPage, "serverTabPage");
             this.serverTabPage.Name = "serverTabPage";
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this.profileSelectListview);
             this.panel1.Controls.Add(this.profileEditButton);
             this.panel1.Controls.Add(this.profileMarkActiveButton);
             this.panel1.Controls.Add(this.profileRemoveButton);
             this.panel1.Controls.Add(this.profileAddButton);
             this.panel1.Controls.Add(this.label13);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // profileSelectListview
             // 
             resources.ApplyResources(this.profileSelectListview, "profileSelectListview");
-            resources.ApplyResources(listViewItem2, "listViewItem2");
             listViewItem2.Text = resources.GetString("profileSelectListview.Items");
             this.profileSelectListview.Items.Add(listViewItem2);
             this.profileSelectListview.Name = "profileSelectListview";
@@ -192,9 +196,14 @@
             // 
             // communicationTabPage
             // 
-            resources.ApplyResources(this.communicationTabPage, "communicationTabPage");
+            this.communicationTabPage.Controls.Add(this.autoReconnectRetryCountTextBox);
+            this.communicationTabPage.Controls.Add(this.autoReconnectRetryCountLabel);
+            this.communicationTabPage.Controls.Add(this.autoReconnectWaitTextBox);
+            this.communicationTabPage.Controls.Add(this.autoReconnectWaitLabel);
+            this.communicationTabPage.Controls.Add(this.autoReconnectCheckBox);
             this.communicationTabPage.Controls.Add(this.forcePongCheckBox);
             this.communicationTabPage.Controls.Add(this.cacheConnectionCheckBox);
+            resources.ApplyResources(this.communicationTabPage, "communicationTabPage");
             this.communicationTabPage.Name = "communicationTabPage";
             // 
             // forcePongCheckBox
@@ -209,9 +218,9 @@
             // 
             // nickNameTabPage
             // 
-            resources.ApplyResources(this.nickNameTabPage, "nickNameTabPage");
             this.nickNameTabPage.Controls.Add(this.subNicknameInputBox);
             this.nickNameTabPage.Controls.Add(this.label10);
+            resources.ApplyResources(this.nickNameTabPage, "nickNameTabPage");
             this.nickNameTabPage.Name = "nickNameTabPage";
             // 
             // subNicknameInputBox
@@ -248,7 +257,6 @@
             // 
             // fontSizeComboBox
             // 
-            resources.ApplyResources(this.fontSizeComboBox, "fontSizeComboBox");
             this.fontSizeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.fontSizeComboBox.Items.Add(resources.GetString("fontSizeComboBox.Items"));
             this.fontSizeComboBox.Items.Add(resources.GetString("fontSizeComboBox.Items1"));
@@ -260,17 +268,18 @@
             this.fontSizeComboBox.Items.Add(resources.GetString("fontSizeComboBox.Items7"));
             this.fontSizeComboBox.Items.Add(resources.GetString("fontSizeComboBox.Items8"));
             this.fontSizeComboBox.Items.Add(resources.GetString("fontSizeComboBox.Items9"));
+            resources.ApplyResources(this.fontSizeComboBox, "fontSizeComboBox");
             this.fontSizeComboBox.Name = "fontSizeComboBox";
             // 
             // fontNameInputBox
             // 
-            resources.ApplyResources(this.fontNameInputBox, "fontNameInputBox");
             this.fontNameInputBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.fontNameInputBox.Items.Add(resources.GetString("fontNameInputBox.Items"));
             this.fontNameInputBox.Items.Add(resources.GetString("fontNameInputBox.Items1"));
             this.fontNameInputBox.Items.Add(resources.GetString("fontNameInputBox.Items2"));
             this.fontNameInputBox.Items.Add(resources.GetString("fontNameInputBox.Items3"));
             this.fontNameInputBox.Items.Add(resources.GetString("fontNameInputBox.Items4"));
+            resources.ApplyResources(this.fontNameInputBox, "fontNameInputBox");
             this.fontNameInputBox.Name = "fontNameInputBox";
             // 
             // label7
@@ -312,12 +321,12 @@
             // 
             // ctrlHorizontalKeySelectBox
             // 
-            resources.ApplyResources(this.ctrlHorizontalKeySelectBox, "ctrlHorizontalKeySelectBox");
             this.ctrlHorizontalKeySelectBox.Items.Add(resources.GetString("ctrlHorizontalKeySelectBox.Items"));
             this.ctrlHorizontalKeySelectBox.Items.Add(resources.GetString("ctrlHorizontalKeySelectBox.Items1"));
             this.ctrlHorizontalKeySelectBox.Items.Add(resources.GetString("ctrlHorizontalKeySelectBox.Items2"));
             this.ctrlHorizontalKeySelectBox.Items.Add(resources.GetString("ctrlHorizontalKeySelectBox.Items3"));
             this.ctrlHorizontalKeySelectBox.Items.Add(resources.GetString("ctrlHorizontalKeySelectBox.Items4"));
+            resources.ApplyResources(this.ctrlHorizontalKeySelectBox, "ctrlHorizontalKeySelectBox");
             this.ctrlHorizontalKeySelectBox.Name = "ctrlHorizontalKeySelectBox";
             // 
             // scrollLinesLabel
@@ -332,12 +341,12 @@
             // 
             // ctrlVerticalKeySelectBox
             // 
-            resources.ApplyResources(this.ctrlVerticalKeySelectBox, "ctrlVerticalKeySelectBox");
             this.ctrlVerticalKeySelectBox.Items.Add(resources.GetString("ctrlVerticalKeySelectBox.Items"));
             this.ctrlVerticalKeySelectBox.Items.Add(resources.GetString("ctrlVerticalKeySelectBox.Items1"));
             this.ctrlVerticalKeySelectBox.Items.Add(resources.GetString("ctrlVerticalKeySelectBox.Items2"));
             this.ctrlVerticalKeySelectBox.Items.Add(resources.GetString("ctrlVerticalKeySelectBox.Items3"));
             this.ctrlVerticalKeySelectBox.Items.Add(resources.GetString("ctrlVerticalKeySelectBox.Items4"));
+            resources.ApplyResources(this.ctrlVerticalKeySelectBox, "ctrlVerticalKeySelectBox");
             this.ctrlVerticalKeySelectBox.Name = "ctrlVerticalKeySelectBox";
             // 
             // label12
@@ -347,12 +356,12 @@
             // 
             // horizontalKeySelectBox
             // 
-            resources.ApplyResources(this.horizontalKeySelectBox, "horizontalKeySelectBox");
             this.horizontalKeySelectBox.Items.Add(resources.GetString("horizontalKeySelectBox.Items"));
             this.horizontalKeySelectBox.Items.Add(resources.GetString("horizontalKeySelectBox.Items1"));
             this.horizontalKeySelectBox.Items.Add(resources.GetString("horizontalKeySelectBox.Items2"));
             this.horizontalKeySelectBox.Items.Add(resources.GetString("horizontalKeySelectBox.Items3"));
             this.horizontalKeySelectBox.Items.Add(resources.GetString("horizontalKeySelectBox.Items4"));
+            resources.ApplyResources(this.horizontalKeySelectBox, "horizontalKeySelectBox");
             this.horizontalKeySelectBox.Name = "horizontalKeySelectBox";
             // 
             // label9
@@ -362,13 +371,13 @@
             // 
             // verticalKeySelectBox
             // 
-            resources.ApplyResources(this.verticalKeySelectBox, "verticalKeySelectBox");
             this.verticalKeySelectBox.Items.Add(resources.GetString("verticalKeySelectBox.Items"));
             this.verticalKeySelectBox.Items.Add(resources.GetString("verticalKeySelectBox.Items1"));
             this.verticalKeySelectBox.Items.Add(resources.GetString("verticalKeySelectBox.Items2"));
             this.verticalKeySelectBox.Items.Add(resources.GetString("verticalKeySelectBox.Items3"));
             this.verticalKeySelectBox.Items.Add(resources.GetString("verticalKeySelectBox.Items4"));
             this.verticalKeySelectBox.Items.Add(resources.GetString("verticalKeySelectBox.Items5"));
+            resources.ApplyResources(this.verticalKeySelectBox, "verticalKeySelectBox");
             this.verticalKeySelectBox.Name = "verticalKeySelectBox";
             // 
             // label8
@@ -378,10 +387,10 @@
             // 
             // functionMenuTabPage
             // 
-            resources.ApplyResources(this.functionMenuTabPage, "functionMenuTabPage");
             this.functionMenuTabPage.Controls.Add(this.reverseSoftKeyCheckBox);
             this.functionMenuTabPage.Controls.Add(this.multiMenuFunctionComboBox);
             this.functionMenuTabPage.Controls.Add(this.functionMenuLabel);
+            resources.ApplyResources(this.functionMenuTabPage, "functionMenuTabPage");
             this.functionMenuTabPage.Name = "functionMenuTabPage";
             // 
             // reverseSoftKeyCheckBox
@@ -391,10 +400,10 @@
             // 
             // multiMenuFunctionComboBox
             // 
-            resources.ApplyResources(this.multiMenuFunctionComboBox, "multiMenuFunctionComboBox");
             this.multiMenuFunctionComboBox.Items.Add(resources.GetString("multiMenuFunctionComboBox.Items"));
             this.multiMenuFunctionComboBox.Items.Add(resources.GetString("multiMenuFunctionComboBox.Items1"));
             this.multiMenuFunctionComboBox.Items.Add(resources.GetString("multiMenuFunctionComboBox.Items2"));
+            resources.ApplyResources(this.multiMenuFunctionComboBox, "multiMenuFunctionComboBox");
             this.multiMenuFunctionComboBox.Name = "multiMenuFunctionComboBox";
             // 
             // functionMenuLabel
@@ -455,11 +464,11 @@
             // 
             // highlightMethodComboBox
             // 
-            resources.ApplyResources(this.highlightMethodComboBox, "highlightMethodComboBox");
             this.highlightMethodComboBox.Items.Add(resources.GetString("highlightMethodComboBox.Items"));
             this.highlightMethodComboBox.Items.Add(resources.GetString("highlightMethodComboBox.Items1"));
             this.highlightMethodComboBox.Items.Add(resources.GetString("highlightMethodComboBox.Items2"));
             this.highlightMethodComboBox.Items.Add(resources.GetString("highlightMethodComboBox.Items3"));
+            resources.ApplyResources(this.highlightMethodComboBox, "highlightMethodComboBox");
             this.highlightMethodComboBox.Name = "highlightMethodComboBox";
             // 
             // highlightWordsTextBox
@@ -485,10 +494,10 @@
             // 
             // filterTabPage
             // 
-            resources.ApplyResources(this.filterTabPage, "filterTabPage");
             this.filterTabPage.Controls.Add(this.dislikeWordsTextBox);
             this.filterTabPage.Controls.Add(this.dislikeUseRegexCheckBox);
             this.filterTabPage.Controls.Add(this.label17);
+            resources.ApplyResources(this.filterTabPage, "filterTabPage");
             this.filterTabPage.Name = "filterTabPage";
             // 
             // dislikeWordsTextBox
@@ -508,11 +517,11 @@
             // 
             // logTabPage
             // 
-            resources.ApplyResources(this.logTabPage, "logTabPage");
             this.logTabPage.Controls.Add(this.enableLoggingCheckBox);
             this.logTabPage.Controls.Add(this.logDirectoryBrowseButton);
             this.logTabPage.Controls.Add(this.label18);
             this.logTabPage.Controls.Add(this.logDirectoryNameTextBox);
+            resources.ApplyResources(this.logTabPage, "logTabPage");
             this.logTabPage.Name = "logTabPage";
             // 
             // enableLoggingCheckBox
@@ -539,6 +548,31 @@
             // inputPanel
             // 
             this.inputPanel.EnabledChanged += new System.EventHandler(this.inputPanel_EnabledChanged);
+            // 
+            // autoReconnectCheckBox
+            // 
+            resources.ApplyResources(this.autoReconnectCheckBox, "autoReconnectCheckBox");
+            this.autoReconnectCheckBox.Name = "autoReconnectCheckBox";
+            // 
+            // autoReconnectWaitLabel
+            // 
+            resources.ApplyResources(this.autoReconnectWaitLabel, "autoReconnectWaitLabel");
+            this.autoReconnectWaitLabel.Name = "autoReconnectWaitLabel";
+            // 
+            // autoReconnectWaitTextBox
+            // 
+            resources.ApplyResources(this.autoReconnectWaitTextBox, "autoReconnectWaitTextBox");
+            this.autoReconnectWaitTextBox.Name = "autoReconnectWaitTextBox";
+            // 
+            // autoReconnectRetryCountLabel
+            // 
+            resources.ApplyResources(this.autoReconnectRetryCountLabel, "autoReconnectRetryCountLabel");
+            this.autoReconnectRetryCountLabel.Name = "autoReconnectRetryCountLabel";
+            // 
+            // autoReconnectRetryCountTextBox
+            // 
+            resources.ApplyResources(this.autoReconnectRetryCountTextBox, "autoReconnectRetryCountTextBox");
+            this.autoReconnectRetryCountTextBox.Name = "autoReconnectRetryCountTextBox";
             // 
             // SettingForm
             // 
@@ -633,5 +667,10 @@
         private System.Windows.Forms.Label functionMenuLabel;
         private System.Windows.Forms.CheckBox reverseSoftKeyCheckBox;
         private System.Windows.Forms.CheckBox highlightToastCheckBox;
+        private System.Windows.Forms.Label autoReconnectRetryCountLabel;
+        private System.Windows.Forms.TextBox autoReconnectWaitTextBox;
+        private System.Windows.Forms.Label autoReconnectWaitLabel;
+        private System.Windows.Forms.CheckBox autoReconnectCheckBox;
+        private System.Windows.Forms.TextBox autoReconnectRetryCountTextBox;
     }
 }

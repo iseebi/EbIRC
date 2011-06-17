@@ -50,6 +50,10 @@ namespace EbiSoft.EbIRC.Settings
         private bool m_QuickSwitchUnreadCountSort = true;
         private bool m_QuickSwitchHilightsSort = true;
 
+        private bool m_autoReconnect = false;
+        private uint m_autoReconnectWait = 5;
+        private uint m_autoReconnectRetryCount = 5;
+
         private bool m_logingEnable = false;
         private string m_logDirectory = string.Empty;
 
@@ -408,6 +412,33 @@ namespace EbiSoft.EbIRC.Settings
         {
             get { return m_QuickSwitchHilightsSort; }
             set { m_QuickSwitchHilightsSort = value; }
+        }
+
+        /// <summary>
+        /// 自動再接続有効かどうか
+        /// </summary>
+        public bool AutoReconnect
+        {
+            get { return m_autoReconnect; }
+            set { m_autoReconnect = value; }
+        }
+
+        /// <summary>
+        /// 自動再接続のウェイト秒数
+        /// </summary>
+        public uint AutoReconnectWait
+        {
+            get { return m_autoReconnectWait; }
+            set { m_autoReconnectWait = value; }
+        }
+
+        /// <summary>
+        /// 自動再接続のリトライ回数
+        /// </summary>
+        public uint AutoReconnectRetryCount
+        {
+            get { return m_autoReconnectRetryCount; }
+            set { m_autoReconnectRetryCount = value; }
         }
 
         /// <summary>

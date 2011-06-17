@@ -368,4 +368,7 @@ UTF-8</value>
   <data name="UrlMenuCaption" xml:space="preserve">
     <value>Recent URL</value>
   </data>
+  <data name="AutoReconnectTry" xml:space="preserve">
+    <value>Wait for reconnect ({0}/{1})</value>
+  </data>
 </root>

@@ -114,6 +114,9 @@ namespace EbiSoft.EbIRC
             qsSortHighlightedCheckBox.Checked = SettingManager.Data.QuickSwitchHilightsSort;
             qsSortUnreadCheckBox.Checked = SettingManager.Data.QuickSwitchUnreadCountSort;
             multiMenuFunctionComboBox.SelectedIndex = (int)SettingManager.Data.MultiMenuOperation;
+            autoReconnectCheckBox.Checked = SettingManager.Data.AutoReconnect;
+            autoReconnectRetryCountTextBox.Text = SettingManager.Data.AutoReconnectRetryCount.ToString();
+            autoReconnectWaitTextBox.Text = SettingManager.Data.AutoReconnectWait.ToString();
         }
 
         private void SettingForm_Closing(object sender, CancelEventArgs e)
@@ -166,6 +169,17 @@ namespace EbiSoft.EbIRC
 
             SettingManager.Data.MultiMenuOperation = (EbIRCMultiMenuOperations)multiMenuFunctionComboBox.SelectedIndex;
 
+            SettingManager.Data.AutoReconnect = autoReconnectCheckBox.Checked;
+            try
+            {
+                SettingManager.Data.AutoReconnectRetryCount = uint.Parse(autoReconnectRetryCountTextBox.Text);
+            }
+            catch (Exception) { } // ê›íËÇï€ë∂ÇµÇ»Ç¢
+            try
+            {
+                SettingManager.Data.AutoReconnectWait = uint.Parse(autoReconnectWaitTextBox.Text);
+            }
+            catch (Exception) { } // ê›íËÇï€ë∂ÇµÇ»Ç¢
 
             SettingManager.WriteSetting();
         }

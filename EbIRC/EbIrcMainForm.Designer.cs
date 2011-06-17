@@ -78,6 +78,7 @@
             this.menuItem6 = new System.Windows.Forms.MenuItem();
             this.menuItem7 = new System.Windows.Forms.MenuItem();
             this.notification = new Microsoft.WindowsCE.Forms.Notification();
+            this.reconnectTimer = new System.Windows.Forms.Timer();
             this.infomationPanel.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
@@ -340,6 +341,10 @@
             this.notification.BalloonChanged += new Microsoft.WindowsCE.Forms.BalloonChangedEventHandler(this.notification_BalloonChanged);
             this.notification.ResponseSubmitted += new Microsoft.WindowsCE.Forms.ResponseSubmittedEventHandler(this.notification_ResponseSubmitted);
             // 
+            // reconnectTimer
+            // 
+            this.reconnectTimer.Tick += new System.EventHandler(this.reconnectTimer_Tick);
+            // 
             // EbIrcMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
@@ -406,6 +411,7 @@
         private System.Windows.Forms.MenuItem menuItem6;
         private System.Windows.Forms.MenuItem menuItem7;
         private Microsoft.WindowsCE.Forms.Notification notification;
+        private System.Windows.Forms.Timer reconnectTimer;
     }
 }
 

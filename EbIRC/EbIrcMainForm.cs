@@ -91,7 +91,10 @@ namespace EbiSoft.EbIRC
         List<ChannelMenuItem> m_channelPopupMenus; // チャンネルポップアップメニューに出すチャンネルの項目
         int m_lastSendTick = 0;                    // 最後に発言したTicktime (無効時間判定に使用)
 
-        Queue<ToastItem> m_toastQueue = null;
+        Queue<ToastItem> m_toastQueue = null;  // トースト処理キュー
+
+        uint autoReconnectRetryCount = 0;  // 自動再接続の試行回数
+        bool userDisconnect = false;       // ユーザーによる切断かどうか
 
         /// <summary>
         /// コンストラクタ
@@ -348,39 +351,7 @@ namespace EbiSoft.EbIRC
             // ステータスが切断のとき→接続する
             if (ircClient.Status == IRCClientStatus.Disconnected)
             {
-                // サーバーが空欄のときには接続処理を行わない。
-                if (SettingManager.Data.Profiles.ActiveProfile.Server == string.Empty)
-                {
-                    MessageBox.Show(Resources.NullServerSettingError,
-                        Resources.ConnectionError, MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
-                    return;
-                }
-
-                try
-                {
-                    // ダイアルアップ処理
-                    if (SettingManager.Data.UseNetworkControl)
-                    {
-                        ConnectionManager.Connection(string.Format(CONNMGR_URL_FORMAT,
-                            SettingManager.Data.Profiles.ActiveProfile.Server, SettingManager.Data.Profiles.ActiveProfile.Port.ToString()));
-                    }
-
-                    BroadcastLog(Resources.BeginConnection);
-                    ircClient.Encoding = SettingManager.Data.Profiles.ActiveProfile.GetEncoding();
-                    ircClient.Connect(SettingManager.Data.Profiles.ActiveProfile.Server, (int)SettingManager.Data.Profiles.ActiveProfile.Port,
-                        SettingManager.Data.Profiles.ActiveProfile.Password, SettingManager.Data.Profiles.ActiveProfile.UseSsl,
-                        SettingManager.Data.Profiles.ActiveProfile.NoValidation,
-                        SettingManager.Data.Profiles.ActiveProfile.Nickname, SettingManager.Data.Profiles.ActiveProfile.Realname,
-                        SettingManager.Data.Profiles.ActiveProfile.LoginName, SettingManager.Data.Profiles.ActiveProfile.NickServPassword);
-                    SetConnectionMenuText();
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    ircClient.Close();
-                }
-                return;
+                StartConnect();
             }
 
             // 切断以外のとき→切断する
@@ -398,8 +369,49 @@ namespace EbiSoft.EbIRC
                     }
                 }
 
+                userDisconnect = true;
+
                 ircClient.Disconnect();
-                return;
+            }
+        }
+
+        private void StartConnect()
+        {
+            try
+            {
+                reconnectTimer.Enabled = false;
+
+                // サーバーが空欄のときには接続処理を行わない。
+                if (SettingManager.Data.Profiles.ActiveProfile.Server == string.Empty)
+                {
+                    MessageBox.Show(Resources.NullServerSettingError,
+                        Resources.ConnectionError, MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                    return;
+                }
+
+                // ダイアルアップ処理
+                if (SettingManager.Data.UseNetworkControl)
+                {
+                    ConnectionManager.Connection(string.Format(CONNMGR_URL_FORMAT,
+                        SettingManager.Data.Profiles.ActiveProfile.Server, SettingManager.Data.Profiles.ActiveProfile.Port.ToString()));
+                }
+
+                userDisconnect = false;
+
+                BroadcastLog(Resources.BeginConnection);
+                ircClient.Encoding = SettingManager.Data.Profiles.ActiveProfile.GetEncoding();
+                ircClient.Connect(SettingManager.Data.Profiles.ActiveProfile.Server, (int)SettingManager.Data.Profiles.ActiveProfile.Port,
+                    SettingManager.Data.Profiles.ActiveProfile.Password, SettingManager.Data.Profiles.ActiveProfile.UseSsl,
+                    SettingManager.Data.Profiles.ActiveProfile.NoValidation,
+                    SettingManager.Data.Profiles.ActiveProfile.Nickname, SettingManager.Data.Profiles.ActiveProfile.Realname,
+                    SettingManager.Data.Profiles.ActiveProfile.LoginName, SettingManager.Data.Profiles.ActiveProfile.NickServPassword);
+                SetConnectionMenuText();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                ircClient.Close();
             }
         }
 
@@ -978,6 +990,7 @@ namespace EbiSoft.EbIRC
             {
                 BroadcastLog(Resources.SslValidateErrorNotValidateString);
             }
+            autoReconnectRetryCount = 0;
             CommitStoredLog();
             SetConnectionMenuText();
         }
@@ -994,6 +1007,7 @@ namespace EbiSoft.EbIRC
                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
              */
             BroadcastLog(Resources.CannotConnectMessage);
+            bool sslValidationError = true;
             switch (ircClient.SslValidateError)
             {
                 case SslTest.SslValidateErrors.InvalidIssuer:
@@ -1011,8 +1025,15 @@ namespace EbiSoft.EbIRC
                 case SslTest.SslValidateErrors.OtherSite:
                     BroadcastLog(Resources.SslValidateErrorOtherSiteString);
                     break;
+                default:
+                    sslValidationError = false;
+                    break;
             }
             SetDisconnected();
+            if (!sslValidationError && !userDisconnect)
+            {
+                BeginAutoReconnect();
+            }
         }
 
         /// <summary>
@@ -1028,6 +1049,11 @@ namespace EbiSoft.EbIRC
             }
             CommitStoredLog();
             SetDisconnected();
+
+            if (!userDisconnect)
+            {
+                BeginAutoReconnect();
+            }
         }
 
         /// <summary>
@@ -2183,6 +2209,8 @@ namespace EbiSoft.EbIRC
 
         #endregion
 
+        #region キーボードオペレーション
+
         /// <summary>
         /// 特殊キーボードオペレーション実行
         /// </summary>
@@ -2264,6 +2292,10 @@ namespace EbiSoft.EbIRC
             }
         }
 
+        #endregion
+
+        #region URL関連
+
         /// <summary>
         /// 選択されているURLを取得する。
         /// </summary>
@@ -2344,6 +2376,10 @@ namespace EbiSoft.EbIRC
             }
         }
 
+        #endregion
+
+        #region 自動PONG
+
         /// <summary>
         /// PONG送信タイマーイベント
         /// </summary>
@@ -2356,6 +2392,10 @@ namespace EbiSoft.EbIRC
                 ircClient.SendCommand("PONG :" + SettingManager.Data.Profiles.ActiveProfile.Server);
             }
         }
+
+        #endregion
+
+        #region トースト
 
         private void notification_ResponseSubmitted(object sender, ResponseSubmittedEventArgs e)
         {
@@ -2393,5 +2433,27 @@ namespace EbiSoft.EbIRC
                 }
              }
         }
+
+        #endregion
+
+        #region 自動再接続
+
+        private void BeginAutoReconnect()
+        {
+            if (SettingManager.Data.AutoReconnect && (autoReconnectRetryCount < SettingManager.Data.AutoReconnectRetryCount))
+            {
+                autoReconnectRetryCount++;
+                reconnectTimer.Interval = (int)SettingManager.Data.AutoReconnectWait * 1000;
+                reconnectTimer.Enabled = true;
+                BroadcastLog(string.Format(Resources.AutoReconnectTry, autoReconnectRetryCount,  SettingManager.Data.AutoReconnectRetryCount));
+            }
+        }
+
+        private void reconnectTimer_Tick(object sender, EventArgs e)
+        {
+            StartConnect();
+        }
+
+        #endregion
     }
 }
